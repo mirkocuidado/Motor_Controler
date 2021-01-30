@@ -1,0 +1,22 @@
+/*
+ * work.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "work.h"
+
+void init_Work() {
+	init_MCU_one();
+	xTaskCreate(task_work_function, "work_task", 128, NULL, 5, NULL);
+}
+
+void task_work_function(void* params) {
+	while(1) {
+		send_string_to_terminal("Insert command: ");
+		char* command = receive_string_from_terminal();
+		send_string_to_terminal(command);
+		send_string_to_terminal("\r");
+	}
+}

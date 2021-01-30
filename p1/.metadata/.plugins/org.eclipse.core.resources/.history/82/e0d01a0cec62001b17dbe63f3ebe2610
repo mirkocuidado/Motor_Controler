@@ -1,0 +1,70 @@
+/*
+ * mcu_one.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "mcu_one.h"
+
+TaskHandle_t task_handle_send_to_terminal_from_MCU_one;
+QueueHandle_t queue_handle_send_to_terminal_from_MCU_one;
+SemaphoreHandle_t mutex_handle_send_to_terminal_from_MCU_one;
+
+TaskHandle_t task_handle_receive_from_terminal_on_MCU_one;
+QueueHandle_t queue_handle_receive_from_terminal_on_MCU_one;
+SemaphoreHandle_t mutex_handle_receive_from_terminal_on_MCU_one;
+
+void init_MCU_one() {
+	xTaskCreate(task_function_send_to_terminal, "send_to_terminal", 64, NULL, 4, &task_handle_send_to_terminal_from_MCU_one);
+	queue_handle_send_to_terminal_from_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_send_to_terminal_from_MCU_one = xSemaphoreCreateMutex();
+
+	xTaskCreate(task_function_receive_from_terminal, "receive_from_terminal", 64, NULL, 4, &task_handle_receive_from_terminal_on_MCU_one);
+	queue_handle_receive_from_terminal_on_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_receive_from_terminal_on_MCU_one = xSemaphoreCreateMutex();
+}
+
+void task_function_send_to_terminal(void* params) {
+	uint8_t item_to_send_to_terminal;
+	while(1) {
+		xQueueReceive(queue_handle_send_to_terminal_from_MCU_one, &item_to_send_to_terminal, portMAX_DELAY);
+		HAL_UART_Transmit_IT(&huart1, &item_to_send_to_terminal, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	}
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t woken = pdFALSE;
+
+	if(huart->Instance == huart1.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_send_to_terminal_from_MCU_one, &woken);
+	}
+
+	portYIELD_FROM_ISR(woken);
+}
+
+void task_function_receive_from_terminal(void* params) {
+	uint8_t item_to_receive_from_terminal;
+	while(1) {
+		HAL_UART_Receive_IT(&huart1, &item_to_receive_from_terminal, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+		xQueueSendToBack(queue_handle_receive_from_terminal_on_MCU_one, &item_to_receive_from_terminal, portMAX_DELAY);
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t woken = pdFALSE;
+
+	if(huart->Instance == huart1.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_receive_from_terminal_on_MCU_one, &woken);
+	}
+
+	portYIELD_FROM_ISR(woken);
+}
+
+
+
+
+
+

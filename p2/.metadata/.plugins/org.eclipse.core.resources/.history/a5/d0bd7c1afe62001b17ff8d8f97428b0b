@@ -1,0 +1,30 @@
+/*
+ * lcd.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "lcd.h"
+
+void LCD_Write(LCD_CommandReg reg, LCD_CommandVal val) {
+	GPIOC->ODR = ((reg & 0x01) << 5) | (val & 0x0F);
+
+	GPIOC->ODR |= 0x40;
+	GPIOC->ODR &= ~0x40;
+}
+
+void LCD_CommandInitiate(LCD_CommandReg reg, LCD_CommandVal val) {
+	LCD_Write(reg, val >> 4);
+	LCD_Write(reg, val >> 0);
+
+	vTaskDelay(pdMS_TO_TICKS(2));
+}
+
+void init_LCD() {
+	xTaskCreate(task_function_for_LCD, "task_function_for_LCD", 64, NULL, 2, NULL);
+}
+
+void task_function_for_LCD(void* params) {
+
+}

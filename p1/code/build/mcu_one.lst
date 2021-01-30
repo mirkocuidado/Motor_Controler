@@ -1,0 +1,1278 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"mcu_one.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.task_function_send_to_terminal,"ax",%progbits
+  16              		.align	1
+  17              		.global	task_function_send_to_terminal
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	task_function_send_to_terminal:
+  25              	.LFB70:
+  26              		.file 1 "../Core/Src/mcu_one.c"
+   1:../Core/Src/mcu_one.c **** 
+  27              		.loc 1 46 51 view -0
+  28              		.cfi_startproc
+  29              		@ Volatile: function does not return.
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33              		.loc 1 46 51 is_stmt 0 view .LVU1
+  34 0000 00B5     		push	{lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 4
+  37              		.cfi_offset 14, -4
+  38 0002 83B0     		sub	sp, sp, #12
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 16
+  41              	.LVL1:
+  42              	.L2:
+  43              		.loc 1 47 2 is_stmt 1 discriminator 1 view .LVU2
+  44              		.loc 1 48 2 discriminator 1 view .LVU3
+  45              		.loc 1 49 3 discriminator 1 view .LVU4
+  46 0004 4FF0FF32 		mov	r2, #-1
+  47 0008 0DF10701 		add	r1, sp, #7
+  48 000c 074B     		ldr	r3, .L4
+  49 000e 1868     		ldr	r0, [r3]
+  50 0010 074B     		ldr	r3, .L4+4
+  51 0012 9847     		blx	r3
+  52              	.LVL2:
+  53              		.loc 1 50 3 discriminator 1 view .LVU5
+  54 0014 0122     		movs	r2, #1
+  55 0016 0DF10701 		add	r1, sp, #7
+  56 001a 0648     		ldr	r0, .L4+8
+  57 001c 064B     		ldr	r3, .L4+12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 2
+
+
+  58 001e 9847     		blx	r3
+  59              	.LVL3:
+  60              		.loc 1 51 3 discriminator 1 view .LVU6
+  61 0020 4FF0FF31 		mov	r1, #-1
+  62 0024 0120     		movs	r0, #1
+  63 0026 054B     		ldr	r3, .L4+16
+  64 0028 9847     		blx	r3
+  65              	.LVL4:
+  66              		.loc 1 48 7 discriminator 1 view .LVU7
+  67 002a EBE7     		b	.L2
+  68              	.L5:
+  69              		.align	2
+  70              	.L4:
+  71 002c 00000000 		.word	queue_handle_send_to_terminal_from_MCU_one
+  72 0030 00000000 		.word	xQueueReceive
+  73 0034 00000000 		.word	huart1
+  74 0038 00000000 		.word	HAL_UART_Transmit_IT
+  75 003c 00000000 		.word	ulTaskNotifyTake
+  76              		.cfi_endproc
+  77              	.LFE70:
+  79              		.section	.text.task_function_send_to_MCU_two,"ax",%progbits
+  80              		.align	1
+  81              		.global	task_function_send_to_MCU_two
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  85              		.fpu softvfp
+  87              	task_function_send_to_MCU_two:
+  88              	.LFB77:
+  89              		.loc 1 130 50 view -0
+  90              		.cfi_startproc
+  91              		@ Volatile: function does not return.
+  92              		@ args = 0, pretend = 0, frame = 8
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              	.LVL5:
+  95              		.loc 1 130 50 is_stmt 0 view .LVU9
+  96 0000 00B5     		push	{lr}
+  97              	.LCFI2:
+  98              		.cfi_def_cfa_offset 4
+  99              		.cfi_offset 14, -4
+ 100 0002 83B0     		sub	sp, sp, #12
+ 101              	.LCFI3:
+ 102              		.cfi_def_cfa_offset 16
+ 103              	.LVL6:
+ 104              	.L7:
+ 105              		.loc 1 131 2 is_stmt 1 discriminator 1 view .LVU10
+ 106              		.loc 1 132 2 discriminator 1 view .LVU11
+ 107              		.loc 1 133 3 discriminator 1 view .LVU12
+ 108 0004 4FF0FF32 		mov	r2, #-1
+ 109 0008 0DF10701 		add	r1, sp, #7
+ 110 000c 074B     		ldr	r3, .L9
+ 111 000e 1868     		ldr	r0, [r3]
+ 112 0010 074B     		ldr	r3, .L9+4
+ 113 0012 9847     		blx	r3
+ 114              	.LVL7:
+ 115              		.loc 1 134 3 discriminator 1 view .LVU13
+ 116 0014 0122     		movs	r2, #1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 3
+
+
+ 117 0016 0DF10701 		add	r1, sp, #7
+ 118 001a 0648     		ldr	r0, .L9+8
+ 119 001c 064B     		ldr	r3, .L9+12
+ 120 001e 9847     		blx	r3
+ 121              	.LVL8:
+ 122              		.loc 1 135 3 discriminator 1 view .LVU14
+ 123 0020 4FF0FF31 		mov	r1, #-1
+ 124 0024 0120     		movs	r0, #1
+ 125 0026 054B     		ldr	r3, .L9+16
+ 126 0028 9847     		blx	r3
+ 127              	.LVL9:
+ 128              		.loc 1 132 7 discriminator 1 view .LVU15
+ 129 002a EBE7     		b	.L7
+ 130              	.L10:
+ 131              		.align	2
+ 132              	.L9:
+ 133 002c 00000000 		.word	queue_handle_send_to_MCU_two_from_MCU_one
+ 134 0030 00000000 		.word	xQueueReceive
+ 135 0034 00000000 		.word	huart2
+ 136 0038 00000000 		.word	HAL_UART_Transmit_IT
+ 137 003c 00000000 		.word	ulTaskNotifyTake
+ 138              		.cfi_endproc
+ 139              	.LFE77:
+ 141              		.section	.text.task_function_receive_from_terminal,"ax",%progbits
+ 142              		.align	1
+ 143              		.global	task_function_receive_from_terminal
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 147              		.fpu softvfp
+ 149              	task_function_receive_from_terminal:
+ 150              	.LFB72:
+ 151              		.loc 1 68 56 view -0
+ 152              		.cfi_startproc
+ 153              		@ Volatile: function does not return.
+ 154              		@ args = 0, pretend = 0, frame = 8
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156              	.LVL10:
+ 157              		.loc 1 68 56 is_stmt 0 view .LVU17
+ 158 0000 00B5     		push	{lr}
+ 159              	.LCFI4:
+ 160              		.cfi_def_cfa_offset 4
+ 161              		.cfi_offset 14, -4
+ 162 0002 83B0     		sub	sp, sp, #12
+ 163              	.LCFI5:
+ 164              		.cfi_def_cfa_offset 16
+ 165              	.LVL11:
+ 166              	.L12:
+ 167              		.loc 1 69 2 is_stmt 1 discriminator 1 view .LVU18
+ 168              		.loc 1 70 2 discriminator 1 view .LVU19
+ 169              		.loc 1 71 3 discriminator 1 view .LVU20
+ 170 0004 0122     		movs	r2, #1
+ 171 0006 0DF10701 		add	r1, sp, #7
+ 172 000a 0948     		ldr	r0, .L14
+ 173 000c 094B     		ldr	r3, .L14+4
+ 174 000e 9847     		blx	r3
+ 175              	.LVL12:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 4
+
+
+ 176              		.loc 1 72 3 discriminator 1 view .LVU21
+ 177 0010 4FF0FF31 		mov	r1, #-1
+ 178 0014 0120     		movs	r0, #1
+ 179 0016 084B     		ldr	r3, .L14+8
+ 180 0018 9847     		blx	r3
+ 181              	.LVL13:
+ 182              		.loc 1 73 3 discriminator 1 view .LVU22
+ 183 001a 0023     		movs	r3, #0
+ 184 001c 4FF0FF32 		mov	r2, #-1
+ 185 0020 0DF10701 		add	r1, sp, #7
+ 186 0024 0548     		ldr	r0, .L14+12
+ 187 0026 0068     		ldr	r0, [r0]
+ 188 0028 054C     		ldr	r4, .L14+16
+ 189 002a A047     		blx	r4
+ 190              	.LVL14:
+ 191              		.loc 1 70 7 discriminator 1 view .LVU23
+ 192 002c EAE7     		b	.L12
+ 193              	.L15:
+ 194 002e 00BF     		.align	2
+ 195              	.L14:
+ 196 0030 00000000 		.word	huart1
+ 197 0034 00000000 		.word	HAL_UART_Receive_IT
+ 198 0038 00000000 		.word	ulTaskNotifyTake
+ 199 003c 00000000 		.word	queue_handle_receive_from_terminal_on_MCU_one
+ 200 0040 00000000 		.word	xQueueGenericSend
+ 201              		.cfi_endproc
+ 202              	.LFE72:
+ 204              		.section	.rodata.init_MCU_one.str1.4,"aMS",%progbits,1
+ 205              		.align	2
+ 206              	.LC0:
+ 207 0000 73656E64 		.ascii	"send_to_terminal\000"
+ 207      5F746F5F 
+ 207      7465726D 
+ 207      696E616C 
+ 207      00
+ 208 0011 000000   		.align	2
+ 209              	.LC1:
+ 210 0014 72656365 		.ascii	"receive_from_terminal\000"
+ 210      6976655F 
+ 210      66726F6D 
+ 210      5F746572 
+ 210      6D696E61 
+ 211 002a 0000     		.align	2
+ 212              	.LC2:
+ 213 002c 73656E64 		.ascii	"send_to_MCU2\000"
+ 213      5F746F5F 
+ 213      4D435532 
+ 213      00
+ 214 0039 000000   		.align	2
+ 215              	.LC3:
+ 216 003c 72656365 		.ascii	"receive_from_MCU2\000"
+ 216      6976655F 
+ 216      66726F6D 
+ 216      5F4D4355 
+ 216      3200
+ 217              		.section	.text.init_MCU_one,"ax",%progbits
+ 218              		.align	1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 5
+
+
+ 219              		.global	init_MCU_one
+ 220              		.syntax unified
+ 221              		.thumb
+ 222              		.thumb_func
+ 223              		.fpu softvfp
+ 225              	init_MCU_one:
+ 226              	.LFB69:
+ 227              		.loc 1 28 21 view -0
+ 228              		.cfi_startproc
+ 229              		@ args = 0, pretend = 0, frame = 0
+ 230              		@ frame_needed = 0, uses_anonymous_args = 0
+ 231 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 232              	.LCFI6:
+ 233              		.cfi_def_cfa_offset 24
+ 234              		.cfi_offset 4, -24
+ 235              		.cfi_offset 5, -20
+ 236              		.cfi_offset 6, -16
+ 237              		.cfi_offset 7, -12
+ 238              		.cfi_offset 8, -8
+ 239              		.cfi_offset 14, -4
+ 240 0004 82B0     		sub	sp, sp, #8
+ 241              	.LCFI7:
+ 242              		.cfi_def_cfa_offset 32
+ 243              		.loc 1 29 2 view .LVU25
+ 244 0006 294B     		ldr	r3, .L18
+ 245 0008 0193     		str	r3, [sp, #4]
+ 246 000a 4FF00408 		mov	r8, #4
+ 247 000e CDF80080 		str	r8, [sp]
+ 248 0012 0023     		movs	r3, #0
+ 249 0014 4022     		movs	r2, #64
+ 250 0016 2649     		ldr	r1, .L18+4
+ 251 0018 2648     		ldr	r0, .L18+8
+ 252 001a 274E     		ldr	r6, .L18+12
+ 253 001c B047     		blx	r6
+ 254              	.LVL15:
+ 255              		.loc 1 30 2 view .LVU26
+ 256              		.loc 1 30 47 is_stmt 0 view .LVU27
+ 257 001e 0022     		movs	r2, #0
+ 258 0020 0121     		movs	r1, #1
+ 259 0022 2020     		movs	r0, #32
+ 260 0024 254D     		ldr	r5, .L18+16
+ 261 0026 A847     		blx	r5
+ 262              	.LVL16:
+ 263              		.loc 1 30 45 view .LVU28
+ 264 0028 254B     		ldr	r3, .L18+20
+ 265 002a 1860     		str	r0, [r3]
+ 266              		.loc 1 31 2 is_stmt 1 view .LVU29
+ 267              		.loc 1 31 47 is_stmt 0 view .LVU30
+ 268 002c 0120     		movs	r0, #1
+ 269 002e 254C     		ldr	r4, .L18+24
+ 270 0030 A047     		blx	r4
+ 271              	.LVL17:
+ 272              		.loc 1 31 45 view .LVU31
+ 273 0032 254B     		ldr	r3, .L18+28
+ 274 0034 1860     		str	r0, [r3]
+ 275              		.loc 1 33 2 is_stmt 1 view .LVU32
+ 276 0036 254B     		ldr	r3, .L18+32
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 6
+
+
+ 277 0038 0193     		str	r3, [sp, #4]
+ 278 003a 1427     		movs	r7, #20
+ 279 003c 0097     		str	r7, [sp]
+ 280 003e 0023     		movs	r3, #0
+ 281 0040 4022     		movs	r2, #64
+ 282 0042 2349     		ldr	r1, .L18+36
+ 283 0044 2348     		ldr	r0, .L18+40
+ 284 0046 B047     		blx	r6
+ 285              	.LVL18:
+ 286              		.loc 1 34 2 view .LVU33
+ 287              		.loc 1 34 50 is_stmt 0 view .LVU34
+ 288 0048 0022     		movs	r2, #0
+ 289 004a 0121     		movs	r1, #1
+ 290 004c 2020     		movs	r0, #32
+ 291 004e A847     		blx	r5
+ 292              	.LVL19:
+ 293              		.loc 1 34 48 view .LVU35
+ 294 0050 214B     		ldr	r3, .L18+44
+ 295 0052 1860     		str	r0, [r3]
+ 296              		.loc 1 35 2 is_stmt 1 view .LVU36
+ 297              		.loc 1 35 50 is_stmt 0 view .LVU37
+ 298 0054 0120     		movs	r0, #1
+ 299 0056 A047     		blx	r4
+ 300              	.LVL20:
+ 301              		.loc 1 35 48 view .LVU38
+ 302 0058 204B     		ldr	r3, .L18+48
+ 303 005a 1860     		str	r0, [r3]
+ 304              		.loc 1 37 2 is_stmt 1 view .LVU39
+ 305 005c 204B     		ldr	r3, .L18+52
+ 306 005e 0193     		str	r3, [sp, #4]
+ 307 0060 CDF80080 		str	r8, [sp]
+ 308 0064 0023     		movs	r3, #0
+ 309 0066 4022     		movs	r2, #64
+ 310 0068 1E49     		ldr	r1, .L18+56
+ 311 006a 1F48     		ldr	r0, .L18+60
+ 312 006c B047     		blx	r6
+ 313              	.LVL21:
+ 314              		.loc 1 38 2 view .LVU40
+ 315              		.loc 1 38 46 is_stmt 0 view .LVU41
+ 316 006e 0022     		movs	r2, #0
+ 317 0070 0121     		movs	r1, #1
+ 318 0072 2020     		movs	r0, #32
+ 319 0074 A847     		blx	r5
+ 320              	.LVL22:
+ 321              		.loc 1 38 44 view .LVU42
+ 322 0076 1D4B     		ldr	r3, .L18+64
+ 323 0078 1860     		str	r0, [r3]
+ 324              		.loc 1 39 2 is_stmt 1 view .LVU43
+ 325              		.loc 1 39 46 is_stmt 0 view .LVU44
+ 326 007a 0120     		movs	r0, #1
+ 327 007c A047     		blx	r4
+ 328              	.LVL23:
+ 329              		.loc 1 39 44 view .LVU45
+ 330 007e 1C4B     		ldr	r3, .L18+68
+ 331 0080 1860     		str	r0, [r3]
+ 332              		.loc 1 41 2 is_stmt 1 view .LVU46
+ 333 0082 1C4B     		ldr	r3, .L18+72
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 7
+
+
+ 334 0084 0193     		str	r3, [sp, #4]
+ 335 0086 0097     		str	r7, [sp]
+ 336 0088 0023     		movs	r3, #0
+ 337 008a 4022     		movs	r2, #64
+ 338 008c 1A49     		ldr	r1, .L18+76
+ 339 008e 1B48     		ldr	r0, .L18+80
+ 340 0090 B047     		blx	r6
+ 341              	.LVL24:
+ 342              		.loc 1 42 2 view .LVU47
+ 343              		.loc 1 42 49 is_stmt 0 view .LVU48
+ 344 0092 0022     		movs	r2, #0
+ 345 0094 0121     		movs	r1, #1
+ 346 0096 2020     		movs	r0, #32
+ 347 0098 A847     		blx	r5
+ 348              	.LVL25:
+ 349              		.loc 1 42 47 view .LVU49
+ 350 009a 194B     		ldr	r3, .L18+84
+ 351 009c 1860     		str	r0, [r3]
+ 352              		.loc 1 43 2 is_stmt 1 view .LVU50
+ 353              		.loc 1 43 49 is_stmt 0 view .LVU51
+ 354 009e 0120     		movs	r0, #1
+ 355 00a0 A047     		blx	r4
+ 356              	.LVL26:
+ 357              		.loc 1 43 47 view .LVU52
+ 358 00a2 184B     		ldr	r3, .L18+88
+ 359 00a4 1860     		str	r0, [r3]
+ 360              		.loc 1 44 1 view .LVU53
+ 361 00a6 02B0     		add	sp, sp, #8
+ 362              	.LCFI8:
+ 363              		.cfi_def_cfa_offset 24
+ 364              		@ sp needed
+ 365 00a8 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 366              	.L19:
+ 367              		.align	2
+ 368              	.L18:
+ 369 00ac 00000000 		.word	task_handle_send_to_terminal_from_MCU_one
+ 370 00b0 00000000 		.word	.LC0
+ 371 00b4 00000000 		.word	task_function_send_to_terminal
+ 372 00b8 00000000 		.word	xTaskCreate
+ 373 00bc 00000000 		.word	xQueueGenericCreate
+ 374 00c0 00000000 		.word	queue_handle_send_to_terminal_from_MCU_one
+ 375 00c4 00000000 		.word	xQueueCreateMutex
+ 376 00c8 00000000 		.word	mutex_handle_send_to_terminal_from_MCU_one
+ 377 00cc 00000000 		.word	task_handle_receive_from_terminal_on_MCU_one
+ 378 00d0 14000000 		.word	.LC1
+ 379 00d4 00000000 		.word	task_function_receive_from_terminal
+ 380 00d8 00000000 		.word	queue_handle_receive_from_terminal_on_MCU_one
+ 381 00dc 00000000 		.word	mutex_handle_receive_from_terminal_on_MCU_one
+ 382 00e0 00000000 		.word	task_handle_send_to_MCU_two_from_MCU_one
+ 383 00e4 2C000000 		.word	.LC2
+ 384 00e8 00000000 		.word	task_function_send_to_MCU_two
+ 385 00ec 00000000 		.word	queue_handle_send_to_MCU_two_from_MCU_one
+ 386 00f0 00000000 		.word	mutex_handle_send_to_MCU_two_from_MCU_one
+ 387 00f4 00000000 		.word	task_handle_receive_from_MCU_two_on_MCU_one
+ 388 00f8 3C000000 		.word	.LC3
+ 389 00fc 00000000 		.word	task_function_receive_from_MCU_two
+ 390 0100 00000000 		.word	queue_handle_receive_from_MCU_two_on_MCU_one
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 8
+
+
+ 391 0104 00000000 		.word	mutex_handle_receive_from_MCU_two_on_MCU_one
+ 392              		.cfi_endproc
+ 393              	.LFE69:
+ 395              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+ 396              		.align	1
+ 397              		.global	HAL_UART_TxCpltCallback
+ 398              		.syntax unified
+ 399              		.thumb
+ 400              		.thumb_func
+ 401              		.fpu softvfp
+ 403              	HAL_UART_TxCpltCallback:
+ 404              	.LVL27:
+ 405              	.LFB71:
+ 406              		.loc 1 55 57 is_stmt 1 view -0
+ 407              		.cfi_startproc
+ 408              		@ args = 0, pretend = 0, frame = 8
+ 409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 410              		.loc 1 55 57 is_stmt 0 view .LVU55
+ 411 0000 10B5     		push	{r4, lr}
+ 412              	.LCFI9:
+ 413              		.cfi_def_cfa_offset 8
+ 414              		.cfi_offset 4, -8
+ 415              		.cfi_offset 14, -4
+ 416 0002 82B0     		sub	sp, sp, #8
+ 417              	.LCFI10:
+ 418              		.cfi_def_cfa_offset 16
+ 419 0004 0446     		mov	r4, r0
+ 420              		.loc 1 56 2 is_stmt 1 view .LVU56
+ 421              		.loc 1 56 13 is_stmt 0 view .LVU57
+ 422 0006 0023     		movs	r3, #0
+ 423 0008 0193     		str	r3, [sp, #4]
+ 424              		.loc 1 58 2 is_stmt 1 view .LVU58
+ 425              		.loc 1 58 10 is_stmt 0 view .LVU59
+ 426 000a 0268     		ldr	r2, [r0]
+ 427              		.loc 1 58 30 view .LVU60
+ 428 000c 104B     		ldr	r3, .L27
+ 429 000e 1B68     		ldr	r3, [r3]
+ 430              		.loc 1 58 4 view .LVU61
+ 431 0010 9A42     		cmp	r2, r3
+ 432 0012 10D0     		beq	.L25
+ 433              	.LVL28:
+ 434              	.L21:
+ 435              		.loc 1 61 2 is_stmt 1 view .LVU62
+ 436              		.loc 1 61 10 is_stmt 0 view .LVU63
+ 437 0014 2268     		ldr	r2, [r4]
+ 438              		.loc 1 61 30 view .LVU64
+ 439 0016 0F4B     		ldr	r3, .L27+4
+ 440 0018 1B68     		ldr	r3, [r3]
+ 441              		.loc 1 61 4 view .LVU65
+ 442 001a 9A42     		cmp	r2, r3
+ 443 001c 11D0     		beq	.L26
+ 444              	.L22:
+ 445              		.loc 1 65 2 is_stmt 1 view .LVU66
+ 446 001e 019B     		ldr	r3, [sp, #4]
+ 447 0020 3BB1     		cbz	r3, .L20
+ 448              		.loc 1 65 2 discriminator 1 view .LVU67
+ 449 0022 0D4B     		ldr	r3, .L27+8
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 9
+
+
+ 450 0024 4FF08052 		mov	r2, #268435456
+ 451 0028 1A60     		str	r2, [r3]
+ 452              		.loc 1 65 2 discriminator 1 view .LVU68
+ 453              		.syntax unified
+ 454              	@ 65 "Core/Src/mcu_one.c" 1
+ 455 002a BFF34F8F 		dsb
+ 456              	@ 0 "" 2
+ 457              		.loc 1 65 2 discriminator 1 view .LVU69
+ 458              	@ 65 "Core/Src/mcu_one.c" 1
+ 459 002e BFF36F8F 		isb
+ 460              	@ 0 "" 2
+ 461              		.loc 1 65 27 discriminator 1 view .LVU70
+ 462              		.thumb
+ 463              		.syntax unified
+ 464              	.L20:
+ 465              		.loc 1 66 1 is_stmt 0 view .LVU71
+ 466 0032 02B0     		add	sp, sp, #8
+ 467              	.LCFI11:
+ 468              		.cfi_remember_state
+ 469              		.cfi_def_cfa_offset 8
+ 470              		@ sp needed
+ 471 0034 10BD     		pop	{r4, pc}
+ 472              	.LVL29:
+ 473              	.L25:
+ 474              	.LCFI12:
+ 475              		.cfi_restore_state
+ 476              		.loc 1 59 3 is_stmt 1 view .LVU72
+ 477 0036 01A9     		add	r1, sp, #4
+ 478 0038 084B     		ldr	r3, .L27+12
+ 479 003a 1868     		ldr	r0, [r3]
+ 480              	.LVL30:
+ 481              		.loc 1 59 3 is_stmt 0 view .LVU73
+ 482 003c 084B     		ldr	r3, .L27+16
+ 483 003e 9847     		blx	r3
+ 484              	.LVL31:
+ 485 0040 E8E7     		b	.L21
+ 486              	.L26:
+ 487              		.loc 1 62 3 is_stmt 1 view .LVU74
+ 488 0042 01A9     		add	r1, sp, #4
+ 489 0044 074B     		ldr	r3, .L27+20
+ 490 0046 1868     		ldr	r0, [r3]
+ 491 0048 054B     		ldr	r3, .L27+16
+ 492 004a 9847     		blx	r3
+ 493              	.LVL32:
+ 494 004c E7E7     		b	.L22
+ 495              	.L28:
+ 496 004e 00BF     		.align	2
+ 497              	.L27:
+ 498 0050 00000000 		.word	huart1
+ 499 0054 00000000 		.word	huart2
+ 500 0058 04ED00E0 		.word	-536810236
+ 501 005c 00000000 		.word	task_handle_send_to_terminal_from_MCU_one
+ 502 0060 00000000 		.word	vTaskNotifyGiveFromISR
+ 503 0064 00000000 		.word	task_handle_send_to_MCU_two_from_MCU_one
+ 504              		.cfi_endproc
+ 505              	.LFE71:
+ 507              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 10
+
+
+ 508              		.align	1
+ 509              		.global	HAL_UART_RxCpltCallback
+ 510              		.syntax unified
+ 511              		.thumb
+ 512              		.thumb_func
+ 513              		.fpu softvfp
+ 515              	HAL_UART_RxCpltCallback:
+ 516              	.LVL33:
+ 517              	.LFB73:
+ 518              		.loc 1 77 57 view -0
+ 519              		.cfi_startproc
+ 520              		@ args = 0, pretend = 0, frame = 8
+ 521              		@ frame_needed = 0, uses_anonymous_args = 0
+ 522              		.loc 1 77 57 is_stmt 0 view .LVU76
+ 523 0000 10B5     		push	{r4, lr}
+ 524              	.LCFI13:
+ 525              		.cfi_def_cfa_offset 8
+ 526              		.cfi_offset 4, -8
+ 527              		.cfi_offset 14, -4
+ 528 0002 82B0     		sub	sp, sp, #8
+ 529              	.LCFI14:
+ 530              		.cfi_def_cfa_offset 16
+ 531 0004 0446     		mov	r4, r0
+ 532              		.loc 1 78 2 is_stmt 1 view .LVU77
+ 533              		.loc 1 78 13 is_stmt 0 view .LVU78
+ 534 0006 0023     		movs	r3, #0
+ 535 0008 0193     		str	r3, [sp, #4]
+ 536              		.loc 1 80 2 is_stmt 1 view .LVU79
+ 537              		.loc 1 80 10 is_stmt 0 view .LVU80
+ 538 000a 0268     		ldr	r2, [r0]
+ 539              		.loc 1 80 30 view .LVU81
+ 540 000c 104B     		ldr	r3, .L36
+ 541 000e 1B68     		ldr	r3, [r3]
+ 542              		.loc 1 80 4 view .LVU82
+ 543 0010 9A42     		cmp	r2, r3
+ 544 0012 10D0     		beq	.L34
+ 545              	.LVL34:
+ 546              	.L30:
+ 547              		.loc 1 83 2 is_stmt 1 view .LVU83
+ 548              		.loc 1 83 10 is_stmt 0 view .LVU84
+ 549 0014 2268     		ldr	r2, [r4]
+ 550              		.loc 1 83 30 view .LVU85
+ 551 0016 0F4B     		ldr	r3, .L36+4
+ 552 0018 1B68     		ldr	r3, [r3]
+ 553              		.loc 1 83 4 view .LVU86
+ 554 001a 9A42     		cmp	r2, r3
+ 555 001c 11D0     		beq	.L35
+ 556              	.L31:
+ 557              		.loc 1 87 2 is_stmt 1 view .LVU87
+ 558 001e 019B     		ldr	r3, [sp, #4]
+ 559 0020 3BB1     		cbz	r3, .L29
+ 560              		.loc 1 87 2 discriminator 1 view .LVU88
+ 561 0022 0D4B     		ldr	r3, .L36+8
+ 562 0024 4FF08052 		mov	r2, #268435456
+ 563 0028 1A60     		str	r2, [r3]
+ 564              		.loc 1 87 2 discriminator 1 view .LVU89
+ 565              		.syntax unified
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 11
+
+
+ 566              	@ 87 "Core/Src/mcu_one.c" 1
+ 567 002a BFF34F8F 		dsb
+ 568              	@ 0 "" 2
+ 569              		.loc 1 87 2 discriminator 1 view .LVU90
+ 570              	@ 87 "Core/Src/mcu_one.c" 1
+ 571 002e BFF36F8F 		isb
+ 572              	@ 0 "" 2
+ 573              		.loc 1 87 27 discriminator 1 view .LVU91
+ 574              		.thumb
+ 575              		.syntax unified
+ 576              	.L29:
+ 577              		.loc 1 88 1 is_stmt 0 view .LVU92
+ 578 0032 02B0     		add	sp, sp, #8
+ 579              	.LCFI15:
+ 580              		.cfi_remember_state
+ 581              		.cfi_def_cfa_offset 8
+ 582              		@ sp needed
+ 583 0034 10BD     		pop	{r4, pc}
+ 584              	.LVL35:
+ 585              	.L34:
+ 586              	.LCFI16:
+ 587              		.cfi_restore_state
+ 588              		.loc 1 81 3 is_stmt 1 view .LVU93
+ 589 0036 01A9     		add	r1, sp, #4
+ 590 0038 084B     		ldr	r3, .L36+12
+ 591 003a 1868     		ldr	r0, [r3]
+ 592              	.LVL36:
+ 593              		.loc 1 81 3 is_stmt 0 view .LVU94
+ 594 003c 084B     		ldr	r3, .L36+16
+ 595 003e 9847     		blx	r3
+ 596              	.LVL37:
+ 597 0040 E8E7     		b	.L30
+ 598              	.L35:
+ 599              		.loc 1 84 3 is_stmt 1 view .LVU95
+ 600 0042 01A9     		add	r1, sp, #4
+ 601 0044 074B     		ldr	r3, .L36+20
+ 602 0046 1868     		ldr	r0, [r3]
+ 603 0048 054B     		ldr	r3, .L36+16
+ 604 004a 9847     		blx	r3
+ 605              	.LVL38:
+ 606 004c E7E7     		b	.L31
+ 607              	.L37:
+ 608 004e 00BF     		.align	2
+ 609              	.L36:
+ 610 0050 00000000 		.word	huart1
+ 611 0054 00000000 		.word	huart2
+ 612 0058 04ED00E0 		.word	-536810236
+ 613 005c 00000000 		.word	task_handle_receive_from_terminal_on_MCU_one
+ 614 0060 00000000 		.word	vTaskNotifyGiveFromISR
+ 615 0064 00000000 		.word	task_handle_receive_from_MCU_two_on_MCU_one
+ 616              		.cfi_endproc
+ 617              	.LFE73:
+ 619              		.section	.text.send_string_to_terminal,"ax",%progbits
+ 620              		.align	1
+ 621              		.global	send_string_to_terminal
+ 622              		.syntax unified
+ 623              		.thumb
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 12
+
+
+ 624              		.thumb_func
+ 625              		.fpu softvfp
+ 627              	send_string_to_terminal:
+ 628              	.LVL39:
+ 629              	.LFB74:
+ 630              		.loc 1 90 52 view -0
+ 631              		.cfi_startproc
+ 632              		@ args = 0, pretend = 0, frame = 0
+ 633              		@ frame_needed = 0, uses_anonymous_args = 0
+ 634              		.loc 1 91 2 view .LVU97
+ 635              		.loc 1 91 4 is_stmt 0 view .LVU98
+ 636 0000 F8B1     		cbz	r0, .L43
+ 637              		.loc 1 90 52 view .LVU99
+ 638 0002 70B5     		push	{r4, r5, r6, lr}
+ 639              	.LCFI17:
+ 640              		.cfi_def_cfa_offset 16
+ 641              		.cfi_offset 4, -16
+ 642              		.cfi_offset 5, -12
+ 643              		.cfi_offset 6, -8
+ 644              		.cfi_offset 14, -4
+ 645 0004 0546     		mov	r5, r0
+ 646              		.loc 1 92 3 is_stmt 1 view .LVU100
+ 647 0006 4FF0FF31 		mov	r1, #-1
+ 648 000a 0E4B     		ldr	r3, .L46
+ 649 000c 1868     		ldr	r0, [r3]
+ 650              	.LVL40:
+ 651              		.loc 1 92 3 is_stmt 0 view .LVU101
+ 652 000e 0E4B     		ldr	r3, .L46+4
+ 653 0010 9847     		blx	r3
+ 654              	.LVL41:
+ 655              		.loc 1 94 3 is_stmt 1 view .LVU102
+ 656              	.LBB2:
+ 657              		.loc 1 94 7 view .LVU103
+ 658              		.loc 1 94 11 is_stmt 0 view .LVU104
+ 659 0012 0024     		movs	r4, #0
+ 660              		.loc 1 94 3 view .LVU105
+ 661 0014 08E0     		b	.L40
+ 662              	.LVL42:
+ 663              	.L41:
+ 664              		.loc 1 95 4 is_stmt 1 discriminator 3 view .LVU106
+ 665 0016 0023     		movs	r3, #0
+ 666 0018 4FF0FF32 		mov	r2, #-1
+ 667 001c 2919     		adds	r1, r5, r4
+ 668 001e 0B48     		ldr	r0, .L46+8
+ 669 0020 0068     		ldr	r0, [r0]
+ 670 0022 0B4E     		ldr	r6, .L46+12
+ 671 0024 B047     		blx	r6
+ 672              	.LVL43:
+ 673              		.loc 1 94 44 discriminator 3 view .LVU107
+ 674 0026 0134     		adds	r4, r4, #1
+ 675              	.LVL44:
+ 676              	.L40:
+ 677              		.loc 1 94 16 discriminator 1 view .LVU108
+ 678              		.loc 1 94 20 is_stmt 0 discriminator 1 view .LVU109
+ 679 0028 2846     		mov	r0, r5
+ 680 002a 0A4B     		ldr	r3, .L46+16
+ 681 002c 9847     		blx	r3
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 13
+
+
+ 682              	.LVL45:
+ 683              		.loc 1 94 3 discriminator 1 view .LVU110
+ 684 002e A042     		cmp	r0, r4
+ 685 0030 F1D8     		bhi	.L41
+ 686              	.LBE2:
+ 687              		.loc 1 98 3 is_stmt 1 view .LVU111
+ 688 0032 0023     		movs	r3, #0
+ 689 0034 1A46     		mov	r2, r3
+ 690 0036 1946     		mov	r1, r3
+ 691 0038 0248     		ldr	r0, .L46
+ 692 003a 0068     		ldr	r0, [r0]
+ 693 003c 044C     		ldr	r4, .L46+12
+ 694              	.LVL46:
+ 695              		.loc 1 98 3 is_stmt 0 view .LVU112
+ 696 003e A047     		blx	r4
+ 697              	.LVL47:
+ 698              		.loc 1 100 1 view .LVU113
+ 699 0040 70BD     		pop	{r4, r5, r6, pc}
+ 700              	.LVL48:
+ 701              	.L43:
+ 702              	.LCFI18:
+ 703              		.cfi_def_cfa_offset 0
+ 704              		.cfi_restore 4
+ 705              		.cfi_restore 5
+ 706              		.cfi_restore 6
+ 707              		.cfi_restore 14
+ 708              		.loc 1 100 1 view .LVU114
+ 709 0042 7047     		bx	lr
+ 710              	.L47:
+ 711              		.align	2
+ 712              	.L46:
+ 713 0044 00000000 		.word	mutex_handle_send_to_terminal_from_MCU_one
+ 714 0048 00000000 		.word	xQueueSemaphoreTake
+ 715 004c 00000000 		.word	queue_handle_send_to_terminal_from_MCU_one
+ 716 0050 00000000 		.word	xQueueGenericSend
+ 717 0054 00000000 		.word	strlen
+ 718              		.cfi_endproc
+ 719              	.LFE74:
+ 721              		.section	.text.send_integer_to_terminal,"ax",%progbits
+ 722              		.align	1
+ 723              		.global	send_integer_to_terminal
+ 724              		.syntax unified
+ 725              		.thumb
+ 726              		.thumb_func
+ 727              		.fpu softvfp
+ 729              	send_integer_to_terminal:
+ 730              	.LVL49:
+ 731              	.LFB75:
+ 732              		.loc 1 102 47 is_stmt 1 view -0
+ 733              		.cfi_startproc
+ 734              		@ args = 0, pretend = 0, frame = 8
+ 735              		@ frame_needed = 0, uses_anonymous_args = 0
+ 736              		.loc 1 102 47 is_stmt 0 view .LVU116
+ 737 0000 30B5     		push	{r4, r5, lr}
+ 738              	.LCFI19:
+ 739              		.cfi_def_cfa_offset 12
+ 740              		.cfi_offset 4, -12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 14
+
+
+ 741              		.cfi_offset 5, -8
+ 742              		.cfi_offset 14, -4
+ 743 0002 83B0     		sub	sp, sp, #12
+ 744              	.LCFI20:
+ 745              		.cfi_def_cfa_offset 24
+ 746 0004 8DF80700 		strb	r0, [sp, #7]
+ 747              		.loc 1 103 2 is_stmt 1 view .LVU117
+ 748 0008 0A4D     		ldr	r5, .L50
+ 749 000a 4FF0FF31 		mov	r1, #-1
+ 750 000e 2868     		ldr	r0, [r5]
+ 751              	.LVL50:
+ 752              		.loc 1 103 2 is_stmt 0 view .LVU118
+ 753 0010 094B     		ldr	r3, .L50+4
+ 754 0012 9847     		blx	r3
+ 755              	.LVL51:
+ 756              		.loc 1 105 2 is_stmt 1 view .LVU119
+ 757 0014 0023     		movs	r3, #0
+ 758 0016 4FF0FF32 		mov	r2, #-1
+ 759 001a 0DF10701 		add	r1, sp, #7
+ 760 001e 0748     		ldr	r0, .L50+8
+ 761 0020 0068     		ldr	r0, [r0]
+ 762 0022 074C     		ldr	r4, .L50+12
+ 763 0024 A047     		blx	r4
+ 764              	.LVL52:
+ 765              		.loc 1 107 2 view .LVU120
+ 766 0026 0023     		movs	r3, #0
+ 767 0028 1A46     		mov	r2, r3
+ 768 002a 1946     		mov	r1, r3
+ 769 002c 2868     		ldr	r0, [r5]
+ 770 002e A047     		blx	r4
+ 771              	.LVL53:
+ 772              		.loc 1 108 1 is_stmt 0 view .LVU121
+ 773 0030 03B0     		add	sp, sp, #12
+ 774              	.LCFI21:
+ 775              		.cfi_def_cfa_offset 12
+ 776              		@ sp needed
+ 777 0032 30BD     		pop	{r4, r5, pc}
+ 778              	.L51:
+ 779              		.align	2
+ 780              	.L50:
+ 781 0034 00000000 		.word	mutex_handle_send_to_terminal_from_MCU_one
+ 782 0038 00000000 		.word	xQueueSemaphoreTake
+ 783 003c 00000000 		.word	queue_handle_send_to_terminal_from_MCU_one
+ 784 0040 00000000 		.word	xQueueGenericSend
+ 785              		.cfi_endproc
+ 786              	.LFE75:
+ 788              		.section	.text.receive_string_from_terminal,"ax",%progbits
+ 789              		.align	1
+ 790              		.global	receive_string_from_terminal
+ 791              		.syntax unified
+ 792              		.thumb
+ 793              		.thumb_func
+ 794              		.fpu softvfp
+ 796              	receive_string_from_terminal:
+ 797              	.LFB76:
+ 798              		.loc 1 110 38 is_stmt 1 view -0
+ 799              		.cfi_startproc
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 15
+
+
+ 800              		@ args = 0, pretend = 0, frame = 8
+ 801              		@ frame_needed = 0, uses_anonymous_args = 0
+ 802 0000 30B5     		push	{r4, r5, lr}
+ 803              	.LCFI22:
+ 804              		.cfi_def_cfa_offset 12
+ 805              		.cfi_offset 4, -12
+ 806              		.cfi_offset 5, -8
+ 807              		.cfi_offset 14, -4
+ 808 0002 83B0     		sub	sp, sp, #12
+ 809              	.LCFI23:
+ 810              		.cfi_def_cfa_offset 24
+ 811              		.loc 1 111 2 view .LVU123
+ 812 0004 4FF0FF31 		mov	r1, #-1
+ 813 0008 154B     		ldr	r3, .L57
+ 814 000a 1868     		ldr	r0, [r3]
+ 815 000c 154B     		ldr	r3, .L57+4
+ 816 000e 9847     		blx	r3
+ 817              	.LVL54:
+ 818              		.loc 1 113 2 view .LVU124
+ 819              		.loc 1 113 26 is_stmt 0 view .LVU125
+ 820 0010 4020     		movs	r0, #64
+ 821 0012 154B     		ldr	r3, .L57+8
+ 822 0014 9847     		blx	r3
+ 823              	.LVL55:
+ 824 0016 0546     		mov	r5, r0
+ 825              	.LVL56:
+ 826              		.loc 1 115 2 is_stmt 1 view .LVU126
+ 827              		.loc 1 116 2 view .LVU127
+ 828              		.loc 1 116 7 is_stmt 0 view .LVU128
+ 829 0018 0024     		movs	r4, #0
+ 830 001a 8DF80740 		strb	r4, [sp, #7]
+ 831              		.loc 1 118 2 is_stmt 1 view .LVU129
+ 832              	.LVL57:
+ 833              	.L53:
+ 834              		.loc 1 118 7 view .LVU130
+ 835 001e 3F2C     		cmp	r4, #63
+ 836 0020 11D8     		bhi	.L54
+ 837              		.loc 1 118 41 is_stmt 0 discriminator 1 view .LVU131
+ 838 0022 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 839              		.loc 1 118 19 discriminator 1 view .LVU132
+ 840 0026 0D2B     		cmp	r3, #13
+ 841 0028 0DD0     		beq	.L54
+ 842              		.loc 1 119 3 is_stmt 1 view .LVU133
+ 843 002a 4FF0FF32 		mov	r2, #-1
+ 844 002e 0DF10701 		add	r1, sp, #7
+ 845 0032 0E4B     		ldr	r3, .L57+12
+ 846 0034 1868     		ldr	r0, [r3]
+ 847 0036 0E4B     		ldr	r3, .L57+16
+ 848 0038 9847     		blx	r3
+ 849              	.LVL58:
+ 850              		.loc 1 120 3 view .LVU134
+ 851              		.loc 1 120 24 is_stmt 0 view .LVU135
+ 852 003a 631C     		adds	r3, r4, #1
+ 853              	.LVL59:
+ 854              		.loc 1 120 28 view .LVU136
+ 855 003c 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 856 0040 2A55     		strb	r2, [r5, r4]
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 16
+
+
+ 857              		.loc 1 120 24 view .LVU137
+ 858 0042 9CB2     		uxth	r4, r3
+ 859 0044 EBE7     		b	.L53
+ 860              	.LVL60:
+ 861              	.L54:
+ 862              		.loc 1 123 2 is_stmt 1 view .LVU138
+ 863              		.loc 1 123 27 is_stmt 0 view .LVU139
+ 864 0046 013C     		subs	r4, r4, #1
+ 865              	.LVL61:
+ 866              		.loc 1 123 27 view .LVU140
+ 867 0048 A4B2     		uxth	r4, r4
+ 868              	.LVL62:
+ 869              		.loc 1 123 27 view .LVU141
+ 870 004a 0021     		movs	r1, #0
+ 871 004c 2955     		strb	r1, [r5, r4]
+ 872              		.loc 1 125 2 is_stmt 1 view .LVU142
+ 873 004e 0B46     		mov	r3, r1
+ 874 0050 0A46     		mov	r2, r1
+ 875 0052 0348     		ldr	r0, .L57
+ 876 0054 0068     		ldr	r0, [r0]
+ 877 0056 074C     		ldr	r4, .L57+20
+ 878              	.LVL63:
+ 879              		.loc 1 125 2 is_stmt 0 view .LVU143
+ 880 0058 A047     		blx	r4
+ 881              	.LVL64:
+ 882              		.loc 1 127 2 is_stmt 1 view .LVU144
+ 883              		.loc 1 128 1 is_stmt 0 view .LVU145
+ 884 005a 2846     		mov	r0, r5
+ 885 005c 03B0     		add	sp, sp, #12
+ 886              	.LCFI24:
+ 887              		.cfi_def_cfa_offset 12
+ 888              		@ sp needed
+ 889 005e 30BD     		pop	{r4, r5, pc}
+ 890              	.LVL65:
+ 891              	.L58:
+ 892              		.loc 1 128 1 view .LVU146
+ 893              		.align	2
+ 894              	.L57:
+ 895 0060 00000000 		.word	mutex_handle_receive_from_terminal_on_MCU_one
+ 896 0064 00000000 		.word	xQueueSemaphoreTake
+ 897 0068 00000000 		.word	pvPortMalloc
+ 898 006c 00000000 		.word	queue_handle_receive_from_terminal_on_MCU_one
+ 899 0070 00000000 		.word	xQueueReceive
+ 900 0074 00000000 		.word	xQueueGenericSend
+ 901              		.cfi_endproc
+ 902              	.LFE76:
+ 904              		.section	.text.send_motor_command_to_MCU_two,"ax",%progbits
+ 905              		.align	1
+ 906              		.global	send_motor_command_to_MCU_two
+ 907              		.syntax unified
+ 908              		.thumb
+ 909              		.thumb_func
+ 910              		.fpu softvfp
+ 912              	send_motor_command_to_MCU_two:
+ 913              	.LFB78:
+ 914              		.loc 1 139 52 is_stmt 1 view -0
+ 915              		.cfi_startproc
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 17
+
+
+ 916              		@ args = 0, pretend = 0, frame = 8
+ 917              		@ frame_needed = 0, uses_anonymous_args = 0
+ 918 0000 70B5     		push	{r4, r5, r6, lr}
+ 919              	.LCFI25:
+ 920              		.cfi_def_cfa_offset 16
+ 921              		.cfi_offset 4, -16
+ 922              		.cfi_offset 5, -12
+ 923              		.cfi_offset 6, -8
+ 924              		.cfi_offset 14, -4
+ 925 0002 82B0     		sub	sp, sp, #8
+ 926              	.LCFI26:
+ 927              		.cfi_def_cfa_offset 24
+ 928 0004 ADF80400 		strh	r0, [sp, #4]	@ movhi
+ 929              		.loc 1 140 2 view .LVU148
+ 930 0008 0D4D     		ldr	r5, .L61
+ 931 000a 4FF0FF31 		mov	r1, #-1
+ 932 000e 2868     		ldr	r0, [r5]
+ 933 0010 0C4B     		ldr	r3, .L61+4
+ 934 0012 9847     		blx	r3
+ 935              	.LVL66:
+ 936              		.loc 1 142 2 view .LVU149
+ 937 0014 0C4E     		ldr	r6, .L61+8
+ 938 0016 0023     		movs	r3, #0
+ 939 0018 4FF0FF32 		mov	r2, #-1
+ 940 001c 01A9     		add	r1, sp, #4
+ 941 001e 3068     		ldr	r0, [r6]
+ 942 0020 0A4C     		ldr	r4, .L61+12
+ 943 0022 A047     		blx	r4
+ 944              	.LVL67:
+ 945              		.loc 1 143 2 view .LVU150
+ 946 0024 0023     		movs	r3, #0
+ 947 0026 4FF0FF32 		mov	r2, #-1
+ 948 002a 0DF10501 		add	r1, sp, #5
+ 949 002e 3068     		ldr	r0, [r6]
+ 950 0030 A047     		blx	r4
+ 951              	.LVL68:
+ 952              		.loc 1 145 2 view .LVU151
+ 953 0032 0023     		movs	r3, #0
+ 954 0034 1A46     		mov	r2, r3
+ 955 0036 1946     		mov	r1, r3
+ 956 0038 2868     		ldr	r0, [r5]
+ 957 003a A047     		blx	r4
+ 958              	.LVL69:
+ 959              		.loc 1 146 1 is_stmt 0 view .LVU152
+ 960 003c 02B0     		add	sp, sp, #8
+ 961              	.LCFI27:
+ 962              		.cfi_def_cfa_offset 16
+ 963              		@ sp needed
+ 964 003e 70BD     		pop	{r4, r5, r6, pc}
+ 965              	.L62:
+ 966              		.align	2
+ 967              	.L61:
+ 968 0040 00000000 		.word	mutex_handle_send_to_MCU_two_from_MCU_one
+ 969 0044 00000000 		.word	xQueueSemaphoreTake
+ 970 0048 00000000 		.word	queue_handle_send_to_MCU_two_from_MCU_one
+ 971 004c 00000000 		.word	xQueueGenericSend
+ 972              		.cfi_endproc
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 18
+
+
+ 973              	.LFE78:
+ 975              		.section	.text.modify_velocities,"ax",%progbits
+ 976              		.align	1
+ 977              		.global	modify_velocities
+ 978              		.syntax unified
+ 979              		.thumb
+ 980              		.thumb_func
+ 981              		.fpu softvfp
+ 983              	modify_velocities:
+ 984              	.LFB80:
+ 985              		.loc 1 163 40 is_stmt 1 view -0
+ 986              		.cfi_startproc
+ 987              		@ args = 0, pretend = 0, frame = 8
+ 988              		@ frame_needed = 0, uses_anonymous_args = 0
+ 989 0000 10B5     		push	{r4, lr}
+ 990              	.LCFI28:
+ 991              		.cfi_def_cfa_offset 8
+ 992              		.cfi_offset 4, -8
+ 993              		.cfi_offset 14, -4
+ 994 0002 82B0     		sub	sp, sp, #8
+ 995              	.LCFI29:
+ 996              		.cfi_def_cfa_offset 16
+ 997 0004 ADF80400 		strh	r0, [sp, #4]	@ movhi
+ 998              		.loc 1 164 2 view .LVU154
+ 999 0008 094C     		ldr	r4, .L65
+ 1000 000a 4FF0FF31 		mov	r1, #-1
+ 1001 000e 2068     		ldr	r0, [r4]
+ 1002 0010 084B     		ldr	r3, .L65+4
+ 1003 0012 9847     		blx	r3
+ 1004              	.LVL70:
+ 1005              		.loc 1 166 2 view .LVU155
+ 1006              		.loc 1 166 14 is_stmt 0 view .LVU156
+ 1007 0014 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 1008              		.loc 1 166 25 view .LVU157
+ 1009 0018 9DF80510 		ldrb	r1, [sp, #5]	@ zero_extendqisi2
+ 1010              		.loc 1 166 22 view .LVU158
+ 1011 001c 064A     		ldr	r2, .L65+8
+ 1012 001e D154     		strb	r1, [r2, r3]
+ 1013              		.loc 1 168 2 is_stmt 1 view .LVU159
+ 1014 0020 0023     		movs	r3, #0
+ 1015 0022 1A46     		mov	r2, r3
+ 1016 0024 1946     		mov	r1, r3
+ 1017 0026 2068     		ldr	r0, [r4]
+ 1018 0028 044C     		ldr	r4, .L65+12
+ 1019 002a A047     		blx	r4
+ 1020              	.LVL71:
+ 1021              		.loc 1 169 1 is_stmt 0 view .LVU160
+ 1022 002c 02B0     		add	sp, sp, #8
+ 1023              	.LCFI30:
+ 1024              		.cfi_def_cfa_offset 8
+ 1025              		@ sp needed
+ 1026 002e 10BD     		pop	{r4, pc}
+ 1027              	.L66:
+ 1028              		.align	2
+ 1029              	.L65:
+ 1030 0030 00000000 		.word	mutex_handle_receive_from_MCU_two_on_MCU_one
+ 1031 0034 00000000 		.word	xQueueSemaphoreTake
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 19
+
+
+ 1032 0038 00000000 		.word	.LANCHOR0
+ 1033 003c 00000000 		.word	xQueueGenericSend
+ 1034              		.cfi_endproc
+ 1035              	.LFE80:
+ 1037              		.section	.text.task_function_receive_from_MCU_two,"ax",%progbits
+ 1038              		.align	1
+ 1039              		.global	task_function_receive_from_MCU_two
+ 1040              		.syntax unified
+ 1041              		.thumb
+ 1042              		.thumb_func
+ 1043              		.fpu softvfp
+ 1045              	task_function_receive_from_MCU_two:
+ 1046              	.LFB79:
+ 1047              		.loc 1 150 55 is_stmt 1 view -0
+ 1048              		.cfi_startproc
+ 1049              		@ Volatile: function does not return.
+ 1050              		@ args = 0, pretend = 0, frame = 8
+ 1051              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1052              	.LVL72:
+ 1053              		.loc 1 150 55 is_stmt 0 view .LVU162
+ 1054 0000 00B5     		push	{lr}
+ 1055              	.LCFI31:
+ 1056              		.cfi_def_cfa_offset 4
+ 1057              		.cfi_offset 14, -4
+ 1058 0002 83B0     		sub	sp, sp, #12
+ 1059              	.LCFI32:
+ 1060              		.cfi_def_cfa_offset 16
+ 1061              	.LVL73:
+ 1062              	.L68:
+ 1063              		.loc 1 151 2 is_stmt 1 discriminator 1 view .LVU163
+ 1064              		.loc 1 152 2 discriminator 1 view .LVU164
+ 1065              		.loc 1 153 3 discriminator 1 view .LVU165
+ 1066 0004 0B4E     		ldr	r6, .L70
+ 1067 0006 0122     		movs	r2, #1
+ 1068 0008 01A9     		add	r1, sp, #4
+ 1069 000a 3046     		mov	r0, r6
+ 1070 000c 0A4D     		ldr	r5, .L70+4
+ 1071 000e A847     		blx	r5
+ 1072              	.LVL74:
+ 1073              		.loc 1 154 3 discriminator 1 view .LVU166
+ 1074 0010 4FF0FF31 		mov	r1, #-1
+ 1075 0014 0120     		movs	r0, #1
+ 1076 0016 094C     		ldr	r4, .L70+8
+ 1077 0018 A047     		blx	r4
+ 1078              	.LVL75:
+ 1079              		.loc 1 156 3 discriminator 1 view .LVU167
+ 1080 001a 0122     		movs	r2, #1
+ 1081 001c 0DF10501 		add	r1, sp, #5
+ 1082 0020 3046     		mov	r0, r6
+ 1083 0022 A847     		blx	r5
+ 1084              	.LVL76:
+ 1085              		.loc 1 157 3 discriminator 1 view .LVU168
+ 1086 0024 4FF0FF31 		mov	r1, #-1
+ 1087 0028 0120     		movs	r0, #1
+ 1088 002a A047     		blx	r4
+ 1089              	.LVL77:
+ 1090              		.loc 1 159 3 discriminator 1 view .LVU169
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 20
+
+
+ 1091 002c 0198     		ldr	r0, [sp, #4]
+ 1092 002e 044B     		ldr	r3, .L70+12
+ 1093 0030 9847     		blx	r3
+ 1094              	.LVL78:
+ 1095              		.loc 1 152 7 discriminator 1 view .LVU170
+ 1096 0032 E7E7     		b	.L68
+ 1097              	.L71:
+ 1098              		.align	2
+ 1099              	.L70:
+ 1100 0034 00000000 		.word	huart2
+ 1101 0038 00000000 		.word	HAL_UART_Receive_IT
+ 1102 003c 00000000 		.word	ulTaskNotifyTake
+ 1103 0040 00000000 		.word	modify_velocities
+ 1104              		.cfi_endproc
+ 1105              	.LFE79:
+ 1107              		.comm	mutex_handle_receive_from_MCU_two_on_MCU_one,4,4
+ 1108              		.comm	queue_handle_receive_from_MCU_two_on_MCU_one,4,4
+ 1109              		.comm	task_handle_receive_from_MCU_two_on_MCU_one,4,4
+ 1110              		.global	velocities
+ 1111              		.comm	mutex_handle_send_to_MCU_two_from_MCU_one,4,4
+ 1112              		.comm	queue_handle_send_to_MCU_two_from_MCU_one,4,4
+ 1113              		.comm	task_handle_send_to_MCU_two_from_MCU_one,4,4
+ 1114              		.comm	mutex_handle_receive_from_terminal_on_MCU_one,4,4
+ 1115              		.comm	queue_handle_receive_from_terminal_on_MCU_one,4,4
+ 1116              		.comm	task_handle_receive_from_terminal_on_MCU_one,4,4
+ 1117              		.comm	mutex_handle_send_to_terminal_from_MCU_one,4,4
+ 1118              		.comm	queue_handle_send_to_terminal_from_MCU_one,4,4
+ 1119              		.comm	task_handle_send_to_terminal_from_MCU_one,4,4
+ 1120              		.section	.bss.velocities,"aw",%nobits
+ 1121              		.align	2
+ 1122              		.set	.LANCHOR0,. + 0
+ 1125              	velocities:
+ 1126 0000 0000     		.space	2
+ 1127              		.text
+ 1128              	.Letext0:
+ 1129              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 1130              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 1131              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 1132              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 1133              		.file 6 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 1134              		.file 7 "../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 1135              		.file 8 "../Core/Inc/FreeRTOSConfig.h"
+ 1136              		.file 9 "../Drivers/CMSIS/Include/core_cm3.h"
+ 1137              		.file 10 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 1138              		.file 11 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 1139              		.file 12 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1140              		.file 13 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1141              		.file 14 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 1142              		.file 15 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 1143              		.file 16 "../Core/Inc/usart.h"
+ 1144              		.file 17 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\lib\\gcc\\
+ 1145              		.file 18 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 1146              		.file 19 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 1147              		.file 20 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 1148              		.file 21 "../Core/Inc/mcu_one.h"
+ 1149              		.file 22 "../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
+ 1150              		.file 23 "../<built-in>"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 21
+
+
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 22
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 mcu_one.c
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:16     .text.task_function_send_to_terminal:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:24     .text.task_function_send_to_terminal:0000000000000000 task_function_send_to_terminal
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:71     .text.task_function_send_to_terminal:000000000000002c $d
+                            *COM*:0000000000000004 queue_handle_send_to_terminal_from_MCU_one
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:80     .text.task_function_send_to_MCU_two:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:87     .text.task_function_send_to_MCU_two:0000000000000000 task_function_send_to_MCU_two
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:133    .text.task_function_send_to_MCU_two:000000000000002c $d
+                            *COM*:0000000000000004 queue_handle_send_to_MCU_two_from_MCU_one
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:142    .text.task_function_receive_from_terminal:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:149    .text.task_function_receive_from_terminal:0000000000000000 task_function_receive_from_terminal
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:196    .text.task_function_receive_from_terminal:0000000000000030 $d
+                            *COM*:0000000000000004 queue_handle_receive_from_terminal_on_MCU_one
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:205    .rodata.init_MCU_one.str1.4:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:218    .text.init_MCU_one:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:225    .text.init_MCU_one:0000000000000000 init_MCU_one
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:369    .text.init_MCU_one:00000000000000ac $d
+                            *COM*:0000000000000004 task_handle_send_to_terminal_from_MCU_one
+                            *COM*:0000000000000004 mutex_handle_send_to_terminal_from_MCU_one
+                            *COM*:0000000000000004 task_handle_receive_from_terminal_on_MCU_one
+                            *COM*:0000000000000004 mutex_handle_receive_from_terminal_on_MCU_one
+                            *COM*:0000000000000004 task_handle_send_to_MCU_two_from_MCU_one
+                            *COM*:0000000000000004 mutex_handle_send_to_MCU_two_from_MCU_one
+                            *COM*:0000000000000004 task_handle_receive_from_MCU_two_on_MCU_one
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:1045   .text.task_function_receive_from_MCU_two:0000000000000000 task_function_receive_from_MCU_two
+                            *COM*:0000000000000004 queue_handle_receive_from_MCU_two_on_MCU_one
+                            *COM*:0000000000000004 mutex_handle_receive_from_MCU_two_on_MCU_one
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:396    .text.HAL_UART_TxCpltCallback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:403    .text.HAL_UART_TxCpltCallback:0000000000000000 HAL_UART_TxCpltCallback
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:498    .text.HAL_UART_TxCpltCallback:0000000000000050 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:508    .text.HAL_UART_RxCpltCallback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:515    .text.HAL_UART_RxCpltCallback:0000000000000000 HAL_UART_RxCpltCallback
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:610    .text.HAL_UART_RxCpltCallback:0000000000000050 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:620    .text.send_string_to_terminal:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:627    .text.send_string_to_terminal:0000000000000000 send_string_to_terminal
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:713    .text.send_string_to_terminal:0000000000000044 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:722    .text.send_integer_to_terminal:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:729    .text.send_integer_to_terminal:0000000000000000 send_integer_to_terminal
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:781    .text.send_integer_to_terminal:0000000000000034 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:789    .text.receive_string_from_terminal:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:796    .text.receive_string_from_terminal:0000000000000000 receive_string_from_terminal
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:895    .text.receive_string_from_terminal:0000000000000060 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:905    .text.send_motor_command_to_MCU_two:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:912    .text.send_motor_command_to_MCU_two:0000000000000000 send_motor_command_to_MCU_two
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:968    .text.send_motor_command_to_MCU_two:0000000000000040 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:976    .text.modify_velocities:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:983    .text.modify_velocities:0000000000000000 modify_velocities
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:1030   .text.modify_velocities:0000000000000030 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:1038   .text.task_function_receive_from_MCU_two:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:1100   .text.task_function_receive_from_MCU_two:0000000000000034 $d
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:1125   .bss.velocities:0000000000000000 velocities
+C:\Users\38164\AppData\Local\Temp\cch7ukQo.s:1121   .bss.velocities:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+xQueueReceive
+huart1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cch7ukQo.s 			page 23
+
+
+HAL_UART_Transmit_IT
+ulTaskNotifyTake
+huart2
+HAL_UART_Receive_IT
+xQueueGenericSend
+xTaskCreate
+xQueueGenericCreate
+xQueueCreateMutex
+vTaskNotifyGiveFromISR
+xQueueSemaphoreTake
+strlen
+pvPortMalloc

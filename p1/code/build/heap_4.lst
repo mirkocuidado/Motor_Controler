@@ -1,0 +1,913 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"heap_4.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.prvHeapInit,"ax",%progbits
+  16              		.align	1
+  17              		.arch armv7-m
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	prvHeapInit:
+  24              	.LFB9:
+  25              		.file 1 "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c"
+   1:../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c **** 
+  26              		.loc 1 330 1 view -0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  31              		.loc 1 331 1 view .LVU1
+  32              		.loc 1 332 1 view .LVU2
+  33              		.loc 1 333 1 view .LVU3
+  34              		.loc 1 334 1 view .LVU4
+  35              	.LVL0:
+  36              		.loc 1 337 2 view .LVU5
+  37              		.loc 1 337 12 is_stmt 0 view .LVU6
+  38 0000 124A     		ldr	r2, .L4
+  39              	.LVL1:
+  40              		.loc 1 339 2 is_stmt 1 view .LVU7
+  41              		.loc 1 339 4 is_stmt 0 view .LVU8
+  42 0002 12F0070F 		tst	r2, #7
+  43 0006 1ED0     		beq	.L3
+  44              		.loc 1 341 3 is_stmt 1 view .LVU9
+  45              		.loc 1 341 13 is_stmt 0 view .LVU10
+  46 0008 D11D     		adds	r1, r2, #7
+  47              	.LVL2:
+  48              		.loc 1 342 3 is_stmt 1 view .LVU11
+  49              		.loc 1 342 13 is_stmt 0 view .LVU12
+  50 000a 21F00701 		bic	r1, r1, #7
+  51              	.LVL3:
+  52              		.loc 1 343 3 is_stmt 1 view .LVU13
+  53              		.loc 1 343 18 is_stmt 0 view .LVU14
+  54 000e C1F58053 		rsb	r3, r1, #4096
+  55 0012 1344     		add	r3, r3, r2
+  56              	.LVL4:
+  57              		.loc 1 342 13 view .LVU15
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 2
+
+
+  58 0014 0A46     		mov	r2, r1
+  59              	.LVL5:
+  60              	.L2:
+  61              		.loc 1 346 2 is_stmt 1 view .LVU16
+  62              		.loc 1 350 2 view .LVU17
+  63              		.loc 1 350 25 is_stmt 0 view .LVU18
+  64 0016 0E48     		ldr	r0, .L4+4
+  65 0018 0260     		str	r2, [r0]
+  66              		.loc 1 351 2 is_stmt 1 view .LVU19
+  67              		.loc 1 351 20 is_stmt 0 view .LVU20
+  68 001a 0021     		movs	r1, #0
+  69 001c 4160     		str	r1, [r0, #4]
+  70              		.loc 1 355 2 is_stmt 1 view .LVU21
+  71              		.loc 1 355 12 is_stmt 0 view .LVU22
+  72 001e 1344     		add	r3, r3, r2
+  73              	.LVL6:
+  74              		.loc 1 356 2 is_stmt 1 view .LVU23
+  75              		.loc 1 356 12 is_stmt 0 view .LVU24
+  76 0020 083B     		subs	r3, r3, #8
+  77              	.LVL7:
+  78              		.loc 1 357 2 is_stmt 1 view .LVU25
+  79              		.loc 1 357 12 is_stmt 0 view .LVU26
+  80 0022 23F00703 		bic	r3, r3, #7
+  81              	.LVL8:
+  82              		.loc 1 358 2 is_stmt 1 view .LVU27
+  83              		.loc 1 358 8 is_stmt 0 view .LVU28
+  84 0026 0B48     		ldr	r0, .L4+8
+  85 0028 0360     		str	r3, [r0]
+  86              		.loc 1 359 2 is_stmt 1 view .LVU29
+  87              		.loc 1 359 20 is_stmt 0 view .LVU30
+  88 002a 5960     		str	r1, [r3, #4]
+  89              		.loc 1 360 2 is_stmt 1 view .LVU31
+  90              		.loc 1 360 25 is_stmt 0 view .LVU32
+  91 002c 1960     		str	r1, [r3]
+  92              		.loc 1 364 2 is_stmt 1 view .LVU33
+  93              	.LVL9:
+  94              		.loc 1 365 2 view .LVU34
+  95              		.loc 1 365 43 is_stmt 0 view .LVU35
+  96 002e 991A     		subs	r1, r3, r2
+  97              		.loc 1 365 31 view .LVU36
+  98 0030 5160     		str	r1, [r2, #4]
+  99              		.loc 1 366 2 is_stmt 1 view .LVU37
+ 100              		.loc 1 366 36 is_stmt 0 view .LVU38
+ 101 0032 1360     		str	r3, [r2]
+ 102              		.loc 1 369 2 is_stmt 1 view .LVU39
+ 103              		.loc 1 369 33 is_stmt 0 view .LVU40
+ 104 0034 084B     		ldr	r3, .L4+12
+ 105              	.LVL10:
+ 106              		.loc 1 369 33 view .LVU41
+ 107 0036 1960     		str	r1, [r3]
+ 108              		.loc 1 370 2 is_stmt 1 view .LVU42
+ 109              		.loc 1 370 22 is_stmt 0 view .LVU43
+ 110 0038 084B     		ldr	r3, .L4+16
+ 111 003a 1960     		str	r1, [r3]
+ 112              		.loc 1 373 2 is_stmt 1 view .LVU44
+ 113              		.loc 1 373 21 is_stmt 0 view .LVU45
+ 114 003c 084B     		ldr	r3, .L4+20
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 3
+
+
+ 115 003e 4FF00042 		mov	r2, #-2147483648
+ 116              	.LVL11:
+ 117              		.loc 1 373 21 view .LVU46
+ 118 0042 1A60     		str	r2, [r3]
+ 119              		.loc 1 374 1 view .LVU47
+ 120 0044 7047     		bx	lr
+ 121              	.LVL12:
+ 122              	.L3:
+ 123              		.loc 1 334 8 view .LVU48
+ 124 0046 4FF48053 		mov	r3, #4096
+ 125 004a E4E7     		b	.L2
+ 126              	.L5:
+ 127              		.align	2
+ 128              	.L4:
+ 129 004c 00000000 		.word	ucHeap
+ 130 0050 00000000 		.word	.LANCHOR0
+ 131 0054 00000000 		.word	.LANCHOR1
+ 132 0058 00000000 		.word	.LANCHOR2
+ 133 005c 00000000 		.word	.LANCHOR3
+ 134 0060 00000000 		.word	.LANCHOR4
+ 135              		.cfi_endproc
+ 136              	.LFE9:
+ 138              		.section	.text.prvInsertBlockIntoFreeList,"ax",%progbits
+ 139              		.align	1
+ 140              		.syntax unified
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.fpu softvfp
+ 145              	prvInsertBlockIntoFreeList:
+ 146              	.LVL13:
+ 147              	.LFB10:
+ 148              		.loc 1 378 1 is_stmt 1 view -0
+ 149              		.cfi_startproc
+ 150              		@ args = 0, pretend = 0, frame = 0
+ 151              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152              		@ link register save eliminated.
+ 153              		.loc 1 378 1 is_stmt 0 view .LVU50
+ 154 0000 10B4     		push	{r4}
+ 155              	.LCFI0:
+ 156              		.cfi_def_cfa_offset 4
+ 157              		.cfi_offset 4, -4
+ 158              		.loc 1 379 1 is_stmt 1 view .LVU51
+ 159              		.loc 1 380 1 view .LVU52
+ 160              		.loc 1 384 2 view .LVU53
+ 161              	.LVL14:
+ 162              		.loc 1 384 18 is_stmt 0 view .LVU54
+ 163 0002 124B     		ldr	r3, .L16
+ 164              	.LVL15:
+ 165              	.L7:
+ 166              		.loc 1 384 29 is_stmt 1 discriminator 1 view .LVU55
+ 167 0004 1A46     		mov	r2, r3
+ 168              		.loc 1 384 39 is_stmt 0 discriminator 1 view .LVU56
+ 169 0006 1B68     		ldr	r3, [r3]
+ 170              	.LVL16:
+ 171              		.loc 1 384 2 discriminator 1 view .LVU57
+ 172 0008 8342     		cmp	r3, r0
+ 173 000a FBD3     		bcc	.L7
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 4
+
+
+ 174              		.loc 1 391 2 is_stmt 1 view .LVU58
+ 175              	.LVL17:
+ 176              		.loc 1 392 2 view .LVU59
+ 177              		.loc 1 392 24 is_stmt 0 view .LVU60
+ 178 000c 5168     		ldr	r1, [r2, #4]
+ 179              		.loc 1 392 12 view .LVU61
+ 180 000e 5418     		adds	r4, r2, r1
+ 181              		.loc 1 392 4 view .LVU62
+ 182 0010 8442     		cmp	r4, r0
+ 183 0012 09D0     		beq	.L14
+ 184              	.L8:
+ 185              		.loc 1 399 27 is_stmt 1 view .LVU63
+ 186              		.loc 1 404 2 view .LVU64
+ 187              	.LVL18:
+ 188              		.loc 1 405 2 view .LVU65
+ 189              		.loc 1 405 29 is_stmt 0 view .LVU66
+ 190 0014 4168     		ldr	r1, [r0, #4]
+ 191              		.loc 1 405 12 view .LVU67
+ 192 0016 4418     		adds	r4, r0, r1
+ 193              		.loc 1 405 4 view .LVU68
+ 194 0018 A342     		cmp	r3, r4
+ 195 001a 0AD0     		beq	.L15
+ 196              		.loc 1 420 3 is_stmt 1 view .LVU69
+ 197              		.loc 1 420 36 is_stmt 0 view .LVU70
+ 198 001c 0360     		str	r3, [r0]
+ 199              	.L11:
+ 200              		.loc 1 427 2 is_stmt 1 view .LVU71
+ 201              		.loc 1 427 4 is_stmt 0 view .LVU72
+ 202 001e 9042     		cmp	r0, r2
+ 203 0020 00D0     		beq	.L6
+ 204              		.loc 1 429 3 is_stmt 1 view .LVU73
+ 205              		.loc 1 429 31 is_stmt 0 view .LVU74
+ 206 0022 1060     		str	r0, [r2]
+ 207              		.loc 1 433 27 is_stmt 1 view .LVU75
+ 208              	.L6:
+ 209              		.loc 1 435 1 is_stmt 0 view .LVU76
+ 210 0024 10BC     		pop	{r4}
+ 211              	.LCFI1:
+ 212              		.cfi_remember_state
+ 213              		.cfi_restore 4
+ 214              		.cfi_def_cfa_offset 0
+ 215 0026 7047     		bx	lr
+ 216              	.LVL19:
+ 217              	.L14:
+ 218              	.LCFI2:
+ 219              		.cfi_restore_state
+ 220              		.loc 1 394 3 is_stmt 1 view .LVU77
+ 221              		.loc 1 394 44 is_stmt 0 view .LVU78
+ 222 0028 4068     		ldr	r0, [r0, #4]
+ 223              	.LVL20:
+ 224              		.loc 1 394 26 view .LVU79
+ 225 002a 0144     		add	r1, r1, r0
+ 226 002c 5160     		str	r1, [r2, #4]
+ 227              		.loc 1 395 3 is_stmt 1 view .LVU80
+ 228              	.LVL21:
+ 229              		.loc 1 395 19 is_stmt 0 view .LVU81
+ 230 002e 1046     		mov	r0, r2
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 5
+
+
+ 231 0030 F0E7     		b	.L8
+ 232              	.LVL22:
+ 233              	.L15:
+ 234              		.loc 1 407 3 is_stmt 1 view .LVU82
+ 235              		.loc 1 407 35 is_stmt 0 view .LVU83
+ 236 0032 074C     		ldr	r4, .L16+4
+ 237 0034 2468     		ldr	r4, [r4]
+ 238              		.loc 1 407 5 view .LVU84
+ 239 0036 A342     		cmp	r3, r4
+ 240 0038 06D0     		beq	.L10
+ 241              		.loc 1 410 4 is_stmt 1 view .LVU85
+ 242              		.loc 1 410 62 is_stmt 0 view .LVU86
+ 243 003a 5B68     		ldr	r3, [r3, #4]
+ 244              		.loc 1 410 32 view .LVU87
+ 245 003c 1944     		add	r1, r1, r3
+ 246 003e 4160     		str	r1, [r0, #4]
+ 247              		.loc 1 411 4 is_stmt 1 view .LVU88
+ 248              		.loc 1 411 49 is_stmt 0 view .LVU89
+ 249 0040 1368     		ldr	r3, [r2]
+ 250              		.loc 1 411 66 view .LVU90
+ 251 0042 1B68     		ldr	r3, [r3]
+ 252              		.loc 1 411 37 view .LVU91
+ 253 0044 0360     		str	r3, [r0]
+ 254 0046 EAE7     		b	.L11
+ 255              	.L10:
+ 256              		.loc 1 415 4 is_stmt 1 view .LVU92
+ 257              		.loc 1 415 37 is_stmt 0 view .LVU93
+ 258 0048 0460     		str	r4, [r0]
+ 259 004a E8E7     		b	.L11
+ 260              	.L17:
+ 261              		.align	2
+ 262              	.L16:
+ 263 004c 00000000 		.word	.LANCHOR0
+ 264 0050 00000000 		.word	.LANCHOR1
+ 265              		.cfi_endproc
+ 266              	.LFE10:
+ 268              		.section	.text.pvPortMalloc,"ax",%progbits
+ 269              		.align	1
+ 270              		.global	pvPortMalloc
+ 271              		.syntax unified
+ 272              		.thumb
+ 273              		.thumb_func
+ 274              		.fpu softvfp
+ 276              	pvPortMalloc:
+ 277              	.LVL23:
+ 278              	.LFB4:
+ 279              		.loc 1 114 1 is_stmt 1 view -0
+ 280              		.cfi_startproc
+ 281              		@ args = 0, pretend = 0, frame = 0
+ 282              		@ frame_needed = 0, uses_anonymous_args = 0
+ 283              		.loc 1 114 1 is_stmt 0 view .LVU95
+ 284 0000 70B5     		push	{r4, r5, r6, lr}
+ 285              	.LCFI3:
+ 286              		.cfi_def_cfa_offset 16
+ 287              		.cfi_offset 4, -16
+ 288              		.cfi_offset 5, -12
+ 289              		.cfi_offset 6, -8
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 6
+
+
+ 290              		.cfi_offset 14, -4
+ 291 0002 0446     		mov	r4, r0
+ 292              		.loc 1 115 1 is_stmt 1 view .LVU96
+ 293              		.loc 1 116 1 view .LVU97
+ 294              	.LVL24:
+ 295              		.loc 1 118 2 view .LVU98
+ 296 0004 354B     		ldr	r3, .L37
+ 297 0006 9847     		blx	r3
+ 298              	.LVL25:
+ 299              		.loc 1 122 3 view .LVU99
+ 300              		.loc 1 122 13 is_stmt 0 view .LVU100
+ 301 0008 354B     		ldr	r3, .L37+4
+ 302 000a 1B68     		ldr	r3, [r3]
+ 303              		.loc 1 122 5 view .LVU101
+ 304 000c A3B1     		cbz	r3, .L36
+ 305              	.L19:
+ 306              		.loc 1 128 28 is_stmt 1 view .LVU102
+ 307              		.loc 1 135 3 view .LVU103
+ 308              		.loc 1 135 21 is_stmt 0 view .LVU104
+ 309 000e 354B     		ldr	r3, .L37+8
+ 310 0010 1B68     		ldr	r3, [r3]
+ 311              		.loc 1 135 5 view .LVU105
+ 312 0012 1C42     		tst	r4, r3
+ 313 0014 4AD1     		bne	.L30
+ 314              		.loc 1 139 4 is_stmt 1 view .LVU106
+ 315              		.loc 1 139 6 is_stmt 0 view .LVU107
+ 316 0016 34B1     		cbz	r4, .L21
+ 317              		.loc 1 141 5 is_stmt 1 view .LVU108
+ 318              		.loc 1 141 17 is_stmt 0 view .LVU109
+ 319 0018 0834     		adds	r4, r4, #8
+ 320              	.LVL26:
+ 321              		.loc 1 145 5 is_stmt 1 view .LVU110
+ 322              		.loc 1 145 7 is_stmt 0 view .LVU111
+ 323 001a 14F0070F 		tst	r4, #7
+ 324 001e 02D0     		beq	.L21
+ 325              		.loc 1 148 6 is_stmt 1 view .LVU112
+ 326              		.loc 1 148 18 is_stmt 0 view .LVU113
+ 327 0020 24F00704 		bic	r4, r4, #7
+ 328              	.LVL27:
+ 329              		.loc 1 148 18 view .LVU114
+ 330 0024 0834     		adds	r4, r4, #8
+ 331              	.LVL28:
+ 332              		.loc 1 149 6 is_stmt 1 view .LVU115
+ 333              	.L21:
+ 334              		.loc 1 158 29 view .LVU116
+ 335              		.loc 1 161 4 view .LVU117
+ 336              		.loc 1 161 6 is_stmt 0 view .LVU118
+ 337 0026 002C     		cmp	r4, #0
+ 338 0028 42D0     		beq	.L31
+ 339              		.loc 1 161 45 discriminator 1 view .LVU119
+ 340 002a 2F4B     		ldr	r3, .L37+12
+ 341 002c 1B68     		ldr	r3, [r3]
+ 342              		.loc 1 161 28 discriminator 1 view .LVU120
+ 343 002e A342     		cmp	r3, r4
+ 344 0030 4DD3     		bcc	.L32
+ 345              		.loc 1 165 5 is_stmt 1 view .LVU121
+ 346              	.LVL29:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 7
+
+
+ 347              		.loc 1 166 5 view .LVU122
+ 348              		.loc 1 166 13 is_stmt 0 view .LVU123
+ 349 0032 2E4B     		ldr	r3, .L37+16
+ 350 0034 1D68     		ldr	r5, [r3]
+ 351              	.LVL30:
+ 352              		.loc 1 167 5 is_stmt 1 view .LVU124
+ 353              		.loc 1 167 10 is_stmt 0 view .LVU125
+ 354 0036 04E0     		b	.L23
+ 355              	.LVL31:
+ 356              	.L36:
+ 357              		.loc 1 124 4 is_stmt 1 view .LVU126
+ 358 0038 2D4B     		ldr	r3, .L37+20
+ 359 003a 9847     		blx	r3
+ 360              	.LVL32:
+ 361 003c E7E7     		b	.L19
+ 362              	.LVL33:
+ 363              	.L33:
+ 364              		.loc 1 169 22 is_stmt 0 view .LVU127
+ 365 003e 2B46     		mov	r3, r5
+ 366              	.LVL34:
+ 367              		.loc 1 170 14 view .LVU128
+ 368 0040 1546     		mov	r5, r2
+ 369              	.LVL35:
+ 370              	.L23:
+ 371              		.loc 1 167 10 is_stmt 1 view .LVU129
+ 372              		.loc 1 167 21 is_stmt 0 view .LVU130
+ 373 0042 6A68     		ldr	r2, [r5, #4]
+ 374              		.loc 1 167 10 view .LVU131
+ 375 0044 A242     		cmp	r2, r4
+ 376 0046 02D2     		bcs	.L22
+ 377              		.loc 1 167 62 discriminator 1 view .LVU132
+ 378 0048 2A68     		ldr	r2, [r5]
+ 379              		.loc 1 167 50 discriminator 1 view .LVU133
+ 380 004a 002A     		cmp	r2, #0
+ 381 004c F7D1     		bne	.L33
+ 382              	.L22:
+ 383              		.loc 1 175 5 is_stmt 1 view .LVU134
+ 384              		.loc 1 175 17 is_stmt 0 view .LVU135
+ 385 004e 244A     		ldr	r2, .L37+4
+ 386 0050 1268     		ldr	r2, [r2]
+ 387              		.loc 1 175 7 view .LVU136
+ 388 0052 AA42     		cmp	r2, r5
+ 389 0054 3DD0     		beq	.L34
+ 390              		.loc 1 179 6 is_stmt 1 view .LVU137
+ 391              		.loc 1 179 61 is_stmt 0 view .LVU138
+ 392 0056 1E68     		ldr	r6, [r3]
+ 393              		.loc 1 179 15 view .LVU139
+ 394 0058 0836     		adds	r6, r6, #8
+ 395              	.LVL36:
+ 396              		.loc 1 183 6 is_stmt 1 view .LVU140
+ 397              		.loc 1 183 48 is_stmt 0 view .LVU141
+ 398 005a 2A68     		ldr	r2, [r5]
+ 399              		.loc 1 183 39 view .LVU142
+ 400 005c 1A60     		str	r2, [r3]
+ 401              		.loc 1 187 6 is_stmt 1 view .LVU143
+ 402              		.loc 1 187 19 is_stmt 0 view .LVU144
+ 403 005e 6B68     		ldr	r3, [r5, #4]
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 8
+
+
+ 404              	.LVL37:
+ 405              		.loc 1 187 32 view .LVU145
+ 406 0060 1B1B     		subs	r3, r3, r4
+ 407              		.loc 1 187 8 view .LVU146
+ 408 0062 102B     		cmp	r3, #16
+ 409 0064 10D9     		bls	.L24
+ 410              		.loc 1 193 7 is_stmt 1 view .LVU147
+ 411              		.loc 1 193 22 is_stmt 0 view .LVU148
+ 412 0066 2819     		adds	r0, r5, r4
+ 413              	.LVL38:
+ 414              		.loc 1 194 7 is_stmt 1 view .LVU149
+ 415 0068 10F0070F 		tst	r0, #7
+ 416 006c 08D0     		beq	.L25
+ 417              		.loc 1 194 7 view .LVU150
+ 418              	.LBB12:
+ 419              	.LBI12:
+ 420              		.file 2 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+   1:../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h **** 
+ 421              		.loc 2 191 30 view .LVU151
+ 422              	.LBB13:
+ 423              		.loc 2 193 1 view .LVU152
+ 424              		.loc 2 195 2 view .LVU153
+ 425              		.syntax unified
+ 426              	@ 195 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h" 1
+ 427 006e 4FF05003 			mov r3, #80												
+ 428 0072 83F31188 		msr basepri, r3											
+ 429 0076 BFF36F8F 		isb														
+ 430 007a BFF34F8F 		dsb														
+ 431              	
+ 432              	@ 0 "" 2
+ 433              	.LVL39:
+ 434              		.thumb
+ 435              		.syntax unified
+ 436              	.L26:
+ 437              		.loc 2 195 2 is_stmt 0 view .LVU154
+ 438              	.LBE13:
+ 439              	.LBE12:
+ 440              		.loc 1 194 7 is_stmt 1 discriminator 3 view .LVU155
+ 441              		.loc 1 194 7 discriminator 3 view .LVU156
+ 442              		.loc 1 194 7 discriminator 3 view .LVU157
+ 443 007e FEE7     		b	.L26
+ 444              	.L25:
+ 445              		.loc 1 194 87 discriminator 2 view .LVU158
+ 446              		.loc 1 198 7 discriminator 2 view .LVU159
+ 447              		.loc 1 198 34 is_stmt 0 discriminator 2 view .LVU160
+ 448 0080 4360     		str	r3, [r0, #4]
+ 449              		.loc 1 199 7 is_stmt 1 discriminator 2 view .LVU161
+ 450              		.loc 1 199 27 is_stmt 0 discriminator 2 view .LVU162
+ 451 0082 6C60     		str	r4, [r5, #4]
+ 452              		.loc 1 202 7 is_stmt 1 discriminator 2 view .LVU163
+ 453 0084 1B4B     		ldr	r3, .L37+24
+ 454 0086 9847     		blx	r3
+ 455              	.LVL40:
+ 456              	.L24:
+ 457              		.loc 1 206 31 view .LVU164
+ 458              		.loc 1 209 6 view .LVU165
+ 459              		.loc 1 209 36 is_stmt 0 view .LVU166
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 9
+
+
+ 460 0088 6A68     		ldr	r2, [r5, #4]
+ 461              		.loc 1 209 26 view .LVU167
+ 462 008a 1749     		ldr	r1, .L37+12
+ 463 008c 0B68     		ldr	r3, [r1]
+ 464 008e 9B1A     		subs	r3, r3, r2
+ 465 0090 0B60     		str	r3, [r1]
+ 466              		.loc 1 211 6 is_stmt 1 view .LVU168
+ 467              		.loc 1 211 30 is_stmt 0 view .LVU169
+ 468 0092 1949     		ldr	r1, .L37+28
+ 469 0094 0968     		ldr	r1, [r1]
+ 470              		.loc 1 211 8 view .LVU170
+ 471 0096 8B42     		cmp	r3, r1
+ 472 0098 01D2     		bcs	.L27
+ 473              		.loc 1 213 7 is_stmt 1 view .LVU171
+ 474              		.loc 1 213 38 is_stmt 0 view .LVU172
+ 475 009a 1749     		ldr	r1, .L37+28
+ 476 009c 0B60     		str	r3, [r1]
+ 477              	.L27:
+ 478              		.loc 1 217 31 is_stmt 1 view .LVU173
+ 479              		.loc 1 222 6 view .LVU174
+ 480              		.loc 1 222 26 is_stmt 0 view .LVU175
+ 481 009e 114B     		ldr	r3, .L37+8
+ 482 00a0 1B68     		ldr	r3, [r3]
+ 483 00a2 1343     		orrs	r3, r3, r2
+ 484 00a4 6B60     		str	r3, [r5, #4]
+ 485              		.loc 1 223 6 is_stmt 1 view .LVU176
+ 486              		.loc 1 223 31 is_stmt 0 view .LVU177
+ 487 00a6 0023     		movs	r3, #0
+ 488 00a8 2B60     		str	r3, [r5]
+ 489 00aa 02E0     		b	.L20
+ 490              	.LVL41:
+ 491              	.L30:
+ 492              		.loc 1 116 7 view .LVU178
+ 493 00ac 0026     		movs	r6, #0
+ 494 00ae 00E0     		b	.L20
+ 495              	.L31:
+ 496              		.loc 1 116 7 view .LVU179
+ 497 00b0 0026     		movs	r6, #0
+ 498              	.LVL42:
+ 499              	.L20:
+ 500              		.loc 1 237 28 is_stmt 1 view .LVU180
+ 501              		.loc 1 240 39 view .LVU181
+ 502              		.loc 1 242 2 view .LVU182
+ 503              		.loc 1 242 11 is_stmt 0 view .LVU183
+ 504 00b2 124B     		ldr	r3, .L37+32
+ 505 00b4 9847     		blx	r3
+ 506              	.LVL43:
+ 507              		.loc 1 258 2 is_stmt 1 view .LVU184
+ 508 00b6 16F0070F 		tst	r6, #7
+ 509 00ba 0CD0     		beq	.L18
+ 510              		.loc 1 258 2 view .LVU185
+ 511              	.LBB14:
+ 512              	.LBI14:
+ 513              		.loc 2 191 30 view .LVU186
+ 514              	.LBB15:
+ 515              		.loc 2 193 1 view .LVU187
+ 516              		.loc 2 195 2 view .LVU188
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 10
+
+
+ 517              		.syntax unified
+ 518              	@ 195 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h" 1
+ 519 00bc 4FF05003 			mov r3, #80												
+ 520 00c0 83F31188 		msr basepri, r3											
+ 521 00c4 BFF36F8F 		isb														
+ 522 00c8 BFF34F8F 		dsb														
+ 523              	
+ 524              	@ 0 "" 2
+ 525              	.LVL44:
+ 526              		.thumb
+ 527              		.syntax unified
+ 528              	.L29:
+ 529              		.loc 2 195 2 is_stmt 0 view .LVU189
+ 530              	.LBE15:
+ 531              	.LBE14:
+ 532              		.loc 1 258 2 is_stmt 1 discriminator 5 view .LVU190
+ 533              		.loc 1 258 2 discriminator 5 view .LVU191
+ 534              		.loc 1 258 2 discriminator 5 view .LVU192
+ 535 00cc FEE7     		b	.L29
+ 536              	.LVL45:
+ 537              	.L32:
+ 538              		.loc 1 116 7 is_stmt 0 view .LVU193
+ 539 00ce 0026     		movs	r6, #0
+ 540 00d0 EFE7     		b	.L20
+ 541              	.LVL46:
+ 542              	.L34:
+ 543              		.loc 1 116 7 view .LVU194
+ 544 00d2 0026     		movs	r6, #0
+ 545 00d4 EDE7     		b	.L20
+ 546              	.LVL47:
+ 547              	.L18:
+ 548              		.loc 1 260 1 view .LVU195
+ 549 00d6 3046     		mov	r0, r6
+ 550 00d8 70BD     		pop	{r4, r5, r6, pc}
+ 551              	.LVL48:
+ 552              	.L38:
+ 553              		.loc 1 260 1 view .LVU196
+ 554 00da 00BF     		.align	2
+ 555              	.L37:
+ 556 00dc 00000000 		.word	vTaskSuspendAll
+ 557 00e0 00000000 		.word	.LANCHOR1
+ 558 00e4 00000000 		.word	.LANCHOR4
+ 559 00e8 00000000 		.word	.LANCHOR3
+ 560 00ec 00000000 		.word	.LANCHOR0
+ 561 00f0 00000000 		.word	prvHeapInit
+ 562 00f4 00000000 		.word	prvInsertBlockIntoFreeList
+ 563 00f8 00000000 		.word	.LANCHOR2
+ 564 00fc 00000000 		.word	xTaskResumeAll
+ 565              		.cfi_endproc
+ 566              	.LFE4:
+ 568              		.section	.text.vPortFree,"ax",%progbits
+ 569              		.align	1
+ 570              		.global	vPortFree
+ 571              		.syntax unified
+ 572              		.thumb
+ 573              		.thumb_func
+ 574              		.fpu softvfp
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 11
+
+
+ 576              	vPortFree:
+ 577              	.LVL49:
+ 578              	.LFB5:
+ 579              		.loc 1 264 1 is_stmt 1 view -0
+ 580              		.cfi_startproc
+ 581              		@ args = 0, pretend = 0, frame = 0
+ 582              		@ frame_needed = 0, uses_anonymous_args = 0
+ 583              		.loc 1 265 1 view .LVU198
+ 584              		.loc 1 266 1 view .LVU199
+ 585              		.loc 1 268 2 view .LVU200
+ 586              		.loc 1 268 4 is_stmt 0 view .LVU201
+ 587 0000 0028     		cmp	r0, #0
+ 588 0002 30D0     		beq	.L46
+ 589              		.loc 1 264 1 view .LVU202
+ 590 0004 38B5     		push	{r3, r4, r5, lr}
+ 591              	.LCFI4:
+ 592              		.cfi_def_cfa_offset 16
+ 593              		.cfi_offset 3, -16
+ 594              		.cfi_offset 4, -12
+ 595              		.cfi_offset 5, -8
+ 596              		.cfi_offset 14, -4
+ 597 0006 0446     		mov	r4, r0
+ 598              		.loc 1 272 3 is_stmt 1 view .LVU203
+ 599              		.loc 1 272 7 is_stmt 0 view .LVU204
+ 600 0008 A0F10805 		sub	r5, r0, #8
+ 601              	.LVL50:
+ 602              		.loc 1 275 3 is_stmt 1 view .LVU205
+ 603              		.loc 1 278 3 view .LVU206
+ 604 000c 50F8043C 		ldr	r3, [r0, #-4]
+ 605 0010 154A     		ldr	r2, .L49
+ 606 0012 1268     		ldr	r2, [r2]
+ 607 0014 1342     		tst	r3, r2
+ 608 0016 08D1     		bne	.L41
+ 609              		.loc 1 278 3 view .LVU207
+ 610              	.LBB16:
+ 611              	.LBI16:
+ 612              		.loc 2 191 30 view .LVU208
+ 613              	.LBB17:
+ 614              		.loc 2 193 1 view .LVU209
+ 615              		.loc 2 195 2 view .LVU210
+ 616              		.syntax unified
+ 617              	@ 195 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h" 1
+ 618 0018 4FF05003 			mov r3, #80												
+ 619 001c 83F31188 		msr basepri, r3											
+ 620 0020 BFF36F8F 		isb														
+ 621 0024 BFF34F8F 		dsb														
+ 622              	
+ 623              	@ 0 "" 2
+ 624              	.LVL51:
+ 625              		.thumb
+ 626              		.syntax unified
+ 627              	.L42:
+ 628              		.loc 2 195 2 is_stmt 0 view .LVU211
+ 629              	.LBE17:
+ 630              	.LBE16:
+ 631              		.loc 1 278 3 is_stmt 1 discriminator 1 view .LVU212
+ 632              		.loc 1 278 3 discriminator 1 view .LVU213
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 12
+
+
+ 633              		.loc 1 278 3 discriminator 1 view .LVU214
+ 634 0028 FEE7     		b	.L42
+ 635              	.L41:
+ 636              		.loc 1 278 67 discriminator 2 view .LVU215
+ 637              		.loc 1 279 3 discriminator 2 view .LVU216
+ 638 002a 50F8081C 		ldr	r1, [r0, #-8]
+ 639 002e 41B1     		cbz	r1, .L43
+ 640              		.loc 1 279 3 view .LVU217
+ 641              	.LBB18:
+ 642              	.LBI18:
+ 643              		.loc 2 191 30 view .LVU218
+ 644              	.LBB19:
+ 645              		.loc 2 193 1 view .LVU219
+ 646              		.loc 2 195 2 view .LVU220
+ 647              		.syntax unified
+ 648              	@ 195 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h" 1
+ 649 0030 4FF05003 			mov r3, #80												
+ 650 0034 83F31188 		msr basepri, r3											
+ 651 0038 BFF36F8F 		isb														
+ 652 003c BFF34F8F 		dsb														
+ 653              	
+ 654              	@ 0 "" 2
+ 655              	.LVL52:
+ 656              		.thumb
+ 657              		.syntax unified
+ 658              	.L44:
+ 659              		.loc 2 195 2 is_stmt 0 view .LVU221
+ 660              	.LBE19:
+ 661              	.LBE18:
+ 662              		.loc 1 279 3 is_stmt 1 discriminator 2 view .LVU222
+ 663              		.loc 1 279 3 discriminator 2 view .LVU223
+ 664              		.loc 1 279 3 discriminator 2 view .LVU224
+ 665 0040 FEE7     		b	.L44
+ 666              	.L43:
+ 667              		.loc 1 279 50 view .LVU225
+ 668              		.loc 1 281 3 view .LVU226
+ 669              		.loc 1 283 4 view .LVU227
+ 670              		.loc 1 287 5 view .LVU228
+ 671              		.loc 1 287 24 is_stmt 0 view .LVU229
+ 672 0042 23EA0203 		bic	r3, r3, r2
+ 673 0046 40F8043C 		str	r3, [r0, #-4]
+ 674              		.loc 1 289 5 is_stmt 1 view .LVU230
+ 675 004a 084B     		ldr	r3, .L49+4
+ 676 004c 9847     		blx	r3
+ 677              	.LVL53:
+ 678              		.loc 1 292 6 view .LVU231
+ 679              		.loc 1 292 35 is_stmt 0 view .LVU232
+ 680 004e 54F8041C 		ldr	r1, [r4, #-4]
+ 681              		.loc 1 292 26 view .LVU233
+ 682 0052 074A     		ldr	r2, .L49+8
+ 683 0054 1368     		ldr	r3, [r2]
+ 684 0056 0B44     		add	r3, r3, r1
+ 685 0058 1360     		str	r3, [r2]
+ 686              		.loc 1 293 41 is_stmt 1 view .LVU234
+ 687              		.loc 1 294 6 view .LVU235
+ 688 005a 2846     		mov	r0, r5
+ 689 005c 054B     		ldr	r3, .L49+12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 13
+
+
+ 690 005e 9847     		blx	r3
+ 691              	.LVL54:
+ 692              		.loc 1 296 5 view .LVU236
+ 693              		.loc 1 296 14 is_stmt 0 view .LVU237
+ 694 0060 054B     		ldr	r3, .L49+16
+ 695 0062 9847     		blx	r3
+ 696              	.LVL55:
+ 697              		.loc 1 305 28 is_stmt 1 view .LVU238
+ 698              		.loc 1 308 1 is_stmt 0 view .LVU239
+ 699 0064 38BD     		pop	{r3, r4, r5, pc}
+ 700              	.LVL56:
+ 701              	.L46:
+ 702              	.LCFI5:
+ 703              		.cfi_def_cfa_offset 0
+ 704              		.cfi_restore 3
+ 705              		.cfi_restore 4
+ 706              		.cfi_restore 5
+ 707              		.cfi_restore 14
+ 708              		.loc 1 308 1 view .LVU240
+ 709 0066 7047     		bx	lr
+ 710              	.L50:
+ 711              		.align	2
+ 712              	.L49:
+ 713 0068 00000000 		.word	.LANCHOR4
+ 714 006c 00000000 		.word	vTaskSuspendAll
+ 715 0070 00000000 		.word	.LANCHOR3
+ 716 0074 00000000 		.word	prvInsertBlockIntoFreeList
+ 717 0078 00000000 		.word	xTaskResumeAll
+ 718              		.cfi_endproc
+ 719              	.LFE5:
+ 721              		.section	.text.xPortGetFreeHeapSize,"ax",%progbits
+ 722              		.align	1
+ 723              		.global	xPortGetFreeHeapSize
+ 724              		.syntax unified
+ 725              		.thumb
+ 726              		.thumb_func
+ 727              		.fpu softvfp
+ 729              	xPortGetFreeHeapSize:
+ 730              	.LFB6:
+ 731              		.loc 1 312 1 is_stmt 1 view -0
+ 732              		.cfi_startproc
+ 733              		@ args = 0, pretend = 0, frame = 0
+ 734              		@ frame_needed = 0, uses_anonymous_args = 0
+ 735              		@ link register save eliminated.
+ 736              		.loc 1 313 2 view .LVU242
+ 737              		.loc 1 314 1 is_stmt 0 view .LVU243
+ 738 0000 014B     		ldr	r3, .L52
+ 739 0002 1868     		ldr	r0, [r3]
+ 740 0004 7047     		bx	lr
+ 741              	.L53:
+ 742 0006 00BF     		.align	2
+ 743              	.L52:
+ 744 0008 00000000 		.word	.LANCHOR3
+ 745              		.cfi_endproc
+ 746              	.LFE6:
+ 748              		.section	.text.xPortGetMinimumEverFreeHeapSize,"ax",%progbits
+ 749              		.align	1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 14
+
+
+ 750              		.global	xPortGetMinimumEverFreeHeapSize
+ 751              		.syntax unified
+ 752              		.thumb
+ 753              		.thumb_func
+ 754              		.fpu softvfp
+ 756              	xPortGetMinimumEverFreeHeapSize:
+ 757              	.LFB7:
+ 758              		.loc 1 318 1 is_stmt 1 view -0
+ 759              		.cfi_startproc
+ 760              		@ args = 0, pretend = 0, frame = 0
+ 761              		@ frame_needed = 0, uses_anonymous_args = 0
+ 762              		@ link register save eliminated.
+ 763              		.loc 1 319 2 view .LVU245
+ 764              		.loc 1 320 1 is_stmt 0 view .LVU246
+ 765 0000 014B     		ldr	r3, .L55
+ 766 0002 1868     		ldr	r0, [r3]
+ 767 0004 7047     		bx	lr
+ 768              	.L56:
+ 769 0006 00BF     		.align	2
+ 770              	.L55:
+ 771 0008 00000000 		.word	.LANCHOR2
+ 772              		.cfi_endproc
+ 773              	.LFE7:
+ 775              		.section	.text.vPortInitialiseBlocks,"ax",%progbits
+ 776              		.align	1
+ 777              		.global	vPortInitialiseBlocks
+ 778              		.syntax unified
+ 779              		.thumb
+ 780              		.thumb_func
+ 781              		.fpu softvfp
+ 783              	vPortInitialiseBlocks:
+ 784              	.LFB8:
+ 785              		.loc 1 324 1 is_stmt 1 view -0
+ 786              		.cfi_startproc
+ 787              		@ args = 0, pretend = 0, frame = 0
+ 788              		@ frame_needed = 0, uses_anonymous_args = 0
+ 789              		@ link register save eliminated.
+ 790              		.loc 1 326 1 view .LVU248
+ 791 0000 7047     		bx	lr
+ 792              		.cfi_endproc
+ 793              	.LFE8:
+ 795              		.section	.bss.pxEnd,"aw",%nobits
+ 796              		.align	2
+ 797              		.set	.LANCHOR1,. + 0
+ 800              	pxEnd:
+ 801 0000 00000000 		.space	4
+ 802              		.section	.bss.ucHeap,"aw",%nobits
+ 803              		.align	2
+ 806              	ucHeap:
+ 807 0000 00000000 		.space	4096
+ 807      00000000 
+ 807      00000000 
+ 807      00000000 
+ 807      00000000 
+ 808              		.section	.bss.xBlockAllocatedBit,"aw",%nobits
+ 809              		.align	2
+ 810              		.set	.LANCHOR4,. + 0
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 15
+
+
+ 813              	xBlockAllocatedBit:
+ 814 0000 00000000 		.space	4
+ 815              		.section	.bss.xFreeBytesRemaining,"aw",%nobits
+ 816              		.align	2
+ 817              		.set	.LANCHOR3,. + 0
+ 820              	xFreeBytesRemaining:
+ 821 0000 00000000 		.space	4
+ 822              		.section	.bss.xMinimumEverFreeBytesRemaining,"aw",%nobits
+ 823              		.align	2
+ 824              		.set	.LANCHOR2,. + 0
+ 827              	xMinimumEverFreeBytesRemaining:
+ 828 0000 00000000 		.space	4
+ 829              		.section	.bss.xStart,"aw",%nobits
+ 830              		.align	2
+ 831              		.set	.LANCHOR0,. + 0
+ 834              	xStart:
+ 835 0000 00000000 		.space	8
+ 835      00000000 
+ 836              		.text
+ 837              	.Letext0:
+ 838              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\lib\\gcc\\a
+ 839              		.file 4 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 840              		.file 5 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 841              		.file 6 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 842              		.file 7 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 843              		.file 8 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 844              		.file 9 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 845              		.file 10 "../Core/Inc/FreeRTOSConfig.h"
+ 846              		.file 11 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cchBWkzt.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 heap_4.c
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:16     .text.prvHeapInit:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:23     .text.prvHeapInit:0000000000000000 prvHeapInit
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:129    .text.prvHeapInit:000000000000004c $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:806    .bss.ucHeap:0000000000000000 ucHeap
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:139    .text.prvInsertBlockIntoFreeList:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:145    .text.prvInsertBlockIntoFreeList:0000000000000000 prvInsertBlockIntoFreeList
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:263    .text.prvInsertBlockIntoFreeList:000000000000004c $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:269    .text.pvPortMalloc:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:276    .text.pvPortMalloc:0000000000000000 pvPortMalloc
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:556    .text.pvPortMalloc:00000000000000dc $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:569    .text.vPortFree:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:576    .text.vPortFree:0000000000000000 vPortFree
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:713    .text.vPortFree:0000000000000068 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:722    .text.xPortGetFreeHeapSize:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:729    .text.xPortGetFreeHeapSize:0000000000000000 xPortGetFreeHeapSize
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:744    .text.xPortGetFreeHeapSize:0000000000000008 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:749    .text.xPortGetMinimumEverFreeHeapSize:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:756    .text.xPortGetMinimumEverFreeHeapSize:0000000000000000 xPortGetMinimumEverFreeHeapSize
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:771    .text.xPortGetMinimumEverFreeHeapSize:0000000000000008 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:776    .text.vPortInitialiseBlocks:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:783    .text.vPortInitialiseBlocks:0000000000000000 vPortInitialiseBlocks
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:796    .bss.pxEnd:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:800    .bss.pxEnd:0000000000000000 pxEnd
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:803    .bss.ucHeap:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:809    .bss.xBlockAllocatedBit:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:813    .bss.xBlockAllocatedBit:0000000000000000 xBlockAllocatedBit
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:816    .bss.xFreeBytesRemaining:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:820    .bss.xFreeBytesRemaining:0000000000000000 xFreeBytesRemaining
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:823    .bss.xMinimumEverFreeBytesRemaining:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:827    .bss.xMinimumEverFreeBytesRemaining:0000000000000000 xMinimumEverFreeBytesRemaining
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:830    .bss.xStart:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cchBWkzt.s:834    .bss.xStart:0000000000000000 xStart
+
+UNDEFINED SYMBOLS
+vTaskSuspendAll
+xTaskResumeAll

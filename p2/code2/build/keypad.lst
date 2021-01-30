@@ -1,0 +1,705 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"keypad.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.timer_function_keypad,"ax",%progbits
+  16              		.align	1
+  17              		.global	timer_function_keypad
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	timer_function_keypad:
+  25              	.LVL0:
+  26              	.LFB71:
+  27              		.file 1 "../Core/Src/keypad.c"
+   1:../Core/Src/keypad.c **** 
+  28              		.loc 1 88 50 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 89 2 view .LVU1
+  33              		.loc 1 89 5 is_stmt 0 view .LVU2
+  34 0000 0E4B     		ldr	r3, .L7
+  35 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  36              		.loc 1 89 4 view .LVU3
+  37 0004 CBB9     		cbnz	r3, .L5
+  38              		.loc 1 90 3 is_stmt 1 view .LVU4
+  39              		.loc 1 90 13 is_stmt 0 view .LVU5
+  40 0006 0E4B     		ldr	r3, .L7+4
+  41 0008 9B68     		ldr	r3, [r3, #8]
+  42              		.loc 1 90 5 view .LVU6
+  43 000a 13F0700F 		tst	r3, #112
+  44 000e 03D1     		bne	.L3
+  45              		.loc 1 91 4 is_stmt 1 view .LVU7
+  46              		.loc 1 91 42 is_stmt 0 view .LVU8
+  47 0010 0A4B     		ldr	r3, .L7
+  48 0012 0122     		movs	r2, #1
+  49 0014 1A70     		strb	r2, [r3]
+  50 0016 7047     		bx	lr
+  51              	.L3:
+  52              		.loc 1 88 50 view .LVU9
+  53 0018 10B5     		push	{r4, lr}
+  54              	.LCFI0:
+  55              		.cfi_def_cfa_offset 8
+  56              		.cfi_offset 4, -8
+  57              		.cfi_offset 14, -4
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 2
+
+
+  58 001a 82B0     		sub	sp, sp, #8
+  59              	.LCFI1:
+  60              		.cfi_def_cfa_offset 16
+  61              		.loc 1 94 4 is_stmt 1 view .LVU10
+  62 001c 094B     		ldr	r3, .L7+8
+  63 001e 1C68     		ldr	r4, [r3]
+  64 0020 094B     		ldr	r3, .L7+12
+  65 0022 9847     		blx	r3
+  66              	.LVL1:
+  67              		.loc 1 94 4 is_stmt 0 view .LVU11
+  68 0024 0246     		mov	r2, r0
+  69 0026 4FF0FF33 		mov	r3, #-1
+  70 002a 0093     		str	r3, [sp]
+  71 002c 0023     		movs	r3, #0
+  72 002e 0121     		movs	r1, #1
+  73 0030 2046     		mov	r0, r4
+  74 0032 064C     		ldr	r4, .L7+16
+  75 0034 A047     		blx	r4
+  76              	.LVL2:
+  77              		.loc 1 97 1 view .LVU12
+  78 0036 02B0     		add	sp, sp, #8
+  79              	.LCFI2:
+  80              		.cfi_def_cfa_offset 8
+  81              		@ sp needed
+  82 0038 10BD     		pop	{r4, pc}
+  83              	.LVL3:
+  84              	.L5:
+  85              	.LCFI3:
+  86              		.cfi_def_cfa_offset 0
+  87              		.cfi_restore 4
+  88              		.cfi_restore 14
+  89              		.loc 1 97 1 view .LVU13
+  90 003a 7047     		bx	lr
+  91              	.L8:
+  92              		.align	2
+  93              	.L7:
+  94 003c 00000000 		.word	.LANCHOR0
+  95 0040 000C0140 		.word	1073810432
+  96 0044 00000000 		.word	timer_handle_keypad
+  97 0048 00000000 		.word	xTaskGetTickCount
+  98 004c 00000000 		.word	xTimerGenericCommand
+  99              		.cfi_endproc
+ 100              	.LFE71:
+ 102              		.section	.text.task_function_keypad,"ax",%progbits
+ 103              		.align	1
+ 104              		.global	task_function_keypad
+ 105              		.syntax unified
+ 106              		.thumb
+ 107              		.thumb_func
+ 108              		.fpu softvfp
+ 110              	task_function_keypad:
+ 111              	.LFB70:
+ 112              		.loc 1 34 41 is_stmt 1 view -0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              	.LVL4:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 3
+
+
+ 117              		.loc 1 34 41 is_stmt 0 view .LVU15
+ 118 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 119              	.LCFI4:
+ 120              		.cfi_def_cfa_offset 32
+ 121              		.cfi_offset 4, -32
+ 122              		.cfi_offset 5, -28
+ 123              		.cfi_offset 6, -24
+ 124              		.cfi_offset 7, -20
+ 125              		.cfi_offset 8, -16
+ 126              		.cfi_offset 9, -12
+ 127              		.cfi_offset 10, -8
+ 128              		.cfi_offset 14, -4
+ 129 0004 82B0     		sub	sp, sp, #8
+ 130              	.LCFI5:
+ 131              		.cfi_def_cfa_offset 40
+ 132 0006 7CE0     		b	.L11
+ 133              	.LVL5:
+ 134              	.L16:
+ 135              	.LBB2:
+ 136              	.LBB3:
+ 137              	.LBB4:
+ 138              	.LBB5:
+ 139              	.LBB6:
+ 140              		.loc 1 58 35 is_stmt 1 discriminator 3 view .LVU16
+ 141              		.loc 1 58 57 is_stmt 0 discriminator 3 view .LVU17
+ 142 0008 434A     		ldr	r2, .L32
+ 143 000a 3021     		movs	r1, #48
+ 144 000c D154     		strb	r1, [r2, r3]
+ 145              		.loc 1 58 30 is_stmt 1 discriminator 3 view .LVU18
+ 146              		.loc 1 58 31 is_stmt 0 discriminator 3 view .LVU19
+ 147 000e 0133     		adds	r3, r3, #1
+ 148              	.LVL6:
+ 149              	.L15:
+ 150              		.loc 1 58 23 is_stmt 1 discriminator 1 view .LVU20
+ 151              		.loc 1 58 8 is_stmt 0 discriminator 1 view .LVU21
+ 152 0010 022B     		cmp	r3, #2
+ 153 0012 F9DD     		ble	.L16
+ 154 0014 01E0     		b	.L13
+ 155              	.LVL7:
+ 156              	.L14:
+ 157              		.loc 1 58 8 discriminator 1 view .LVU22
+ 158              	.LBE6:
+ 159              		.loc 1 60 12 is_stmt 1 view .LVU23
+ 160              		.loc 1 60 14 is_stmt 0 view .LVU24
+ 161 0016 032B     		cmp	r3, #3
+ 162 0018 30D0     		beq	.L28
+ 163              	.LVL8:
+ 164              	.L13:
+ 165              		.loc 1 60 14 view .LVU25
+ 166              	.LBE5:
+ 167              		.loc 1 45 31 is_stmt 1 discriminator 2 view .LVU26
+ 168 001a 0134     		adds	r4, r4, #1
+ 169              	.LVL9:
+ 170              	.L12:
+ 171              		.loc 1 45 22 discriminator 1 view .LVU27
+ 172              		.loc 1 45 5 is_stmt 0 discriminator 1 view .LVU28
+ 173 001c 022C     		cmp	r4, #2
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 4
+
+
+ 174 001e 61DC     		bgt	.L29
+ 175              		.loc 1 47 6 is_stmt 1 view .LVU29
+ 176              		.loc 1 47 24 is_stmt 0 view .LVU30
+ 177 0020 0123     		movs	r3, #1
+ 178 0022 A340     		lsls	r3, r3, r4
+ 179              		.loc 1 47 8 view .LVU31
+ 180 0024 3342     		tst	r3, r6
+ 181 0026 F8D0     		beq	.L13
+ 182              	.LBB11:
+ 183              		.loc 1 49 7 is_stmt 1 view .LVU32
+ 184              		.loc 1 49 45 is_stmt 0 view .LVU33
+ 185 0028 4FF00008 		mov	r8, #0
+ 186 002c 3B4B     		ldr	r3, .L32+4
+ 187 002e 83F80080 		strb	r8, [r3]
+ 188              		.loc 1 50 7 is_stmt 1 view .LVU34
+ 189 0032 3B4B     		ldr	r3, .L32+8
+ 190 0034 D3F80090 		ldr	r9, [r3]
+ 191 0038 3A4B     		ldr	r3, .L32+12
+ 192 003a 9847     		blx	r3
+ 193              	.LVL10:
+ 194 003c 0246     		mov	r2, r0
+ 195 003e 4FF0FF33 		mov	r3, #-1
+ 196 0042 0093     		str	r3, [sp]
+ 197 0044 4346     		mov	r3, r8
+ 198 0046 0121     		movs	r1, #1
+ 199 0048 4846     		mov	r0, r9
+ 200 004a DFF8EC80 		ldr	r8, .L32+32
+ 201 004e C047     		blx	r8
+ 202              	.LVL11:
+ 203              		.loc 1 52 7 view .LVU35
+ 204              		.loc 1 52 12 is_stmt 0 view .LVU36
+ 205 0050 05EB4502 		add	r2, r5, r5, lsl #1
+ 206 0054 344B     		ldr	r3, .L32+16
+ 207 0056 1344     		add	r3, r3, r2
+ 208 0058 185D     		ldrb	r0, [r3, r4]	@ zero_extendqisi2
+ 209              	.LVL12:
+ 210              		.loc 1 54 7 is_stmt 1 view .LVU37
+ 211              		.loc 1 54 32 is_stmt 0 view .LVU38
+ 212 005a 3449     		ldr	r1, .L32+20
+ 213 005c 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 214 005e 531C     		adds	r3, r2, #1
+ 215 0060 DBB2     		uxtb	r3, r3
+ 216 0062 0B70     		strb	r3, [r1]
+ 217              		.loc 1 54 36 view .LVU39
+ 218 0064 2C49     		ldr	r1, .L32
+ 219 0066 8854     		strb	r0, [r1, r2]
+ 220              		.loc 1 56 7 is_stmt 1 view .LVU40
+ 221              		.loc 1 56 9 is_stmt 0 view .LVU41
+ 222 0068 032B     		cmp	r3, #3
+ 223 006a D4D1     		bne	.L14
+ 224              		.loc 1 56 22 discriminator 1 view .LVU42
+ 225 006c 2A28     		cmp	r0, #42
+ 226 006e D2D0     		beq	.L14
+ 227              		.loc 1 56 44 discriminator 2 view .LVU43
+ 228 0070 2328     		cmp	r0, #35
+ 229 0072 D0D0     		beq	.L14
+ 230              		.loc 1 57 8 is_stmt 1 view .LVU44
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 5
+
+
+ 231              		.loc 1 57 15 is_stmt 0 view .LVU45
+ 232 0074 0023     		movs	r3, #0
+ 233 0076 2D4A     		ldr	r2, .L32+20
+ 234 0078 1370     		strb	r3, [r2]
+ 235              		.loc 1 58 8 is_stmt 1 view .LVU46
+ 236              	.LBB7:
+ 237              		.loc 1 58 12 view .LVU47
+ 238              	.LVL13:
+ 239              		.loc 1 58 8 is_stmt 0 view .LVU48
+ 240 007a C9E7     		b	.L15
+ 241              	.LVL14:
+ 242              	.L28:
+ 243              		.loc 1 58 8 view .LVU49
+ 244              	.LBE7:
+ 245              	.LBB8:
+ 246              		.loc 1 62 8 is_stmt 1 view .LVU50
+ 247              		.loc 1 63 8 view .LVU51
+ 248              		.loc 1 63 10 is_stmt 0 view .LVU52
+ 249 007c 2A28     		cmp	r0, #42
+ 250 007e 25D0     		beq	.L30
+ 251              		.loc 1 64 26 view .LVU53
+ 252 0080 4FF00209 		mov	r9, #2
+ 253              	.L17:
+ 254              	.LVL15:
+ 255              		.loc 1 66 8 is_stmt 1 view .LVU54
+ 256              		.loc 1 67 8 view .LVU55
+ 257              		.loc 1 67 38 is_stmt 0 view .LVU56
+ 258 0084 244A     		ldr	r2, .L32
+ 259 0086 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 260              		.loc 1 67 75 view .LVU57
+ 261 0088 92F80180 		ldrb	r8, [r2, #1]	@ zero_extendqisi2
+ 262              		.loc 1 67 54 view .LVU58
+ 263 008c 303B     		subs	r3, r3, #48
+ 264 008e 03EB8303 		add	r3, r3, r3, lsl #2
+ 265 0092 08EB4308 		add	r8, r8, r3, lsl #1
+ 266 0096 5FFA88F8 		uxtb	r8, r8
+ 267              		.loc 1 67 17 view .LVU59
+ 268 009a A8F13008 		sub	r8, r8, #48
+ 269 009e 5FFA88F8 		uxtb	r8, r8
+ 270              	.LVL16:
+ 271              		.loc 1 69 8 is_stmt 1 view .LVU60
+ 272              		.loc 1 69 10 is_stmt 0 view .LVU61
+ 273 00a2 B8F1100F 		cmp	r8, #16
+ 274 00a6 01D9     		bls	.L18
+ 275              		.loc 1 69 35 view .LVU62
+ 276 00a8 4FF01008 		mov	r8, #16
+ 277              	.LVL17:
+ 278              	.L18:
+ 279              		.loc 1 71 8 is_stmt 1 view .LVU63
+ 280 00ac 4846     		mov	r0, r9
+ 281              	.LVL18:
+ 282              		.loc 1 71 8 is_stmt 0 view .LVU64
+ 283 00ae DFF88CA0 		ldr	r10, .L32+36
+ 284 00b2 D047     		blx	r10
+ 285              	.LVL19:
+ 286              		.loc 1 72 8 is_stmt 1 view .LVU65
+ 287 00b4 4046     		mov	r0, r8
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 6
+
+
+ 288 00b6 D047     		blx	r10
+ 289              	.LVL20:
+ 290              		.loc 1 74 8 view .LVU66
+ 291 00b8 09F1FF30 		add	r0, r9, #-1
+ 292 00bc C0B2     		uxtb	r0, r0
+ 293 00be DFF88090 		ldr	r9, .L32+40
+ 294              	.LVL21:
+ 295              		.loc 1 74 8 is_stmt 0 view .LVU67
+ 296 00c2 C847     		blx	r9
+ 297              	.LVL22:
+ 298              		.loc 1 75 8 is_stmt 1 view .LVU68
+ 299 00c4 4046     		mov	r0, r8
+ 300 00c6 C847     		blx	r9
+ 301              	.LVL23:
+ 302              		.loc 1 77 8 view .LVU69
+ 303              	.LBB9:
+ 304              		.loc 1 77 12 view .LVU70
+ 305              		.loc 1 77 16 is_stmt 0 view .LVU71
+ 306 00c8 0023     		movs	r3, #0
+ 307              		.loc 1 77 8 view .LVU72
+ 308 00ca 05E0     		b	.L19
+ 309              	.LVL24:
+ 310              	.L30:
+ 311              		.loc 1 77 8 view .LVU73
+ 312              	.LBE9:
+ 313              		.loc 1 63 44 view .LVU74
+ 314 00cc B946     		mov	r9, r7
+ 315 00ce D9E7     		b	.L17
+ 316              	.LVL25:
+ 317              	.L20:
+ 318              	.LBB10:
+ 319              		.loc 1 77 35 is_stmt 1 discriminator 3 view .LVU75
+ 320              		.loc 1 77 57 is_stmt 0 discriminator 3 view .LVU76
+ 321 00d0 114A     		ldr	r2, .L32
+ 322 00d2 3021     		movs	r1, #48
+ 323 00d4 D154     		strb	r1, [r2, r3]
+ 324              		.loc 1 77 30 is_stmt 1 discriminator 3 view .LVU77
+ 325              		.loc 1 77 31 is_stmt 0 discriminator 3 view .LVU78
+ 326 00d6 0133     		adds	r3, r3, #1
+ 327              	.LVL26:
+ 328              	.L19:
+ 329              		.loc 1 77 23 is_stmt 1 discriminator 1 view .LVU79
+ 330              		.loc 1 77 8 is_stmt 0 discriminator 1 view .LVU80
+ 331 00d8 022B     		cmp	r3, #2
+ 332 00da F9DD     		ble	.L20
+ 333              	.LBE10:
+ 334              		.loc 1 78 8 is_stmt 1 view .LVU81
+ 335              		.loc 1 78 15 is_stmt 0 view .LVU82
+ 336 00dc 134B     		ldr	r3, .L32+20
+ 337              	.LVL27:
+ 338              		.loc 1 78 15 view .LVU83
+ 339 00de 0022     		movs	r2, #0
+ 340 00e0 1A70     		strb	r2, [r3]
+ 341 00e2 9AE7     		b	.L13
+ 342              	.LVL28:
+ 343              	.L29:
+ 344              		.loc 1 78 15 view .LVU84
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 7
+
+
+ 345              	.LBE8:
+ 346              	.LBE11:
+ 347              	.LBE4:
+ 348              	.LBE3:
+ 349              		.loc 1 40 30 is_stmt 1 discriminator 2 view .LVU85
+ 350 00e4 0135     		adds	r5, r5, #1
+ 351              	.LVL29:
+ 352              	.L10:
+ 353              		.loc 1 40 21 discriminator 1 view .LVU86
+ 354              		.loc 1 40 4 is_stmt 0 discriminator 1 view .LVU87
+ 355 00e6 032D     		cmp	r5, #3
+ 356 00e8 08DC     		bgt	.L31
+ 357              	.LBB13:
+ 358              		.loc 1 41 5 is_stmt 1 view .LVU88
+ 359              		.loc 1 41 23 is_stmt 0 view .LVU89
+ 360 00ea 0123     		movs	r3, #1
+ 361 00ec AB40     		lsls	r3, r3, r5
+ 362              		.loc 1 41 16 view .LVU90
+ 363 00ee 104A     		ldr	r2, .L32+24
+ 364 00f0 D360     		str	r3, [r2, #12]
+ 365              		.loc 1 43 5 is_stmt 1 view .LVU91
+ 366              		.loc 1 43 29 is_stmt 0 view .LVU92
+ 367 00f2 9668     		ldr	r6, [r2, #8]
+ 368              		.loc 1 43 14 view .LVU93
+ 369 00f4 C6F30216 		ubfx	r6, r6, #4, #3
+ 370              	.LVL30:
+ 371              		.loc 1 45 5 is_stmt 1 view .LVU94
+ 372              	.LBB12:
+ 373              		.loc 1 45 9 view .LVU95
+ 374              		.loc 1 45 13 is_stmt 0 view .LVU96
+ 375 00f8 0024     		movs	r4, #0
+ 376              		.loc 1 45 5 view .LVU97
+ 377 00fa 8FE7     		b	.L12
+ 378              	.LVL31:
+ 379              	.L31:
+ 380              		.loc 1 45 5 view .LVU98
+ 381              	.LBE12:
+ 382              	.LBE13:
+ 383              	.LBE2:
+ 384              		.loc 1 83 4 is_stmt 1 view .LVU99
+ 385              		.loc 1 83 15 is_stmt 0 view .LVU100
+ 386 00fc 0C4B     		ldr	r3, .L32+24
+ 387 00fe 0F22     		movs	r2, #15
+ 388 0100 DA60     		str	r2, [r3, #12]
+ 389              	.LVL32:
+ 390              	.L11:
+ 391              		.loc 1 35 2 is_stmt 1 view .LVU101
+ 392              		.loc 1 36 3 view .LVU102
+ 393 0102 4FF0FF31 		mov	r1, #-1
+ 394 0106 0120     		movs	r0, #1
+ 395 0108 0A4B     		ldr	r3, .L32+28
+ 396 010a 9847     		blx	r3
+ 397              	.LVL33:
+ 398              		.loc 1 38 3 view .LVU103
+ 399              		.loc 1 38 44 is_stmt 0 view .LVU104
+ 400 010c 034B     		ldr	r3, .L32+4
+ 401 010e 1F78     		ldrb	r7, [r3]	@ zero_extendqisi2
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 8
+
+
+ 402              		.loc 1 38 5 view .LVU105
+ 403 0110 012F     		cmp	r7, #1
+ 404 0112 F6D1     		bne	.L11
+ 405              	.LBB14:
+ 406              		.loc 1 40 12 view .LVU106
+ 407 0114 0025     		movs	r5, #0
+ 408 0116 E6E7     		b	.L10
+ 409              	.L33:
+ 410              		.align	2
+ 411              	.L32:
+ 412 0118 00000000 		.word	.LANCHOR3
+ 413 011c 00000000 		.word	.LANCHOR0
+ 414 0120 00000000 		.word	timer_handle_keypad
+ 415 0124 00000000 		.word	xTaskGetTickCount
+ 416 0128 00000000 		.word	.LANCHOR1
+ 417 012c 00000000 		.word	.LANCHOR2
+ 418 0130 000C0140 		.word	1073810432
+ 419 0134 00000000 		.word	ulTaskNotifyTake
+ 420 0138 00000000 		.word	xTimerGenericCommand
+ 421 013c 00000000 		.word	add_to_queue_which_changes_the_speed_of_motors
+ 422 0140 00000000 		.word	add_to_queue_to_send_to_MCU_one
+ 423              	.LBE14:
+ 424              		.cfi_endproc
+ 425              	.LFE70:
+ 427              		.section	.rodata.init_KeyPad.str1.4,"aMS",%progbits,1
+ 428              		.align	2
+ 429              	.LC0:
+ 430 0000 6B657970 		.ascii	"keypad_task\000"
+ 430      61645F74 
+ 430      61736B00 
+ 431              		.align	2
+ 432              	.LC1:
+ 433 000c 6B657970 		.ascii	"keypad_timer\000"
+ 433      61645F74 
+ 433      696D6572 
+ 433      00
+ 434              		.section	.text.init_KeyPad,"ax",%progbits
+ 435              		.align	1
+ 436              		.global	init_KeyPad
+ 437              		.syntax unified
+ 438              		.thumb
+ 439              		.thumb_func
+ 440              		.fpu softvfp
+ 442              	init_KeyPad:
+ 443              	.LFB69:
+ 444              		.loc 1 13 20 is_stmt 1 view -0
+ 445              		.cfi_startproc
+ 446              		@ args = 0, pretend = 0, frame = 0
+ 447              		@ frame_needed = 0, uses_anonymous_args = 0
+ 448 0000 10B5     		push	{r4, lr}
+ 449              	.LCFI6:
+ 450              		.cfi_def_cfa_offset 8
+ 451              		.cfi_offset 4, -8
+ 452              		.cfi_offset 14, -4
+ 453 0002 82B0     		sub	sp, sp, #8
+ 454              	.LCFI7:
+ 455              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 9
+
+
+ 456              		.loc 1 14 2 view .LVU108
+ 457              		.loc 1 14 13 is_stmt 0 view .LVU109
+ 458 0004 0C4B     		ldr	r3, .L36
+ 459 0006 0F22     		movs	r2, #15
+ 460 0008 DA60     		str	r2, [r3, #12]
+ 461              		.loc 1 16 2 is_stmt 1 view .LVU110
+ 462 000a 0C4B     		ldr	r3, .L36+4
+ 463 000c 0193     		str	r3, [sp, #4]
+ 464 000e 0523     		movs	r3, #5
+ 465 0010 0093     		str	r3, [sp]
+ 466 0012 0023     		movs	r3, #0
+ 467 0014 8022     		movs	r2, #128
+ 468 0016 0A49     		ldr	r1, .L36+8
+ 469 0018 0A48     		ldr	r0, .L36+12
+ 470 001a 0B4C     		ldr	r4, .L36+16
+ 471 001c A047     		blx	r4
+ 472              	.LVL34:
+ 473              		.loc 1 17 2 view .LVU111
+ 474              		.loc 1 17 24 is_stmt 0 view .LVU112
+ 475 001e 0B4B     		ldr	r3, .L36+20
+ 476 0020 0093     		str	r3, [sp]
+ 477 0022 0023     		movs	r3, #0
+ 478 0024 1A46     		mov	r2, r3
+ 479 0026 3221     		movs	r1, #50
+ 480 0028 0948     		ldr	r0, .L36+24
+ 481 002a 0A4C     		ldr	r4, .L36+28
+ 482 002c A047     		blx	r4
+ 483              	.LVL35:
+ 484              		.loc 1 17 22 view .LVU113
+ 485 002e 0A4B     		ldr	r3, .L36+32
+ 486 0030 1860     		str	r0, [r3]
+ 487              		.loc 1 18 1 view .LVU114
+ 488 0032 02B0     		add	sp, sp, #8
+ 489              	.LCFI8:
+ 490              		.cfi_def_cfa_offset 8
+ 491              		@ sp needed
+ 492 0034 10BD     		pop	{r4, pc}
+ 493              	.L37:
+ 494 0036 00BF     		.align	2
+ 495              	.L36:
+ 496 0038 000C0140 		.word	1073810432
+ 497 003c 00000000 		.word	task_handle_keypad
+ 498 0040 00000000 		.word	.LC0
+ 499 0044 00000000 		.word	task_function_keypad
+ 500 0048 00000000 		.word	xTaskCreate
+ 501 004c 00000000 		.word	timer_function_keypad
+ 502 0050 0C000000 		.word	.LC1
+ 503 0054 00000000 		.word	xTimerCreate
+ 504 0058 00000000 		.word	timer_handle_keypad
+ 505              		.cfi_endproc
+ 506              	.LFE69:
+ 508              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+ 509              		.align	1
+ 510              		.global	HAL_GPIO_EXTI_Callback
+ 511              		.syntax unified
+ 512              		.thumb
+ 513              		.thumb_func
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 10
+
+
+ 514              		.fpu softvfp
+ 516              	HAL_GPIO_EXTI_Callback:
+ 517              	.LVL36:
+ 518              	.LFB72:
+ 519              		.loc 1 99 48 is_stmt 1 view -0
+ 520              		.cfi_startproc
+ 521              		@ args = 0, pretend = 0, frame = 8
+ 522              		@ frame_needed = 0, uses_anonymous_args = 0
+ 523              		.loc 1 100 2 view .LVU116
+ 524              		.loc 1 100 4 is_stmt 0 view .LVU117
+ 525 0000 8028     		cmp	r0, #128
+ 526 0002 00D0     		beq	.L45
+ 527 0004 7047     		bx	lr
+ 528              	.L45:
+ 529              		.loc 1 99 48 view .LVU118
+ 530 0006 00B5     		push	{lr}
+ 531              	.LCFI9:
+ 532              		.cfi_def_cfa_offset 4
+ 533              		.cfi_offset 14, -4
+ 534 0008 83B0     		sub	sp, sp, #12
+ 535              	.LCFI10:
+ 536              		.cfi_def_cfa_offset 16
+ 537              	.LBB15:
+ 538              		.loc 1 101 3 is_stmt 1 view .LVU119
+ 539              		.loc 1 101 14 is_stmt 0 view .LVU120
+ 540 000a 0023     		movs	r3, #0
+ 541 000c 0193     		str	r3, [sp, #4]
+ 542              		.loc 1 102 3 is_stmt 1 view .LVU121
+ 543 000e 01A9     		add	r1, sp, #4
+ 544 0010 084B     		ldr	r3, .L46
+ 545 0012 1868     		ldr	r0, [r3]
+ 546              	.LVL37:
+ 547              		.loc 1 102 3 is_stmt 0 view .LVU122
+ 548 0014 084B     		ldr	r3, .L46+4
+ 549 0016 9847     		blx	r3
+ 550              	.LVL38:
+ 551              		.loc 1 103 3 is_stmt 1 view .LVU123
+ 552 0018 019B     		ldr	r3, [sp, #4]
+ 553 001a 3BB1     		cbz	r3, .L38
+ 554              		.loc 1 103 3 discriminator 1 view .LVU124
+ 555 001c 074B     		ldr	r3, .L46+8
+ 556 001e 4FF08052 		mov	r2, #268435456
+ 557 0022 1A60     		str	r2, [r3]
+ 558              		.loc 1 103 3 discriminator 1 view .LVU125
+ 559              		.syntax unified
+ 560              	@ 103 "Core/Src/keypad.c" 1
+ 561 0024 BFF34F8F 		dsb
+ 562              	@ 0 "" 2
+ 563              		.loc 1 103 3 discriminator 1 view .LVU126
+ 564              	@ 103 "Core/Src/keypad.c" 1
+ 565 0028 BFF36F8F 		isb
+ 566              	@ 0 "" 2
+ 567              		.loc 1 103 28 discriminator 1 view .LVU127
+ 568              		.thumb
+ 569              		.syntax unified
+ 570              	.L38:
+ 571              	.LBE15:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 11
+
+
+ 572              		.loc 1 105 1 is_stmt 0 view .LVU128
+ 573 002c 03B0     		add	sp, sp, #12
+ 574              	.LCFI11:
+ 575              		.cfi_def_cfa_offset 4
+ 576              		@ sp needed
+ 577 002e 5DF804FB 		ldr	pc, [sp], #4
+ 578              	.L47:
+ 579 0032 00BF     		.align	2
+ 580              	.L46:
+ 581 0034 00000000 		.word	task_handle_keypad
+ 582 0038 00000000 		.word	vTaskNotifyGiveFromISR
+ 583 003c 04ED00E0 		.word	-536810236
+ 584              		.cfi_endproc
+ 585              	.LFE72:
+ 587              		.global	motor_and_velocity
+ 588              		.global	indexx
+ 589              		.global	Key_Map
+ 590              		.global	key_which_was_pressed_is_now_released
+ 591              		.comm	task_handle_keypad,4,4
+ 592              		.comm	timer_handle_keypad,4,4
+ 593              		.section	.bss.indexx,"aw",%nobits
+ 594              		.set	.LANCHOR2,. + 0
+ 597              	indexx:
+ 598 0000 00       		.space	1
+ 599              		.section	.data.Key_Map,"aw"
+ 600              		.align	2
+ 601              		.set	.LANCHOR1,. + 0
+ 604              	Key_Map:
+ 605 0000 313233   		.ascii	"123"
+ 606 0003 343536   		.ascii	"456"
+ 607 0006 373839   		.ascii	"789"
+ 608 0009 2A3023   		.ascii	"*0#"
+ 609              		.section	.data.key_which_was_pressed_is_now_released,"aw"
+ 610              		.set	.LANCHOR0,. + 0
+ 613              	key_which_was_pressed_is_now_released:
+ 614 0000 01       		.byte	1
+ 615              		.section	.data.motor_and_velocity,"aw"
+ 616              		.align	2
+ 617              		.set	.LANCHOR3,. + 0
+ 620              	motor_and_velocity:
+ 621 0000 303030   		.ascii	"000"
+ 622              		.text
+ 623              	.Letext0:
+ 624              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 625              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 626              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 627              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 628              		.file 6 "../Core/Inc/FreeRTOSConfig.h"
+ 629              		.file 7 "../Drivers/CMSIS/Include/core_cm3.h"
+ 630              		.file 8 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 631              		.file 9 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 632              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 633              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 634              		.file 12 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 635              		.file 13 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 636              		.file 14 "../Core/Inc/usart.h"
+ 637              		.file 15 "../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 12
+
+
+ 638              		.file 16 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\lib\\gcc\\
+ 639              		.file 17 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 640              		.file 18 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 641              		.file 19 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 642              		.file 20 "../Core/Inc/mcu_two.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 keypad.c
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:16     .text.timer_function_keypad:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:24     .text.timer_function_keypad:0000000000000000 timer_function_keypad
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:94     .text.timer_function_keypad:000000000000003c $d
+                            *COM*:0000000000000004 timer_handle_keypad
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:103    .text.task_function_keypad:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:110    .text.task_function_keypad:0000000000000000 task_function_keypad
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:412    .text.task_function_keypad:0000000000000118 $d
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:428    .rodata.init_KeyPad.str1.4:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:435    .text.init_KeyPad:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:442    .text.init_KeyPad:0000000000000000 init_KeyPad
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:496    .text.init_KeyPad:0000000000000038 $d
+                            *COM*:0000000000000004 task_handle_keypad
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:509    .text.HAL_GPIO_EXTI_Callback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:516    .text.HAL_GPIO_EXTI_Callback:0000000000000000 HAL_GPIO_EXTI_Callback
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:581    .text.HAL_GPIO_EXTI_Callback:0000000000000034 $d
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:620    .data.motor_and_velocity:0000000000000000 motor_and_velocity
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:597    .bss.indexx:0000000000000000 indexx
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:604    .data.Key_Map:0000000000000000 Key_Map
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:613    .data.key_which_was_pressed_is_now_released:0000000000000000 key_which_was_pressed_is_now_released
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:598    .bss.indexx:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:600    .data.Key_Map:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\ccVBNxWb.s:616    .data.motor_and_velocity:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+xTaskGetTickCount
+xTimerGenericCommand
+ulTaskNotifyTake
+add_to_queue_which_changes_the_speed_of_motors
+add_to_queue_to_send_to_MCU_one
+xTaskCreate
+xTimerCreate
+vTaskNotifyGiveFromISR

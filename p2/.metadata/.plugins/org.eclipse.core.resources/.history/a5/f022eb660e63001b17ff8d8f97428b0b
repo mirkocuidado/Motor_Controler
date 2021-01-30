@@ -1,0 +1,81 @@
+/*
+ * mcu_two.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "mcu_two.h"
+
+TaskHandle_t task_handle_receive_from_MCU_one;
+QueueHandle_t queue_handle_receive_from_MCU_one;
+SemaphoreHandle_t mutex_handle_receive_from_MCU_one;
+
+TaskHandle_t task_handle_send_to_MCU_one;
+QueueHandle_t queue_handle_send_to_MCU_one;
+SemaphoreHandle_t mutex_handle_send_to_MCU_one;
+
+void init_MCU_two() {
+	xTaskCreate(task_receive_from_MCU_one, "receive_from_MCU1", 64, NULL, 20, &task_handle_receive_from_MCU_one);
+	queue_handle_receive_from_MCU_one = xQueueCreate(128, sizeof(uint8_t));
+	mutex_handle_receive_from_MCU_one = xSemaphoreCreateMutex();
+
+	xTaskCreate(task_send_to_MCU_one, "send_to_MCU1", 64, NULL, 4, &task_handle_send_to_MCU_one);
+	queue_handle_send_to_MCU_one = xQueueCreate(128, sizeof(uint8_t));
+	mutex_handle_send_to_MCU_one = xSemaphoreCreateMutex();
+}
+
+void add_to_queue_which_changes_the_speed_of_motors(uint8_t param) {
+	xQueueSendToBack(queue_handle_receive_from_MCU_one, &param, portMAX_DELAY);
+}
+
+void task_receive_from_MCU_one(void* params) {
+	uint8_t item_to_receive_from_MCU_one;
+	while(1) {
+		HAL_UART_Receive_IT(&huart1, &item_to_receive_from_MCU_one, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+		add_to_queue_which_changes_the_speed_of_motors(item_to_receive_from_MCU_one);
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t woken = pdFALSE;
+
+	if(huart->Instance == huart1.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_receive_from_MCU_one, &woken);
+	}
+
+	portYIELD_FROM_ISR(woken);
+}
+
+MotorCommand receive_motor_command_from_MCU_one() {
+	xSemaphoreTake(mutex_handle_receive_from_MCU_one, portMAX_DELAY);
+	MotorCommand m;
+
+	xQueueReceive(queue_handle_receive_from_MCU_one, &m.motor, portMAX_DELAY);
+	xQueueReceive(queue_handle_receive_from_MCU_one, &m.velocity, portMAX_DELAY);
+
+	xSemaphoreGive(mutex_handle_receive_from_MCU_one);
+	return m;
+}
+
+
+
+void task_send_to_MCU_one(void* params) {
+	uint8_t item_to_send_to_MCU_one;
+	while(1) {
+		xQueueReceive(queue_handle_send_to_MCU_one, &item_to_send_to_MCU_one, portMAX_DELAY);
+		HAL_UART_Transmit_IT(&huart1, &item_to_send_to_MCU_one, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	}
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t woken = pdFALSE;
+
+	if(huart->Instance == huart1.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_send_to_MCU_one, &woken);
+	}
+
+	portYIELD_FROM_ISR(woken);
+}

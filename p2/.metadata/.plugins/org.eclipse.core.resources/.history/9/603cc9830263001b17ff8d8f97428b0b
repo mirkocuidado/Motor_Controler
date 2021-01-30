@@ -1,0 +1,75 @@
+/*
+ * keypad.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "keypad.h"
+
+TimerHandle_t timer_handle_keypad;
+TaskHandle_t task_handle_keypad;
+
+void init_KeyPad() {
+	xTaskCreate(task_function_keypad, "keypad_task", 64, NULL, 5, &task_handle_keypad);
+	timer_handle_keypad = xTimerCreate("keypad_timer", pdMS_TO_TICKS(50), pdFALSE, NULL, timer_function_keypad);
+
+	GPIOB->ODR = 0x0F;
+}
+
+uint8_t key_which_was_pressed_is_now_released = 1;
+
+char Key_Map [4][3] = {
+		{ '1' , '2' , '3' },
+		{ '4' , '5' , '6' },
+		{ '7' , '8' , '9' },
+		{ '*' , '0' , '#' }
+};
+
+char motor_and_velocity [3] = {'0', '0', '0'};
+uint8_t index = 0;
+
+void task_function_keypad(void* params) {
+	while(1) {
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+		if(key_which_was_pressed_is_now_released == 1) {
+
+			for(int row = 0; row < 4; ++row) {
+				GPIOB->ODR = 0x01 << row;
+
+				uint32_t state = ((GPIOB->IDR >> 4) & 0x07);
+
+				for(int col = 0; col < 3; ++col) {
+					if((state & (0x01 << col))) {
+						key_which_was_pressed_is_now_released = 0;
+						xTimerStart(timer_handle_keypad, portMAX_DELAY);
+
+						char key_pressed = Key_Map[row][col];
+
+						if(index == 3 && key_pressed != '*' && key_pressed != '#') {
+							index = 0;
+							for(int i = 0; i < 3; i++) motor_and_velocity[i] = '0';
+						}
+						else if(index == 3) {
+
+
+							index = 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+void timer_function_keypad(TimerHandle_t handle) {
+
+}
+
+void void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	if(GPIO_Pin == GPIO_PIN_7) {
+		BaseType_t woken = pdFALSE;
+		vTaskNotifyGiveFromISR(task_handle_keypad, &woken);
+		portYIELD_FROM_ISR(woken);
+	}
+}

@@ -1,0 +1,9 @@
+16:29:49 **** Build of configuration Default for project code2 ****
+make all 
+arm-none-eabi-gcc -c -mcpu=cortex-m3 -mthumb   -DUSE_HAL_DRIVER -DSTM32F103x6 -ICore/Inc -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy -IDrivers/STM32F1xx_HAL_Driver/Inc -IMiddlewares/Third_Party/FreeRTOS/Source/include -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -IDrivers/CMSIS/Device/ST/STM32F1xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -mlong-calls -g -gdwarf-2 -fdebug-prefix-map==../ -MMD -MP -MF"build/keypad.d" -Wa,-a,-ad,-alms=build/keypad.lst Core/Src/keypad.c -o build/keypad.o
+arm-none-eabi-gcc build/main.o build/work.o build/mcu_two.o build/lcd.o build/keypad.o build/gpio.o build/freertos.o build/tim.o build/usart.o build/stm32f1xx_it.o build/stm32f1xx_hal_msp.o build/stm32f1xx_hal_timebase_tim.o build/stm32f1xx_hal_gpio_ex.o build/stm32f1xx_hal.o build/stm32f1xx_hal_rcc.o build/stm32f1xx_hal_rcc_ex.o build/stm32f1xx_hal_gpio.o build/stm32f1xx_hal_dma.o build/stm32f1xx_hal_cortex.o build/stm32f1xx_hal_pwr.o build/stm32f1xx_hal_flash.o build/stm32f1xx_hal_flash_ex.o build/stm32f1xx_hal_exti.o build/stm32f1xx_hal_tim.o build/stm32f1xx_hal_tim_ex.o build/stm32f1xx_hal_uart.o build/system_stm32f1xx.o build/croutine.o build/event_groups.o build/list.o build/queue.o build/stream_buffer.o build/tasks.o build/timers.o build/cmsis_os2.o build/heap_4.o build/port.o build/startup_stm32f103x6.o -mcpu=cortex-m3 -mthumb   -specs=nano.specs -TSTM32F103R6Tx_FLASH.ld  -lc -lm -lnosys  -Wl,-Map=build/code2.map,--cref -Wl,--gc-sections -o build/code2.elf
+arm-none-eabi-size build/code2.elf
+   text	   data	    bss	    dec	    hex	filename
+  18920	     40	   9312	  28272	   6e70	build/code2.elf
+arm-none-eabi-objcopy -O ihex build/code2.elf build/code2.hex
+arm-none-eabi-objcopy -O binary -S build/code2.elf build/code2.bin	

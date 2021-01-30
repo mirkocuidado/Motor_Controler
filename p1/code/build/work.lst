@@ -1,0 +1,341 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"work.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata.task_work_function.str1.4,"aMS",%progbits,1
+  16              		.align	2
+  17              	.LC0:
+  18 0000 496E7365 		.ascii	"Insert command: \000"
+  18      72742063 
+  18      6F6D6D61 
+  18      6E643A20 
+  18      00
+  19 0011 000000   		.align	2
+  20              	.LC1:
+  21 0014 0D00     		.ascii	"\015\000"
+  22 0016 0000     		.align	2
+  23              	.LC2:
+  24 0018 496E7661 		.ascii	"Invalid command! \015\000"
+  24      6C696420 
+  24      636F6D6D 
+  24      616E6421 
+  24      200D00
+  25 002b 00       		.align	2
+  26              	.LC3:
+  27 002c 53686F75 		.ascii	"Should not be here! \015\000"
+  27      6C64206E 
+  27      6F742062 
+  27      65206865 
+  27      72652120 
+  28              		.section	.text.task_work_function,"ax",%progbits
+  29              		.align	1
+  30              		.global	task_work_function
+  31              		.arch armv7-m
+  32              		.syntax unified
+  33              		.thumb
+  34              		.thumb_func
+  35              		.fpu softvfp
+  37              	task_work_function:
+  38              	.LFB70:
+  39              		.file 1 "../Core/Src/work.c"
+   1:../Core/Src/work.c **** 
+  40              		.loc 1 15 39 view -0
+  41              		.cfi_startproc
+  42              		@ args = 0, pretend = 0, frame = 8
+  43              		@ frame_needed = 0, uses_anonymous_args = 0
+  44              	.LVL0:
+  45              		.loc 1 15 39 is_stmt 0 view .LVU1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s 			page 2
+
+
+  46 0000 30B5     		push	{r4, r5, lr}
+  47              	.LCFI0:
+  48              		.cfi_def_cfa_offset 12
+  49              		.cfi_offset 4, -12
+  50              		.cfi_offset 5, -8
+  51              		.cfi_offset 14, -4
+  52 0002 83B0     		sub	sp, sp, #12
+  53              	.LCFI1:
+  54              		.cfi_def_cfa_offset 24
+  55 0004 05E0     		b	.L8
+  56              	.LVL1:
+  57              	.L2:
+  58              	.LBB2:
+  59              		.loc 1 22 4 is_stmt 1 view .LVU2
+  60 0006 2048     		ldr	r0, .L11
+  61 0008 204B     		ldr	r3, .L11+4
+  62 000a 9847     		blx	r3
+  63              	.LVL2:
+  64              	.L4:
+  65              		.loc 1 57 3 view .LVU3
+  66 000c 2046     		mov	r0, r4
+  67 000e 204B     		ldr	r3, .L11+8
+  68 0010 9847     		blx	r3
+  69              	.LVL3:
+  70              	.LBE2:
+  71              		.loc 1 16 7 view .LVU4
+  72              	.L8:
+  73              		.loc 1 16 2 view .LVU5
+  74              	.LBB4:
+  75              		.loc 1 17 3 view .LVU6
+  76 0012 2048     		ldr	r0, .L11+12
+  77 0014 1D4D     		ldr	r5, .L11+4
+  78 0016 A847     		blx	r5
+  79              	.LVL4:
+  80              		.loc 1 18 3 view .LVU7
+  81              		.loc 1 18 19 is_stmt 0 view .LVU8
+  82 0018 1F4B     		ldr	r3, .L11+16
+  83 001a 9847     		blx	r3
+  84              	.LVL5:
+  85 001c 0446     		mov	r4, r0
+  86              	.LVL6:
+  87              		.loc 1 19 3 is_stmt 1 view .LVU9
+  88 001e 1F48     		ldr	r0, .L11+20
+  89              	.LVL7:
+  90              		.loc 1 19 3 is_stmt 0 view .LVU10
+  91 0020 A847     		blx	r5
+  92              	.LVL8:
+  93              		.loc 1 21 3 is_stmt 1 view .LVU11
+  94              		.loc 1 21 6 is_stmt 0 view .LVU12
+  95 0022 2046     		mov	r0, r4
+  96 0024 1E4B     		ldr	r3, .L11+24
+  97 0026 9847     		blx	r3
+  98              	.LVL9:
+  99              		.loc 1 21 5 view .LVU13
+ 100 0028 0228     		cmp	r0, #2
+ 101 002a ECD1     		bne	.L2
+ 102              		.loc 1 21 36 discriminator 1 view .LVU14
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s 			page 3
+
+
+ 103 002c 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 104              		.loc 1 21 45 discriminator 1 view .LVU15
+ 105 002e A2F13103 		sub	r3, r2, #49
+ 106 0032 DBB2     		uxtb	r3, r3
+ 107              		.loc 1 21 25 discriminator 1 view .LVU16
+ 108 0034 012B     		cmp	r3, #1
+ 109 0036 E6D8     		bhi	.L2
+ 110              		.loc 1 21 76 discriminator 2 view .LVU17
+ 111 0038 6178     		ldrb	r1, [r4, #1]	@ zero_extendqisi2
+ 112              		.loc 1 21 65 discriminator 2 view .LVU18
+ 113 003a 6929     		cmp	r1, #105
+ 114 003c 01D0     		beq	.L3
+ 115              		.loc 1 21 85 discriminator 3 view .LVU19
+ 116 003e 6429     		cmp	r1, #100
+ 117 0040 E1D1     		bne	.L2
+ 118              	.L3:
+ 119              	.LBB3:
+ 120              		.loc 1 25 4 is_stmt 1 view .LVU20
+ 121              		.loc 1 25 12 is_stmt 0 view .LVU21
+ 122 0042 303A     		subs	r2, r2, #48
+ 123 0044 D5B2     		uxtb	r5, r2
+ 124              	.LVL10:
+ 125              		.loc 1 26 4 is_stmt 1 view .LVU22
+ 126              		.loc 1 28 4 view .LVU23
+ 127              		.loc 1 30 4 view .LVU24
+ 128              		.loc 1 30 6 is_stmt 0 view .LVU25
+ 129 0046 6929     		cmp	r1, #105
+ 130 0048 09D0     		beq	.L10
+ 131              		.loc 1 38 9 is_stmt 1 view .LVU26
+ 132              		.loc 1 38 11 is_stmt 0 view .LVU27
+ 133 004a 6429     		cmp	r1, #100
+ 134 004c 10D1     		bne	.L7
+ 135              		.loc 1 39 5 is_stmt 1 view .LVU28
+ 136              		.loc 1 39 18 is_stmt 0 view .LVU29
+ 137 004e 154A     		ldr	r2, .L11+28
+ 138 0050 D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 139              		.loc 1 39 7 view .LVU30
+ 140 0052 8AB1     		cbz	r2, .L6
+ 141              		.loc 1 43 6 is_stmt 1 view .LVU31
+ 142              		.loc 1 43 25 is_stmt 0 view .LVU32
+ 143 0054 013A     		subs	r2, r2, #1
+ 144 0056 D2B2     		uxtb	r2, r2
+ 145              		.loc 1 43 23 view .LVU33
+ 146 0058 1249     		ldr	r1, .L11+28
+ 147 005a CA54     		strb	r2, [r1, r3]
+ 148              	.LVL11:
+ 149              		.loc 1 43 23 view .LVU34
+ 150 005c 0CE0     		b	.L6
+ 151              	.LVL12:
+ 152              	.L10:
+ 153              		.loc 1 31 5 is_stmt 1 view .LVU35
+ 154              		.loc 1 31 18 is_stmt 0 view .LVU36
+ 155 005e 114A     		ldr	r2, .L11+28
+ 156 0060 D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
+ 157              		.loc 1 31 7 view .LVU37
+ 158 0062 102A     		cmp	r2, #16
+ 159 0064 08D0     		beq	.L6
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s 			page 4
+
+
+ 160              		.loc 1 35 6 is_stmt 1 view .LVU38
+ 161              		.loc 1 35 25 is_stmt 0 view .LVU39
+ 162 0066 0132     		adds	r2, r2, #1
+ 163 0068 D2B2     		uxtb	r2, r2
+ 164              		.loc 1 35 23 view .LVU40
+ 165 006a 0E49     		ldr	r1, .L11+28
+ 166 006c CA54     		strb	r2, [r1, r3]
+ 167              	.LVL13:
+ 168              		.loc 1 35 23 view .LVU41
+ 169 006e 03E0     		b	.L6
+ 170              	.LVL14:
+ 171              	.L7:
+ 172              		.loc 1 46 9 is_stmt 1 view .LVU42
+ 173 0070 0D48     		ldr	r0, .L11+32
+ 174 0072 064B     		ldr	r3, .L11+4
+ 175              	.LVL15:
+ 176              		.loc 1 46 9 is_stmt 0 view .LVU43
+ 177 0074 9847     		blx	r3
+ 178              	.LVL16:
+ 179              		.loc 1 28 12 view .LVU44
+ 180 0076 0022     		movs	r2, #0
+ 181              	.LVL17:
+ 182              	.L6:
+ 183              		.loc 1 53 4 is_stmt 1 discriminator 1 view .LVU45
+ 184              		.loc 1 53 17 is_stmt 0 discriminator 1 view .LVU46
+ 185 0078 8DF80450 		strb	r5, [sp, #4]
+ 186 007c 8DF80520 		strb	r2, [sp, #5]
+ 187              		.loc 1 54 4 is_stmt 1 discriminator 1 view .LVU47
+ 188 0080 0198     		ldr	r0, [sp, #4]
+ 189 0082 0A4B     		ldr	r3, .L11+36
+ 190 0084 9847     		blx	r3
+ 191              	.LVL18:
+ 192              		.loc 1 54 4 is_stmt 0 discriminator 1 view .LVU48
+ 193 0086 C1E7     		b	.L4
+ 194              	.L12:
+ 195              		.align	2
+ 196              	.L11:
+ 197 0088 18000000 		.word	.LC2
+ 198 008c 00000000 		.word	send_string_to_terminal
+ 199 0090 00000000 		.word	vPortFree
+ 200 0094 00000000 		.word	.LC0
+ 201 0098 00000000 		.word	receive_string_from_terminal
+ 202 009c 14000000 		.word	.LC1
+ 203 00a0 00000000 		.word	strlen
+ 204 00a4 00000000 		.word	velocities
+ 205 00a8 2C000000 		.word	.LC3
+ 206 00ac 00000000 		.word	send_motor_command_to_MCU_two
+ 207              	.LBE3:
+ 208              	.LBE4:
+ 209              		.cfi_endproc
+ 210              	.LFE70:
+ 212              		.section	.rodata.init_Work.str1.4,"aMS",%progbits,1
+ 213              		.align	2
+ 214              	.LC4:
+ 215 0000 776F726B 		.ascii	"work_task\000"
+ 215      5F746173 
+ 215      6B00
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s 			page 5
+
+
+ 216              		.section	.text.init_Work,"ax",%progbits
+ 217              		.align	1
+ 218              		.global	init_Work
+ 219              		.syntax unified
+ 220              		.thumb
+ 221              		.thumb_func
+ 222              		.fpu softvfp
+ 224              	init_Work:
+ 225              	.LFB69:
+ 226              		.loc 1 10 18 is_stmt 1 view -0
+ 227              		.cfi_startproc
+ 228              		@ args = 0, pretend = 0, frame = 0
+ 229              		@ frame_needed = 0, uses_anonymous_args = 0
+ 230 0000 10B5     		push	{r4, lr}
+ 231              	.LCFI2:
+ 232              		.cfi_def_cfa_offset 8
+ 233              		.cfi_offset 4, -8
+ 234              		.cfi_offset 14, -4
+ 235 0002 82B0     		sub	sp, sp, #8
+ 236              	.LCFI3:
+ 237              		.cfi_def_cfa_offset 16
+ 238              		.loc 1 11 2 view .LVU50
+ 239 0004 064B     		ldr	r3, .L15
+ 240 0006 9847     		blx	r3
+ 241              	.LVL19:
+ 242              		.loc 1 12 2 view .LVU51
+ 243 0008 0023     		movs	r3, #0
+ 244 000a 0193     		str	r3, [sp, #4]
+ 245 000c 0522     		movs	r2, #5
+ 246 000e 0092     		str	r2, [sp]
+ 247 0010 8022     		movs	r2, #128
+ 248 0012 0449     		ldr	r1, .L15+4
+ 249 0014 0448     		ldr	r0, .L15+8
+ 250 0016 054C     		ldr	r4, .L15+12
+ 251 0018 A047     		blx	r4
+ 252              	.LVL20:
+ 253              		.loc 1 13 1 is_stmt 0 view .LVU52
+ 254 001a 02B0     		add	sp, sp, #8
+ 255              	.LCFI4:
+ 256              		.cfi_def_cfa_offset 8
+ 257              		@ sp needed
+ 258 001c 10BD     		pop	{r4, pc}
+ 259              	.L16:
+ 260 001e 00BF     		.align	2
+ 261              	.L15:
+ 262 0020 00000000 		.word	init_MCU_one
+ 263 0024 00000000 		.word	.LC4
+ 264 0028 00000000 		.word	task_work_function
+ 265 002c 00000000 		.word	xTaskCreate
+ 266              		.cfi_endproc
+ 267              	.LFE69:
+ 269              		.text
+ 270              	.Letext0:
+ 271              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 272              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 273              		.file 4 "../Core/Inc/FreeRTOSConfig.h"
+ 274              		.file 5 "../Drivers/CMSIS/Include/core_cm3.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s 			page 6
+
+
+ 275              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 276              		.file 7 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 277              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 278              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 279              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 280              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 281              		.file 12 "../Core/Inc/usart.h"
+ 282              		.file 13 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\lib\\gcc\\
+ 283              		.file 14 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 284              		.file 15 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 285              		.file 16 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 286              		.file 17 "../Core/Inc/mcu_one.h"
+ 287              		.file 18 "../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"
+ 288              		.file 19 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 289              		.file 20 "../<built-in>"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 work.c
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:16     .rodata.task_work_function.str1.4:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:29     .text.task_work_function:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:37     .text.task_work_function:0000000000000000 task_work_function
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:197    .text.task_work_function:0000000000000088 $d
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:213    .rodata.init_Work.str1.4:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:217    .text.init_Work:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:224    .text.init_Work:0000000000000000 init_Work
+C:\Users\38164\AppData\Local\Temp\ccXr2SAb.s:262    .text.init_Work:0000000000000020 $d
+
+UNDEFINED SYMBOLS
+send_string_to_terminal
+vPortFree
+receive_string_from_terminal
+strlen
+velocities
+send_motor_command_to_MCU_two
+init_MCU_one
+xTaskCreate

@@ -1,0 +1,86 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccSjsPTn.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"gpio.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  16              		.align	1
+  17              		.global	MX_GPIO_Init
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	MX_GPIO_Init:
+  25              	.LFB65:
+  26              		.file 1 "../Core/Src/gpio.c"
+   1:../Core/Src/gpio.c **** 
+  27              		.loc 1 37 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 82B0     		sub	sp, sp, #8
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.loc 1 40 3 view .LVU1
+  36              	.LBB2:
+  37              		.loc 1 40 3 view .LVU2
+  38              		.loc 1 40 3 view .LVU3
+  39 0002 064B     		ldr	r3, .L3
+  40 0004 9A69     		ldr	r2, [r3, #24]
+  41 0006 42F00402 		orr	r2, r2, #4
+  42 000a 9A61     		str	r2, [r3, #24]
+  43              		.loc 1 40 3 view .LVU4
+  44 000c 9B69     		ldr	r3, [r3, #24]
+  45 000e 03F00403 		and	r3, r3, #4
+  46 0012 0193     		str	r3, [sp, #4]
+  47              		.loc 1 40 3 view .LVU5
+  48 0014 019B     		ldr	r3, [sp, #4]
+  49              	.LBE2:
+  50              		.loc 1 40 3 view .LVU6
+  51              		.loc 1 42 1 is_stmt 0 view .LVU7
+  52 0016 02B0     		add	sp, sp, #8
+  53              	.LCFI1:
+  54              		.cfi_def_cfa_offset 0
+  55              		@ sp needed
+  56 0018 7047     		bx	lr
+  57              	.L4:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccSjsPTn.s 			page 2
+
+
+  58 001a 00BF     		.align	2
+  59              	.L3:
+  60 001c 00100240 		.word	1073876992
+  61              		.cfi_endproc
+  62              	.LFE65:
+  64              		.text
+  65              	.Letext0:
+  66              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+  67              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+  68              		.file 4 "../Drivers/CMSIS/Include/core_cm3.h"
+  69              		.file 5 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+  70              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+  71              		.file 7 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccSjsPTn.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 gpio.c
+C:\Users\38164\AppData\Local\Temp\ccSjsPTn.s:16     .text.MX_GPIO_Init:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccSjsPTn.s:24     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+C:\Users\38164\AppData\Local\Temp\ccSjsPTn.s:60     .text.MX_GPIO_Init:000000000000001c $d
+
+NO UNDEFINED SYMBOLS

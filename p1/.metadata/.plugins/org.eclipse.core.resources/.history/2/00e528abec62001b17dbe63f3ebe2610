@@ -1,0 +1,21 @@
+/*
+ * mcu_one.h
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#ifndef CORE_INC_MCU_ONE_H_
+#define CORE_INC_MCU_ONE_H_
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "semphr.h"
+
+#include <stdint.h>
+#include <string.h>
+
+
+
+#endif /* CORE_INC_MCU_ONE_H_ */

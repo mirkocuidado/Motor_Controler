@@ -1,0 +1,33 @@
+/*
+ * lcd.h
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#ifndef CORE_INC_LCD_H_
+#define CORE_INC_LCD_H_
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "semphr.h"
+#include "usart.h"
+#include "gpio.h"
+
+#include <stdint.h>
+#include <string.h>
+
+typedef enum {
+	LCD_INSTRUCTION = 0,
+	LCD_DATA = 1
+} LCD_CommandReg;
+
+typedef uint8_t LCD_CommandVal;
+
+typedef struct {
+	LCD_CommandReg reg;
+	LCD_CommandVal val;
+} LCD_Command;
+
+#endif /* CORE_INC_LCD_H_ */

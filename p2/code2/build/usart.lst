@@ -1,0 +1,357 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"usart.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.MX_USART1_UART_Init,"ax",%progbits
+  16              		.align	1
+  17              		.global	MX_USART1_UART_Init
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	MX_USART1_UART_Init:
+  25              	.LFB65:
+  26              		.file 1 "../Core/Src/usart.c"
+   1:../Core/Src/usart.c **** 
+  27              		.loc 1 32 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 08B5     		push	{r3, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  36              		.loc 1 34 3 view .LVU1
+  37              		.loc 1 34 19 is_stmt 0 view .LVU2
+  38 0002 0C48     		ldr	r0, .L5
+  39 0004 0C4B     		ldr	r3, .L5+4
+  40 0006 0360     		str	r3, [r0]
+  41              		.loc 1 35 3 is_stmt 1 view .LVU3
+  42              		.loc 1 35 24 is_stmt 0 view .LVU4
+  43 0008 4FF41643 		mov	r3, #38400
+  44 000c 4360     		str	r3, [r0, #4]
+  45              		.loc 1 36 3 is_stmt 1 view .LVU5
+  46              		.loc 1 36 26 is_stmt 0 view .LVU6
+  47 000e 4FF48053 		mov	r3, #4096
+  48 0012 8360     		str	r3, [r0, #8]
+  49              		.loc 1 37 3 is_stmt 1 view .LVU7
+  50              		.loc 1 37 24 is_stmt 0 view .LVU8
+  51 0014 0023     		movs	r3, #0
+  52 0016 C360     		str	r3, [r0, #12]
+  53              		.loc 1 38 3 is_stmt 1 view .LVU9
+  54              		.loc 1 38 22 is_stmt 0 view .LVU10
+  55 0018 4FF48062 		mov	r2, #1024
+  56 001c 0261     		str	r2, [r0, #16]
+  57              		.loc 1 39 3 is_stmt 1 view .LVU11
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s 			page 2
+
+
+  58              		.loc 1 39 20 is_stmt 0 view .LVU12
+  59 001e 0C22     		movs	r2, #12
+  60 0020 4261     		str	r2, [r0, #20]
+  61              		.loc 1 40 3 is_stmt 1 view .LVU13
+  62              		.loc 1 40 25 is_stmt 0 view .LVU14
+  63 0022 8361     		str	r3, [r0, #24]
+  64              		.loc 1 41 3 is_stmt 1 view .LVU15
+  65              		.loc 1 41 28 is_stmt 0 view .LVU16
+  66 0024 C361     		str	r3, [r0, #28]
+  67              		.loc 1 42 3 is_stmt 1 view .LVU17
+  68              		.loc 1 42 7 is_stmt 0 view .LVU18
+  69 0026 054B     		ldr	r3, .L5+8
+  70 0028 9847     		blx	r3
+  71              	.LVL0:
+  72              		.loc 1 42 6 view .LVU19
+  73 002a 00B9     		cbnz	r0, .L4
+  74              	.L1:
+  75              		.loc 1 47 1 view .LVU20
+  76 002c 08BD     		pop	{r3, pc}
+  77              	.L4:
+  78              		.loc 1 44 5 is_stmt 1 view .LVU21
+  79 002e 044B     		ldr	r3, .L5+12
+  80 0030 9847     		blx	r3
+  81              	.LVL1:
+  82              		.loc 1 47 1 is_stmt 0 view .LVU22
+  83 0032 FBE7     		b	.L1
+  84              	.L6:
+  85              		.align	2
+  86              	.L5:
+  87 0034 00000000 		.word	huart1
+  88 0038 00380140 		.word	1073821696
+  89 003c 00000000 		.word	HAL_UART_Init
+  90 0040 00000000 		.word	Error_Handler
+  91              		.cfi_endproc
+  92              	.LFE65:
+  94              		.section	.text.HAL_UART_MspInit,"ax",%progbits
+  95              		.align	1
+  96              		.global	HAL_UART_MspInit
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.fpu softvfp
+ 102              	HAL_UART_MspInit:
+ 103              	.LVL2:
+ 104              	.LFB66:
+ 105              		.loc 1 50 1 is_stmt 1 view -0
+ 106              		.cfi_startproc
+ 107              		@ args = 0, pretend = 0, frame = 24
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109              		.loc 1 50 1 is_stmt 0 view .LVU24
+ 110 0000 70B5     		push	{r4, r5, r6, lr}
+ 111              	.LCFI1:
+ 112              		.cfi_def_cfa_offset 16
+ 113              		.cfi_offset 4, -16
+ 114              		.cfi_offset 5, -12
+ 115              		.cfi_offset 6, -8
+ 116              		.cfi_offset 14, -4
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s 			page 3
+
+
+ 117 0002 86B0     		sub	sp, sp, #24
+ 118              	.LCFI2:
+ 119              		.cfi_def_cfa_offset 40
+ 120              		.loc 1 52 3 is_stmt 1 view .LVU25
+ 121              		.loc 1 52 20 is_stmt 0 view .LVU26
+ 122 0004 0023     		movs	r3, #0
+ 123 0006 0293     		str	r3, [sp, #8]
+ 124 0008 0393     		str	r3, [sp, #12]
+ 125 000a 0493     		str	r3, [sp, #16]
+ 126 000c 0593     		str	r3, [sp, #20]
+ 127              		.loc 1 53 3 is_stmt 1 view .LVU27
+ 128              		.loc 1 53 16 is_stmt 0 view .LVU28
+ 129 000e 0268     		ldr	r2, [r0]
+ 130              		.loc 1 53 5 view .LVU29
+ 131 0010 1B4B     		ldr	r3, .L11
+ 132 0012 9A42     		cmp	r2, r3
+ 133 0014 01D0     		beq	.L10
+ 134              	.LVL3:
+ 135              	.L7:
+ 136              		.loc 1 83 1 view .LVU30
+ 137 0016 06B0     		add	sp, sp, #24
+ 138              	.LCFI3:
+ 139              		.cfi_remember_state
+ 140              		.cfi_def_cfa_offset 16
+ 141              		@ sp needed
+ 142 0018 70BD     		pop	{r4, r5, r6, pc}
+ 143              	.LVL4:
+ 144              	.L10:
+ 145              	.LCFI4:
+ 146              		.cfi_restore_state
+ 147              		.loc 1 59 5 is_stmt 1 view .LVU31
+ 148              	.LBB2:
+ 149              		.loc 1 59 5 view .LVU32
+ 150              		.loc 1 59 5 view .LVU33
+ 151 001a 03F55843 		add	r3, r3, #55296
+ 152 001e 9A69     		ldr	r2, [r3, #24]
+ 153 0020 42F48042 		orr	r2, r2, #16384
+ 154 0024 9A61     		str	r2, [r3, #24]
+ 155              		.loc 1 59 5 view .LVU34
+ 156 0026 9A69     		ldr	r2, [r3, #24]
+ 157 0028 02F48042 		and	r2, r2, #16384
+ 158 002c 0092     		str	r2, [sp]
+ 159              		.loc 1 59 5 view .LVU35
+ 160 002e 009A     		ldr	r2, [sp]
+ 161              	.LBE2:
+ 162              		.loc 1 59 5 view .LVU36
+ 163              		.loc 1 61 5 view .LVU37
+ 164              	.LBB3:
+ 165              		.loc 1 61 5 view .LVU38
+ 166              		.loc 1 61 5 view .LVU39
+ 167 0030 9A69     		ldr	r2, [r3, #24]
+ 168 0032 42F00402 		orr	r2, r2, #4
+ 169 0036 9A61     		str	r2, [r3, #24]
+ 170              		.loc 1 61 5 view .LVU40
+ 171 0038 9B69     		ldr	r3, [r3, #24]
+ 172 003a 03F00403 		and	r3, r3, #4
+ 173 003e 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s 			page 4
+
+
+ 174              		.loc 1 61 5 view .LVU41
+ 175 0040 019B     		ldr	r3, [sp, #4]
+ 176              	.LBE3:
+ 177              		.loc 1 61 5 view .LVU42
+ 178              		.loc 1 66 5 view .LVU43
+ 179              		.loc 1 66 25 is_stmt 0 view .LVU44
+ 180 0042 4FF40073 		mov	r3, #512
+ 181 0046 0293     		str	r3, [sp, #8]
+ 182              		.loc 1 67 5 is_stmt 1 view .LVU45
+ 183              		.loc 1 67 26 is_stmt 0 view .LVU46
+ 184 0048 0223     		movs	r3, #2
+ 185 004a 0393     		str	r3, [sp, #12]
+ 186              		.loc 1 68 5 is_stmt 1 view .LVU47
+ 187              		.loc 1 68 27 is_stmt 0 view .LVU48
+ 188 004c 0323     		movs	r3, #3
+ 189 004e 0593     		str	r3, [sp, #20]
+ 190              		.loc 1 69 5 is_stmt 1 view .LVU49
+ 191 0050 0C4E     		ldr	r6, .L11+4
+ 192 0052 02A9     		add	r1, sp, #8
+ 193 0054 3046     		mov	r0, r6
+ 194              	.LVL5:
+ 195              		.loc 1 69 5 is_stmt 0 view .LVU50
+ 196 0056 0C4D     		ldr	r5, .L11+8
+ 197 0058 A847     		blx	r5
+ 198              	.LVL6:
+ 199              		.loc 1 71 5 is_stmt 1 view .LVU51
+ 200              		.loc 1 71 25 is_stmt 0 view .LVU52
+ 201 005a 4FF48063 		mov	r3, #1024
+ 202 005e 0293     		str	r3, [sp, #8]
+ 203              		.loc 1 72 5 is_stmt 1 view .LVU53
+ 204              		.loc 1 72 26 is_stmt 0 view .LVU54
+ 205 0060 0024     		movs	r4, #0
+ 206 0062 0394     		str	r4, [sp, #12]
+ 207              		.loc 1 73 5 is_stmt 1 view .LVU55
+ 208              		.loc 1 73 26 is_stmt 0 view .LVU56
+ 209 0064 0494     		str	r4, [sp, #16]
+ 210              		.loc 1 74 5 is_stmt 1 view .LVU57
+ 211 0066 02A9     		add	r1, sp, #8
+ 212 0068 3046     		mov	r0, r6
+ 213 006a A847     		blx	r5
+ 214              	.LVL7:
+ 215              		.loc 1 77 5 view .LVU58
+ 216 006c 2246     		mov	r2, r4
+ 217 006e 0521     		movs	r1, #5
+ 218 0070 2520     		movs	r0, #37
+ 219 0072 064B     		ldr	r3, .L11+12
+ 220 0074 9847     		blx	r3
+ 221              	.LVL8:
+ 222              		.loc 1 78 5 view .LVU59
+ 223 0076 2520     		movs	r0, #37
+ 224 0078 054B     		ldr	r3, .L11+16
+ 225 007a 9847     		blx	r3
+ 226              	.LVL9:
+ 227              		.loc 1 83 1 is_stmt 0 view .LVU60
+ 228 007c CBE7     		b	.L7
+ 229              	.L12:
+ 230 007e 00BF     		.align	2
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s 			page 5
+
+
+ 231              	.L11:
+ 232 0080 00380140 		.word	1073821696
+ 233 0084 00080140 		.word	1073809408
+ 234 0088 00000000 		.word	HAL_GPIO_Init
+ 235 008c 00000000 		.word	HAL_NVIC_SetPriority
+ 236 0090 00000000 		.word	HAL_NVIC_EnableIRQ
+ 237              		.cfi_endproc
+ 238              	.LFE66:
+ 240              		.section	.text.HAL_UART_MspDeInit,"ax",%progbits
+ 241              		.align	1
+ 242              		.global	HAL_UART_MspDeInit
+ 243              		.syntax unified
+ 244              		.thumb
+ 245              		.thumb_func
+ 246              		.fpu softvfp
+ 248              	HAL_UART_MspDeInit:
+ 249              	.LVL10:
+ 250              	.LFB67:
+ 251              		.loc 1 86 1 is_stmt 1 view -0
+ 252              		.cfi_startproc
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255              		.loc 1 86 1 is_stmt 0 view .LVU62
+ 256 0000 08B5     		push	{r3, lr}
+ 257              	.LCFI5:
+ 258              		.cfi_def_cfa_offset 8
+ 259              		.cfi_offset 3, -8
+ 260              		.cfi_offset 14, -4
+ 261              		.loc 1 88 3 is_stmt 1 view .LVU63
+ 262              		.loc 1 88 16 is_stmt 0 view .LVU64
+ 263 0002 0268     		ldr	r2, [r0]
+ 264              		.loc 1 88 5 view .LVU65
+ 265 0004 084B     		ldr	r3, .L17
+ 266 0006 9A42     		cmp	r2, r3
+ 267 0008 00D0     		beq	.L16
+ 268              	.LVL11:
+ 269              	.L13:
+ 270              		.loc 1 108 1 view .LVU66
+ 271 000a 08BD     		pop	{r3, pc}
+ 272              	.LVL12:
+ 273              	.L16:
+ 274              		.loc 1 94 5 is_stmt 1 view .LVU67
+ 275 000c 074A     		ldr	r2, .L17+4
+ 276 000e 9369     		ldr	r3, [r2, #24]
+ 277 0010 23F48043 		bic	r3, r3, #16384
+ 278 0014 9361     		str	r3, [r2, #24]
+ 279              		.loc 1 100 5 view .LVU68
+ 280 0016 4FF4C061 		mov	r1, #1536
+ 281 001a 0548     		ldr	r0, .L17+8
+ 282              	.LVL13:
+ 283              		.loc 1 100 5 is_stmt 0 view .LVU69
+ 284 001c 054B     		ldr	r3, .L17+12
+ 285 001e 9847     		blx	r3
+ 286              	.LVL14:
+ 287              		.loc 1 103 5 is_stmt 1 view .LVU70
+ 288 0020 2520     		movs	r0, #37
+ 289 0022 054B     		ldr	r3, .L17+16
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s 			page 6
+
+
+ 290 0024 9847     		blx	r3
+ 291              	.LVL15:
+ 292              		.loc 1 108 1 is_stmt 0 view .LVU71
+ 293 0026 F0E7     		b	.L13
+ 294              	.L18:
+ 295              		.align	2
+ 296              	.L17:
+ 297 0028 00380140 		.word	1073821696
+ 298 002c 00100240 		.word	1073876992
+ 299 0030 00080140 		.word	1073809408
+ 300 0034 00000000 		.word	HAL_GPIO_DeInit
+ 301 0038 00000000 		.word	HAL_NVIC_DisableIRQ
+ 302              		.cfi_endproc
+ 303              	.LFE67:
+ 305              		.comm	huart1,64,4
+ 306              		.text
+ 307              	.Letext0:
+ 308              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 309              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 310              		.file 4 "../Drivers/CMSIS/Include/core_cm3.h"
+ 311              		.file 5 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 312              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 313              		.file 7 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 314              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 315              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 316              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 317              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 318              		.file 12 "../Core/Inc/usart.h"
+ 319              		.file 13 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ 320              		.file 14 "../Core/Inc/main.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 usart.c
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:16     .text.MX_USART1_UART_Init:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:24     .text.MX_USART1_UART_Init:0000000000000000 MX_USART1_UART_Init
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:87     .text.MX_USART1_UART_Init:0000000000000034 $d
+                            *COM*:0000000000000040 huart1
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:95     .text.HAL_UART_MspInit:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:102    .text.HAL_UART_MspInit:0000000000000000 HAL_UART_MspInit
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:232    .text.HAL_UART_MspInit:0000000000000080 $d
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:241    .text.HAL_UART_MspDeInit:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:248    .text.HAL_UART_MspDeInit:0000000000000000 HAL_UART_MspDeInit
+C:\Users\38164\AppData\Local\Temp\ccWwvjHm.s:297    .text.HAL_UART_MspDeInit:0000000000000028 $d
+
+UNDEFINED SYMBOLS
+HAL_UART_Init
+Error_Handler
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_GPIO_DeInit
+HAL_NVIC_DisableIRQ

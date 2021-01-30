@@ -1,0 +1,44 @@
+/*
+ * keypad.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "keypad.h"
+
+TimerHandle_t timer_handle_keypad;
+TaskHandle_t task_handle_keypad;
+
+void init_KeyPad() {
+	xTaskCreate(task_function_keypad, "keypad_task", 64, NULL, 5, &task_handle_keypad);
+	timer_handle_keypad = xTimerCreate("keypad_timer", pdMS_TO_TICKS(50), pdFALSE, NULL, timer_function_keypad);
+
+	GPIOB->ODR = 0x0F;
+}
+
+uint8_t key_which_was_pressed_is_now_released = 1;
+
+void task_function_keypad(void* params) {
+	while(1) {
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+		if(key_which_was_pressed_is_now_released == 1) {
+
+			for(int row = 0; row < 4; ++row) {
+
+			}
+		}
+	}
+}
+
+void timer_function_keypad(TimerHandle_t handle) {
+
+}
+
+void void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	if(GPIO_Pin == GPIO_PIN_7) {
+		BaseType_t woken = pdFALSE;
+		vTaskNotifyGiveFromISR(task_handle_keypad, &woken);
+		portYIELD_FROM_ISR(woken);
+	}
+}

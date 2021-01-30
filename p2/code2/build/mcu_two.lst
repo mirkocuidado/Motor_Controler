@@ -1,0 +1,715 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"mcu_two.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.task_send_to_MCU_one,"ax",%progbits
+  16              		.align	1
+  17              		.global	task_send_to_MCU_one
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	task_send_to_MCU_one:
+  25              	.LFB75:
+  26              		.file 1 "../Core/Src/mcu_two.c"
+   1:../Core/Src/mcu_two.c **** 
+  27              		.loc 1 68 41 view -0
+  28              		.cfi_startproc
+  29              		@ Volatile: function does not return.
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33              		.loc 1 68 41 is_stmt 0 view .LVU1
+  34 0000 00B5     		push	{lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 4
+  37              		.cfi_offset 14, -4
+  38 0002 83B0     		sub	sp, sp, #12
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 16
+  41              	.LVL1:
+  42              	.L2:
+  43              		.loc 1 69 2 is_stmt 1 discriminator 1 view .LVU2
+  44              		.loc 1 70 2 discriminator 1 view .LVU3
+  45              		.loc 1 71 3 discriminator 1 view .LVU4
+  46 0004 4FF0FF32 		mov	r2, #-1
+  47 0008 0DF10701 		add	r1, sp, #7
+  48 000c 074B     		ldr	r3, .L4
+  49 000e 1868     		ldr	r0, [r3]
+  50 0010 074B     		ldr	r3, .L4+4
+  51 0012 9847     		blx	r3
+  52              	.LVL2:
+  53              		.loc 1 72 3 discriminator 1 view .LVU5
+  54 0014 0122     		movs	r2, #1
+  55 0016 0DF10701 		add	r1, sp, #7
+  56 001a 0648     		ldr	r0, .L4+8
+  57 001c 064B     		ldr	r3, .L4+12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 2
+
+
+  58 001e 9847     		blx	r3
+  59              	.LVL3:
+  60              		.loc 1 73 3 discriminator 1 view .LVU6
+  61 0020 4FF0FF31 		mov	r1, #-1
+  62 0024 0120     		movs	r0, #1
+  63 0026 054B     		ldr	r3, .L4+16
+  64 0028 9847     		blx	r3
+  65              	.LVL4:
+  66              		.loc 1 70 7 discriminator 1 view .LVU7
+  67 002a EBE7     		b	.L2
+  68              	.L5:
+  69              		.align	2
+  70              	.L4:
+  71 002c 00000000 		.word	queue_handle_send_to_MCU_one
+  72 0030 00000000 		.word	xQueueReceive
+  73 0034 00000000 		.word	huart1
+  74 0038 00000000 		.word	HAL_UART_Transmit_IT
+  75 003c 00000000 		.word	ulTaskNotifyTake
+  76              		.cfi_endproc
+  77              	.LFE75:
+  79              		.section	.rodata.init_MCU_two.str1.4,"aMS",%progbits,1
+  80              		.align	2
+  81              	.LC0:
+  82 0000 72656365 		.ascii	"receive_from_MCU1\000"
+  82      6976655F 
+  82      66726F6D 
+  82      5F4D4355 
+  82      3100
+  83 0012 0000     		.align	2
+  84              	.LC1:
+  85 0014 73656E64 		.ascii	"send_to_MCU1\000"
+  85      5F746F5F 
+  85      4D435531 
+  85      00
+  86              		.section	.text.init_MCU_two,"ax",%progbits
+  87              		.align	1
+  88              		.global	init_MCU_two
+  89              		.syntax unified
+  90              		.thumb
+  91              		.thumb_func
+  92              		.fpu softvfp
+  94              	init_MCU_two:
+  95              	.LFB69:
+  96              		.loc 1 18 21 view -0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 0000 70B5     		push	{r4, r5, r6, lr}
+ 101              	.LCFI2:
+ 102              		.cfi_def_cfa_offset 16
+ 103              		.cfi_offset 4, -16
+ 104              		.cfi_offset 5, -12
+ 105              		.cfi_offset 6, -8
+ 106              		.cfi_offset 14, -4
+ 107 0002 82B0     		sub	sp, sp, #8
+ 108              	.LCFI3:
+ 109              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 3
+
+
+ 110              		.loc 1 19 2 view .LVU9
+ 111 0004 154B     		ldr	r3, .L8
+ 112 0006 0193     		str	r3, [sp, #4]
+ 113 0008 1423     		movs	r3, #20
+ 114 000a 0093     		str	r3, [sp]
+ 115 000c 0023     		movs	r3, #0
+ 116 000e 4022     		movs	r2, #64
+ 117 0010 1349     		ldr	r1, .L8+4
+ 118 0012 1448     		ldr	r0, .L8+8
+ 119 0014 144E     		ldr	r6, .L8+12
+ 120 0016 B047     		blx	r6
+ 121              	.LVL5:
+ 122              		.loc 1 20 2 view .LVU10
+ 123              		.loc 1 20 38 is_stmt 0 view .LVU11
+ 124 0018 0022     		movs	r2, #0
+ 125 001a 0121     		movs	r1, #1
+ 126 001c 8020     		movs	r0, #128
+ 127 001e 134D     		ldr	r5, .L8+16
+ 128 0020 A847     		blx	r5
+ 129              	.LVL6:
+ 130              		.loc 1 20 36 view .LVU12
+ 131 0022 134B     		ldr	r3, .L8+20
+ 132 0024 1860     		str	r0, [r3]
+ 133              		.loc 1 21 2 is_stmt 1 view .LVU13
+ 134              		.loc 1 21 38 is_stmt 0 view .LVU14
+ 135 0026 0120     		movs	r0, #1
+ 136 0028 124C     		ldr	r4, .L8+24
+ 137 002a A047     		blx	r4
+ 138              	.LVL7:
+ 139              		.loc 1 21 36 view .LVU15
+ 140 002c 124B     		ldr	r3, .L8+28
+ 141 002e 1860     		str	r0, [r3]
+ 142              		.loc 1 23 2 is_stmt 1 view .LVU16
+ 143 0030 124B     		ldr	r3, .L8+32
+ 144 0032 0193     		str	r3, [sp, #4]
+ 145 0034 0423     		movs	r3, #4
+ 146 0036 0093     		str	r3, [sp]
+ 147 0038 0023     		movs	r3, #0
+ 148 003a 4022     		movs	r2, #64
+ 149 003c 1049     		ldr	r1, .L8+36
+ 150 003e 1148     		ldr	r0, .L8+40
+ 151 0040 B047     		blx	r6
+ 152              	.LVL8:
+ 153              		.loc 1 24 2 view .LVU17
+ 154              		.loc 1 24 33 is_stmt 0 view .LVU18
+ 155 0042 0022     		movs	r2, #0
+ 156 0044 0121     		movs	r1, #1
+ 157 0046 8020     		movs	r0, #128
+ 158 0048 A847     		blx	r5
+ 159              	.LVL9:
+ 160              		.loc 1 24 31 view .LVU19
+ 161 004a 0F4B     		ldr	r3, .L8+44
+ 162 004c 1860     		str	r0, [r3]
+ 163              		.loc 1 25 2 is_stmt 1 view .LVU20
+ 164              		.loc 1 25 33 is_stmt 0 view .LVU21
+ 165 004e 0120     		movs	r0, #1
+ 166 0050 A047     		blx	r4
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 4
+
+
+ 167              	.LVL10:
+ 168              		.loc 1 25 31 view .LVU22
+ 169 0052 0E4B     		ldr	r3, .L8+48
+ 170 0054 1860     		str	r0, [r3]
+ 171              		.loc 1 26 1 view .LVU23
+ 172 0056 02B0     		add	sp, sp, #8
+ 173              	.LCFI4:
+ 174              		.cfi_def_cfa_offset 16
+ 175              		@ sp needed
+ 176 0058 70BD     		pop	{r4, r5, r6, pc}
+ 177              	.L9:
+ 178 005a 00BF     		.align	2
+ 179              	.L8:
+ 180 005c 00000000 		.word	task_handle_receive_from_MCU_one
+ 181 0060 00000000 		.word	.LC0
+ 182 0064 00000000 		.word	task_receive_from_MCU_one
+ 183 0068 00000000 		.word	xTaskCreate
+ 184 006c 00000000 		.word	xQueueGenericCreate
+ 185 0070 00000000 		.word	queue_handle_receive_from_MCU_one
+ 186 0074 00000000 		.word	xQueueCreateMutex
+ 187 0078 00000000 		.word	mutex_handle_receive_from_MCU_one
+ 188 007c 00000000 		.word	task_handle_send_to_MCU_one
+ 189 0080 14000000 		.word	.LC1
+ 190 0084 00000000 		.word	task_send_to_MCU_one
+ 191 0088 00000000 		.word	queue_handle_send_to_MCU_one
+ 192 008c 00000000 		.word	mutex_handle_send_to_MCU_one
+ 193              		.cfi_endproc
+ 194              	.LFE69:
+ 196              		.section	.text.add_to_queue_which_changes_the_speed_of_motors,"ax",%progbits
+ 197              		.align	1
+ 198              		.global	add_to_queue_which_changes_the_speed_of_motors
+ 199              		.syntax unified
+ 200              		.thumb
+ 201              		.thumb_func
+ 202              		.fpu softvfp
+ 204              	add_to_queue_which_changes_the_speed_of_motors:
+ 205              	.LVL11:
+ 206              	.LFB70:
+ 207              		.loc 1 28 68 is_stmt 1 view -0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 8
+ 210              		@ frame_needed = 0, uses_anonymous_args = 0
+ 211              		.loc 1 28 68 is_stmt 0 view .LVU25
+ 212 0000 10B5     		push	{r4, lr}
+ 213              	.LCFI5:
+ 214              		.cfi_def_cfa_offset 8
+ 215              		.cfi_offset 4, -8
+ 216              		.cfi_offset 14, -4
+ 217 0002 82B0     		sub	sp, sp, #8
+ 218              	.LCFI6:
+ 219              		.cfi_def_cfa_offset 16
+ 220 0004 8DF80700 		strb	r0, [sp, #7]
+ 221              		.loc 1 29 2 is_stmt 1 view .LVU26
+ 222 0008 0023     		movs	r3, #0
+ 223 000a 4FF0FF32 		mov	r2, #-1
+ 224 000e 0DF10701 		add	r1, sp, #7
+ 225 0012 0348     		ldr	r0, .L12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 5
+
+
+ 226              	.LVL12:
+ 227              		.loc 1 29 2 is_stmt 0 view .LVU27
+ 228 0014 0068     		ldr	r0, [r0]
+ 229 0016 034C     		ldr	r4, .L12+4
+ 230 0018 A047     		blx	r4
+ 231              	.LVL13:
+ 232              		.loc 1 30 1 view .LVU28
+ 233 001a 02B0     		add	sp, sp, #8
+ 234              	.LCFI7:
+ 235              		.cfi_def_cfa_offset 8
+ 236              		@ sp needed
+ 237 001c 10BD     		pop	{r4, pc}
+ 238              	.L13:
+ 239 001e 00BF     		.align	2
+ 240              	.L12:
+ 241 0020 00000000 		.word	queue_handle_receive_from_MCU_one
+ 242 0024 00000000 		.word	xQueueGenericSend
+ 243              		.cfi_endproc
+ 244              	.LFE70:
+ 246              		.section	.text.task_receive_from_MCU_one,"ax",%progbits
+ 247              		.align	1
+ 248              		.global	task_receive_from_MCU_one
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 252              		.fpu softvfp
+ 254              	task_receive_from_MCU_one:
+ 255              	.LFB72:
+ 256              		.loc 1 36 46 is_stmt 1 view -0
+ 257              		.cfi_startproc
+ 258              		@ Volatile: function does not return.
+ 259              		@ args = 0, pretend = 0, frame = 8
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261              	.LVL14:
+ 262              		.loc 1 36 46 is_stmt 0 view .LVU30
+ 263 0000 00B5     		push	{lr}
+ 264              	.LCFI8:
+ 265              		.cfi_def_cfa_offset 4
+ 266              		.cfi_offset 14, -4
+ 267 0002 83B0     		sub	sp, sp, #12
+ 268              	.LCFI9:
+ 269              		.cfi_def_cfa_offset 16
+ 270              	.LVL15:
+ 271              	.L15:
+ 272              		.loc 1 37 2 is_stmt 1 discriminator 1 view .LVU31
+ 273              		.loc 1 38 2 discriminator 1 view .LVU32
+ 274              		.loc 1 39 3 discriminator 1 view .LVU33
+ 275 0004 0122     		movs	r2, #1
+ 276 0006 0DF10701 		add	r1, sp, #7
+ 277 000a 0648     		ldr	r0, .L17
+ 278 000c 064B     		ldr	r3, .L17+4
+ 279 000e 9847     		blx	r3
+ 280              	.LVL16:
+ 281              		.loc 1 40 3 discriminator 1 view .LVU34
+ 282 0010 4FF0FF31 		mov	r1, #-1
+ 283 0014 0120     		movs	r0, #1
+ 284 0016 054B     		ldr	r3, .L17+8
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 6
+
+
+ 285 0018 9847     		blx	r3
+ 286              	.LVL17:
+ 287              		.loc 1 41 3 discriminator 1 view .LVU35
+ 288 001a 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 289 001e 044B     		ldr	r3, .L17+12
+ 290 0020 9847     		blx	r3
+ 291              	.LVL18:
+ 292              		.loc 1 38 7 discriminator 1 view .LVU36
+ 293 0022 EFE7     		b	.L15
+ 294              	.L18:
+ 295              		.align	2
+ 296              	.L17:
+ 297 0024 00000000 		.word	huart1
+ 298 0028 00000000 		.word	HAL_UART_Receive_IT
+ 299 002c 00000000 		.word	ulTaskNotifyTake
+ 300 0030 00000000 		.word	add_to_queue_which_changes_the_speed_of_motors
+ 301              		.cfi_endproc
+ 302              	.LFE72:
+ 304              		.section	.text.add_to_queue_to_send_to_MCU_one,"ax",%progbits
+ 305              		.align	1
+ 306              		.global	add_to_queue_to_send_to_MCU_one
+ 307              		.syntax unified
+ 308              		.thumb
+ 309              		.thumb_func
+ 310              		.fpu softvfp
+ 312              	add_to_queue_to_send_to_MCU_one:
+ 313              	.LVL19:
+ 314              	.LFB71:
+ 315              		.loc 1 32 53 view -0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 8
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              		.loc 1 32 53 is_stmt 0 view .LVU38
+ 320 0000 10B5     		push	{r4, lr}
+ 321              	.LCFI10:
+ 322              		.cfi_def_cfa_offset 8
+ 323              		.cfi_offset 4, -8
+ 324              		.cfi_offset 14, -4
+ 325 0002 82B0     		sub	sp, sp, #8
+ 326              	.LCFI11:
+ 327              		.cfi_def_cfa_offset 16
+ 328 0004 8DF80700 		strb	r0, [sp, #7]
+ 329              		.loc 1 33 2 is_stmt 1 view .LVU39
+ 330 0008 0023     		movs	r3, #0
+ 331 000a 4FF0FF32 		mov	r2, #-1
+ 332 000e 0DF10701 		add	r1, sp, #7
+ 333 0012 0348     		ldr	r0, .L21
+ 334              	.LVL20:
+ 335              		.loc 1 33 2 is_stmt 0 view .LVU40
+ 336 0014 0068     		ldr	r0, [r0]
+ 337 0016 034C     		ldr	r4, .L21+4
+ 338 0018 A047     		blx	r4
+ 339              	.LVL21:
+ 340              		.loc 1 34 1 view .LVU41
+ 341 001a 02B0     		add	sp, sp, #8
+ 342              	.LCFI12:
+ 343              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 7
+
+
+ 344              		@ sp needed
+ 345 001c 10BD     		pop	{r4, pc}
+ 346              	.L22:
+ 347 001e 00BF     		.align	2
+ 348              	.L21:
+ 349 0020 00000000 		.word	queue_handle_send_to_MCU_one
+ 350 0024 00000000 		.word	xQueueGenericSend
+ 351              		.cfi_endproc
+ 352              	.LFE71:
+ 354              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ 355              		.align	1
+ 356              		.global	HAL_UART_RxCpltCallback
+ 357              		.syntax unified
+ 358              		.thumb
+ 359              		.thumb_func
+ 360              		.fpu softvfp
+ 362              	HAL_UART_RxCpltCallback:
+ 363              	.LVL22:
+ 364              	.LFB73:
+ 365              		.loc 1 45 57 is_stmt 1 view -0
+ 366              		.cfi_startproc
+ 367              		@ args = 0, pretend = 0, frame = 8
+ 368              		@ frame_needed = 0, uses_anonymous_args = 0
+ 369              		.loc 1 45 57 is_stmt 0 view .LVU43
+ 370 0000 00B5     		push	{lr}
+ 371              	.LCFI13:
+ 372              		.cfi_def_cfa_offset 4
+ 373              		.cfi_offset 14, -4
+ 374 0002 83B0     		sub	sp, sp, #12
+ 375              	.LCFI14:
+ 376              		.cfi_def_cfa_offset 16
+ 377              		.loc 1 46 2 is_stmt 1 view .LVU44
+ 378              		.loc 1 46 13 is_stmt 0 view .LVU45
+ 379 0004 0023     		movs	r3, #0
+ 380 0006 0193     		str	r3, [sp, #4]
+ 381              		.loc 1 48 2 is_stmt 1 view .LVU46
+ 382              		.loc 1 48 10 is_stmt 0 view .LVU47
+ 383 0008 0268     		ldr	r2, [r0]
+ 384              		.loc 1 48 30 view .LVU48
+ 385 000a 0B4B     		ldr	r3, .L28
+ 386 000c 1B68     		ldr	r3, [r3]
+ 387              		.loc 1 48 4 view .LVU49
+ 388 000e 9A42     		cmp	r2, r3
+ 389 0010 0CD0     		beq	.L27
+ 390              	.LVL23:
+ 391              	.L24:
+ 392              		.loc 1 52 2 is_stmt 1 view .LVU50
+ 393 0012 019B     		ldr	r3, [sp, #4]
+ 394 0014 3BB1     		cbz	r3, .L23
+ 395              		.loc 1 52 2 discriminator 1 view .LVU51
+ 396 0016 094B     		ldr	r3, .L28+4
+ 397 0018 4FF08052 		mov	r2, #268435456
+ 398 001c 1A60     		str	r2, [r3]
+ 399              		.loc 1 52 2 discriminator 1 view .LVU52
+ 400              		.syntax unified
+ 401              	@ 52 "Core/Src/mcu_two.c" 1
+ 402 001e BFF34F8F 		dsb
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 8
+
+
+ 403              	@ 0 "" 2
+ 404              		.loc 1 52 2 discriminator 1 view .LVU53
+ 405              	@ 52 "Core/Src/mcu_two.c" 1
+ 406 0022 BFF36F8F 		isb
+ 407              	@ 0 "" 2
+ 408              		.loc 1 52 27 discriminator 1 view .LVU54
+ 409              		.thumb
+ 410              		.syntax unified
+ 411              	.L23:
+ 412              		.loc 1 53 1 is_stmt 0 view .LVU55
+ 413 0026 03B0     		add	sp, sp, #12
+ 414              	.LCFI15:
+ 415              		.cfi_remember_state
+ 416              		.cfi_def_cfa_offset 4
+ 417              		@ sp needed
+ 418 0028 5DF804FB 		ldr	pc, [sp], #4
+ 419              	.LVL24:
+ 420              	.L27:
+ 421              	.LCFI16:
+ 422              		.cfi_restore_state
+ 423              		.loc 1 49 3 is_stmt 1 view .LVU56
+ 424 002c 01A9     		add	r1, sp, #4
+ 425 002e 044B     		ldr	r3, .L28+8
+ 426 0030 1868     		ldr	r0, [r3]
+ 427              	.LVL25:
+ 428              		.loc 1 49 3 is_stmt 0 view .LVU57
+ 429 0032 044B     		ldr	r3, .L28+12
+ 430 0034 9847     		blx	r3
+ 431              	.LVL26:
+ 432 0036 ECE7     		b	.L24
+ 433              	.L29:
+ 434              		.align	2
+ 435              	.L28:
+ 436 0038 00000000 		.word	huart1
+ 437 003c 04ED00E0 		.word	-536810236
+ 438 0040 00000000 		.word	task_handle_receive_from_MCU_one
+ 439 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 440              		.cfi_endproc
+ 441              	.LFE73:
+ 443              		.section	.text.receive_motor_command_from_MCU_one,"ax",%progbits
+ 444              		.align	1
+ 445              		.global	receive_motor_command_from_MCU_one
+ 446              		.syntax unified
+ 447              		.thumb
+ 448              		.thumb_func
+ 449              		.fpu softvfp
+ 451              	receive_motor_command_from_MCU_one:
+ 452              	.LFB74:
+ 453              		.loc 1 55 51 is_stmt 1 view -0
+ 454              		.cfi_startproc
+ 455              		@ args = 0, pretend = 0, frame = 8
+ 456              		@ frame_needed = 0, uses_anonymous_args = 0
+ 457 0000 70B5     		push	{r4, r5, r6, lr}
+ 458              	.LCFI17:
+ 459              		.cfi_def_cfa_offset 16
+ 460              		.cfi_offset 4, -16
+ 461              		.cfi_offset 5, -12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 9
+
+
+ 462              		.cfi_offset 6, -8
+ 463              		.cfi_offset 14, -4
+ 464 0002 82B0     		sub	sp, sp, #8
+ 465              	.LCFI18:
+ 466              		.cfi_def_cfa_offset 24
+ 467              		.loc 1 56 2 view .LVU59
+ 468 0004 124C     		ldr	r4, .L32
+ 469 0006 4FF0FF31 		mov	r1, #-1
+ 470 000a 2068     		ldr	r0, [r4]
+ 471 000c 114B     		ldr	r3, .L32+4
+ 472 000e 9847     		blx	r3
+ 473              	.LVL27:
+ 474              		.loc 1 57 2 view .LVU60
+ 475              		.loc 1 59 2 view .LVU61
+ 476 0010 114E     		ldr	r6, .L32+8
+ 477 0012 4FF0FF32 		mov	r2, #-1
+ 478 0016 6946     		mov	r1, sp
+ 479 0018 3068     		ldr	r0, [r6]
+ 480 001a 104D     		ldr	r5, .L32+12
+ 481 001c A847     		blx	r5
+ 482              	.LVL28:
+ 483              		.loc 1 60 2 view .LVU62
+ 484 001e 4FF0FF32 		mov	r2, #-1
+ 485 0022 0DF10101 		add	r1, sp, #1
+ 486 0026 3068     		ldr	r0, [r6]
+ 487 0028 A847     		blx	r5
+ 488              	.LVL29:
+ 489              		.loc 1 62 2 view .LVU63
+ 490 002a 0023     		movs	r3, #0
+ 491 002c 1A46     		mov	r2, r3
+ 492 002e 1946     		mov	r1, r3
+ 493 0030 2068     		ldr	r0, [r4]
+ 494 0032 0B4C     		ldr	r4, .L32+16
+ 495 0034 A047     		blx	r4
+ 496              	.LVL30:
+ 497              		.loc 1 63 2 view .LVU64
+ 498              		.loc 1 63 9 is_stmt 0 view .LVU65
+ 499 0036 BDF80030 		ldrh	r3, [sp]
+ 500 003a 0020     		movs	r0, #0
+ 501 003c DAB2     		uxtb	r2, r3
+ 502 003e 62F30700 		bfi	r0, r2, #0, #8
+ 503 0042 C3F30723 		ubfx	r3, r3, #8, #8
+ 504 0046 63F30F20 		bfi	r0, r3, #8, #8
+ 505              		.loc 1 64 1 view .LVU66
+ 506 004a 02B0     		add	sp, sp, #8
+ 507              	.LCFI19:
+ 508              		.cfi_def_cfa_offset 16
+ 509              		@ sp needed
+ 510 004c 70BD     		pop	{r4, r5, r6, pc}
+ 511              	.L33:
+ 512 004e 00BF     		.align	2
+ 513              	.L32:
+ 514 0050 00000000 		.word	mutex_handle_receive_from_MCU_one
+ 515 0054 00000000 		.word	xQueueSemaphoreTake
+ 516 0058 00000000 		.word	queue_handle_receive_from_MCU_one
+ 517 005c 00000000 		.word	xQueueReceive
+ 518 0060 00000000 		.word	xQueueGenericSend
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 10
+
+
+ 519              		.cfi_endproc
+ 520              	.LFE74:
+ 522              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+ 523              		.align	1
+ 524              		.global	HAL_UART_TxCpltCallback
+ 525              		.syntax unified
+ 526              		.thumb
+ 527              		.thumb_func
+ 528              		.fpu softvfp
+ 530              	HAL_UART_TxCpltCallback:
+ 531              	.LVL31:
+ 532              	.LFB76:
+ 533              		.loc 1 77 57 is_stmt 1 view -0
+ 534              		.cfi_startproc
+ 535              		@ args = 0, pretend = 0, frame = 8
+ 536              		@ frame_needed = 0, uses_anonymous_args = 0
+ 537              		.loc 1 77 57 is_stmt 0 view .LVU68
+ 538 0000 00B5     		push	{lr}
+ 539              	.LCFI20:
+ 540              		.cfi_def_cfa_offset 4
+ 541              		.cfi_offset 14, -4
+ 542 0002 83B0     		sub	sp, sp, #12
+ 543              	.LCFI21:
+ 544              		.cfi_def_cfa_offset 16
+ 545              		.loc 1 78 2 is_stmt 1 view .LVU69
+ 546              		.loc 1 78 13 is_stmt 0 view .LVU70
+ 547 0004 0023     		movs	r3, #0
+ 548 0006 0193     		str	r3, [sp, #4]
+ 549              		.loc 1 80 2 is_stmt 1 view .LVU71
+ 550              		.loc 1 80 10 is_stmt 0 view .LVU72
+ 551 0008 0268     		ldr	r2, [r0]
+ 552              		.loc 1 80 30 view .LVU73
+ 553 000a 0B4B     		ldr	r3, .L39
+ 554 000c 1B68     		ldr	r3, [r3]
+ 555              		.loc 1 80 4 view .LVU74
+ 556 000e 9A42     		cmp	r2, r3
+ 557 0010 0CD0     		beq	.L38
+ 558              	.LVL32:
+ 559              	.L35:
+ 560              		.loc 1 84 2 is_stmt 1 view .LVU75
+ 561 0012 019B     		ldr	r3, [sp, #4]
+ 562 0014 3BB1     		cbz	r3, .L34
+ 563              		.loc 1 84 2 discriminator 1 view .LVU76
+ 564 0016 094B     		ldr	r3, .L39+4
+ 565 0018 4FF08052 		mov	r2, #268435456
+ 566 001c 1A60     		str	r2, [r3]
+ 567              		.loc 1 84 2 discriminator 1 view .LVU77
+ 568              		.syntax unified
+ 569              	@ 84 "Core/Src/mcu_two.c" 1
+ 570 001e BFF34F8F 		dsb
+ 571              	@ 0 "" 2
+ 572              		.loc 1 84 2 discriminator 1 view .LVU78
+ 573              	@ 84 "Core/Src/mcu_two.c" 1
+ 574 0022 BFF36F8F 		isb
+ 575              	@ 0 "" 2
+ 576              		.loc 1 84 27 discriminator 1 view .LVU79
+ 577              		.thumb
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 11
+
+
+ 578              		.syntax unified
+ 579              	.L34:
+ 580              		.loc 1 85 1 is_stmt 0 view .LVU80
+ 581 0026 03B0     		add	sp, sp, #12
+ 582              	.LCFI22:
+ 583              		.cfi_remember_state
+ 584              		.cfi_def_cfa_offset 4
+ 585              		@ sp needed
+ 586 0028 5DF804FB 		ldr	pc, [sp], #4
+ 587              	.LVL33:
+ 588              	.L38:
+ 589              	.LCFI23:
+ 590              		.cfi_restore_state
+ 591              		.loc 1 81 3 is_stmt 1 view .LVU81
+ 592 002c 01A9     		add	r1, sp, #4
+ 593 002e 044B     		ldr	r3, .L39+8
+ 594 0030 1868     		ldr	r0, [r3]
+ 595              	.LVL34:
+ 596              		.loc 1 81 3 is_stmt 0 view .LVU82
+ 597 0032 044B     		ldr	r3, .L39+12
+ 598 0034 9847     		blx	r3
+ 599              	.LVL35:
+ 600 0036 ECE7     		b	.L35
+ 601              	.L40:
+ 602              		.align	2
+ 603              	.L39:
+ 604 0038 00000000 		.word	huart1
+ 605 003c 04ED00E0 		.word	-536810236
+ 606 0040 00000000 		.word	task_handle_send_to_MCU_one
+ 607 0044 00000000 		.word	vTaskNotifyGiveFromISR
+ 608              		.cfi_endproc
+ 609              	.LFE76:
+ 611              		.comm	mutex_handle_send_to_MCU_one,4,4
+ 612              		.comm	queue_handle_send_to_MCU_one,4,4
+ 613              		.comm	task_handle_send_to_MCU_one,4,4
+ 614              		.comm	mutex_handle_receive_from_MCU_one,4,4
+ 615              		.comm	queue_handle_receive_from_MCU_one,4,4
+ 616              		.comm	task_handle_receive_from_MCU_one,4,4
+ 617              		.text
+ 618              	.Letext0:
+ 619              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 620              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 621              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 622              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 623              		.file 6 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 624              		.file 7 "../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 625              		.file 8 "../Core/Inc/FreeRTOSConfig.h"
+ 626              		.file 9 "../Drivers/CMSIS/Include/core_cm3.h"
+ 627              		.file 10 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 628              		.file 11 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 629              		.file 12 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 630              		.file 13 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 631              		.file 14 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 632              		.file 15 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 633              		.file 16 "../Core/Inc/usart.h"
+ 634              		.file 17 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\lib\\gcc\\
+ 635              		.file 18 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 12
+
+
+ 636              		.file 19 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 637              		.file 20 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 638              		.file 21 "../Core/Inc/mcu_two.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 mcu_two.c
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:16     .text.task_send_to_MCU_one:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:24     .text.task_send_to_MCU_one:0000000000000000 task_send_to_MCU_one
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:71     .text.task_send_to_MCU_one:000000000000002c $d
+                            *COM*:0000000000000004 queue_handle_send_to_MCU_one
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:80     .rodata.init_MCU_two.str1.4:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:87     .text.init_MCU_two:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:94     .text.init_MCU_two:0000000000000000 init_MCU_two
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:180    .text.init_MCU_two:000000000000005c $d
+                            *COM*:0000000000000004 task_handle_receive_from_MCU_one
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:254    .text.task_receive_from_MCU_one:0000000000000000 task_receive_from_MCU_one
+                            *COM*:0000000000000004 queue_handle_receive_from_MCU_one
+                            *COM*:0000000000000004 mutex_handle_receive_from_MCU_one
+                            *COM*:0000000000000004 task_handle_send_to_MCU_one
+                            *COM*:0000000000000004 mutex_handle_send_to_MCU_one
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:197    .text.add_to_queue_which_changes_the_speed_of_motors:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:204    .text.add_to_queue_which_changes_the_speed_of_motors:0000000000000000 add_to_queue_which_changes_the_speed_of_motors
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:241    .text.add_to_queue_which_changes_the_speed_of_motors:0000000000000020 $d
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:247    .text.task_receive_from_MCU_one:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:297    .text.task_receive_from_MCU_one:0000000000000024 $d
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:305    .text.add_to_queue_to_send_to_MCU_one:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:312    .text.add_to_queue_to_send_to_MCU_one:0000000000000000 add_to_queue_to_send_to_MCU_one
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:349    .text.add_to_queue_to_send_to_MCU_one:0000000000000020 $d
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:355    .text.HAL_UART_RxCpltCallback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:362    .text.HAL_UART_RxCpltCallback:0000000000000000 HAL_UART_RxCpltCallback
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:436    .text.HAL_UART_RxCpltCallback:0000000000000038 $d
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:444    .text.receive_motor_command_from_MCU_one:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:451    .text.receive_motor_command_from_MCU_one:0000000000000000 receive_motor_command_from_MCU_one
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:514    .text.receive_motor_command_from_MCU_one:0000000000000050 $d
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:523    .text.HAL_UART_TxCpltCallback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:530    .text.HAL_UART_TxCpltCallback:0000000000000000 HAL_UART_TxCpltCallback
+C:\Users\38164\AppData\Local\Temp\ccxYNzZr.s:604    .text.HAL_UART_TxCpltCallback:0000000000000038 $d
+
+UNDEFINED SYMBOLS
+xQueueReceive
+huart1
+HAL_UART_Transmit_IT
+ulTaskNotifyTake
+xTaskCreate
+xQueueGenericCreate
+xQueueCreateMutex
+xQueueGenericSend
+HAL_UART_Receive_IT
+vTaskNotifyGiveFromISR
+xQueueSemaphoreTake

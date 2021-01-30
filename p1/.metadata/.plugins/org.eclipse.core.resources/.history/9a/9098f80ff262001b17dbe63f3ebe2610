@@ -1,0 +1,56 @@
+/*
+ * work.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "work.h"
+
+uint8_t velocities[2] = { 0, 0 };
+
+void init_Work() {
+	init_MCU_one();
+	xTaskCreate(task_work_function, "work_task", 128, NULL, 5, NULL);
+}
+
+void task_work_function(void* params) {
+	while(1) {
+		send_string_to_terminal("Insert command: ");
+		char* command = receive_string_from_terminal();
+		send_string_to_terminal("\r");
+
+		if(strlen(command)!=2 || (command[0]!='1' && command[0]!='2') || (command[1]!='i' || command[1]!='d')) {
+			send_string_to_terminal("Invalid command! \r");
+		}
+		else {
+			uint8_t motorNumber = command[0] - '0';
+			motorNumber--;
+
+			uint8_t velocity_to_send = 0;
+
+			if(command[1] == 'i') {
+				if(velocities[motorNumber] == 16) {
+					velocity_to_send = 16;
+				}
+				else {
+					velocity_to_send = ++velocities[motorNumber];
+				}
+			}
+			else if(command[1] == 'd'){
+				if(velocities[motorNumber] == 0) {
+					velocity_to_send = 0;
+				}
+				else {
+					velocity_to_send = --velocities[motorNumber];
+				}
+			}
+			else send_string_to_terminal("Should not be here! \r");
+
+			MotorCommand m = { motorNumber + 1, velocity_to_send };
+			send_motor_command_to_MCU_two(m);
+		}
+
+		vPortFree(command);
+	}
+}

@@ -1,0 +1,146 @@
+/*
+ * mcu_one.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "mcu_one.h"
+
+TaskHandle_t task_handle_send_to_terminal_from_MCU_one;
+QueueHandle_t queue_handle_send_to_terminal_from_MCU_one;
+SemaphoreHandle_t mutex_handle_send_to_terminal_from_MCU_one;
+
+TaskHandle_t task_handle_receive_from_terminal_on_MCU_one;
+QueueHandle_t queue_handle_receive_from_terminal_on_MCU_one;
+SemaphoreHandle_t mutex_handle_receive_from_terminal_on_MCU_one;
+
+TaskHandle_t task_handle_send_to_MCU_two_from_MCU_one;
+QueueHandle_t queue_handle_send_to_MCU_two_from_MCU_one;
+SemaphoreHandle_t mutex_handle_send_to_MCU_two_from_MCU_one;
+
+void init_MCU_one() {
+	xTaskCreate(task_function_send_to_terminal, "send_to_terminal", 64, NULL, 4, &task_handle_send_to_terminal_from_MCU_one);
+	queue_handle_send_to_terminal_from_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_send_to_terminal_from_MCU_one = xSemaphoreCreateMutex();
+
+	xTaskCreate(task_function_receive_from_terminal, "receive_from_terminal", 64, NULL, 20, &task_handle_receive_from_terminal_on_MCU_one);
+	queue_handle_receive_from_terminal_on_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_receive_from_terminal_on_MCU_one = xSemaphoreCreateMutex();
+
+	xTaskCreate(task_function_send_to_MCU_two, "send_to_MCU2", 64, NULL, 4, &task_handle_send_to_MCU_two_from_MCU_one);
+	queue_handle_send_to_MCU_two_from_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_send_to_MCU_two_from_MCU_one = xSemaphoreCreateMutex();
+}
+
+void task_function_send_to_terminal(void* params) {
+	uint8_t item_to_send_to_terminal;
+	while(1) {
+		xQueueReceive(queue_handle_send_to_terminal_from_MCU_one, &item_to_send_to_terminal, portMAX_DELAY);
+		HAL_UART_Transmit_IT(&huart1, &item_to_send_to_terminal, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	}
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t woken = pdFALSE;
+
+	if(huart->Instance == huart1.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_send_to_terminal_from_MCU_one, &woken);
+	}
+	if(huart->Instance == huart2.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_send_to_MCU_two_from_MCU_one, &woken);
+	}
+
+	portYIELD_FROM_ISR(woken);
+}
+
+void task_function_receive_from_terminal(void* params) {
+	uint8_t item_to_receive_from_terminal;
+	while(1) {
+		HAL_UART_Receive_IT(&huart1, &item_to_receive_from_terminal, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+		xQueueSendToBack(queue_handle_receive_from_terminal_on_MCU_one, &item_to_receive_from_terminal, portMAX_DELAY);
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t woken = pdFALSE;
+
+	if(huart->Instance == huart1.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_receive_from_terminal_on_MCU_one, &woken);
+	}
+
+	portYIELD_FROM_ISR(woken);
+}
+
+void send_string_to_terminal(char* string_to_send) {
+	if(string_to_send != NULL) {
+		xSemaphoreTake(mutex_handle_send_to_terminal_from_MCU_one, portMAX_DELAY);
+
+		for(int i=0; i < strlen(string_to_send); ++i) {
+			xQueueSendToBack(queue_handle_send_to_terminal_from_MCU_one, string_to_send + i, portMAX_DELAY);
+		}
+
+		xSemaphoreGive(mutex_handle_send_to_terminal_from_MCU_one);
+	}
+}
+
+void send_integer_to_terminal(uint32_t number) {
+	xSemaphoreTake(mutex_handle_send_to_terminal_from_MCU_one, portMAX_DELAY);
+
+	char value[32];
+	uint16_t index = 32;
+
+	while(index >= 0 && number!= 0) {
+		value[--index] = number % 10;
+		number /= 10;
+	}
+
+	for(uint16_t j = index; j < 32; ++j) {
+		xQueueSendToBack(queue_handle_send_to_terminal_from_MCU_one, value + j, portMAX_DELAY);
+	}
+
+	xSemaphoreGive(mutex_handle_send_to_terminal_from_MCU_one);
+}
+
+char* receive_string_from_terminal() {
+	xSemaphoreTake(mutex_handle_receive_from_terminal_on_MCU_one, portMAX_DELAY);
+
+	char* received_string = pvPortMalloc(64);
+
+	uint16_t index = 0;
+	char character_received = '\0';
+
+	while(index < 64 && character_received != '\r') {
+		xQueueReceive(queue_handle_receive_from_terminal_on_MCU_one, &character_received, portMAX_DELAY);
+		received_string[index++] = character_received;
+	}
+
+	received_string[--index] = '\0';
+
+	xSemaphoreGive(mutex_handle_receive_from_terminal_on_MCU_one);
+
+	return received_string;
+}
+
+void task_function_send_to_MCU_two(void* params) {
+	uint8_t item_to_send_to_MCU_two;
+	while(1) {
+		xQueueReceive(queue_handle_send_to_MCU_two_from_MCU_one, &item_to_send_to_MCU_two, portMAX_DELAY);
+		HAL_UART_Receive_IT(&huart2, &item_to_send_to_MCU_two, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+	}
+}
+
+void send_motor_command_to_MCU_two(MotorCommand m) {
+	xSemaphoreTake(mutex_handle_send_to_MCU_two_from_MCU_one, portMAX_DELAY);
+
+	xQueueSendToBack(queue_handle_send_to_MCU_two_from_MCU_one, &m.motor, portMAX_DELAY);
+	xQueueSendToBack(queue_handle_send_to_MCU_two_from_MCU_one, &m.velocity, portMAX_DELAY);
+
+	xSemaphoreGive(mutex_handle_send_to_MCU_two_from_MCU_one);
+}
+
+
+

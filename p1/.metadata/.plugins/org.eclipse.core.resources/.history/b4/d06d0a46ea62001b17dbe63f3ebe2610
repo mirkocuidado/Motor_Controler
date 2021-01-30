@@ -1,0 +1,34 @@
+/*
+ * mcu_one.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "mcu_one.h"
+
+TaskHandle_t task_handle_send_to_terminal_from_MCU_one;
+QueueHandle_t queue_handle_send_to_terminal_from_MCU_one;
+SemaphoreHandle_t mutex_handle_send_to_terminal_from_MCU_one;
+
+TaskHandle_t task_handle_receive_from_terminal_on_MCU_one;
+QueueHandle_t queue_handle_receive_from_terminal_on_MCU_one;
+SemaphoreHandle_t mutex_handle_receive_from_terminal_on_MCU_one;
+
+void init_MCU_one() {
+	xTaskCreate(task_function_send_to_terminal, "send_to_terminal", 64, NULL, 4, &task_handle_send_to_terminal_from_MCU_one);
+	queue_handle_send_to_terminal_from_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_send_to_terminal_from_MCU_one = xSemaphoreCreateMutex();
+
+	xTaskCreate(task_function_receive_from_terminal, "receive_from_terminal", 64, NULL, 4, &task_handle_receive_from_terminal_on_MCU_one);
+	queue_handle_receive_from_terminal_on_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_receive_from_terminal_on_MCU_one = xSemaphoreCreateMutex();
+}
+
+void task_function_send_to_terminal(void* params) {
+
+}
+
+void task_function_receive_from_terminal(void* params) {
+
+}

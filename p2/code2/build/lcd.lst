@@ -1,0 +1,458 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lcd.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.rodata.init_LCD.str1.4,"aMS",%progbits,1
+  16              		.align	2
+  17              	.LC0:
+  18 0000 7461736B 		.ascii	"task_function_for_LCD\000"
+  18      5F66756E 
+  18      6374696F 
+  18      6E5F666F 
+  18      725F4C43 
+  19              		.section	.text.init_LCD,"ax",%progbits
+  20              		.align	1
+  21              		.global	init_LCD
+  22              		.arch armv7-m
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  26              		.fpu softvfp
+  28              	init_LCD:
+  29              	.LFB69:
+  30              		.file 1 "../Core/Src/lcd.c"
+   1:../Core/Src/lcd.c **** 
+  31              		.loc 1 12 17 view -0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35 0000 70B5     		push	{r4, r5, r6, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 16
+  38              		.cfi_offset 4, -16
+  39              		.cfi_offset 5, -12
+  40              		.cfi_offset 6, -8
+  41              		.cfi_offset 14, -4
+  42 0002 82B0     		sub	sp, sp, #8
+  43              	.LCFI1:
+  44              		.cfi_def_cfa_offset 24
+  45              		.loc 1 13 2 view .LVU1
+  46 0004 0024     		movs	r4, #0
+  47 0006 0194     		str	r4, [sp, #4]
+  48 0008 0225     		movs	r5, #2
+  49 000a 0095     		str	r5, [sp]
+  50 000c 2346     		mov	r3, r4
+  51 000e 8022     		movs	r2, #128
+  52 0010 0649     		ldr	r1, .L3
+  53 0012 0748     		ldr	r0, .L3+4
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 2
+
+
+  54 0014 074E     		ldr	r6, .L3+8
+  55 0016 B047     		blx	r6
+  56              	.LVL0:
+  57              		.loc 1 14 2 view .LVU2
+  58              		.loc 1 14 21 is_stmt 0 view .LVU3
+  59 0018 2246     		mov	r2, r4
+  60 001a 2946     		mov	r1, r5
+  61 001c 4020     		movs	r0, #64
+  62 001e 064B     		ldr	r3, .L3+12
+  63 0020 9847     		blx	r3
+  64              	.LVL1:
+  65              		.loc 1 14 19 view .LVU4
+  66 0022 064B     		ldr	r3, .L3+16
+  67 0024 1860     		str	r0, [r3]
+  68              		.loc 1 15 1 view .LVU5
+  69 0026 02B0     		add	sp, sp, #8
+  70              	.LCFI2:
+  71              		.cfi_def_cfa_offset 16
+  72              		@ sp needed
+  73 0028 70BD     		pop	{r4, r5, r6, pc}
+  74              	.L4:
+  75 002a 00BF     		.align	2
+  76              	.L3:
+  77 002c 00000000 		.word	.LC0
+  78 0030 00000000 		.word	task_function_for_LCD
+  79 0034 00000000 		.word	xTaskCreate
+  80 0038 00000000 		.word	xQueueGenericCreate
+  81 003c 00000000 		.word	queue_handle_LCD
+  82              		.cfi_endproc
+  83              	.LFE69:
+  85              		.section	.text.LCD_Write,"ax",%progbits
+  86              		.align	1
+  87              		.global	LCD_Write
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  91              		.fpu softvfp
+  93              	LCD_Write:
+  94              	.LVL2:
+  95              	.LFB70:
+  96              		.loc 1 17 56 is_stmt 1 view -0
+  97              		.cfi_startproc
+  98              		@ args = 0, pretend = 0, frame = 0
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100              		@ link register save eliminated.
+ 101              		.loc 1 18 2 view .LVU7
+ 102              		.loc 1 18 29 is_stmt 0 view .LVU8
+ 103 0000 4001     		lsls	r0, r0, #5
+ 104              	.LVL3:
+ 105              		.loc 1 18 29 view .LVU9
+ 106 0002 00F02000 		and	r0, r0, #32
+ 107              		.loc 1 18 42 view .LVU10
+ 108 0006 01F00F01 		and	r1, r1, #15
+ 109              	.LVL4:
+ 110              		.loc 1 18 35 view .LVU11
+ 111 000a 0843     		orrs	r0, r0, r1
+ 112              		.loc 1 18 13 view .LVU12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 3
+
+
+ 113 000c 054B     		ldr	r3, .L6
+ 114 000e D860     		str	r0, [r3, #12]
+ 115              		.loc 1 20 2 is_stmt 1 view .LVU13
+ 116              		.loc 1 20 13 is_stmt 0 view .LVU14
+ 117 0010 DA68     		ldr	r2, [r3, #12]
+ 118 0012 42F04002 		orr	r2, r2, #64
+ 119 0016 DA60     		str	r2, [r3, #12]
+ 120              		.loc 1 21 2 is_stmt 1 view .LVU15
+ 121              		.loc 1 21 13 is_stmt 0 view .LVU16
+ 122 0018 DA68     		ldr	r2, [r3, #12]
+ 123 001a 22F04002 		bic	r2, r2, #64
+ 124 001e DA60     		str	r2, [r3, #12]
+ 125              		.loc 1 22 1 view .LVU17
+ 126 0020 7047     		bx	lr
+ 127              	.L7:
+ 128 0022 00BF     		.align	2
+ 129              	.L6:
+ 130 0024 00100140 		.word	1073811456
+ 131              		.cfi_endproc
+ 132              	.LFE70:
+ 134              		.section	.text.LCD_CommandInitiate,"ax",%progbits
+ 135              		.align	1
+ 136              		.global	LCD_CommandInitiate
+ 137              		.syntax unified
+ 138              		.thumb
+ 139              		.thumb_func
+ 140              		.fpu softvfp
+ 142              	LCD_CommandInitiate:
+ 143              	.LVL5:
+ 144              	.LFB71:
+ 145              		.loc 1 24 66 is_stmt 1 view -0
+ 146              		.cfi_startproc
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		.loc 1 24 66 is_stmt 0 view .LVU19
+ 150 0000 70B5     		push	{r4, r5, r6, lr}
+ 151              	.LCFI3:
+ 152              		.cfi_def_cfa_offset 16
+ 153              		.cfi_offset 4, -16
+ 154              		.cfi_offset 5, -12
+ 155              		.cfi_offset 6, -8
+ 156              		.cfi_offset 14, -4
+ 157 0002 0546     		mov	r5, r0
+ 158 0004 0C46     		mov	r4, r1
+ 159              		.loc 1 25 2 is_stmt 1 view .LVU20
+ 160 0006 0909     		lsrs	r1, r1, #4
+ 161              	.LVL6:
+ 162              		.loc 1 25 2 is_stmt 0 view .LVU21
+ 163 0008 044E     		ldr	r6, .L10
+ 164 000a B047     		blx	r6
+ 165              	.LVL7:
+ 166              		.loc 1 26 2 is_stmt 1 view .LVU22
+ 167 000c 2146     		mov	r1, r4
+ 168 000e 2846     		mov	r0, r5
+ 169 0010 B047     		blx	r6
+ 170              	.LVL8:
+ 171              		.loc 1 28 2 view .LVU23
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 4
+
+
+ 172 0012 0220     		movs	r0, #2
+ 173 0014 024B     		ldr	r3, .L10+4
+ 174 0016 9847     		blx	r3
+ 175              	.LVL9:
+ 176              		.loc 1 29 1 is_stmt 0 view .LVU24
+ 177 0018 70BD     		pop	{r4, r5, r6, pc}
+ 178              	.L11:
+ 179 001a 00BF     		.align	2
+ 180              	.L10:
+ 181 001c 00000000 		.word	LCD_Write
+ 182 0020 00000000 		.word	vTaskDelay
+ 183              		.cfi_endproc
+ 184              	.LFE71:
+ 186              		.section	.text.task_function_for_LCD,"ax",%progbits
+ 187              		.align	1
+ 188              		.global	task_function_for_LCD
+ 189              		.syntax unified
+ 190              		.thumb
+ 191              		.thumb_func
+ 192              		.fpu softvfp
+ 194              	task_function_for_LCD:
+ 195              	.LVL10:
+ 196              	.LFB74:
+ 197              		.loc 1 41 42 is_stmt 1 view -0
+ 198              		.cfi_startproc
+ 199              		@ Volatile: function does not return.
+ 200              		@ args = 0, pretend = 0, frame = 8
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202              		.loc 1 41 42 is_stmt 0 view .LVU26
+ 203 0000 00B5     		push	{lr}
+ 204              	.LCFI4:
+ 205              		.cfi_def_cfa_offset 4
+ 206              		.cfi_offset 14, -4
+ 207 0002 83B0     		sub	sp, sp, #12
+ 208              	.LCFI5:
+ 209              		.cfi_def_cfa_offset 16
+ 210              		.loc 1 42 2 is_stmt 1 view .LVU27
+ 211 0004 1420     		movs	r0, #20
+ 212              	.LVL11:
+ 213              		.loc 1 42 2 is_stmt 0 view .LVU28
+ 214 0006 114C     		ldr	r4, .L15
+ 215 0008 A047     		blx	r4
+ 216              	.LVL12:
+ 217              		.loc 1 44 2 is_stmt 1 view .LVU29
+ 218 000a 0221     		movs	r1, #2
+ 219 000c 0020     		movs	r0, #0
+ 220 000e 104B     		ldr	r3, .L15+4
+ 221 0010 9847     		blx	r3
+ 222              	.LVL13:
+ 223              		.loc 1 46 2 view .LVU30
+ 224 0012 0220     		movs	r0, #2
+ 225 0014 A047     		blx	r4
+ 226              	.LVL14:
+ 227              		.loc 1 48 2 view .LVU31
+ 228 0016 2821     		movs	r1, #40
+ 229 0018 0020     		movs	r0, #0
+ 230 001a 0E4C     		ldr	r4, .L15+8
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 5
+
+
+ 231 001c A047     		blx	r4
+ 232              	.LVL15:
+ 233              		.loc 1 53 2 view .LVU32
+ 234 001e 0C21     		movs	r1, #12
+ 235 0020 0020     		movs	r0, #0
+ 236 0022 A047     		blx	r4
+ 237              	.LVL16:
+ 238              		.loc 1 58 2 view .LVU33
+ 239 0024 0621     		movs	r1, #6
+ 240 0026 0020     		movs	r0, #0
+ 241 0028 A047     		blx	r4
+ 242              	.LVL17:
+ 243              		.loc 1 62 2 view .LVU34
+ 244 002a 0221     		movs	r1, #2
+ 245 002c 0020     		movs	r0, #0
+ 246 002e A047     		blx	r4
+ 247              	.LVL18:
+ 248              	.L13:
+ 249              		.loc 1 64 2 discriminator 1 view .LVU35
+ 250              		.loc 1 65 2 discriminator 1 view .LVU36
+ 251              		.loc 1 66 3 discriminator 1 view .LVU37
+ 252 0030 4FF0FF32 		mov	r2, #-1
+ 253 0034 01A9     		add	r1, sp, #4
+ 254 0036 084B     		ldr	r3, .L15+12
+ 255 0038 1868     		ldr	r0, [r3]
+ 256 003a 084B     		ldr	r3, .L15+16
+ 257 003c 9847     		blx	r3
+ 258              	.LVL19:
+ 259              		.loc 1 67 3 discriminator 1 view .LVU38
+ 260 003e 9DF80510 		ldrb	r1, [sp, #5]	@ zero_extendqisi2
+ 261 0042 9DF80400 		ldrb	r0, [sp, #4]	@ zero_extendqisi2
+ 262 0046 034B     		ldr	r3, .L15+8
+ 263 0048 9847     		blx	r3
+ 264              	.LVL20:
+ 265              		.loc 1 65 7 discriminator 1 view .LVU39
+ 266 004a F1E7     		b	.L13
+ 267              	.L16:
+ 268              		.align	2
+ 269              	.L15:
+ 270 004c 00000000 		.word	vTaskDelay
+ 271 0050 00000000 		.word	LCD_Write
+ 272 0054 00000000 		.word	LCD_CommandInitiate
+ 273 0058 00000000 		.word	queue_handle_LCD
+ 274 005c 00000000 		.word	xQueueReceive
+ 275              		.cfi_endproc
+ 276              	.LFE74:
+ 278              		.section	.text.LCD_add_to_queue,"ax",%progbits
+ 279              		.align	1
+ 280              		.global	LCD_add_to_queue
+ 281              		.syntax unified
+ 282              		.thumb
+ 283              		.thumb_func
+ 284              		.fpu softvfp
+ 286              	LCD_add_to_queue:
+ 287              	.LVL21:
+ 288              	.LFB72:
+ 289              		.loc 1 31 62 view -0
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 6
+
+
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 8
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293              		.loc 1 31 62 is_stmt 0 view .LVU41
+ 294 0000 10B5     		push	{r4, lr}
+ 295              	.LCFI6:
+ 296              		.cfi_def_cfa_offset 8
+ 297              		.cfi_offset 4, -8
+ 298              		.cfi_offset 14, -4
+ 299 0002 82B0     		sub	sp, sp, #8
+ 300              	.LCFI7:
+ 301              		.cfi_def_cfa_offset 16
+ 302              		.loc 1 32 2 is_stmt 1 view .LVU42
+ 303              		.loc 1 32 14 is_stmt 0 view .LVU43
+ 304 0004 8DF80400 		strb	r0, [sp, #4]
+ 305 0008 8DF80510 		strb	r1, [sp, #5]
+ 306              		.loc 1 33 2 is_stmt 1 view .LVU44
+ 307 000c 0023     		movs	r3, #0
+ 308 000e 4FF0FF32 		mov	r2, #-1
+ 309 0012 01A9     		add	r1, sp, #4
+ 310              	.LVL22:
+ 311              		.loc 1 33 2 is_stmt 0 view .LVU45
+ 312 0014 0248     		ldr	r0, .L19
+ 313              	.LVL23:
+ 314              		.loc 1 33 2 view .LVU46
+ 315 0016 0068     		ldr	r0, [r0]
+ 316 0018 024C     		ldr	r4, .L19+4
+ 317 001a A047     		blx	r4
+ 318              	.LVL24:
+ 319              		.loc 1 34 1 view .LVU47
+ 320 001c 02B0     		add	sp, sp, #8
+ 321              	.LCFI8:
+ 322              		.cfi_def_cfa_offset 8
+ 323              		@ sp needed
+ 324 001e 10BD     		pop	{r4, pc}
+ 325              	.L20:
+ 326              		.align	2
+ 327              	.L19:
+ 328 0020 00000000 		.word	queue_handle_LCD
+ 329 0024 00000000 		.word	xQueueGenericSend
+ 330              		.cfi_endproc
+ 331              	.LFE72:
+ 333              		.section	.text.LCD_add_to_queue_from_ISR,"ax",%progbits
+ 334              		.align	1
+ 335              		.global	LCD_add_to_queue_from_ISR
+ 336              		.syntax unified
+ 337              		.thumb
+ 338              		.thumb_func
+ 339              		.fpu softvfp
+ 341              	LCD_add_to_queue_from_ISR:
+ 342              	.LVL25:
+ 343              	.LFB73:
+ 344              		.loc 1 36 110 is_stmt 1 view -0
+ 345              		.cfi_startproc
+ 346              		@ args = 0, pretend = 0, frame = 8
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 348              		.loc 1 36 110 is_stmt 0 view .LVU49
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 7
+
+
+ 349 0000 10B5     		push	{r4, lr}
+ 350              	.LCFI9:
+ 351              		.cfi_def_cfa_offset 8
+ 352              		.cfi_offset 4, -8
+ 353              		.cfi_offset 14, -4
+ 354 0002 82B0     		sub	sp, sp, #8
+ 355              	.LCFI10:
+ 356              		.cfi_def_cfa_offset 16
+ 357              		.loc 1 37 2 is_stmt 1 view .LVU50
+ 358              		.loc 1 37 14 is_stmt 0 view .LVU51
+ 359 0004 8DF80400 		strb	r0, [sp, #4]
+ 360 0008 8DF80510 		strb	r1, [sp, #5]
+ 361              		.loc 1 38 2 is_stmt 1 view .LVU52
+ 362 000c 0023     		movs	r3, #0
+ 363 000e 01A9     		add	r1, sp, #4
+ 364              	.LVL26:
+ 365              		.loc 1 38 2 is_stmt 0 view .LVU53
+ 366 0010 0248     		ldr	r0, .L23
+ 367              	.LVL27:
+ 368              		.loc 1 38 2 view .LVU54
+ 369 0012 0068     		ldr	r0, [r0]
+ 370 0014 024C     		ldr	r4, .L23+4
+ 371 0016 A047     		blx	r4
+ 372              	.LVL28:
+ 373              		.loc 1 39 1 view .LVU55
+ 374 0018 02B0     		add	sp, sp, #8
+ 375              	.LCFI11:
+ 376              		.cfi_def_cfa_offset 8
+ 377              		@ sp needed
+ 378 001a 10BD     		pop	{r4, pc}
+ 379              	.L24:
+ 380              		.align	2
+ 381              	.L23:
+ 382 001c 00000000 		.word	queue_handle_LCD
+ 383 0020 00000000 		.word	xQueueGenericSendFromISR
+ 384              		.cfi_endproc
+ 385              	.LFE73:
+ 387              		.comm	queue_handle_LCD,4,4
+ 388              		.text
+ 389              	.Letext0:
+ 390              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 391              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 392              		.file 4 "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 393              		.file 5 "../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 394              		.file 6 "../Core/Inc/FreeRTOSConfig.h"
+ 395              		.file 7 "../Drivers/CMSIS/Include/core_cm3.h"
+ 396              		.file 8 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 397              		.file 9 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 398              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 399              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 400              		.file 12 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 401              		.file 13 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 402              		.file 14 "../Core/Inc/usart.h"
+ 403              		.file 15 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\lib\\gcc\\
+ 404              		.file 16 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 405              		.file 17 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 406              		.file 18 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 8
+
+
+ 407              		.file 19 "../Core/Inc/lcd.h"
+ 408              		.file 20 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccjTviCm.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 lcd.c
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:16     .rodata.init_LCD.str1.4:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:20     .text.init_LCD:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:28     .text.init_LCD:0000000000000000 init_LCD
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:77     .text.init_LCD:000000000000002c $d
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:194    .text.task_function_for_LCD:0000000000000000 task_function_for_LCD
+                            *COM*:0000000000000004 queue_handle_LCD
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:86     .text.LCD_Write:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:93     .text.LCD_Write:0000000000000000 LCD_Write
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:130    .text.LCD_Write:0000000000000024 $d
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:135    .text.LCD_CommandInitiate:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:142    .text.LCD_CommandInitiate:0000000000000000 LCD_CommandInitiate
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:181    .text.LCD_CommandInitiate:000000000000001c $d
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:187    .text.task_function_for_LCD:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:270    .text.task_function_for_LCD:000000000000004c $d
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:279    .text.LCD_add_to_queue:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:286    .text.LCD_add_to_queue:0000000000000000 LCD_add_to_queue
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:328    .text.LCD_add_to_queue:0000000000000020 $d
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:334    .text.LCD_add_to_queue_from_ISR:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:341    .text.LCD_add_to_queue_from_ISR:0000000000000000 LCD_add_to_queue_from_ISR
+C:\Users\38164\AppData\Local\Temp\ccjTviCm.s:382    .text.LCD_add_to_queue_from_ISR:000000000000001c $d
+
+UNDEFINED SYMBOLS
+xTaskCreate
+xQueueGenericCreate
+vTaskDelay
+xQueueReceive
+xQueueGenericSend
+xQueueGenericSendFromISR

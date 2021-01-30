@@ -1,0 +1,37 @@
+/*
+ * mcu_two.c
+ *
+ *  Created on: Jan 30, 2021
+ *      Author: 38164
+ */
+
+#include "mcu_two.h"
+
+TaskHandle_t task_handle_receive_from_MCU_one;
+QueueHandle_t queue_handle_receive_from_MCU_one;
+SemaphoreHandle_t mutex_handle_receive_from_MCU_one;
+
+void init_MCU_two() {
+	xTaskCreate(task_receive_from_MCU_one, "receive_from_MCU1", 64, NULL, 20, &task_handle_receive_from_MCU_one);
+	queue_handle_receive_from_MCU_one = xQueueCreate(32, sizeof(uint8_t));
+	mutex_handle_receive_from_MCU_one = xSemaphoreCreateMutex();
+}
+
+void task_receive_from_MCU_one(void* params) {
+	uint8_t item_to_receive_from_MCU_one;
+	while(1) {
+		HAL_UART_Receive_IT(&htim1, &item_to_receive_from_MCU_one, sizeof(uint8_t));
+		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+		xQueueSendToBack(queue_handle_receive_from_MCU_one, &item_to_receive_from_MCU_one, portMAX_DELAY);
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	BaseType_t woken = pdFALSE;
+
+	if(huart->Instance == huart1.Instance) {
+		vTaskNotifyGiveFromISR(task_handle_receive_from_MCU_one, &woken);
+	}
+
+	portYIELD_FROM_ISR(woken);
+}

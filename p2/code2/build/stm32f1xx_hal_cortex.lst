@@ -1,0 +1,1134 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f1xx_hal_cortex.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.HAL_NVIC_SetPriorityGrouping,"ax",%progbits
+  16              		.align	1
+  17              		.global	HAL_NVIC_SetPriorityGrouping
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	HAL_NVIC_SetPriorityGrouping:
+  25              	.LVL0:
+  26              	.LFB65:
+  27              		.file 1 "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c"
+   1:../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c **** 
+  28              		.loc 1 144 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              		.loc 1 146 3 view .LVU1
+  34              		.loc 1 149 3 view .LVU2
+  35              	.LBB46:
+  36              	.LBI46:
+  37              		.file 2 "../Drivers/CMSIS/Include/core_cm3.h"
+   1:../Drivers/CMSIS/Include/core_cm3.h **** 
+  38              		.loc 2 1480 22 view .LVU3
+  39              	.LBB47:
+  40              		.loc 2 1482 3 view .LVU4
+  41              		.loc 2 1483 3 view .LVU5
+  42              		.loc 2 1485 3 view .LVU6
+  43              		.loc 2 1485 14 is_stmt 0 view .LVU7
+  44 0000 074A     		ldr	r2, .L2
+  45 0002 D368     		ldr	r3, [r2, #12]
+  46              	.LVL1:
+  47              		.loc 2 1486 3 is_stmt 1 view .LVU8
+  48              		.loc 2 1486 13 is_stmt 0 view .LVU9
+  49 0004 23F4E063 		bic	r3, r3, #1792
+  50              	.LVL2:
+  51              		.loc 2 1486 13 view .LVU10
+  52 0008 1B04     		lsls	r3, r3, #16
+  53 000a 1B0C     		lsrs	r3, r3, #16
+  54              	.LVL3:
+  55              		.loc 2 1487 3 is_stmt 1 view .LVU11
+  56              		.loc 2 1489 35 is_stmt 0 view .LVU12
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 2
+
+
+  57 000c 0002     		lsls	r0, r0, #8
+  58              	.LVL4:
+  59              		.loc 2 1489 35 view .LVU13
+  60 000e 00F4E060 		and	r0, r0, #1792
+  61              		.loc 2 1488 62 view .LVU14
+  62 0012 0343     		orrs	r3, r3, r0
+  63              	.LVL5:
+  64              		.loc 2 1487 14 view .LVU15
+  65 0014 43F0BF63 		orr	r3, r3, #100139008
+  66 0018 43F40033 		orr	r3, r3, #131072
+  67              	.LVL6:
+  68              		.loc 2 1490 3 is_stmt 1 view .LVU16
+  69              		.loc 2 1490 14 is_stmt 0 view .LVU17
+  70 001c D360     		str	r3, [r2, #12]
+  71              	.LVL7:
+  72              		.loc 2 1490 14 view .LVU18
+  73              	.LBE47:
+  74              	.LBE46:
+  75              		.loc 1 150 1 view .LVU19
+  76 001e 7047     		bx	lr
+  77              	.L3:
+  78              		.align	2
+  79              	.L2:
+  80 0020 00ED00E0 		.word	-536810240
+  81              		.cfi_endproc
+  82              	.LFE65:
+  84              		.section	.text.HAL_NVIC_SetPriority,"ax",%progbits
+  85              		.align	1
+  86              		.global	HAL_NVIC_SetPriority
+  87              		.syntax unified
+  88              		.thumb
+  89              		.thumb_func
+  90              		.fpu softvfp
+  92              	HAL_NVIC_SetPriority:
+  93              	.LVL8:
+  94              	.LFB66:
+  95              		.loc 1 166 1 is_stmt 1 view -0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99              		@ link register save eliminated.
+ 100              		.loc 1 166 1 is_stmt 0 view .LVU21
+ 101 0000 30B4     		push	{r4, r5}
+ 102              	.LCFI0:
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 4, -8
+ 105              		.cfi_offset 5, -4
+ 106              		.loc 1 167 3 is_stmt 1 view .LVU22
+ 107              	.LVL9:
+ 108              		.loc 1 170 3 view .LVU23
+ 109              		.loc 1 171 3 view .LVU24
+ 110              		.loc 1 173 3 view .LVU25
+ 111              	.LBB48:
+ 112              	.LBI48:
+ 113              		.loc 2 1499 26 view .LVU26
+ 114              	.LBB49:
+ 115              		.loc 2 1501 3 view .LVU27
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 3
+
+
+ 116              		.loc 2 1501 26 is_stmt 0 view .LVU28
+ 117 0002 174B     		ldr	r3, .L10
+ 118 0004 DB68     		ldr	r3, [r3, #12]
+ 119              		.loc 2 1501 11 view .LVU29
+ 120 0006 C3F30223 		ubfx	r3, r3, #8, #3
+ 121              	.LVL10:
+ 122              		.loc 2 1501 11 view .LVU30
+ 123              	.LBE49:
+ 124              	.LBE48:
+ 125              		.loc 1 175 3 is_stmt 1 view .LVU31
+ 126              	.LBB50:
+ 127              	.LBI50:
+ 128              		.loc 2 1686 26 view .LVU32
+ 129              	.LBB51:
+ 130              		.loc 2 1688 3 view .LVU33
+ 131              		.loc 2 1689 3 view .LVU34
+ 132              		.loc 2 1690 3 view .LVU35
+ 133              		.loc 2 1692 3 view .LVU36
+ 134              		.loc 2 1692 31 is_stmt 0 view .LVU37
+ 135 000a C3F10704 		rsb	r4, r3, #7
+ 136              		.loc 2 1692 23 view .LVU38
+ 137 000e 042C     		cmp	r4, #4
+ 138 0010 28BF     		it	cs
+ 139 0012 0424     		movcs	r4, #4
+ 140              	.LVL11:
+ 141              		.loc 2 1693 3 is_stmt 1 view .LVU39
+ 142              		.loc 2 1693 44 is_stmt 0 view .LVU40
+ 143 0014 1D1D     		adds	r5, r3, #4
+ 144              		.loc 2 1693 109 view .LVU41
+ 145 0016 062D     		cmp	r5, #6
+ 146 0018 18D9     		bls	.L8
+ 147 001a 033B     		subs	r3, r3, #3
+ 148              	.LVL12:
+ 149              	.L5:
+ 150              		.loc 2 1695 3 is_stmt 1 view .LVU42
+ 151              		.loc 2 1696 30 is_stmt 0 view .LVU43
+ 152 001c 4FF0FF35 		mov	r5, #-1
+ 153              	.LVL13:
+ 154              		.loc 2 1696 30 view .LVU44
+ 155 0020 05FA04F4 		lsl	r4, r5, r4
+ 156              	.LVL14:
+ 157              		.loc 2 1696 30 view .LVU45
+ 158 0024 21EA0401 		bic	r1, r1, r4
+ 159              	.LVL15:
+ 160              		.loc 2 1696 82 view .LVU46
+ 161 0028 9940     		lsls	r1, r1, r3
+ 162              		.loc 2 1697 30 view .LVU47
+ 163 002a 05FA03F3 		lsl	r3, r5, r3
+ 164              	.LVL16:
+ 165              		.loc 2 1697 30 view .LVU48
+ 166 002e 22EA0303 		bic	r3, r2, r3
+ 167              		.loc 2 1696 102 view .LVU49
+ 168 0032 1943     		orrs	r1, r1, r3
+ 169              	.LVL17:
+ 170              		.loc 2 1696 102 view .LVU50
+ 171              	.LBE51:
+ 172              	.LBE50:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 4
+
+
+ 173              	.LBB53:
+ 174              	.LBI53:
+ 175              		.loc 2 1639 22 is_stmt 1 view .LVU51
+ 176              	.LBB54:
+ 177              		.loc 2 1641 3 view .LVU52
+ 178              		.loc 2 1641 6 is_stmt 0 view .LVU53
+ 179 0034 0028     		cmp	r0, #0
+ 180 0036 0BDB     		blt	.L6
+ 181              		.loc 2 1643 5 is_stmt 1 view .LVU54
+ 182              		.loc 2 1643 48 is_stmt 0 view .LVU55
+ 183 0038 0901     		lsls	r1, r1, #4
+ 184              	.LVL18:
+ 185              		.loc 2 1643 48 view .LVU56
+ 186 003a C9B2     		uxtb	r1, r1
+ 187              		.loc 2 1643 46 view .LVU57
+ 188 003c 00F16040 		add	r0, r0, #-536870912
+ 189              	.LVL19:
+ 190              		.loc 2 1643 46 view .LVU58
+ 191 0040 00F56140 		add	r0, r0, #57600
+ 192 0044 80F80013 		strb	r1, [r0, #768]
+ 193              	.LVL20:
+ 194              	.L4:
+ 195              		.loc 2 1643 46 view .LVU59
+ 196              	.LBE54:
+ 197              	.LBE53:
+ 198              		.loc 1 176 1 view .LVU60
+ 199 0048 30BC     		pop	{r4, r5}
+ 200              	.LCFI1:
+ 201              		.cfi_remember_state
+ 202              		.cfi_restore 5
+ 203              		.cfi_restore 4
+ 204              		.cfi_def_cfa_offset 0
+ 205 004a 7047     		bx	lr
+ 206              	.LVL21:
+ 207              	.L8:
+ 208              	.LCFI2:
+ 209              		.cfi_restore_state
+ 210              	.LBB56:
+ 211              	.LBB52:
+ 212              		.loc 2 1693 109 view .LVU61
+ 213 004c 0023     		movs	r3, #0
+ 214              	.LVL22:
+ 215              		.loc 2 1693 109 view .LVU62
+ 216 004e E5E7     		b	.L5
+ 217              	.LVL23:
+ 218              	.L6:
+ 219              		.loc 2 1693 109 view .LVU63
+ 220              	.LBE52:
+ 221              	.LBE56:
+ 222              	.LBB57:
+ 223              	.LBB55:
+ 224              		.loc 2 1647 5 is_stmt 1 view .LVU64
+ 225              		.loc 2 1647 32 is_stmt 0 view .LVU65
+ 226 0050 00F00F00 		and	r0, r0, #15
+ 227              	.LVL24:
+ 228              		.loc 2 1647 48 view .LVU66
+ 229 0054 0901     		lsls	r1, r1, #4
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 5
+
+
+ 230              	.LVL25:
+ 231              		.loc 2 1647 48 view .LVU67
+ 232 0056 C9B2     		uxtb	r1, r1
+ 233              		.loc 2 1647 46 view .LVU68
+ 234 0058 024B     		ldr	r3, .L10+4
+ 235 005a 1954     		strb	r1, [r3, r0]
+ 236              	.LVL26:
+ 237              		.loc 2 1647 46 view .LVU69
+ 238              	.LBE55:
+ 239              	.LBE57:
+ 240              		.loc 1 176 1 view .LVU70
+ 241 005c F4E7     		b	.L4
+ 242              	.L11:
+ 243 005e 00BF     		.align	2
+ 244              	.L10:
+ 245 0060 00ED00E0 		.word	-536810240
+ 246 0064 14ED00E0 		.word	-536810220
+ 247              		.cfi_endproc
+ 248              	.LFE66:
+ 250              		.section	.text.HAL_NVIC_EnableIRQ,"ax",%progbits
+ 251              		.align	1
+ 252              		.global	HAL_NVIC_EnableIRQ
+ 253              		.syntax unified
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.fpu softvfp
+ 258              	HAL_NVIC_EnableIRQ:
+ 259              	.LVL27:
+ 260              	.LFB67:
+ 261              		.loc 1 188 1 is_stmt 1 view -0
+ 262              		.cfi_startproc
+ 263              		@ args = 0, pretend = 0, frame = 0
+ 264              		@ frame_needed = 0, uses_anonymous_args = 0
+ 265              		@ link register save eliminated.
+ 266              		.loc 1 190 3 view .LVU72
+ 267              		.loc 1 193 3 view .LVU73
+ 268              	.LBB58:
+ 269              	.LBI58:
+ 270              		.loc 2 1511 22 view .LVU74
+ 271              	.LBB59:
+ 272              		.loc 2 1513 3 view .LVU75
+ 273              		.loc 2 1513 6 is_stmt 0 view .LVU76
+ 274 0000 0028     		cmp	r0, #0
+ 275              	.LVL28:
+ 276              		.loc 2 1513 6 view .LVU77
+ 277 0002 07DB     		blt	.L12
+ 278              		.loc 2 1515 5 is_stmt 1 view .LVU78
+ 279              		.loc 2 1515 81 is_stmt 0 view .LVU79
+ 280 0004 00F01F02 		and	r2, r0, #31
+ 281              		.loc 2 1515 34 view .LVU80
+ 282 0008 4009     		lsrs	r0, r0, #5
+ 283              		.loc 2 1515 45 view .LVU81
+ 284 000a 0123     		movs	r3, #1
+ 285 000c 9340     		lsls	r3, r3, r2
+ 286              		.loc 2 1515 43 view .LVU82
+ 287 000e 024A     		ldr	r2, .L14
+ 288 0010 42F82030 		str	r3, [r2, r0, lsl #2]
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 6
+
+
+ 289              	.LVL29:
+ 290              	.L12:
+ 291              		.loc 2 1515 43 view .LVU83
+ 292              	.LBE59:
+ 293              	.LBE58:
+ 294              		.loc 1 194 1 view .LVU84
+ 295 0014 7047     		bx	lr
+ 296              	.L15:
+ 297 0016 00BF     		.align	2
+ 298              	.L14:
+ 299 0018 00E100E0 		.word	-536813312
+ 300              		.cfi_endproc
+ 301              	.LFE67:
+ 303              		.section	.text.HAL_NVIC_DisableIRQ,"ax",%progbits
+ 304              		.align	1
+ 305              		.global	HAL_NVIC_DisableIRQ
+ 306              		.syntax unified
+ 307              		.thumb
+ 308              		.thumb_func
+ 309              		.fpu softvfp
+ 311              	HAL_NVIC_DisableIRQ:
+ 312              	.LVL30:
+ 313              	.LFB68:
+ 314              		.loc 1 204 1 is_stmt 1 view -0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318              		@ link register save eliminated.
+ 319              		.loc 1 206 3 view .LVU86
+ 320              		.loc 1 209 3 view .LVU87
+ 321              	.LBB60:
+ 322              	.LBI60:
+ 323              		.loc 2 1547 22 view .LVU88
+ 324              	.LBB61:
+ 325              		.loc 2 1549 3 view .LVU89
+ 326              		.loc 2 1549 6 is_stmt 0 view .LVU90
+ 327 0000 0028     		cmp	r0, #0
+ 328              	.LVL31:
+ 329              		.loc 2 1549 6 view .LVU91
+ 330 0002 0CDB     		blt	.L16
+ 331              		.loc 2 1551 5 is_stmt 1 view .LVU92
+ 332              		.loc 2 1551 81 is_stmt 0 view .LVU93
+ 333 0004 00F01F02 		and	r2, r0, #31
+ 334              		.loc 2 1551 34 view .LVU94
+ 335 0008 4009     		lsrs	r0, r0, #5
+ 336              		.loc 2 1551 45 view .LVU95
+ 337 000a 0123     		movs	r3, #1
+ 338 000c 9340     		lsls	r3, r3, r2
+ 339              		.loc 2 1551 43 view .LVU96
+ 340 000e 2030     		adds	r0, r0, #32
+ 341 0010 034A     		ldr	r2, .L18
+ 342 0012 42F82030 		str	r3, [r2, r0, lsl #2]
+ 343              		.loc 2 1552 5 is_stmt 1 view .LVU97
+ 344              	.LBB62:
+ 345              	.LBI62:
+ 346              		.file 3 "../Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:../Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 7
+
+
+ 347              		.loc 3 877 27 view .LVU98
+ 348              	.LBB63:
+ 349              		.loc 3 879 3 view .LVU99
+ 350              		.syntax unified
+ 351              	@ 879 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 352 0016 BFF34F8F 		dsb 0xF
+ 353              	@ 0 "" 2
+ 354              		.thumb
+ 355              		.syntax unified
+ 356              	.LBE63:
+ 357              	.LBE62:
+ 358              		.loc 2 1553 5 view .LVU100
+ 359              	.LBB64:
+ 360              	.LBI64:
+ 361              		.loc 3 866 27 view .LVU101
+ 362              	.LBB65:
+ 363              		.loc 3 868 3 view .LVU102
+ 364              		.syntax unified
+ 365              	@ 868 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 366 001a BFF36F8F 		isb 0xF
+ 367              	@ 0 "" 2
+ 368              	.LVL32:
+ 369              		.thumb
+ 370              		.syntax unified
+ 371              	.L16:
+ 372              		.loc 3 868 3 is_stmt 0 view .LVU103
+ 373              	.LBE65:
+ 374              	.LBE64:
+ 375              	.LBE61:
+ 376              	.LBE60:
+ 377              		.loc 1 210 1 view .LVU104
+ 378 001e 7047     		bx	lr
+ 379              	.L19:
+ 380              		.align	2
+ 381              	.L18:
+ 382 0020 00E100E0 		.word	-536813312
+ 383              		.cfi_endproc
+ 384              	.LFE68:
+ 386              		.section	.text.HAL_NVIC_SystemReset,"ax",%progbits
+ 387              		.align	1
+ 388              		.global	HAL_NVIC_SystemReset
+ 389              		.syntax unified
+ 390              		.thumb
+ 391              		.thumb_func
+ 392              		.fpu softvfp
+ 394              	HAL_NVIC_SystemReset:
+ 395              	.LFB69:
+ 396              		.loc 1 217 1 is_stmt 1 view -0
+ 397              		.cfi_startproc
+ 398              		@ Volatile: function does not return.
+ 399              		@ args = 0, pretend = 0, frame = 0
+ 400              		@ frame_needed = 0, uses_anonymous_args = 0
+ 401              		@ link register save eliminated.
+ 402              		.loc 1 219 3 view .LVU106
+ 403              	.LBB72:
+ 404              	.LBI72:
+ 405              		.loc 2 1762 34 view .LVU107
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 8
+
+
+ 406              	.LBB73:
+ 407              		.loc 2 1764 3 view .LVU108
+ 408              	.LBB74:
+ 409              	.LBI74:
+ 410              		.loc 3 877 27 view .LVU109
+ 411              	.LBB75:
+ 412              		.loc 3 879 3 view .LVU110
+ 413              		.syntax unified
+ 414              	@ 879 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 415 0000 BFF34F8F 		dsb 0xF
+ 416              	@ 0 "" 2
+ 417              		.thumb
+ 418              		.syntax unified
+ 419              	.LBE75:
+ 420              	.LBE74:
+ 421              		.loc 2 1766 3 view .LVU111
+ 422              		.loc 2 1767 32 is_stmt 0 view .LVU112
+ 423 0004 0549     		ldr	r1, .L22
+ 424 0006 CA68     		ldr	r2, [r1, #12]
+ 425              		.loc 2 1767 40 view .LVU113
+ 426 0008 02F4E062 		and	r2, r2, #1792
+ 427              		.loc 2 1766 17 view .LVU114
+ 428 000c 044B     		ldr	r3, .L22+4
+ 429 000e 1343     		orrs	r3, r3, r2
+ 430              		.loc 2 1766 15 view .LVU115
+ 431 0010 CB60     		str	r3, [r1, #12]
+ 432              		.loc 2 1769 3 is_stmt 1 view .LVU116
+ 433              	.LBB76:
+ 434              	.LBI76:
+ 435              		.loc 3 877 27 view .LVU117
+ 436              	.LBB77:
+ 437              		.loc 3 879 3 view .LVU118
+ 438              		.syntax unified
+ 439              	@ 879 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 440 0012 BFF34F8F 		dsb 0xF
+ 441              	@ 0 "" 2
+ 442              		.thumb
+ 443              		.syntax unified
+ 444              	.L21:
+ 445              	.LBE77:
+ 446              	.LBE76:
+ 447              		.loc 2 1771 3 view .LVU119
+ 448              		.loc 2 1773 5 view .LVU120
+ 449              		.syntax unified
+ 450              	@ 1773 "Drivers/CMSIS/Include/core_cm3.h" 1
+ 451 0016 00BF     		nop
+ 452              	@ 0 "" 2
+ 453              		.loc 2 1771 8 view .LVU121
+ 454              		.thumb
+ 455              		.syntax unified
+ 456 0018 FDE7     		b	.L21
+ 457              	.L23:
+ 458 001a 00BF     		.align	2
+ 459              	.L22:
+ 460 001c 00ED00E0 		.word	-536810240
+ 461 0020 0400FA05 		.word	100270084
+ 462              	.LBE73:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 9
+
+
+ 463              	.LBE72:
+ 464              		.cfi_endproc
+ 465              	.LFE69:
+ 467              		.section	.text.HAL_SYSTICK_Config,"ax",%progbits
+ 468              		.align	1
+ 469              		.global	HAL_SYSTICK_Config
+ 470              		.syntax unified
+ 471              		.thumb
+ 472              		.thumb_func
+ 473              		.fpu softvfp
+ 475              	HAL_SYSTICK_Config:
+ 476              	.LVL33:
+ 477              	.LFB70:
+ 478              		.loc 1 230 1 view -0
+ 479              		.cfi_startproc
+ 480              		@ args = 0, pretend = 0, frame = 0
+ 481              		@ frame_needed = 0, uses_anonymous_args = 0
+ 482              		@ link register save eliminated.
+ 483              		.loc 1 231 4 view .LVU123
+ 484              	.LBB78:
+ 485              	.LBI78:
+ 486              		.loc 2 1834 26 view .LVU124
+ 487              	.LBB79:
+ 488              		.loc 2 1836 3 view .LVU125
+ 489              		.loc 2 1836 14 is_stmt 0 view .LVU126
+ 490 0000 0138     		subs	r0, r0, #1
+ 491              	.LVL34:
+ 492              		.loc 2 1836 6 view .LVU127
+ 493 0002 B0F1807F 		cmp	r0, #16777216
+ 494 0006 0AD2     		bcs	.L26
+ 495              		.loc 2 1841 3 is_stmt 1 view .LVU128
+ 496              		.loc 2 1841 18 is_stmt 0 view .LVU129
+ 497 0008 064B     		ldr	r3, .L27
+ 498 000a 5860     		str	r0, [r3, #4]
+ 499              		.loc 2 1842 3 is_stmt 1 view .LVU130
+ 500              	.LVL35:
+ 501              	.LBB80:
+ 502              	.LBI80:
+ 503              		.loc 2 1639 22 view .LVU131
+ 504              	.LBB81:
+ 505              		.loc 2 1641 3 view .LVU132
+ 506              		.loc 2 1647 5 view .LVU133
+ 507              		.loc 2 1647 46 is_stmt 0 view .LVU134
+ 508 000c 064A     		ldr	r2, .L27+4
+ 509 000e F021     		movs	r1, #240
+ 510 0010 82F82310 		strb	r1, [r2, #35]
+ 511              	.LVL36:
+ 512              		.loc 2 1647 46 view .LVU135
+ 513              	.LBE81:
+ 514              	.LBE80:
+ 515              		.loc 2 1843 3 is_stmt 1 view .LVU136
+ 516              		.loc 2 1843 18 is_stmt 0 view .LVU137
+ 517 0014 0020     		movs	r0, #0
+ 518              	.LVL37:
+ 519              		.loc 2 1843 18 view .LVU138
+ 520 0016 9860     		str	r0, [r3, #8]
+ 521              		.loc 2 1844 3 is_stmt 1 view .LVU139
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 10
+
+
+ 522              		.loc 2 1844 18 is_stmt 0 view .LVU140
+ 523 0018 0722     		movs	r2, #7
+ 524 001a 1A60     		str	r2, [r3]
+ 525              		.loc 2 1847 3 is_stmt 1 view .LVU141
+ 526              		.loc 2 1847 10 is_stmt 0 view .LVU142
+ 527 001c 7047     		bx	lr
+ 528              	.L26:
+ 529              		.loc 2 1838 12 view .LVU143
+ 530 001e 0120     		movs	r0, #1
+ 531              	.LVL38:
+ 532              		.loc 2 1838 12 view .LVU144
+ 533              	.LBE79:
+ 534              	.LBE78:
+ 535              		.loc 1 232 1 view .LVU145
+ 536 0020 7047     		bx	lr
+ 537              	.L28:
+ 538 0022 00BF     		.align	2
+ 539              	.L27:
+ 540 0024 10E000E0 		.word	-536813552
+ 541 0028 00ED00E0 		.word	-536810240
+ 542              		.cfi_endproc
+ 543              	.LFE70:
+ 545              		.section	.text.HAL_NVIC_GetPriorityGrouping,"ax",%progbits
+ 546              		.align	1
+ 547              		.global	HAL_NVIC_GetPriorityGrouping
+ 548              		.syntax unified
+ 549              		.thumb
+ 550              		.thumb_func
+ 551              		.fpu softvfp
+ 553              	HAL_NVIC_GetPriorityGrouping:
+ 554              	.LFB71:
+ 555              		.loc 1 345 1 is_stmt 1 view -0
+ 556              		.cfi_startproc
+ 557              		@ args = 0, pretend = 0, frame = 0
+ 558              		@ frame_needed = 0, uses_anonymous_args = 0
+ 559              		@ link register save eliminated.
+ 560              		.loc 1 347 3 view .LVU147
+ 561              	.LBB82:
+ 562              	.LBI82:
+ 563              		.loc 2 1499 26 view .LVU148
+ 564              	.LBB83:
+ 565              		.loc 2 1501 3 view .LVU149
+ 566              		.loc 2 1501 26 is_stmt 0 view .LVU150
+ 567 0000 024B     		ldr	r3, .L30
+ 568 0002 D868     		ldr	r0, [r3, #12]
+ 569              	.LBE83:
+ 570              	.LBE82:
+ 571              		.loc 1 348 1 view .LVU151
+ 572 0004 C0F30220 		ubfx	r0, r0, #8, #3
+ 573 0008 7047     		bx	lr
+ 574              	.L31:
+ 575 000a 00BF     		.align	2
+ 576              	.L30:
+ 577 000c 00ED00E0 		.word	-536810240
+ 578              		.cfi_endproc
+ 579              	.LFE71:
+ 581              		.section	.text.HAL_NVIC_GetPriority,"ax",%progbits
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 11
+
+
+ 582              		.align	1
+ 583              		.global	HAL_NVIC_GetPriority
+ 584              		.syntax unified
+ 585              		.thumb
+ 586              		.thumb_func
+ 587              		.fpu softvfp
+ 589              	HAL_NVIC_GetPriority:
+ 590              	.LVL39:
+ 591              	.LFB72:
+ 592              		.loc 1 372 1 is_stmt 1 view -0
+ 593              		.cfi_startproc
+ 594              		@ args = 0, pretend = 0, frame = 0
+ 595              		@ frame_needed = 0, uses_anonymous_args = 0
+ 596              		@ link register save eliminated.
+ 597              		.loc 1 372 1 is_stmt 0 view .LVU153
+ 598 0000 70B4     		push	{r4, r5, r6}
+ 599              	.LCFI3:
+ 600              		.cfi_def_cfa_offset 12
+ 601              		.cfi_offset 4, -12
+ 602              		.cfi_offset 5, -8
+ 603              		.cfi_offset 6, -4
+ 604              		.loc 1 374 3 is_stmt 1 view .LVU154
+ 605              		.loc 1 376 3 view .LVU155
+ 606              	.LVL40:
+ 607              	.LBB84:
+ 608              	.LBI84:
+ 609              		.loc 2 1661 26 view .LVU156
+ 610              	.LBB85:
+ 611              		.loc 2 1664 3 view .LVU157
+ 612              		.loc 2 1664 6 is_stmt 0 view .LVU158
+ 613 0002 0028     		cmp	r0, #0
+ 614              	.LVL41:
+ 615              		.loc 2 1664 6 view .LVU159
+ 616 0004 21DB     		blt	.L33
+ 617              		.loc 2 1666 5 is_stmt 1 view .LVU160
+ 618              		.loc 2 1666 31 is_stmt 0 view .LVU161
+ 619 0006 00F16040 		add	r0, r0, #-536870912
+ 620 000a 00F56140 		add	r0, r0, #57600
+ 621 000e 90F80003 		ldrb	r0, [r0, #768]	@ zero_extendqisi2
+ 622              		.loc 2 1666 64 view .LVU162
+ 623 0012 0009     		lsrs	r0, r0, #4
+ 624              	.L34:
+ 625              	.LVL42:
+ 626              		.loc 2 1666 64 view .LVU163
+ 627              	.LBE85:
+ 628              	.LBE84:
+ 629              	.LBB87:
+ 630              	.LBI87:
+ 631              		.loc 2 1713 22 is_stmt 1 view .LVU164
+ 632              	.LBB88:
+ 633              		.loc 2 1715 3 view .LVU165
+ 634              		.loc 2 1715 12 is_stmt 0 view .LVU166
+ 635 0014 01F00701 		and	r1, r1, #7
+ 636              	.LVL43:
+ 637              		.loc 2 1716 3 is_stmt 1 view .LVU167
+ 638              		.loc 2 1717 3 view .LVU168
+ 639              		.loc 2 1719 3 view .LVU169
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 12
+
+
+ 640              		.loc 2 1719 31 is_stmt 0 view .LVU170
+ 641 0018 C1F10704 		rsb	r4, r1, #7
+ 642              		.loc 2 1719 23 view .LVU171
+ 643 001c 042C     		cmp	r4, #4
+ 644 001e 28BF     		it	cs
+ 645 0020 0424     		movcs	r4, #4
+ 646              	.LVL44:
+ 647              		.loc 2 1720 3 is_stmt 1 view .LVU172
+ 648              		.loc 2 1720 44 is_stmt 0 view .LVU173
+ 649 0022 0D1D     		adds	r5, r1, #4
+ 650              		.loc 2 1720 109 view .LVU174
+ 651 0024 062D     		cmp	r5, #6
+ 652 0026 16D9     		bls	.L36
+ 653 0028 0339     		subs	r1, r1, #3
+ 654              	.LVL45:
+ 655              	.L35:
+ 656              		.loc 2 1722 3 is_stmt 1 view .LVU175
+ 657              		.loc 2 1722 33 is_stmt 0 view .LVU176
+ 658 002a 20FA01F6 		lsr	r6, r0, r1
+ 659              		.loc 2 1722 53 view .LVU177
+ 660 002e 4FF0FF35 		mov	r5, #-1
+ 661              	.LVL46:
+ 662              		.loc 2 1722 53 view .LVU178
+ 663 0032 05FA04F4 		lsl	r4, r5, r4
+ 664              	.LVL47:
+ 665              		.loc 2 1722 53 view .LVU179
+ 666 0036 26EA0404 		bic	r4, r6, r4
+ 667              		.loc 2 1722 21 view .LVU180
+ 668 003a 1460     		str	r4, [r2]
+ 669              		.loc 2 1723 3 is_stmt 1 view .LVU181
+ 670              		.loc 2 1723 53 is_stmt 0 view .LVU182
+ 671 003c 05FA01F1 		lsl	r1, r5, r1
+ 672              	.LVL48:
+ 673              		.loc 2 1723 53 view .LVU183
+ 674 0040 20EA0100 		bic	r0, r0, r1
+ 675              	.LVL49:
+ 676              		.loc 2 1723 21 view .LVU184
+ 677 0044 1860     		str	r0, [r3]
+ 678              	.LVL50:
+ 679              		.loc 2 1723 21 view .LVU185
+ 680              	.LBE88:
+ 681              	.LBE87:
+ 682              		.loc 1 377 1 view .LVU186
+ 683 0046 70BC     		pop	{r4, r5, r6}
+ 684              	.LCFI4:
+ 685              		.cfi_remember_state
+ 686              		.cfi_restore 6
+ 687              		.cfi_restore 5
+ 688              		.cfi_restore 4
+ 689              		.cfi_def_cfa_offset 0
+ 690 0048 7047     		bx	lr
+ 691              	.LVL51:
+ 692              	.L33:
+ 693              	.LCFI5:
+ 694              		.cfi_restore_state
+ 695              	.LBB90:
+ 696              	.LBB86:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 13
+
+
+ 697              		.loc 2 1670 5 is_stmt 1 view .LVU187
+ 698              		.loc 2 1670 50 is_stmt 0 view .LVU188
+ 699 004a 00F00F00 		and	r0, r0, #15
+ 700              		.loc 2 1670 31 view .LVU189
+ 701 004e 034C     		ldr	r4, .L38
+ 702 0050 205C     		ldrb	r0, [r4, r0]	@ zero_extendqisi2
+ 703              		.loc 2 1670 64 view .LVU190
+ 704 0052 0009     		lsrs	r0, r0, #4
+ 705 0054 DEE7     		b	.L34
+ 706              	.LVL52:
+ 707              	.L36:
+ 708              		.loc 2 1670 64 view .LVU191
+ 709              	.LBE86:
+ 710              	.LBE90:
+ 711              	.LBB91:
+ 712              	.LBB89:
+ 713              		.loc 2 1720 109 view .LVU192
+ 714 0056 0021     		movs	r1, #0
+ 715              	.LVL53:
+ 716              		.loc 2 1720 109 view .LVU193
+ 717 0058 E7E7     		b	.L35
+ 718              	.L39:
+ 719 005a 00BF     		.align	2
+ 720              	.L38:
+ 721 005c 14ED00E0 		.word	-536810220
+ 722              	.LBE89:
+ 723              	.LBE91:
+ 724              		.cfi_endproc
+ 725              	.LFE72:
+ 727              		.section	.text.HAL_NVIC_SetPendingIRQ,"ax",%progbits
+ 728              		.align	1
+ 729              		.global	HAL_NVIC_SetPendingIRQ
+ 730              		.syntax unified
+ 731              		.thumb
+ 732              		.thumb_func
+ 733              		.fpu softvfp
+ 735              	HAL_NVIC_SetPendingIRQ:
+ 736              	.LVL54:
+ 737              	.LFB73:
+ 738              		.loc 1 387 1 is_stmt 1 view -0
+ 739              		.cfi_startproc
+ 740              		@ args = 0, pretend = 0, frame = 0
+ 741              		@ frame_needed = 0, uses_anonymous_args = 0
+ 742              		@ link register save eliminated.
+ 743              		.loc 1 389 3 view .LVU195
+ 744              		.loc 1 392 3 view .LVU196
+ 745              	.LBB92:
+ 746              	.LBI92:
+ 747              		.loc 2 1585 22 view .LVU197
+ 748              	.LBB93:
+ 749              		.loc 2 1587 3 view .LVU198
+ 750              		.loc 2 1587 6 is_stmt 0 view .LVU199
+ 751 0000 0028     		cmp	r0, #0
+ 752              	.LVL55:
+ 753              		.loc 2 1587 6 view .LVU200
+ 754 0002 08DB     		blt	.L40
+ 755              		.loc 2 1589 5 is_stmt 1 view .LVU201
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 14
+
+
+ 756              		.loc 2 1589 81 is_stmt 0 view .LVU202
+ 757 0004 00F01F02 		and	r2, r0, #31
+ 758              		.loc 2 1589 34 view .LVU203
+ 759 0008 4009     		lsrs	r0, r0, #5
+ 760              		.loc 2 1589 45 view .LVU204
+ 761 000a 0123     		movs	r3, #1
+ 762 000c 9340     		lsls	r3, r3, r2
+ 763              		.loc 2 1589 43 view .LVU205
+ 764 000e 4030     		adds	r0, r0, #64
+ 765 0010 014A     		ldr	r2, .L42
+ 766 0012 42F82030 		str	r3, [r2, r0, lsl #2]
+ 767              	.LVL56:
+ 768              	.L40:
+ 769              		.loc 2 1589 43 view .LVU206
+ 770              	.LBE93:
+ 771              	.LBE92:
+ 772              		.loc 1 393 1 view .LVU207
+ 773 0016 7047     		bx	lr
+ 774              	.L43:
+ 775              		.align	2
+ 776              	.L42:
+ 777 0018 00E100E0 		.word	-536813312
+ 778              		.cfi_endproc
+ 779              	.LFE73:
+ 781              		.section	.text.HAL_NVIC_GetPendingIRQ,"ax",%progbits
+ 782              		.align	1
+ 783              		.global	HAL_NVIC_GetPendingIRQ
+ 784              		.syntax unified
+ 785              		.thumb
+ 786              		.thumb_func
+ 787              		.fpu softvfp
+ 789              	HAL_NVIC_GetPendingIRQ:
+ 790              	.LVL57:
+ 791              	.LFB74:
+ 792              		.loc 1 405 1 is_stmt 1 view -0
+ 793              		.cfi_startproc
+ 794              		@ args = 0, pretend = 0, frame = 0
+ 795              		@ frame_needed = 0, uses_anonymous_args = 0
+ 796              		@ link register save eliminated.
+ 797              		.loc 1 407 3 view .LVU209
+ 798              		.loc 1 410 3 view .LVU210
+ 799              	.LBB94:
+ 800              	.LBI94:
+ 801              		.loc 2 1566 26 view .LVU211
+ 802              	.LBB95:
+ 803              		.loc 2 1568 3 view .LVU212
+ 804              		.loc 2 1568 6 is_stmt 0 view .LVU213
+ 805 0000 0028     		cmp	r0, #0
+ 806              	.LVL58:
+ 807              		.loc 2 1568 6 view .LVU214
+ 808 0002 0BDB     		blt	.L46
+ 809              		.loc 2 1570 5 is_stmt 1 view .LVU215
+ 810              		.loc 2 1570 54 is_stmt 0 view .LVU216
+ 811 0004 4309     		lsrs	r3, r0, #5
+ 812              		.loc 2 1570 35 view .LVU217
+ 813 0006 4033     		adds	r3, r3, #64
+ 814 0008 054A     		ldr	r2, .L47
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 15
+
+
+ 815 000a 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 816              		.loc 2 1570 91 view .LVU218
+ 817 000e 00F01F00 		and	r0, r0, #31
+ 818              		.loc 2 1570 103 view .LVU219
+ 819 0012 23FA00F0 		lsr	r0, r3, r0
+ 820              		.loc 2 1570 12 view .LVU220
+ 821 0016 00F00100 		and	r0, r0, #1
+ 822 001a 7047     		bx	lr
+ 823              	.L46:
+ 824              		.loc 2 1574 11 view .LVU221
+ 825 001c 0020     		movs	r0, #0
+ 826              	.LVL59:
+ 827              		.loc 2 1574 11 view .LVU222
+ 828              	.LBE95:
+ 829              	.LBE94:
+ 830              		.loc 1 411 1 view .LVU223
+ 831 001e 7047     		bx	lr
+ 832              	.L48:
+ 833              		.align	2
+ 834              	.L47:
+ 835 0020 00E100E0 		.word	-536813312
+ 836              		.cfi_endproc
+ 837              	.LFE74:
+ 839              		.section	.text.HAL_NVIC_ClearPendingIRQ,"ax",%progbits
+ 840              		.align	1
+ 841              		.global	HAL_NVIC_ClearPendingIRQ
+ 842              		.syntax unified
+ 843              		.thumb
+ 844              		.thumb_func
+ 845              		.fpu softvfp
+ 847              	HAL_NVIC_ClearPendingIRQ:
+ 848              	.LVL60:
+ 849              	.LFB75:
+ 850              		.loc 1 421 1 is_stmt 1 view -0
+ 851              		.cfi_startproc
+ 852              		@ args = 0, pretend = 0, frame = 0
+ 853              		@ frame_needed = 0, uses_anonymous_args = 0
+ 854              		@ link register save eliminated.
+ 855              		.loc 1 423 3 view .LVU225
+ 856              		.loc 1 426 3 view .LVU226
+ 857              	.LBB96:
+ 858              	.LBI96:
+ 859              		.loc 2 1600 22 view .LVU227
+ 860              	.LBB97:
+ 861              		.loc 2 1602 3 view .LVU228
+ 862              		.loc 2 1602 6 is_stmt 0 view .LVU229
+ 863 0000 0028     		cmp	r0, #0
+ 864              	.LVL61:
+ 865              		.loc 2 1602 6 view .LVU230
+ 866 0002 08DB     		blt	.L49
+ 867              		.loc 2 1604 5 is_stmt 1 view .LVU231
+ 868              		.loc 2 1604 81 is_stmt 0 view .LVU232
+ 869 0004 00F01F02 		and	r2, r0, #31
+ 870              		.loc 2 1604 34 view .LVU233
+ 871 0008 4009     		lsrs	r0, r0, #5
+ 872              		.loc 2 1604 45 view .LVU234
+ 873 000a 0123     		movs	r3, #1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 16
+
+
+ 874 000c 9340     		lsls	r3, r3, r2
+ 875              		.loc 2 1604 43 view .LVU235
+ 876 000e 6030     		adds	r0, r0, #96
+ 877 0010 014A     		ldr	r2, .L51
+ 878 0012 42F82030 		str	r3, [r2, r0, lsl #2]
+ 879              	.LVL62:
+ 880              	.L49:
+ 881              		.loc 2 1604 43 view .LVU236
+ 882              	.LBE97:
+ 883              	.LBE96:
+ 884              		.loc 1 427 1 view .LVU237
+ 885 0016 7047     		bx	lr
+ 886              	.L52:
+ 887              		.align	2
+ 888              	.L51:
+ 889 0018 00E100E0 		.word	-536813312
+ 890              		.cfi_endproc
+ 891              	.LFE75:
+ 893              		.section	.text.HAL_NVIC_GetActive,"ax",%progbits
+ 894              		.align	1
+ 895              		.global	HAL_NVIC_GetActive
+ 896              		.syntax unified
+ 897              		.thumb
+ 898              		.thumb_func
+ 899              		.fpu softvfp
+ 901              	HAL_NVIC_GetActive:
+ 902              	.LVL63:
+ 903              	.LFB76:
+ 904              		.loc 1 438 1 is_stmt 1 view -0
+ 905              		.cfi_startproc
+ 906              		@ args = 0, pretend = 0, frame = 0
+ 907              		@ frame_needed = 0, uses_anonymous_args = 0
+ 908              		@ link register save eliminated.
+ 909              		.loc 1 440 3 view .LVU239
+ 910              		.loc 1 443 3 view .LVU240
+ 911              	.LBB98:
+ 912              	.LBI98:
+ 913              		.loc 2 1617 26 view .LVU241
+ 914              	.LBB99:
+ 915              		.loc 2 1619 3 view .LVU242
+ 916              		.loc 2 1619 6 is_stmt 0 view .LVU243
+ 917 0000 0028     		cmp	r0, #0
+ 918              	.LVL64:
+ 919              		.loc 2 1619 6 view .LVU244
+ 920 0002 0BDB     		blt	.L55
+ 921              		.loc 2 1621 5 is_stmt 1 view .LVU245
+ 922              		.loc 2 1621 54 is_stmt 0 view .LVU246
+ 923 0004 4309     		lsrs	r3, r0, #5
+ 924              		.loc 2 1621 35 view .LVU247
+ 925 0006 8033     		adds	r3, r3, #128
+ 926 0008 054A     		ldr	r2, .L56
+ 927 000a 52F82330 		ldr	r3, [r2, r3, lsl #2]
+ 928              		.loc 2 1621 91 view .LVU248
+ 929 000e 00F01F00 		and	r0, r0, #31
+ 930              		.loc 2 1621 103 view .LVU249
+ 931 0012 23FA00F0 		lsr	r0, r3, r0
+ 932              		.loc 2 1621 12 view .LVU250
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 17
+
+
+ 933 0016 00F00100 		and	r0, r0, #1
+ 934 001a 7047     		bx	lr
+ 935              	.L55:
+ 936              		.loc 2 1625 11 view .LVU251
+ 937 001c 0020     		movs	r0, #0
+ 938              	.LVL65:
+ 939              		.loc 2 1625 11 view .LVU252
+ 940              	.LBE99:
+ 941              	.LBE98:
+ 942              		.loc 1 444 1 view .LVU253
+ 943 001e 7047     		bx	lr
+ 944              	.L57:
+ 945              		.align	2
+ 946              	.L56:
+ 947 0020 00E100E0 		.word	-536813312
+ 948              		.cfi_endproc
+ 949              	.LFE76:
+ 951              		.section	.text.HAL_SYSTICK_CLKSourceConfig,"ax",%progbits
+ 952              		.align	1
+ 953              		.global	HAL_SYSTICK_CLKSourceConfig
+ 954              		.syntax unified
+ 955              		.thumb
+ 956              		.thumb_func
+ 957              		.fpu softvfp
+ 959              	HAL_SYSTICK_CLKSourceConfig:
+ 960              	.LVL66:
+ 961              	.LFB77:
+ 962              		.loc 1 455 1 is_stmt 1 view -0
+ 963              		.cfi_startproc
+ 964              		@ args = 0, pretend = 0, frame = 0
+ 965              		@ frame_needed = 0, uses_anonymous_args = 0
+ 966              		@ link register save eliminated.
+ 967              		.loc 1 457 3 view .LVU255
+ 968              		.loc 1 458 3 view .LVU256
+ 969              		.loc 1 458 6 is_stmt 0 view .LVU257
+ 970 0000 0428     		cmp	r0, #4
+ 971 0002 05D0     		beq	.L61
+ 972              		.loc 1 464 5 is_stmt 1 view .LVU258
+ 973              		.loc 1 464 19 is_stmt 0 view .LVU259
+ 974 0004 054A     		ldr	r2, .L62
+ 975 0006 1368     		ldr	r3, [r2]
+ 976 0008 23F00403 		bic	r3, r3, #4
+ 977 000c 1360     		str	r3, [r2]
+ 978              		.loc 1 466 1 view .LVU260
+ 979 000e 7047     		bx	lr
+ 980              	.L61:
+ 981              		.loc 1 460 5 is_stmt 1 view .LVU261
+ 982              		.loc 1 460 19 is_stmt 0 view .LVU262
+ 983 0010 024A     		ldr	r2, .L62
+ 984 0012 1368     		ldr	r3, [r2]
+ 985 0014 43F00403 		orr	r3, r3, #4
+ 986 0018 1360     		str	r3, [r2]
+ 987 001a 7047     		bx	lr
+ 988              	.L63:
+ 989              		.align	2
+ 990              	.L62:
+ 991 001c 10E000E0 		.word	-536813552
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 18
+
+
+ 992              		.cfi_endproc
+ 993              	.LFE77:
+ 995              		.section	.text.HAL_SYSTICK_Callback,"ax",%progbits
+ 996              		.align	1
+ 997              		.weak	HAL_SYSTICK_Callback
+ 998              		.syntax unified
+ 999              		.thumb
+ 1000              		.thumb_func
+ 1001              		.fpu softvfp
+ 1003              	HAL_SYSTICK_Callback:
+ 1004              	.LFB79:
+ 1005              		.loc 1 482 1 is_stmt 1 view -0
+ 1006              		.cfi_startproc
+ 1007              		@ args = 0, pretend = 0, frame = 0
+ 1008              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1009              		@ link register save eliminated.
+ 1010              		.loc 1 486 1 view .LVU264
+ 1011 0000 7047     		bx	lr
+ 1012              		.cfi_endproc
+ 1013              	.LFE79:
+ 1015              		.section	.text.HAL_SYSTICK_IRQHandler,"ax",%progbits
+ 1016              		.align	1
+ 1017              		.global	HAL_SYSTICK_IRQHandler
+ 1018              		.syntax unified
+ 1019              		.thumb
+ 1020              		.thumb_func
+ 1021              		.fpu softvfp
+ 1023              	HAL_SYSTICK_IRQHandler:
+ 1024              	.LFB78:
+ 1025              		.loc 1 473 1 view -0
+ 1026              		.cfi_startproc
+ 1027              		@ args = 0, pretend = 0, frame = 0
+ 1028              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1029 0000 08B5     		push	{r3, lr}
+ 1030              	.LCFI6:
+ 1031              		.cfi_def_cfa_offset 8
+ 1032              		.cfi_offset 3, -8
+ 1033              		.cfi_offset 14, -4
+ 1034              		.loc 1 474 3 view .LVU266
+ 1035 0002 014B     		ldr	r3, .L67
+ 1036 0004 9847     		blx	r3
+ 1037              	.LVL67:
+ 1038              		.loc 1 475 1 is_stmt 0 view .LVU267
+ 1039 0006 08BD     		pop	{r3, pc}
+ 1040              	.L68:
+ 1041              		.align	2
+ 1042              	.L67:
+ 1043 0008 00000000 		.word	HAL_SYSTICK_Callback
+ 1044              		.cfi_endproc
+ 1045              	.LFE78:
+ 1047              		.text
+ 1048              	.Letext0:
+ 1049              		.file 4 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 1050              		.file 5 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 1051              		.file 6 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 1052              		.file 7 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 1053              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 19
+
+
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_cortex.c
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:16     .text.HAL_NVIC_SetPriorityGrouping:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:24     .text.HAL_NVIC_SetPriorityGrouping:0000000000000000 HAL_NVIC_SetPriorityGrouping
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:80     .text.HAL_NVIC_SetPriorityGrouping:0000000000000020 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:85     .text.HAL_NVIC_SetPriority:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:92     .text.HAL_NVIC_SetPriority:0000000000000000 HAL_NVIC_SetPriority
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:245    .text.HAL_NVIC_SetPriority:0000000000000060 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:251    .text.HAL_NVIC_EnableIRQ:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:258    .text.HAL_NVIC_EnableIRQ:0000000000000000 HAL_NVIC_EnableIRQ
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:299    .text.HAL_NVIC_EnableIRQ:0000000000000018 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:304    .text.HAL_NVIC_DisableIRQ:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:311    .text.HAL_NVIC_DisableIRQ:0000000000000000 HAL_NVIC_DisableIRQ
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:382    .text.HAL_NVIC_DisableIRQ:0000000000000020 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:387    .text.HAL_NVIC_SystemReset:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:394    .text.HAL_NVIC_SystemReset:0000000000000000 HAL_NVIC_SystemReset
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:460    .text.HAL_NVIC_SystemReset:000000000000001c $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:468    .text.HAL_SYSTICK_Config:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:475    .text.HAL_SYSTICK_Config:0000000000000000 HAL_SYSTICK_Config
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:540    .text.HAL_SYSTICK_Config:0000000000000024 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:546    .text.HAL_NVIC_GetPriorityGrouping:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:553    .text.HAL_NVIC_GetPriorityGrouping:0000000000000000 HAL_NVIC_GetPriorityGrouping
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:577    .text.HAL_NVIC_GetPriorityGrouping:000000000000000c $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:582    .text.HAL_NVIC_GetPriority:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:589    .text.HAL_NVIC_GetPriority:0000000000000000 HAL_NVIC_GetPriority
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:721    .text.HAL_NVIC_GetPriority:000000000000005c $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:728    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:735    .text.HAL_NVIC_SetPendingIRQ:0000000000000000 HAL_NVIC_SetPendingIRQ
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:777    .text.HAL_NVIC_SetPendingIRQ:0000000000000018 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:782    .text.HAL_NVIC_GetPendingIRQ:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:789    .text.HAL_NVIC_GetPendingIRQ:0000000000000000 HAL_NVIC_GetPendingIRQ
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:835    .text.HAL_NVIC_GetPendingIRQ:0000000000000020 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:840    .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:847    .text.HAL_NVIC_ClearPendingIRQ:0000000000000000 HAL_NVIC_ClearPendingIRQ
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:889    .text.HAL_NVIC_ClearPendingIRQ:0000000000000018 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:894    .text.HAL_NVIC_GetActive:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:901    .text.HAL_NVIC_GetActive:0000000000000000 HAL_NVIC_GetActive
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:947    .text.HAL_NVIC_GetActive:0000000000000020 $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:952    .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:959    .text.HAL_SYSTICK_CLKSourceConfig:0000000000000000 HAL_SYSTICK_CLKSourceConfig
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:991    .text.HAL_SYSTICK_CLKSourceConfig:000000000000001c $d
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:996    .text.HAL_SYSTICK_Callback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:1003   .text.HAL_SYSTICK_Callback:0000000000000000 HAL_SYSTICK_Callback
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:1016   .text.HAL_SYSTICK_IRQHandler:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:1023   .text.HAL_SYSTICK_IRQHandler:0000000000000000 HAL_SYSTICK_IRQHandler
+C:\Users\38164\AppData\Local\Temp\ccwMyjvt.s:1043   .text.HAL_SYSTICK_IRQHandler:0000000000000008 $d
+
+NO UNDEFINED SYMBOLS

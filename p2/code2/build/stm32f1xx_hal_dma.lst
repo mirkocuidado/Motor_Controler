@@ -1,0 +1,1915 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f1xx_hal_dma.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.DMA_SetConfig,"ax",%progbits
+  16              		.align	1
+  17              		.arch armv7-m
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  23              	DMA_SetConfig:
+  24              	.LVL0:
+  25              	.LFB77:
+  26              		.file 1 "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c"
+   1:../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c **** 
+  27              		.loc 1 859 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              		.loc 1 859 1 is_stmt 0 view .LVU1
+  33 0000 70B4     		push	{r4, r5, r6}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 6, -4
+  39              		.loc 1 861 3 is_stmt 1 view .LVU2
+  40              		.loc 1 861 53 is_stmt 0 view .LVU3
+  41 0002 066C     		ldr	r6, [r0, #64]
+  42              		.loc 1 861 7 view .LVU4
+  43 0004 C56B     		ldr	r5, [r0, #60]
+  44              		.loc 1 861 46 view .LVU5
+  45 0006 0124     		movs	r4, #1
+  46 0008 B440     		lsls	r4, r4, r6
+  47              		.loc 1 861 30 view .LVU6
+  48 000a 6C60     		str	r4, [r5, #4]
+  49              		.loc 1 864 3 is_stmt 1 view .LVU7
+  50              		.loc 1 864 7 is_stmt 0 view .LVU8
+  51 000c 0468     		ldr	r4, [r0]
+  52              		.loc 1 864 25 view .LVU9
+  53 000e 6360     		str	r3, [r4, #4]
+  54              		.loc 1 867 3 is_stmt 1 view .LVU10
+  55              		.loc 1 867 17 is_stmt 0 view .LVU11
+  56 0010 4368     		ldr	r3, [r0, #4]
+  57              	.LVL1:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 2
+
+
+  58              		.loc 1 867 5 view .LVU12
+  59 0012 102B     		cmp	r3, #16
+  60 0014 05D0     		beq	.L5
+  61              		.loc 1 879 5 is_stmt 1 view .LVU13
+  62              		.loc 1 879 9 is_stmt 0 view .LVU14
+  63 0016 0368     		ldr	r3, [r0]
+  64              		.loc 1 879 26 view .LVU15
+  65 0018 9960     		str	r1, [r3, #8]
+  66              	.LVL2:
+  67              		.loc 1 882 5 is_stmt 1 view .LVU16
+  68              		.loc 1 882 9 is_stmt 0 view .LVU17
+  69 001a 0368     		ldr	r3, [r0]
+  70              		.loc 1 882 26 view .LVU18
+  71 001c DA60     		str	r2, [r3, #12]
+  72              	.L1:
+  73              		.loc 1 884 1 view .LVU19
+  74 001e 70BC     		pop	{r4, r5, r6}
+  75              	.LCFI1:
+  76              		.cfi_remember_state
+  77              		.cfi_restore 6
+  78              		.cfi_restore 5
+  79              		.cfi_restore 4
+  80              		.cfi_def_cfa_offset 0
+  81 0020 7047     		bx	lr
+  82              	.LVL3:
+  83              	.L5:
+  84              	.LCFI2:
+  85              		.cfi_restore_state
+  86              		.loc 1 870 5 is_stmt 1 view .LVU20
+  87              		.loc 1 870 9 is_stmt 0 view .LVU21
+  88 0022 0368     		ldr	r3, [r0]
+  89              		.loc 1 870 26 view .LVU22
+  90 0024 9A60     		str	r2, [r3, #8]
+  91              	.LVL4:
+  92              		.loc 1 873 5 is_stmt 1 view .LVU23
+  93              		.loc 1 873 9 is_stmt 0 view .LVU24
+  94 0026 0368     		ldr	r3, [r0]
+  95              		.loc 1 873 26 view .LVU25
+  96 0028 D960     		str	r1, [r3, #12]
+  97 002a F8E7     		b	.L1
+  98              		.cfi_endproc
+  99              	.LFE77:
+ 101              		.section	.text.HAL_DMA_Init,"ax",%progbits
+ 102              		.align	1
+ 103              		.global	HAL_DMA_Init
+ 104              		.syntax unified
+ 105              		.thumb
+ 106              		.thumb_func
+ 107              		.fpu softvfp
+ 109              	HAL_DMA_Init:
+ 110              	.LVL5:
+ 111              	.LFB65:
+ 112              		.loc 1 144 1 is_stmt 1 view -0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              		@ link register save eliminated.
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 3
+
+
+ 117              		.loc 1 145 3 view .LVU27
+ 118              		.loc 1 148 3 view .LVU28
+ 119              		.loc 1 148 5 is_stmt 0 view .LVU29
+ 120 0000 60B3     		cbz	r0, .L8
+ 121              		.loc 1 144 1 view .LVU30
+ 122 0002 10B4     		push	{r4}
+ 123              	.LCFI3:
+ 124              		.cfi_def_cfa_offset 4
+ 125              		.cfi_offset 4, -4
+ 126 0004 0246     		mov	r2, r0
+ 127              		.loc 1 154 3 is_stmt 1 view .LVU31
+ 128              		.loc 1 155 3 view .LVU32
+ 129              		.loc 1 156 3 view .LVU33
+ 130              		.loc 1 157 3 view .LVU34
+ 131              		.loc 1 158 3 view .LVU35
+ 132              		.loc 1 159 3 view .LVU36
+ 133              		.loc 1 160 3 view .LVU37
+ 134              		.loc 1 161 3 view .LVU38
+ 135              		.loc 1 179 3 view .LVU39
+ 136              		.loc 1 179 40 is_stmt 0 view .LVU40
+ 137 0006 0168     		ldr	r1, [r0]
+ 138              		.loc 1 179 51 view .LVU41
+ 139 0008 154B     		ldr	r3, .L13
+ 140 000a 0B44     		add	r3, r3, r1
+ 141              		.loc 1 179 78 view .LVU42
+ 142 000c 1548     		ldr	r0, .L13+4
+ 143              	.LVL6:
+ 144              		.loc 1 179 78 view .LVU43
+ 145 000e A0FB0303 		umull	r0, r3, r0, r3
+ 146 0012 1B09     		lsrs	r3, r3, #4
+ 147              		.loc 1 179 133 view .LVU44
+ 148 0014 9B00     		lsls	r3, r3, #2
+ 149              		.loc 1 179 22 view .LVU45
+ 150 0016 1364     		str	r3, [r2, #64]
+ 151              		.loc 1 180 3 is_stmt 1 view .LVU46
+ 152              		.loc 1 180 24 is_stmt 0 view .LVU47
+ 153 0018 134B     		ldr	r3, .L13+8
+ 154 001a D363     		str	r3, [r2, #60]
+ 155              		.loc 1 184 3 is_stmt 1 view .LVU48
+ 156              		.loc 1 184 15 is_stmt 0 view .LVU49
+ 157 001c 0223     		movs	r3, #2
+ 158 001e 82F82130 		strb	r3, [r2, #33]
+ 159              		.loc 1 187 3 is_stmt 1 view .LVU50
+ 160              		.loc 1 187 7 is_stmt 0 view .LVU51
+ 161 0022 0868     		ldr	r0, [r1]
+ 162              	.LVL7:
+ 163              		.loc 1 190 3 is_stmt 1 view .LVU52
+ 164              		.loc 1 190 7 is_stmt 0 view .LVU53
+ 165 0024 20F47F50 		bic	r0, r0, #16320
+ 166              	.LVL8:
+ 167              		.loc 1 190 7 view .LVU54
+ 168 0028 20F03000 		bic	r0, r0, #48
+ 169              	.LVL9:
+ 170              		.loc 1 195 3 is_stmt 1 view .LVU55
+ 171              		.loc 1 195 21 is_stmt 0 view .LVU56
+ 172 002c 5368     		ldr	r3, [r2, #4]
+ 173              		.loc 1 196 21 view .LVU57
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 4
+
+
+ 174 002e 9468     		ldr	r4, [r2, #8]
+ 175              		.loc 1 195 39 view .LVU58
+ 176 0030 2343     		orrs	r3, r3, r4
+ 177              		.loc 1 196 54 view .LVU59
+ 178 0032 D468     		ldr	r4, [r2, #12]
+ 179              		.loc 1 196 42 view .LVU60
+ 180 0034 2343     		orrs	r3, r3, r4
+ 181              		.loc 1 197 21 view .LVU61
+ 182 0036 1469     		ldr	r4, [r2, #16]
+ 183              		.loc 1 196 72 view .LVU62
+ 184 0038 2343     		orrs	r3, r3, r4
+ 185              		.loc 1 197 54 view .LVU63
+ 186 003a 5469     		ldr	r4, [r2, #20]
+ 187              		.loc 1 197 42 view .LVU64
+ 188 003c 2343     		orrs	r3, r3, r4
+ 189              		.loc 1 198 21 view .LVU65
+ 190 003e 9469     		ldr	r4, [r2, #24]
+ 191              		.loc 1 197 72 view .LVU66
+ 192 0040 2343     		orrs	r3, r3, r4
+ 193              		.loc 1 198 54 view .LVU67
+ 194 0042 D469     		ldr	r4, [r2, #28]
+ 195              		.loc 1 198 42 view .LVU68
+ 196 0044 2343     		orrs	r3, r3, r4
+ 197              		.loc 1 195 7 view .LVU69
+ 198 0046 0343     		orrs	r3, r3, r0
+ 199              	.LVL10:
+ 200              		.loc 1 201 3 is_stmt 1 view .LVU70
+ 201              		.loc 1 201 23 is_stmt 0 view .LVU71
+ 202 0048 0B60     		str	r3, [r1]
+ 203              		.loc 1 204 3 is_stmt 1 view .LVU72
+ 204              		.loc 1 204 19 is_stmt 0 view .LVU73
+ 205 004a 0020     		movs	r0, #0
+ 206 004c 9063     		str	r0, [r2, #56]
+ 207              		.loc 1 207 3 is_stmt 1 view .LVU74
+ 208              		.loc 1 207 15 is_stmt 0 view .LVU75
+ 209 004e 0123     		movs	r3, #1
+ 210              	.LVL11:
+ 211              		.loc 1 207 15 view .LVU76
+ 212 0050 82F82130 		strb	r3, [r2, #33]
+ 213              		.loc 1 209 3 is_stmt 1 view .LVU77
+ 214              		.loc 1 209 14 is_stmt 0 view .LVU78
+ 215 0054 82F82000 		strb	r0, [r2, #32]
+ 216              		.loc 1 211 3 is_stmt 1 view .LVU79
+ 217              		.loc 1 212 1 is_stmt 0 view .LVU80
+ 218 0058 10BC     		pop	{r4}
+ 219              	.LCFI4:
+ 220              		.cfi_restore 4
+ 221              		.cfi_def_cfa_offset 0
+ 222 005a 7047     		bx	lr
+ 223              	.LVL12:
+ 224              	.L8:
+ 225              		.loc 1 150 12 view .LVU81
+ 226 005c 0120     		movs	r0, #1
+ 227              	.LVL13:
+ 228              		.loc 1 212 1 view .LVU82
+ 229 005e 7047     		bx	lr
+ 230              	.L14:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 5
+
+
+ 231              		.align	2
+ 232              	.L13:
+ 233 0060 F8FFFDBF 		.word	-1073872904
+ 234 0064 CDCCCCCC 		.word	-858993459
+ 235 0068 00000240 		.word	1073872896
+ 236              		.cfi_endproc
+ 237              	.LFE65:
+ 239              		.section	.text.HAL_DMA_DeInit,"ax",%progbits
+ 240              		.align	1
+ 241              		.global	HAL_DMA_DeInit
+ 242              		.syntax unified
+ 243              		.thumb
+ 244              		.thumb_func
+ 245              		.fpu softvfp
+ 247              	HAL_DMA_DeInit:
+ 248              	.LVL14:
+ 249              	.LFB66:
+ 250              		.loc 1 221 1 is_stmt 1 view -0
+ 251              		.cfi_startproc
+ 252              		@ args = 0, pretend = 0, frame = 0
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254              		@ link register save eliminated.
+ 255              		.loc 1 223 3 view .LVU84
+ 256              		.loc 1 223 5 is_stmt 0 view .LVU85
+ 257 0000 0028     		cmp	r0, #0
+ 258 0002 29D0     		beq	.L17
+ 259              		.loc 1 221 1 view .LVU86
+ 260 0004 10B4     		push	{r4}
+ 261              	.LCFI5:
+ 262              		.cfi_def_cfa_offset 4
+ 263              		.cfi_offset 4, -4
+ 264 0006 0346     		mov	r3, r0
+ 265              		.loc 1 229 3 is_stmt 1 view .LVU87
+ 266              		.loc 1 232 3 view .LVU88
+ 267 0008 0168     		ldr	r1, [r0]
+ 268 000a 0A68     		ldr	r2, [r1]
+ 269 000c 22F00102 		bic	r2, r2, #1
+ 270 0010 0A60     		str	r2, [r1]
+ 271              		.loc 1 235 3 view .LVU89
+ 272              		.loc 1 235 7 is_stmt 0 view .LVU90
+ 273 0012 0268     		ldr	r2, [r0]
+ 274              		.loc 1 235 24 view .LVU91
+ 275 0014 0020     		movs	r0, #0
+ 276              	.LVL15:
+ 277              		.loc 1 235 24 view .LVU92
+ 278 0016 1060     		str	r0, [r2]
+ 279              		.loc 1 238 3 is_stmt 1 view .LVU93
+ 280              		.loc 1 238 7 is_stmt 0 view .LVU94
+ 281 0018 1A68     		ldr	r2, [r3]
+ 282              		.loc 1 238 25 view .LVU95
+ 283 001a 5060     		str	r0, [r2, #4]
+ 284              		.loc 1 241 3 is_stmt 1 view .LVU96
+ 285              		.loc 1 241 7 is_stmt 0 view .LVU97
+ 286 001c 1A68     		ldr	r2, [r3]
+ 287              		.loc 1 241 25 view .LVU98
+ 288 001e 9060     		str	r0, [r2, #8]
+ 289              		.loc 1 244 3 is_stmt 1 view .LVU99
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 6
+
+
+ 290              		.loc 1 244 7 is_stmt 0 view .LVU100
+ 291 0020 1A68     		ldr	r2, [r3]
+ 292              		.loc 1 244 24 view .LVU101
+ 293 0022 D060     		str	r0, [r2, #12]
+ 294              		.loc 1 262 3 is_stmt 1 view .LVU102
+ 295              		.loc 1 262 40 is_stmt 0 view .LVU103
+ 296 0024 1968     		ldr	r1, [r3]
+ 297              		.loc 1 262 51 view .LVU104
+ 298 0026 0D4A     		ldr	r2, .L22
+ 299 0028 0A44     		add	r2, r2, r1
+ 300              		.loc 1 262 78 view .LVU105
+ 301 002a 0D49     		ldr	r1, .L22+4
+ 302 002c A1FB0212 		umull	r1, r2, r1, r2
+ 303 0030 1209     		lsrs	r2, r2, #4
+ 304              		.loc 1 262 133 view .LVU106
+ 305 0032 9200     		lsls	r2, r2, #2
+ 306              		.loc 1 262 22 view .LVU107
+ 307 0034 1A64     		str	r2, [r3, #64]
+ 308              		.loc 1 263 3 is_stmt 1 view .LVU108
+ 309              		.loc 1 263 24 is_stmt 0 view .LVU109
+ 310 0036 0B4C     		ldr	r4, .L22+8
+ 311 0038 DC63     		str	r4, [r3, #60]
+ 312              		.loc 1 267 3 is_stmt 1 view .LVU110
+ 313              		.loc 1 267 46 is_stmt 0 view .LVU111
+ 314 003a 0121     		movs	r1, #1
+ 315 003c 01FA02F2 		lsl	r2, r1, r2
+ 316              		.loc 1 267 30 view .LVU112
+ 317 0040 6260     		str	r2, [r4, #4]
+ 318              		.loc 1 270 3 is_stmt 1 view .LVU113
+ 319              		.loc 1 270 26 is_stmt 0 view .LVU114
+ 320 0042 9862     		str	r0, [r3, #40]
+ 321              		.loc 1 271 3 is_stmt 1 view .LVU115
+ 322              		.loc 1 271 30 is_stmt 0 view .LVU116
+ 323 0044 D862     		str	r0, [r3, #44]
+ 324              		.loc 1 272 3 is_stmt 1 view .LVU117
+ 325              		.loc 1 272 27 is_stmt 0 view .LVU118
+ 326 0046 1863     		str	r0, [r3, #48]
+ 327              		.loc 1 273 3 is_stmt 1 view .LVU119
+ 328              		.loc 1 273 27 is_stmt 0 view .LVU120
+ 329 0048 5863     		str	r0, [r3, #52]
+ 330              		.loc 1 276 3 is_stmt 1 view .LVU121
+ 331              		.loc 1 276 19 is_stmt 0 view .LVU122
+ 332 004a 9863     		str	r0, [r3, #56]
+ 333              		.loc 1 279 3 is_stmt 1 view .LVU123
+ 334              		.loc 1 279 15 is_stmt 0 view .LVU124
+ 335 004c 83F82100 		strb	r0, [r3, #33]
+ 336              		.loc 1 282 3 is_stmt 1 view .LVU125
+ 337              		.loc 1 282 3 view .LVU126
+ 338 0050 83F82000 		strb	r0, [r3, #32]
+ 339              		.loc 1 282 3 view .LVU127
+ 340              		.loc 1 284 3 view .LVU128
+ 341              		.loc 1 285 1 is_stmt 0 view .LVU129
+ 342 0054 10BC     		pop	{r4}
+ 343              	.LCFI6:
+ 344              		.cfi_restore 4
+ 345              		.cfi_def_cfa_offset 0
+ 346 0056 7047     		bx	lr
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 7
+
+
+ 347              	.LVL16:
+ 348              	.L17:
+ 349              		.loc 1 225 12 view .LVU130
+ 350 0058 0120     		movs	r0, #1
+ 351              	.LVL17:
+ 352              		.loc 1 285 1 view .LVU131
+ 353 005a 7047     		bx	lr
+ 354              	.L23:
+ 355              		.align	2
+ 356              	.L22:
+ 357 005c F8FFFDBF 		.word	-1073872904
+ 358 0060 CDCCCCCC 		.word	-858993459
+ 359 0064 00000240 		.word	1073872896
+ 360              		.cfi_endproc
+ 361              	.LFE66:
+ 363              		.section	.text.HAL_DMA_Start,"ax",%progbits
+ 364              		.align	1
+ 365              		.global	HAL_DMA_Start
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 369              		.fpu softvfp
+ 371              	HAL_DMA_Start:
+ 372              	.LVL18:
+ 373              	.LFB67:
+ 374              		.loc 1 320 1 is_stmt 1 view -0
+ 375              		.cfi_startproc
+ 376              		@ args = 0, pretend = 0, frame = 0
+ 377              		@ frame_needed = 0, uses_anonymous_args = 0
+ 378              		.loc 1 320 1 is_stmt 0 view .LVU133
+ 379 0000 70B5     		push	{r4, r5, r6, lr}
+ 380              	.LCFI7:
+ 381              		.cfi_def_cfa_offset 16
+ 382              		.cfi_offset 4, -16
+ 383              		.cfi_offset 5, -12
+ 384              		.cfi_offset 6, -8
+ 385              		.cfi_offset 14, -4
+ 386 0002 0446     		mov	r4, r0
+ 387              		.loc 1 321 3 is_stmt 1 view .LVU134
+ 388              	.LVL19:
+ 389              		.loc 1 324 3 view .LVU135
+ 390              		.loc 1 327 3 view .LVU136
+ 391              		.loc 1 327 3 view .LVU137
+ 392 0004 90F82000 		ldrb	r0, [r0, #32]	@ zero_extendqisi2
+ 393              	.LVL20:
+ 394              		.loc 1 327 3 is_stmt 0 view .LVU138
+ 395 0008 0128     		cmp	r0, #1
+ 396 000a 1FD0     		beq	.L27
+ 397              		.loc 1 327 3 is_stmt 1 discriminator 2 view .LVU139
+ 398 000c 0120     		movs	r0, #1
+ 399 000e 84F82000 		strb	r0, [r4, #32]
+ 400              		.loc 1 327 3 discriminator 2 view .LVU140
+ 401              		.loc 1 329 3 discriminator 2 view .LVU141
+ 402              		.loc 1 329 33 is_stmt 0 discriminator 2 view .LVU142
+ 403 0012 94F82100 		ldrb	r0, [r4, #33]	@ zero_extendqisi2
+ 404              		.loc 1 329 5 discriminator 2 view .LVU143
+ 405 0016 0128     		cmp	r0, #1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 8
+
+
+ 406 0018 04D0     		beq	.L29
+ 407              		.loc 1 347 4 is_stmt 1 view .LVU144
+ 408              		.loc 1 347 4 view .LVU145
+ 409 001a 0023     		movs	r3, #0
+ 410              	.LVL21:
+ 411              		.loc 1 347 4 is_stmt 0 view .LVU146
+ 412 001c 84F82030 		strb	r3, [r4, #32]
+ 413              		.loc 1 347 4 is_stmt 1 view .LVU147
+ 414              		.loc 1 348 4 view .LVU148
+ 415              	.LVL22:
+ 416              		.loc 1 348 11 is_stmt 0 view .LVU149
+ 417 0020 0220     		movs	r0, #2
+ 418              	.LVL23:
+ 419              	.L25:
+ 420              		.loc 1 351 1 view .LVU150
+ 421 0022 70BD     		pop	{r4, r5, r6, pc}
+ 422              	.LVL24:
+ 423              	.L29:
+ 424              		.loc 1 332 5 is_stmt 1 view .LVU151
+ 425              		.loc 1 332 17 is_stmt 0 view .LVU152
+ 426 0024 0220     		movs	r0, #2
+ 427 0026 84F82100 		strb	r0, [r4, #33]
+ 428              		.loc 1 333 5 is_stmt 1 view .LVU153
+ 429              		.loc 1 333 21 is_stmt 0 view .LVU154
+ 430 002a 0025     		movs	r5, #0
+ 431 002c A563     		str	r5, [r4, #56]
+ 432              		.loc 1 336 5 is_stmt 1 view .LVU155
+ 433 002e 2668     		ldr	r6, [r4]
+ 434 0030 3068     		ldr	r0, [r6]
+ 435 0032 20F00100 		bic	r0, r0, #1
+ 436 0036 3060     		str	r0, [r6]
+ 437              		.loc 1 339 5 view .LVU156
+ 438 0038 2046     		mov	r0, r4
+ 439 003a 054E     		ldr	r6, .L30
+ 440 003c B047     		blx	r6
+ 441              	.LVL25:
+ 442              		.loc 1 342 5 view .LVU157
+ 443 003e 2268     		ldr	r2, [r4]
+ 444 0040 1368     		ldr	r3, [r2]
+ 445 0042 43F00103 		orr	r3, r3, #1
+ 446 0046 1360     		str	r3, [r2]
+ 447              		.loc 1 321 21 is_stmt 0 view .LVU158
+ 448 0048 2846     		mov	r0, r5
+ 449 004a EAE7     		b	.L25
+ 450              	.LVL26:
+ 451              	.L27:
+ 452              		.loc 1 327 3 view .LVU159
+ 453 004c 0220     		movs	r0, #2
+ 454 004e E8E7     		b	.L25
+ 455              	.L31:
+ 456              		.align	2
+ 457              	.L30:
+ 458 0050 00000000 		.word	DMA_SetConfig
+ 459              		.cfi_endproc
+ 460              	.LFE67:
+ 462              		.section	.text.HAL_DMA_Start_IT,"ax",%progbits
+ 463              		.align	1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 9
+
+
+ 464              		.global	HAL_DMA_Start_IT
+ 465              		.syntax unified
+ 466              		.thumb
+ 467              		.thumb_func
+ 468              		.fpu softvfp
+ 470              	HAL_DMA_Start_IT:
+ 471              	.LVL27:
+ 472              	.LFB68:
+ 473              		.loc 1 363 1 is_stmt 1 view -0
+ 474              		.cfi_startproc
+ 475              		@ args = 0, pretend = 0, frame = 0
+ 476              		@ frame_needed = 0, uses_anonymous_args = 0
+ 477              		.loc 1 363 1 is_stmt 0 view .LVU161
+ 478 0000 38B5     		push	{r3, r4, r5, lr}
+ 479              	.LCFI8:
+ 480              		.cfi_def_cfa_offset 16
+ 481              		.cfi_offset 3, -16
+ 482              		.cfi_offset 4, -12
+ 483              		.cfi_offset 5, -8
+ 484              		.cfi_offset 14, -4
+ 485 0002 0446     		mov	r4, r0
+ 486              		.loc 1 364 3 is_stmt 1 view .LVU162
+ 487              	.LVL28:
+ 488              		.loc 1 367 3 view .LVU163
+ 489              		.loc 1 370 3 view .LVU164
+ 490              		.loc 1 370 3 view .LVU165
+ 491 0004 90F82000 		ldrb	r0, [r0, #32]	@ zero_extendqisi2
+ 492              	.LVL29:
+ 493              		.loc 1 370 3 is_stmt 0 view .LVU166
+ 494 0008 0128     		cmp	r0, #1
+ 495 000a 31D0     		beq	.L37
+ 496              		.loc 1 370 3 is_stmt 1 discriminator 2 view .LVU167
+ 497 000c 0120     		movs	r0, #1
+ 498 000e 84F82000 		strb	r0, [r4, #32]
+ 499              		.loc 1 370 3 discriminator 2 view .LVU168
+ 500              		.loc 1 372 3 discriminator 2 view .LVU169
+ 501              		.loc 1 372 33 is_stmt 0 discriminator 2 view .LVU170
+ 502 0012 94F82100 		ldrb	r0, [r4, #33]	@ zero_extendqisi2
+ 503              		.loc 1 372 5 discriminator 2 view .LVU171
+ 504 0016 0128     		cmp	r0, #1
+ 505 0018 04D0     		beq	.L39
+ 506              		.loc 1 402 5 is_stmt 1 view .LVU172
+ 507              		.loc 1 402 5 view .LVU173
+ 508 001a 0023     		movs	r3, #0
+ 509              	.LVL30:
+ 510              		.loc 1 402 5 is_stmt 0 view .LVU174
+ 511 001c 84F82030 		strb	r3, [r4, #32]
+ 512              		.loc 1 402 5 is_stmt 1 view .LVU175
+ 513              		.loc 1 405 5 view .LVU176
+ 514              	.LVL31:
+ 515              		.loc 1 405 12 is_stmt 0 view .LVU177
+ 516 0020 0220     		movs	r0, #2
+ 517              	.LVL32:
+ 518              	.L33:
+ 519              		.loc 1 408 1 view .LVU178
+ 520 0022 38BD     		pop	{r3, r4, r5, pc}
+ 521              	.LVL33:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 10
+
+
+ 522              	.L39:
+ 523              		.loc 1 375 5 is_stmt 1 view .LVU179
+ 524              		.loc 1 375 17 is_stmt 0 view .LVU180
+ 525 0024 0220     		movs	r0, #2
+ 526 0026 84F82100 		strb	r0, [r4, #33]
+ 527              		.loc 1 376 5 is_stmt 1 view .LVU181
+ 528              		.loc 1 376 21 is_stmt 0 view .LVU182
+ 529 002a 0020     		movs	r0, #0
+ 530 002c A063     		str	r0, [r4, #56]
+ 531              		.loc 1 379 5 is_stmt 1 view .LVU183
+ 532 002e 2568     		ldr	r5, [r4]
+ 533 0030 2868     		ldr	r0, [r5]
+ 534 0032 20F00100 		bic	r0, r0, #1
+ 535 0036 2860     		str	r0, [r5]
+ 536              		.loc 1 382 5 view .LVU184
+ 537 0038 2046     		mov	r0, r4
+ 538 003a 0E4D     		ldr	r5, .L40
+ 539 003c A847     		blx	r5
+ 540              	.LVL34:
+ 541              		.loc 1 386 5 view .LVU185
+ 542              		.loc 1 386 20 is_stmt 0 view .LVU186
+ 543 003e E36A     		ldr	r3, [r4, #44]
+ 544              		.loc 1 386 7 view .LVU187
+ 545 0040 5BB1     		cbz	r3, .L35
+ 546              		.loc 1 389 7 is_stmt 1 view .LVU188
+ 547 0042 2268     		ldr	r2, [r4]
+ 548 0044 1368     		ldr	r3, [r2]
+ 549 0046 43F00E03 		orr	r3, r3, #14
+ 550 004a 1360     		str	r3, [r2]
+ 551              	.L36:
+ 552              		.loc 1 397 5 view .LVU189
+ 553 004c 2268     		ldr	r2, [r4]
+ 554 004e 1368     		ldr	r3, [r2]
+ 555 0050 43F00103 		orr	r3, r3, #1
+ 556 0054 1360     		str	r3, [r2]
+ 557              		.loc 1 364 21 is_stmt 0 view .LVU190
+ 558 0056 0020     		movs	r0, #0
+ 559 0058 E3E7     		b	.L33
+ 560              	.L35:
+ 561              		.loc 1 393 7 is_stmt 1 view .LVU191
+ 562 005a 2268     		ldr	r2, [r4]
+ 563 005c 1368     		ldr	r3, [r2]
+ 564 005e 23F00403 		bic	r3, r3, #4
+ 565 0062 1360     		str	r3, [r2]
+ 566              		.loc 1 394 7 view .LVU192
+ 567 0064 2268     		ldr	r2, [r4]
+ 568 0066 1368     		ldr	r3, [r2]
+ 569 0068 43F00A03 		orr	r3, r3, #10
+ 570 006c 1360     		str	r3, [r2]
+ 571 006e EDE7     		b	.L36
+ 572              	.LVL35:
+ 573              	.L37:
+ 574              		.loc 1 370 3 is_stmt 0 view .LVU193
+ 575 0070 0220     		movs	r0, #2
+ 576 0072 D6E7     		b	.L33
+ 577              	.L41:
+ 578              		.align	2
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 11
+
+
+ 579              	.L40:
+ 580 0074 00000000 		.word	DMA_SetConfig
+ 581              		.cfi_endproc
+ 582              	.LFE68:
+ 584              		.section	.text.HAL_DMA_Abort,"ax",%progbits
+ 585              		.align	1
+ 586              		.global	HAL_DMA_Abort
+ 587              		.syntax unified
+ 588              		.thumb
+ 589              		.thumb_func
+ 590              		.fpu softvfp
+ 592              	HAL_DMA_Abort:
+ 593              	.LVL36:
+ 594              	.LFB69:
+ 595              		.loc 1 417 1 is_stmt 1 view -0
+ 596              		.cfi_startproc
+ 597              		@ args = 0, pretend = 0, frame = 0
+ 598              		@ frame_needed = 0, uses_anonymous_args = 0
+ 599              		@ link register save eliminated.
+ 600              		.loc 1 418 3 view .LVU195
+ 601              		.loc 1 420 3 view .LVU196
+ 602              		.loc 1 420 10 is_stmt 0 view .LVU197
+ 603 0000 90F82130 		ldrb	r3, [r0, #33]	@ zero_extendqisi2
+ 604              		.loc 1 420 5 view .LVU198
+ 605 0004 022B     		cmp	r3, #2
+ 606 0006 06D0     		beq	.L43
+ 607              		.loc 1 423 5 is_stmt 1 view .LVU199
+ 608              		.loc 1 423 21 is_stmt 0 view .LVU200
+ 609 0008 0423     		movs	r3, #4
+ 610 000a 8363     		str	r3, [r0, #56]
+ 611              		.loc 1 426 5 is_stmt 1 view .LVU201
+ 612              		.loc 1 426 5 view .LVU202
+ 613 000c 0023     		movs	r3, #0
+ 614 000e 80F82030 		strb	r3, [r0, #32]
+ 615              		.loc 1 426 5 view .LVU203
+ 616              		.loc 1 428 5 view .LVU204
+ 617              		.loc 1 428 12 is_stmt 0 view .LVU205
+ 618 0012 0120     		movs	r0, #1
+ 619              	.LVL37:
+ 620              		.loc 1 428 12 view .LVU206
+ 621 0014 7047     		bx	lr
+ 622              	.LVL38:
+ 623              	.L43:
+ 624              		.loc 1 434 5 is_stmt 1 view .LVU207
+ 625 0016 0268     		ldr	r2, [r0]
+ 626 0018 1368     		ldr	r3, [r2]
+ 627 001a 23F00E03 		bic	r3, r3, #14
+ 628 001e 1360     		str	r3, [r2]
+ 629              		.loc 1 437 5 view .LVU208
+ 630 0020 0268     		ldr	r2, [r0]
+ 631 0022 1368     		ldr	r3, [r2]
+ 632 0024 23F00103 		bic	r3, r3, #1
+ 633 0028 1360     		str	r3, [r2]
+ 634              		.loc 1 440 5 view .LVU209
+ 635              		.loc 1 440 55 is_stmt 0 view .LVU210
+ 636 002a 036C     		ldr	r3, [r0, #64]
+ 637              		.loc 1 440 9 view .LVU211
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 12
+
+
+ 638 002c C16B     		ldr	r1, [r0, #60]
+ 639              		.loc 1 440 48 view .LVU212
+ 640 002e 0122     		movs	r2, #1
+ 641 0030 02FA03F3 		lsl	r3, r2, r3
+ 642              		.loc 1 440 32 view .LVU213
+ 643 0034 4B60     		str	r3, [r1, #4]
+ 644              		.loc 1 443 3 is_stmt 1 view .LVU214
+ 645              		.loc 1 443 15 is_stmt 0 view .LVU215
+ 646 0036 80F82120 		strb	r2, [r0, #33]
+ 647              		.loc 1 446 3 is_stmt 1 view .LVU216
+ 648              		.loc 1 446 3 view .LVU217
+ 649 003a 0023     		movs	r3, #0
+ 650 003c 80F82030 		strb	r3, [r0, #32]
+ 651              		.loc 1 446 3 view .LVU218
+ 652              		.loc 1 448 3 view .LVU219
+ 653              		.loc 1 448 10 is_stmt 0 view .LVU220
+ 654 0040 1846     		mov	r0, r3
+ 655              	.LVL39:
+ 656              		.loc 1 449 1 view .LVU221
+ 657 0042 7047     		bx	lr
+ 658              		.cfi_endproc
+ 659              	.LFE69:
+ 661              		.section	.text.HAL_DMA_Abort_IT,"ax",%progbits
+ 662              		.align	1
+ 663              		.global	HAL_DMA_Abort_IT
+ 664              		.syntax unified
+ 665              		.thumb
+ 666              		.thumb_func
+ 667              		.fpu softvfp
+ 669              	HAL_DMA_Abort_IT:
+ 670              	.LVL40:
+ 671              	.LFB70:
+ 672              		.loc 1 458 1 is_stmt 1 view -0
+ 673              		.cfi_startproc
+ 674              		@ args = 0, pretend = 0, frame = 0
+ 675              		@ frame_needed = 0, uses_anonymous_args = 0
+ 676              		.loc 1 458 1 is_stmt 0 view .LVU223
+ 677 0000 08B5     		push	{r3, lr}
+ 678              	.LCFI9:
+ 679              		.cfi_def_cfa_offset 8
+ 680              		.cfi_offset 3, -8
+ 681              		.cfi_offset 14, -4
+ 682              		.loc 1 459 3 is_stmt 1 view .LVU224
+ 683              	.LVL41:
+ 684              		.loc 1 461 3 view .LVU225
+ 685              		.loc 1 461 32 is_stmt 0 view .LVU226
+ 686 0002 90F82130 		ldrb	r3, [r0, #33]	@ zero_extendqisi2
+ 687              		.loc 1 461 5 view .LVU227
+ 688 0006 022B     		cmp	r3, #2
+ 689 0008 03D0     		beq	.L46
+ 690              		.loc 1 464 5 is_stmt 1 view .LVU228
+ 691              		.loc 1 464 21 is_stmt 0 view .LVU229
+ 692 000a 0423     		movs	r3, #4
+ 693 000c 8363     		str	r3, [r0, #56]
+ 694              		.loc 1 466 5 is_stmt 1 view .LVU230
+ 695              	.LVL42:
+ 696              		.loc 1 466 12 is_stmt 0 view .LVU231
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 13
+
+
+ 697 000e 0120     		movs	r0, #1
+ 698              	.LVL43:
+ 699              	.L47:
+ 700              		.loc 1 491 3 is_stmt 1 view .LVU232
+ 701              		.loc 1 492 1 is_stmt 0 view .LVU233
+ 702 0010 08BD     		pop	{r3, pc}
+ 703              	.LVL44:
+ 704              	.L46:
+ 705              		.loc 1 471 5 is_stmt 1 view .LVU234
+ 706 0012 0268     		ldr	r2, [r0]
+ 707 0014 1368     		ldr	r3, [r2]
+ 708 0016 23F00E03 		bic	r3, r3, #14
+ 709 001a 1360     		str	r3, [r2]
+ 710              		.loc 1 474 5 view .LVU235
+ 711 001c 0268     		ldr	r2, [r0]
+ 712 001e 1368     		ldr	r3, [r2]
+ 713 0020 23F00103 		bic	r3, r3, #1
+ 714 0024 1360     		str	r3, [r2]
+ 715              		.loc 1 477 5 view .LVU236
+ 716 0026 0368     		ldr	r3, [r0]
+ 717 0028 194A     		ldr	r2, .L58
+ 718 002a 9342     		cmp	r3, r2
+ 719 002c 14D0     		beq	.L49
+ 720              		.loc 1 477 5 is_stmt 0 discriminator 1 view .LVU237
+ 721 002e 1432     		adds	r2, r2, #20
+ 722 0030 9342     		cmp	r3, r2
+ 723 0032 1FD0     		beq	.L50
+ 724              		.loc 1 477 5 discriminator 3 view .LVU238
+ 725 0034 1432     		adds	r2, r2, #20
+ 726 0036 9342     		cmp	r3, r2
+ 727 0038 1ED0     		beq	.L51
+ 728              		.loc 1 477 5 discriminator 5 view .LVU239
+ 729 003a 1432     		adds	r2, r2, #20
+ 730 003c 9342     		cmp	r3, r2
+ 731 003e 1ED0     		beq	.L52
+ 732              		.loc 1 477 5 discriminator 7 view .LVU240
+ 733 0040 1432     		adds	r2, r2, #20
+ 734 0042 9342     		cmp	r3, r2
+ 735 0044 1ED0     		beq	.L53
+ 736              		.loc 1 477 5 discriminator 9 view .LVU241
+ 737 0046 1432     		adds	r2, r2, #20
+ 738 0048 9342     		cmp	r3, r2
+ 739 004a 02D0     		beq	.L57
+ 740              		.loc 1 477 5 view .LVU242
+ 741 004c 4FF08072 		mov	r2, #16777216
+ 742 0050 03E0     		b	.L48
+ 743              	.L57:
+ 744 0052 4FF48012 		mov	r2, #1048576
+ 745 0056 00E0     		b	.L48
+ 746              	.L49:
+ 747 0058 0122     		movs	r2, #1
+ 748              	.L48:
+ 749              		.loc 1 477 5 discriminator 24 view .LVU243
+ 750 005a 0E4B     		ldr	r3, .L58+4
+ 751 005c 5A60     		str	r2, [r3, #4]
+ 752              		.loc 1 480 5 is_stmt 1 discriminator 24 view .LVU244
+ 753              		.loc 1 480 17 is_stmt 0 discriminator 24 view .LVU245
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 14
+
+
+ 754 005e 0123     		movs	r3, #1
+ 755 0060 80F82130 		strb	r3, [r0, #33]
+ 756              		.loc 1 483 5 is_stmt 1 discriminator 24 view .LVU246
+ 757              		.loc 1 483 5 discriminator 24 view .LVU247
+ 758 0064 0023     		movs	r3, #0
+ 759 0066 80F82030 		strb	r3, [r0, #32]
+ 760              		.loc 1 483 5 discriminator 24 view .LVU248
+ 761              		.loc 1 486 5 discriminator 24 view .LVU249
+ 762              		.loc 1 486 12 is_stmt 0 discriminator 24 view .LVU250
+ 763 006a 436B     		ldr	r3, [r0, #52]
+ 764              		.loc 1 486 7 discriminator 24 view .LVU251
+ 765 006c 6BB1     		cbz	r3, .L55
+ 766              		.loc 1 488 7 is_stmt 1 view .LVU252
+ 767 006e 9847     		blx	r3
+ 768              	.LVL45:
+ 769              		.loc 1 459 21 is_stmt 0 view .LVU253
+ 770 0070 0020     		movs	r0, #0
+ 771 0072 CDE7     		b	.L47
+ 772              	.LVL46:
+ 773              	.L50:
+ 774              		.loc 1 477 5 view .LVU254
+ 775 0074 1022     		movs	r2, #16
+ 776 0076 F0E7     		b	.L48
+ 777              	.L51:
+ 778 0078 4FF48072 		mov	r2, #256
+ 779 007c EDE7     		b	.L48
+ 780              	.L52:
+ 781 007e 4FF48052 		mov	r2, #4096
+ 782 0082 EAE7     		b	.L48
+ 783              	.L53:
+ 784 0084 4FF48032 		mov	r2, #65536
+ 785 0088 E7E7     		b	.L48
+ 786              	.L55:
+ 787              		.loc 1 459 21 view .LVU255
+ 788 008a 0020     		movs	r0, #0
+ 789              	.LVL47:
+ 790              		.loc 1 459 21 view .LVU256
+ 791 008c C0E7     		b	.L47
+ 792              	.L59:
+ 793 008e 00BF     		.align	2
+ 794              	.L58:
+ 795 0090 08000240 		.word	1073872904
+ 796 0094 00000240 		.word	1073872896
+ 797              		.cfi_endproc
+ 798              	.LFE70:
+ 800              		.section	.text.HAL_DMA_PollForTransfer,"ax",%progbits
+ 801              		.align	1
+ 802              		.global	HAL_DMA_PollForTransfer
+ 803              		.syntax unified
+ 804              		.thumb
+ 805              		.thumb_func
+ 806              		.fpu softvfp
+ 808              	HAL_DMA_PollForTransfer:
+ 809              	.LVL48:
+ 810              	.LFB71:
+ 811              		.loc 1 503 1 is_stmt 1 view -0
+ 812              		.cfi_startproc
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 15
+
+
+ 813              		@ args = 0, pretend = 0, frame = 0
+ 814              		@ frame_needed = 0, uses_anonymous_args = 0
+ 815              		.loc 1 503 1 is_stmt 0 view .LVU258
+ 816 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 817              	.LCFI10:
+ 818              		.cfi_def_cfa_offset 24
+ 819              		.cfi_offset 4, -24
+ 820              		.cfi_offset 5, -20
+ 821              		.cfi_offset 6, -16
+ 822              		.cfi_offset 7, -12
+ 823              		.cfi_offset 8, -8
+ 824              		.cfi_offset 14, -4
+ 825 0004 0446     		mov	r4, r0
+ 826              		.loc 1 504 3 is_stmt 1 view .LVU259
+ 827              		.loc 1 505 3 view .LVU260
+ 828              	.LVL49:
+ 829              		.loc 1 507 3 view .LVU261
+ 830              		.loc 1 507 32 is_stmt 0 view .LVU262
+ 831 0006 90F82130 		ldrb	r3, [r0, #33]	@ zero_extendqisi2
+ 832              		.loc 1 507 5 view .LVU263
+ 833 000a 022B     		cmp	r3, #2
+ 834 000c 07D0     		beq	.L61
+ 835              		.loc 1 510 5 is_stmt 1 view .LVU264
+ 836              		.loc 1 510 21 is_stmt 0 view .LVU265
+ 837 000e 0423     		movs	r3, #4
+ 838 0010 8363     		str	r3, [r0, #56]
+ 839              		.loc 1 511 5 is_stmt 1 view .LVU266
+ 840              		.loc 1 511 5 view .LVU267
+ 841 0012 0023     		movs	r3, #0
+ 842 0014 80F82030 		strb	r3, [r0, #32]
+ 843              		.loc 1 511 5 view .LVU268
+ 844              		.loc 1 512 5 view .LVU269
+ 845              		.loc 1 512 12 is_stmt 0 view .LVU270
+ 846 0018 0120     		movs	r0, #1
+ 847              	.LVL50:
+ 848              	.L62:
+ 849              		.loc 1 595 1 view .LVU271
+ 850 001a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 851              	.LVL51:
+ 852              	.L61:
+ 853              		.loc 1 595 1 view .LVU272
+ 854 001e 0F46     		mov	r7, r1
+ 855 0020 1546     		mov	r5, r2
+ 856              		.loc 1 516 3 is_stmt 1 view .LVU273
+ 857              		.loc 1 516 21 is_stmt 0 view .LVU274
+ 858 0022 0368     		ldr	r3, [r0]
+ 859              		.loc 1 516 31 view .LVU275
+ 860 0024 1A68     		ldr	r2, [r3]
+ 861              	.LVL52:
+ 862              		.loc 1 516 6 view .LVU276
+ 863 0026 12F0200F 		tst	r2, #32
+ 864 002a 15D1     		bne	.L107
+ 865              		.loc 1 523 3 is_stmt 1 view .LVU277
+ 866              		.loc 1 523 5 is_stmt 0 view .LVU278
+ 867 002c E1B9     		cbnz	r1, .L64
+ 868              		.loc 1 526 5 is_stmt 1 view .LVU279
+ 869              		.loc 1 526 12 is_stmt 0 view .LVU280
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 16
+
+
+ 870 002e 7D4A     		ldr	r2, .L116
+ 871 0030 9342     		cmp	r3, r2
+ 872 0032 31D0     		beq	.L76
+ 873              		.loc 1 526 12 discriminator 1 view .LVU281
+ 874 0034 1432     		adds	r2, r2, #20
+ 875 0036 9342     		cmp	r3, r2
+ 876 0038 33D0     		beq	.L77
+ 877              		.loc 1 526 12 discriminator 3 view .LVU282
+ 878 003a 1432     		adds	r2, r2, #20
+ 879 003c 9342     		cmp	r3, r2
+ 880 003e 32D0     		beq	.L78
+ 881              		.loc 1 526 12 discriminator 5 view .LVU283
+ 882 0040 1432     		adds	r2, r2, #20
+ 883 0042 9342     		cmp	r3, r2
+ 884 0044 32D0     		beq	.L79
+ 885              		.loc 1 526 12 discriminator 7 view .LVU284
+ 886 0046 1432     		adds	r2, r2, #20
+ 887 0048 9342     		cmp	r3, r2
+ 888 004a 32D0     		beq	.L80
+ 889              		.loc 1 526 12 discriminator 9 view .LVU285
+ 890 004c 1432     		adds	r2, r2, #20
+ 891 004e 9342     		cmp	r3, r2
+ 892 0050 07D0     		beq	.L108
+ 893              		.loc 1 526 12 view .LVU286
+ 894 0052 4FF00076 		mov	r6, #33554432
+ 895 0056 20E0     		b	.L65
+ 896              	.L107:
+ 897              		.loc 1 518 5 is_stmt 1 view .LVU287
+ 898              		.loc 1 518 21 is_stmt 0 view .LVU288
+ 899 0058 4FF48073 		mov	r3, #256
+ 900 005c 8363     		str	r3, [r0, #56]
+ 901              		.loc 1 519 5 is_stmt 1 view .LVU289
+ 902              		.loc 1 519 12 is_stmt 0 view .LVU290
+ 903 005e 0120     		movs	r0, #1
+ 904              	.LVL53:
+ 905              		.loc 1 519 12 view .LVU291
+ 906 0060 DBE7     		b	.L62
+ 907              	.LVL54:
+ 908              	.L108:
+ 909              		.loc 1 526 12 view .LVU292
+ 910 0062 4FF40016 		mov	r6, #2097152
+ 911 0066 18E0     		b	.L65
+ 912              	.L64:
+ 913              		.loc 1 531 5 is_stmt 1 view .LVU293
+ 914              		.loc 1 531 12 is_stmt 0 view .LVU294
+ 915 0068 6E4A     		ldr	r2, .L116
+ 916 006a 9342     		cmp	r3, r2
+ 917 006c 24D0     		beq	.L82
+ 918              		.loc 1 531 12 discriminator 1 view .LVU295
+ 919 006e 1432     		adds	r2, r2, #20
+ 920 0070 9342     		cmp	r3, r2
+ 921 0072 23D0     		beq	.L83
+ 922              		.loc 1 531 12 discriminator 3 view .LVU296
+ 923 0074 1432     		adds	r2, r2, #20
+ 924 0076 9342     		cmp	r3, r2
+ 925 0078 22D0     		beq	.L84
+ 926              		.loc 1 531 12 discriminator 5 view .LVU297
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 17
+
+
+ 927 007a 1432     		adds	r2, r2, #20
+ 928 007c 9342     		cmp	r3, r2
+ 929 007e 22D0     		beq	.L85
+ 930              		.loc 1 531 12 discriminator 7 view .LVU298
+ 931 0080 1432     		adds	r2, r2, #20
+ 932 0082 9342     		cmp	r3, r2
+ 933 0084 22D0     		beq	.L86
+ 934              		.loc 1 531 12 discriminator 9 view .LVU299
+ 935 0086 1432     		adds	r2, r2, #20
+ 936 0088 9342     		cmp	r3, r2
+ 937 008a 02D0     		beq	.L109
+ 938              		.loc 1 531 12 view .LVU300
+ 939 008c 4FF08066 		mov	r6, #67108864
+ 940 0090 03E0     		b	.L65
+ 941              	.L109:
+ 942 0092 4FF48006 		mov	r6, #4194304
+ 943 0096 00E0     		b	.L65
+ 944              	.L76:
+ 945              		.loc 1 526 12 view .LVU301
+ 946 0098 0226     		movs	r6, #2
+ 947              	.L65:
+ 948              	.LVL55:
+ 949              		.loc 1 535 3 is_stmt 1 view .LVU302
+ 950              		.loc 1 535 15 is_stmt 0 view .LVU303
+ 951 009a 634B     		ldr	r3, .L116+4
+ 952 009c 9847     		blx	r3
+ 953              	.LVL56:
+ 954              		.loc 1 535 15 view .LVU304
+ 955 009e 8046     		mov	r8, r0
+ 956              	.LVL57:
+ 957              		.loc 1 537 3 is_stmt 1 view .LVU305
+ 958              		.loc 1 537 8 is_stmt 0 view .LVU306
+ 959 00a0 20E0     		b	.L69
+ 960              	.LVL58:
+ 961              	.L77:
+ 962              		.loc 1 526 12 view .LVU307
+ 963 00a2 2026     		movs	r6, #32
+ 964 00a4 F9E7     		b	.L65
+ 965              	.L78:
+ 966 00a6 4FF40076 		mov	r6, #512
+ 967 00aa F6E7     		b	.L65
+ 968              	.L79:
+ 969 00ac 4FF40056 		mov	r6, #8192
+ 970 00b0 F3E7     		b	.L65
+ 971              	.L80:
+ 972 00b2 4FF40036 		mov	r6, #131072
+ 973 00b6 F0E7     		b	.L65
+ 974              	.L82:
+ 975              		.loc 1 531 12 view .LVU308
+ 976 00b8 0426     		movs	r6, #4
+ 977 00ba EEE7     		b	.L65
+ 978              	.L83:
+ 979 00bc 4026     		movs	r6, #64
+ 980 00be ECE7     		b	.L65
+ 981              	.L84:
+ 982 00c0 4FF48066 		mov	r6, #1024
+ 983 00c4 E9E7     		b	.L65
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 18
+
+
+ 984              	.L85:
+ 985 00c6 4FF48046 		mov	r6, #16384
+ 986 00ca E6E7     		b	.L65
+ 987              	.L86:
+ 988 00cc 4FF48026 		mov	r6, #262144
+ 989 00d0 E3E7     		b	.L65
+ 990              	.LVL59:
+ 991              	.L113:
+ 992              		.loc 1 539 9 view .LVU309
+ 993 00d2 4FF40003 		mov	r3, #8388608
+ 994 00d6 00E0     		b	.L67
+ 995              	.L88:
+ 996 00d8 0823     		movs	r3, #8
+ 997              	.L67:
+ 998              		.loc 1 539 7 discriminator 24 view .LVU310
+ 999 00da 1A42     		tst	r2, r3
+ 1000 00dc 29D1     		bne	.L110
+ 1001              		.loc 1 558 5 is_stmt 1 view .LVU311
+ 1002              		.loc 1 558 7 is_stmt 0 view .LVU312
+ 1003 00de B5F1FF3F 		cmp	r5, #-1
+ 1004 00e2 35D1     		bne	.L111
+ 1005              	.L69:
+ 1006              		.loc 1 537 8 is_stmt 1 view .LVU313
+ 1007              		.loc 1 537 9 is_stmt 0 view .LVU314
+ 1008 00e4 514B     		ldr	r3, .L116+8
+ 1009 00e6 1B68     		ldr	r3, [r3]
+ 1010              		.loc 1 537 8 view .LVU315
+ 1011 00e8 3342     		tst	r3, r6
+ 1012 00ea 43D1     		bne	.L112
+ 1013              		.loc 1 539 5 is_stmt 1 view .LVU316
+ 1014              		.loc 1 539 9 is_stmt 0 view .LVU317
+ 1015 00ec 4F4B     		ldr	r3, .L116+8
+ 1016 00ee 1A68     		ldr	r2, [r3]
+ 1017 00f0 2368     		ldr	r3, [r4]
+ 1018 00f2 4C49     		ldr	r1, .L116
+ 1019 00f4 8B42     		cmp	r3, r1
+ 1020 00f6 EFD0     		beq	.L88
+ 1021              		.loc 1 539 9 discriminator 1 view .LVU318
+ 1022 00f8 1431     		adds	r1, r1, #20
+ 1023 00fa 8B42     		cmp	r3, r1
+ 1024 00fc 0ED0     		beq	.L89
+ 1025              		.loc 1 539 9 discriminator 3 view .LVU319
+ 1026 00fe 1431     		adds	r1, r1, #20
+ 1027 0100 8B42     		cmp	r3, r1
+ 1028 0102 0DD0     		beq	.L90
+ 1029              		.loc 1 539 9 discriminator 5 view .LVU320
+ 1030 0104 1431     		adds	r1, r1, #20
+ 1031 0106 8B42     		cmp	r3, r1
+ 1032 0108 0DD0     		beq	.L91
+ 1033              		.loc 1 539 9 discriminator 7 view .LVU321
+ 1034 010a 1431     		adds	r1, r1, #20
+ 1035 010c 8B42     		cmp	r3, r1
+ 1036 010e 0DD0     		beq	.L92
+ 1037              		.loc 1 539 9 discriminator 9 view .LVU322
+ 1038 0110 1431     		adds	r1, r1, #20
+ 1039 0112 8B42     		cmp	r3, r1
+ 1040 0114 DDD0     		beq	.L113
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 19
+
+
+ 1041              		.loc 1 539 9 view .LVU323
+ 1042 0116 4FF00063 		mov	r3, #134217728
+ 1043 011a DEE7     		b	.L67
+ 1044              	.L89:
+ 1045 011c 8023     		movs	r3, #128
+ 1046 011e DCE7     		b	.L67
+ 1047              	.L90:
+ 1048 0120 4FF40063 		mov	r3, #2048
+ 1049 0124 D9E7     		b	.L67
+ 1050              	.L91:
+ 1051 0126 4FF40043 		mov	r3, #32768
+ 1052 012a D6E7     		b	.L67
+ 1053              	.L92:
+ 1054 012c 4FF40023 		mov	r3, #524288
+ 1055 0130 D3E7     		b	.L67
+ 1056              	.L110:
+ 1057              		.loc 1 544 7 is_stmt 1 view .LVU324
+ 1058              		.loc 1 544 57 is_stmt 0 view .LVU325
+ 1059 0132 236C     		ldr	r3, [r4, #64]
+ 1060              		.loc 1 544 11 view .LVU326
+ 1061 0134 E26B     		ldr	r2, [r4, #60]
+ 1062              		.loc 1 544 50 view .LVU327
+ 1063 0136 0120     		movs	r0, #1
+ 1064 0138 00FA03F3 		lsl	r3, r0, r3
+ 1065              		.loc 1 544 34 view .LVU328
+ 1066 013c 5360     		str	r3, [r2, #4]
+ 1067              		.loc 1 547 7 is_stmt 1 view .LVU329
+ 1068 013e A36B     		ldr	r3, [r4, #56]
+ 1069 0140 0343     		orrs	r3, r3, r0
+ 1070 0142 A363     		str	r3, [r4, #56]
+ 1071              		.loc 1 550 7 view .LVU330
+ 1072              		.loc 1 550 18 is_stmt 0 view .LVU331
+ 1073 0144 84F82100 		strb	r0, [r4, #33]
+ 1074              		.loc 1 553 7 is_stmt 1 view .LVU332
+ 1075              		.loc 1 553 7 view .LVU333
+ 1076 0148 0023     		movs	r3, #0
+ 1077 014a 84F82030 		strb	r3, [r4, #32]
+ 1078              		.loc 1 553 7 view .LVU334
+ 1079              		.loc 1 555 7 view .LVU335
+ 1080              		.loc 1 555 14 is_stmt 0 view .LVU336
+ 1081 014e 64E7     		b	.L62
+ 1082              	.L111:
+ 1083              		.loc 1 560 7 is_stmt 1 view .LVU337
+ 1084              		.loc 1 560 9 is_stmt 0 view .LVU338
+ 1085 0150 2DB1     		cbz	r5, .L70
+ 1086              		.loc 1 560 31 discriminator 1 view .LVU339
+ 1087 0152 354B     		ldr	r3, .L116+4
+ 1088 0154 9847     		blx	r3
+ 1089              	.LVL60:
+ 1090              		.loc 1 560 45 discriminator 1 view .LVU340
+ 1091 0156 A0EB0800 		sub	r0, r0, r8
+ 1092              		.loc 1 560 26 discriminator 1 view .LVU341
+ 1093 015a A842     		cmp	r0, r5
+ 1094 015c C2D9     		bls	.L69
+ 1095              	.L70:
+ 1096              		.loc 1 563 9 is_stmt 1 view .LVU342
+ 1097 015e A36B     		ldr	r3, [r4, #56]
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 20
+
+
+ 1098 0160 43F02003 		orr	r3, r3, #32
+ 1099 0164 A363     		str	r3, [r4, #56]
+ 1100              		.loc 1 566 9 view .LVU343
+ 1101              		.loc 1 566 21 is_stmt 0 view .LVU344
+ 1102 0166 0120     		movs	r0, #1
+ 1103 0168 84F82100 		strb	r0, [r4, #33]
+ 1104              		.loc 1 569 9 is_stmt 1 view .LVU345
+ 1105              		.loc 1 569 9 view .LVU346
+ 1106 016c 0023     		movs	r3, #0
+ 1107 016e 84F82030 		strb	r3, [r4, #32]
+ 1108              		.loc 1 569 9 view .LVU347
+ 1109              		.loc 1 571 9 view .LVU348
+ 1110              		.loc 1 571 16 is_stmt 0 view .LVU349
+ 1111 0172 52E7     		b	.L62
+ 1112              	.L112:
+ 1113              		.loc 1 576 3 is_stmt 1 view .LVU350
+ 1114              		.loc 1 576 5 is_stmt 0 view .LVU351
+ 1115 0174 6FBB     		cbnz	r7, .L72
+ 1116              		.loc 1 579 5 is_stmt 1 view .LVU352
+ 1117 0176 2368     		ldr	r3, [r4]
+ 1118 0178 2A4A     		ldr	r2, .L116
+ 1119 017a 9342     		cmp	r3, r2
+ 1120 017c 14D0     		beq	.L94
+ 1121              		.loc 1 579 5 is_stmt 0 discriminator 1 view .LVU353
+ 1122 017e 1432     		adds	r2, r2, #20
+ 1123 0180 9342     		cmp	r3, r2
+ 1124 0182 1BD0     		beq	.L95
+ 1125              		.loc 1 579 5 discriminator 3 view .LVU354
+ 1126 0184 1432     		adds	r2, r2, #20
+ 1127 0186 9342     		cmp	r3, r2
+ 1128 0188 1AD0     		beq	.L96
+ 1129              		.loc 1 579 5 discriminator 5 view .LVU355
+ 1130 018a 1432     		adds	r2, r2, #20
+ 1131 018c 9342     		cmp	r3, r2
+ 1132 018e 1AD0     		beq	.L97
+ 1133              		.loc 1 579 5 discriminator 7 view .LVU356
+ 1134 0190 1432     		adds	r2, r2, #20
+ 1135 0192 9342     		cmp	r3, r2
+ 1136 0194 1AD0     		beq	.L98
+ 1137              		.loc 1 579 5 discriminator 9 view .LVU357
+ 1138 0196 1432     		adds	r2, r2, #20
+ 1139 0198 9342     		cmp	r3, r2
+ 1140 019a 02D0     		beq	.L114
+ 1141              		.loc 1 579 5 view .LVU358
+ 1142 019c 4FF00072 		mov	r2, #33554432
+ 1143 01a0 03E0     		b	.L73
+ 1144              	.L114:
+ 1145 01a2 4FF40012 		mov	r2, #2097152
+ 1146 01a6 00E0     		b	.L73
+ 1147              	.L94:
+ 1148 01a8 0222     		movs	r2, #2
+ 1149              	.L73:
+ 1150              		.loc 1 579 5 discriminator 24 view .LVU359
+ 1151 01aa 204B     		ldr	r3, .L116+8
+ 1152 01ac 5A60     		str	r2, [r3, #4]
+ 1153              		.loc 1 583 5 is_stmt 1 discriminator 24 view .LVU360
+ 1154              		.loc 1 583 17 is_stmt 0 discriminator 24 view .LVU361
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 21
+
+
+ 1155 01ae 0123     		movs	r3, #1
+ 1156 01b0 84F82130 		strb	r3, [r4, #33]
+ 1157              	.L74:
+ 1158              		.loc 1 592 3 is_stmt 1 view .LVU362
+ 1159              		.loc 1 592 3 view .LVU363
+ 1160 01b4 0020     		movs	r0, #0
+ 1161 01b6 84F82000 		strb	r0, [r4, #32]
+ 1162              		.loc 1 592 3 view .LVU364
+ 1163              		.loc 1 594 3 view .LVU365
+ 1164              		.loc 1 594 10 is_stmt 0 view .LVU366
+ 1165 01ba 2EE7     		b	.L62
+ 1166              	.L95:
+ 1167              		.loc 1 579 5 view .LVU367
+ 1168 01bc 2022     		movs	r2, #32
+ 1169 01be F4E7     		b	.L73
+ 1170              	.L96:
+ 1171 01c0 4FF40072 		mov	r2, #512
+ 1172 01c4 F1E7     		b	.L73
+ 1173              	.L97:
+ 1174 01c6 4FF40052 		mov	r2, #8192
+ 1175 01ca EEE7     		b	.L73
+ 1176              	.L98:
+ 1177 01cc 4FF40032 		mov	r2, #131072
+ 1178 01d0 EBE7     		b	.L73
+ 1179              	.L72:
+ 1180              		.loc 1 588 5 is_stmt 1 view .LVU368
+ 1181 01d2 2368     		ldr	r3, [r4]
+ 1182 01d4 134A     		ldr	r2, .L116
+ 1183 01d6 9342     		cmp	r3, r2
+ 1184 01d8 14D0     		beq	.L100
+ 1185              		.loc 1 588 5 is_stmt 0 discriminator 1 view .LVU369
+ 1186 01da 1432     		adds	r2, r2, #20
+ 1187 01dc 9342     		cmp	r3, r2
+ 1188 01de 15D0     		beq	.L101
+ 1189              		.loc 1 588 5 discriminator 3 view .LVU370
+ 1190 01e0 1432     		adds	r2, r2, #20
+ 1191 01e2 9342     		cmp	r3, r2
+ 1192 01e4 14D0     		beq	.L102
+ 1193              		.loc 1 588 5 discriminator 5 view .LVU371
+ 1194 01e6 1432     		adds	r2, r2, #20
+ 1195 01e8 9342     		cmp	r3, r2
+ 1196 01ea 14D0     		beq	.L103
+ 1197              		.loc 1 588 5 discriminator 7 view .LVU372
+ 1198 01ec 1432     		adds	r2, r2, #20
+ 1199 01ee 9342     		cmp	r3, r2
+ 1200 01f0 14D0     		beq	.L104
+ 1201              		.loc 1 588 5 discriminator 9 view .LVU373
+ 1202 01f2 1432     		adds	r2, r2, #20
+ 1203 01f4 9342     		cmp	r3, r2
+ 1204 01f6 02D0     		beq	.L115
+ 1205              		.loc 1 588 5 view .LVU374
+ 1206 01f8 4FF08062 		mov	r2, #67108864
+ 1207 01fc 03E0     		b	.L75
+ 1208              	.L115:
+ 1209 01fe 4FF48002 		mov	r2, #4194304
+ 1210 0202 00E0     		b	.L75
+ 1211              	.L100:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 22
+
+
+ 1212 0204 0422     		movs	r2, #4
+ 1213              	.L75:
+ 1214              		.loc 1 588 5 discriminator 24 view .LVU375
+ 1215 0206 094B     		ldr	r3, .L116+8
+ 1216 0208 5A60     		str	r2, [r3, #4]
+ 1217 020a D3E7     		b	.L74
+ 1218              	.L101:
+ 1219              		.loc 1 588 5 view .LVU376
+ 1220 020c 4022     		movs	r2, #64
+ 1221 020e FAE7     		b	.L75
+ 1222              	.L102:
+ 1223 0210 4FF48062 		mov	r2, #1024
+ 1224 0214 F7E7     		b	.L75
+ 1225              	.L103:
+ 1226 0216 4FF48042 		mov	r2, #16384
+ 1227 021a F4E7     		b	.L75
+ 1228              	.L104:
+ 1229 021c 4FF48022 		mov	r2, #262144
+ 1230 0220 F1E7     		b	.L75
+ 1231              	.L117:
+ 1232 0222 00BF     		.align	2
+ 1233              	.L116:
+ 1234 0224 08000240 		.word	1073872904
+ 1235 0228 00000000 		.word	HAL_GetTick
+ 1236 022c 00000240 		.word	1073872896
+ 1237              		.cfi_endproc
+ 1238              	.LFE71:
+ 1240              		.section	.text.HAL_DMA_IRQHandler,"ax",%progbits
+ 1241              		.align	1
+ 1242              		.global	HAL_DMA_IRQHandler
+ 1243              		.syntax unified
+ 1244              		.thumb
+ 1245              		.thumb_func
+ 1246              		.fpu softvfp
+ 1248              	HAL_DMA_IRQHandler:
+ 1249              	.LVL61:
+ 1250              	.LFB72:
+ 1251              		.loc 1 604 1 is_stmt 1 view -0
+ 1252              		.cfi_startproc
+ 1253              		@ args = 0, pretend = 0, frame = 0
+ 1254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1255              		.loc 1 604 1 is_stmt 0 view .LVU378
+ 1256 0000 38B5     		push	{r3, r4, r5, lr}
+ 1257              	.LCFI11:
+ 1258              		.cfi_def_cfa_offset 16
+ 1259              		.cfi_offset 3, -16
+ 1260              		.cfi_offset 4, -12
+ 1261              		.cfi_offset 5, -8
+ 1262              		.cfi_offset 14, -4
+ 1263              		.loc 1 605 3 is_stmt 1 view .LVU379
+ 1264              		.loc 1 605 26 is_stmt 0 view .LVU380
+ 1265 0002 C36B     		ldr	r3, [r0, #60]
+ 1266              		.loc 1 605 12 view .LVU381
+ 1267 0004 1A68     		ldr	r2, [r3]
+ 1268              	.LVL62:
+ 1269              		.loc 1 606 3 is_stmt 1 view .LVU382
+ 1270              		.loc 1 606 28 is_stmt 0 view .LVU383
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 23
+
+
+ 1271 0006 0468     		ldr	r4, [r0]
+ 1272              		.loc 1 606 12 view .LVU384
+ 1273 0008 2568     		ldr	r5, [r4]
+ 1274              	.LVL63:
+ 1275              		.loc 1 609 3 is_stmt 1 view .LVU385
+ 1276              		.loc 1 609 40 is_stmt 0 view .LVU386
+ 1277 000a 016C     		ldr	r1, [r0, #64]
+ 1278              		.loc 1 609 33 view .LVU387
+ 1279 000c 0423     		movs	r3, #4
+ 1280 000e 8B40     		lsls	r3, r3, r1
+ 1281              		.loc 1 609 6 view .LVU388
+ 1282 0010 1342     		tst	r3, r2
+ 1283 0012 35D0     		beq	.L119
+ 1284              		.loc 1 609 67 discriminator 1 view .LVU389
+ 1285 0014 15F0040F 		tst	r5, #4
+ 1286 0018 32D0     		beq	.L119
+ 1287              		.loc 1 612 5 is_stmt 1 view .LVU390
+ 1288              		.loc 1 612 23 is_stmt 0 view .LVU391
+ 1289 001a 2368     		ldr	r3, [r4]
+ 1290              		.loc 1 612 7 view .LVU392
+ 1291 001c 13F0200F 		tst	r3, #32
+ 1292 0020 03D1     		bne	.L120
+ 1293              		.loc 1 615 7 is_stmt 1 view .LVU393
+ 1294 0022 2368     		ldr	r3, [r4]
+ 1295 0024 23F00403 		bic	r3, r3, #4
+ 1296 0028 2360     		str	r3, [r4]
+ 1297              	.L120:
+ 1298              		.loc 1 618 5 view .LVU394
+ 1299 002a 0368     		ldr	r3, [r0]
+ 1300 002c 434A     		ldr	r2, .L141
+ 1301              	.LVL64:
+ 1302              		.loc 1 618 5 is_stmt 0 view .LVU395
+ 1303 002e 9342     		cmp	r3, r2
+ 1304 0030 14D0     		beq	.L126
+ 1305              		.loc 1 618 5 discriminator 1 view .LVU396
+ 1306 0032 1432     		adds	r2, r2, #20
+ 1307 0034 9342     		cmp	r3, r2
+ 1308 0036 18D0     		beq	.L127
+ 1309              		.loc 1 618 5 discriminator 3 view .LVU397
+ 1310 0038 1432     		adds	r2, r2, #20
+ 1311 003a 9342     		cmp	r3, r2
+ 1312 003c 17D0     		beq	.L128
+ 1313              		.loc 1 618 5 discriminator 5 view .LVU398
+ 1314 003e 1432     		adds	r2, r2, #20
+ 1315 0040 9342     		cmp	r3, r2
+ 1316 0042 17D0     		beq	.L129
+ 1317              		.loc 1 618 5 discriminator 7 view .LVU399
+ 1318 0044 1432     		adds	r2, r2, #20
+ 1319 0046 9342     		cmp	r3, r2
+ 1320 0048 17D0     		beq	.L130
+ 1321              		.loc 1 618 5 discriminator 9 view .LVU400
+ 1322 004a 1432     		adds	r2, r2, #20
+ 1323 004c 9342     		cmp	r3, r2
+ 1324 004e 02D0     		beq	.L139
+ 1325              		.loc 1 618 5 view .LVU401
+ 1326 0050 4FF08062 		mov	r2, #67108864
+ 1327 0054 03E0     		b	.L121
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 24
+
+
+ 1328              	.L139:
+ 1329 0056 4FF48002 		mov	r2, #4194304
+ 1330 005a 00E0     		b	.L121
+ 1331              	.L126:
+ 1332 005c 0422     		movs	r2, #4
+ 1333              	.L121:
+ 1334              		.loc 1 618 5 discriminator 24 view .LVU402
+ 1335 005e 384B     		ldr	r3, .L141+4
+ 1336 0060 5A60     		str	r2, [r3, #4]
+ 1337              		.loc 1 623 5 is_stmt 1 discriminator 24 view .LVU403
+ 1338              		.loc 1 623 12 is_stmt 0 discriminator 24 view .LVU404
+ 1339 0062 C36A     		ldr	r3, [r0, #44]
+ 1340              		.loc 1 623 7 discriminator 24 view .LVU405
+ 1341 0064 03B1     		cbz	r3, .L118
+ 1342              		.loc 1 626 7 is_stmt 1 view .LVU406
+ 1343 0066 9847     		blx	r3
+ 1344              	.LVL65:
+ 1345              	.L118:
+ 1346              		.loc 1 681 1 is_stmt 0 view .LVU407
+ 1347 0068 38BD     		pop	{r3, r4, r5, pc}
+ 1348              	.LVL66:
+ 1349              	.L127:
+ 1350              		.loc 1 618 5 view .LVU408
+ 1351 006a 4022     		movs	r2, #64
+ 1352 006c F7E7     		b	.L121
+ 1353              	.L128:
+ 1354 006e 4FF48062 		mov	r2, #1024
+ 1355 0072 F4E7     		b	.L121
+ 1356              	.L129:
+ 1357 0074 4FF48042 		mov	r2, #16384
+ 1358 0078 F1E7     		b	.L121
+ 1359              	.L130:
+ 1360 007a 4FF48022 		mov	r2, #262144
+ 1361 007e EEE7     		b	.L121
+ 1362              	.LVL67:
+ 1363              	.L119:
+ 1364              		.loc 1 631 8 is_stmt 1 view .LVU409
+ 1365              		.loc 1 631 38 is_stmt 0 view .LVU410
+ 1366 0080 0223     		movs	r3, #2
+ 1367 0082 8B40     		lsls	r3, r3, r1
+ 1368              		.loc 1 631 11 view .LVU411
+ 1369 0084 1342     		tst	r3, r2
+ 1370 0086 3CD0     		beq	.L123
+ 1371              		.loc 1 631 72 discriminator 1 view .LVU412
+ 1372 0088 15F0020F 		tst	r5, #2
+ 1373 008c 39D0     		beq	.L123
+ 1374              		.loc 1 633 5 is_stmt 1 view .LVU413
+ 1375              		.loc 1 633 23 is_stmt 0 view .LVU414
+ 1376 008e 2368     		ldr	r3, [r4]
+ 1377              		.loc 1 633 7 view .LVU415
+ 1378 0090 13F0200F 		tst	r3, #32
+ 1379 0094 06D1     		bne	.L124
+ 1380              		.loc 1 636 7 is_stmt 1 view .LVU416
+ 1381 0096 2368     		ldr	r3, [r4]
+ 1382 0098 23F00A03 		bic	r3, r3, #10
+ 1383 009c 2360     		str	r3, [r4]
+ 1384              		.loc 1 639 7 view .LVU417
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 25
+
+
+ 1385              		.loc 1 639 19 is_stmt 0 view .LVU418
+ 1386 009e 0123     		movs	r3, #1
+ 1387 00a0 80F82130 		strb	r3, [r0, #33]
+ 1388              	.L124:
+ 1389              		.loc 1 642 7 is_stmt 1 view .LVU419
+ 1390 00a4 0368     		ldr	r3, [r0]
+ 1391 00a6 254A     		ldr	r2, .L141
+ 1392              	.LVL68:
+ 1393              		.loc 1 642 7 is_stmt 0 view .LVU420
+ 1394 00a8 9342     		cmp	r3, r2
+ 1395 00aa 14D0     		beq	.L132
+ 1396              		.loc 1 642 7 discriminator 1 view .LVU421
+ 1397 00ac 1432     		adds	r2, r2, #20
+ 1398 00ae 9342     		cmp	r3, r2
+ 1399 00b0 1CD0     		beq	.L133
+ 1400              		.loc 1 642 7 discriminator 3 view .LVU422
+ 1401 00b2 1432     		adds	r2, r2, #20
+ 1402 00b4 9342     		cmp	r3, r2
+ 1403 00b6 1BD0     		beq	.L134
+ 1404              		.loc 1 642 7 discriminator 5 view .LVU423
+ 1405 00b8 1432     		adds	r2, r2, #20
+ 1406 00ba 9342     		cmp	r3, r2
+ 1407 00bc 1BD0     		beq	.L135
+ 1408              		.loc 1 642 7 discriminator 7 view .LVU424
+ 1409 00be 1432     		adds	r2, r2, #20
+ 1410 00c0 9342     		cmp	r3, r2
+ 1411 00c2 1BD0     		beq	.L136
+ 1412              		.loc 1 642 7 discriminator 9 view .LVU425
+ 1413 00c4 1432     		adds	r2, r2, #20
+ 1414 00c6 9342     		cmp	r3, r2
+ 1415 00c8 02D0     		beq	.L140
+ 1416              		.loc 1 642 7 view .LVU426
+ 1417 00ca 4FF00072 		mov	r2, #33554432
+ 1418 00ce 03E0     		b	.L125
+ 1419              	.L140:
+ 1420 00d0 4FF40012 		mov	r2, #2097152
+ 1421 00d4 00E0     		b	.L125
+ 1422              	.L132:
+ 1423 00d6 0222     		movs	r2, #2
+ 1424              	.L125:
+ 1425              		.loc 1 642 7 discriminator 24 view .LVU427
+ 1426 00d8 194B     		ldr	r3, .L141+4
+ 1427 00da 5A60     		str	r2, [r3, #4]
+ 1428              		.loc 1 645 5 is_stmt 1 discriminator 24 view .LVU428
+ 1429              		.loc 1 645 5 discriminator 24 view .LVU429
+ 1430 00dc 0023     		movs	r3, #0
+ 1431 00de 80F82030 		strb	r3, [r0, #32]
+ 1432              		.loc 1 645 5 discriminator 24 view .LVU430
+ 1433              		.loc 1 647 5 discriminator 24 view .LVU431
+ 1434              		.loc 1 647 12 is_stmt 0 discriminator 24 view .LVU432
+ 1435 00e2 836A     		ldr	r3, [r0, #40]
+ 1436              		.loc 1 647 7 discriminator 24 view .LVU433
+ 1437 00e4 002B     		cmp	r3, #0
+ 1438 00e6 BFD0     		beq	.L118
+ 1439              		.loc 1 650 7 is_stmt 1 view .LVU434
+ 1440 00e8 9847     		blx	r3
+ 1441              	.LVL69:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 26
+
+
+ 1442              		.loc 1 650 7 is_stmt 0 view .LVU435
+ 1443 00ea BDE7     		b	.L118
+ 1444              	.LVL70:
+ 1445              	.L133:
+ 1446              		.loc 1 642 7 view .LVU436
+ 1447 00ec 2022     		movs	r2, #32
+ 1448 00ee F3E7     		b	.L125
+ 1449              	.L134:
+ 1450 00f0 4FF40072 		mov	r2, #512
+ 1451 00f4 F0E7     		b	.L125
+ 1452              	.L135:
+ 1453 00f6 4FF40052 		mov	r2, #8192
+ 1454 00fa EDE7     		b	.L125
+ 1455              	.L136:
+ 1456 00fc 4FF40032 		mov	r2, #131072
+ 1457 0100 EAE7     		b	.L125
+ 1458              	.LVL71:
+ 1459              	.L123:
+ 1460              		.loc 1 655 8 is_stmt 1 view .LVU437
+ 1461              		.loc 1 655 48 is_stmt 0 view .LVU438
+ 1462 0102 0823     		movs	r3, #8
+ 1463 0104 03FA01F1 		lsl	r1, r3, r1
+ 1464              		.loc 1 655 11 view .LVU439
+ 1465 0108 1142     		tst	r1, r2
+ 1466 010a ADD0     		beq	.L118
+ 1467              		.loc 1 655 73 discriminator 1 view .LVU440
+ 1468 010c 15F0080F 		tst	r5, #8
+ 1469 0110 AAD0     		beq	.L118
+ 1470              		.loc 1 660 5 is_stmt 1 view .LVU441
+ 1471 0112 2368     		ldr	r3, [r4]
+ 1472 0114 23F00E03 		bic	r3, r3, #14
+ 1473 0118 2360     		str	r3, [r4]
+ 1474              		.loc 1 663 5 view .LVU442
+ 1475              		.loc 1 663 55 is_stmt 0 view .LVU443
+ 1476 011a 026C     		ldr	r2, [r0, #64]
+ 1477              	.LVL72:
+ 1478              		.loc 1 663 9 view .LVU444
+ 1479 011c C16B     		ldr	r1, [r0, #60]
+ 1480              		.loc 1 663 48 view .LVU445
+ 1481 011e 0123     		movs	r3, #1
+ 1482 0120 03FA02F2 		lsl	r2, r3, r2
+ 1483              		.loc 1 663 32 view .LVU446
+ 1484 0124 4A60     		str	r2, [r1, #4]
+ 1485              		.loc 1 666 5 is_stmt 1 view .LVU447
+ 1486              		.loc 1 666 21 is_stmt 0 view .LVU448
+ 1487 0126 8363     		str	r3, [r0, #56]
+ 1488              		.loc 1 669 5 is_stmt 1 view .LVU449
+ 1489              		.loc 1 669 17 is_stmt 0 view .LVU450
+ 1490 0128 80F82130 		strb	r3, [r0, #33]
+ 1491              		.loc 1 672 5 is_stmt 1 view .LVU451
+ 1492              		.loc 1 672 5 view .LVU452
+ 1493 012c 0023     		movs	r3, #0
+ 1494 012e 80F82030 		strb	r3, [r0, #32]
+ 1495              		.loc 1 672 5 view .LVU453
+ 1496              		.loc 1 674 5 view .LVU454
+ 1497              		.loc 1 674 13 is_stmt 0 view .LVU455
+ 1498 0132 036B     		ldr	r3, [r0, #48]
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 27
+
+
+ 1499              		.loc 1 674 8 view .LVU456
+ 1500 0134 002B     		cmp	r3, #0
+ 1501 0136 97D0     		beq	.L118
+ 1502              		.loc 1 677 7 is_stmt 1 view .LVU457
+ 1503 0138 9847     		blx	r3
+ 1504              	.LVL73:
+ 1505              		.loc 1 680 3 view .LVU458
+ 1506 013a 95E7     		b	.L118
+ 1507              	.L142:
+ 1508              		.align	2
+ 1509              	.L141:
+ 1510 013c 08000240 		.word	1073872904
+ 1511 0140 00000240 		.word	1073872896
+ 1512              		.cfi_endproc
+ 1513              	.LFE72:
+ 1515              		.section	.text.HAL_DMA_RegisterCallback,"ax",%progbits
+ 1516              		.align	1
+ 1517              		.global	HAL_DMA_RegisterCallback
+ 1518              		.syntax unified
+ 1519              		.thumb
+ 1520              		.thumb_func
+ 1521              		.fpu softvfp
+ 1523              	HAL_DMA_RegisterCallback:
+ 1524              	.LVL74:
+ 1525              	.LFB73:
+ 1526              		.loc 1 694 1 view -0
+ 1527              		.cfi_startproc
+ 1528              		@ args = 0, pretend = 0, frame = 0
+ 1529              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1530              		@ link register save eliminated.
+ 1531              		.loc 1 694 1 is_stmt 0 view .LVU460
+ 1532 0000 0346     		mov	r3, r0
+ 1533              		.loc 1 695 3 is_stmt 1 view .LVU461
+ 1534              	.LVL75:
+ 1535              		.loc 1 698 3 view .LVU462
+ 1536              		.loc 1 698 3 view .LVU463
+ 1537 0002 90F82000 		ldrb	r0, [r0, #32]	@ zero_extendqisi2
+ 1538              	.LVL76:
+ 1539              		.loc 1 698 3 is_stmt 0 view .LVU464
+ 1540 0006 0128     		cmp	r0, #1
+ 1541 0008 1AD0     		beq	.L151
+ 1542              		.loc 1 698 3 is_stmt 1 discriminator 2 view .LVU465
+ 1543              		.loc 1 698 3 discriminator 2 view .LVU466
+ 1544              		.loc 1 700 3 discriminator 2 view .LVU467
+ 1545              		.loc 1 700 33 is_stmt 0 discriminator 2 view .LVU468
+ 1546 000a 93F82100 		ldrb	r0, [r3, #33]	@ zero_extendqisi2
+ 1547              		.loc 1 700 5 discriminator 2 view .LVU469
+ 1548 000e 0128     		cmp	r0, #1
+ 1549 0010 04D0     		beq	.L153
+ 1550              		.loc 1 727 12 view .LVU470
+ 1551 0012 0120     		movs	r0, #1
+ 1552              	.L145:
+ 1553              	.LVL77:
+ 1554              		.loc 1 731 3 is_stmt 1 view .LVU471
+ 1555              		.loc 1 731 3 view .LVU472
+ 1556 0014 0022     		movs	r2, #0
+ 1557              	.LVL78:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 28
+
+
+ 1558              		.loc 1 731 3 is_stmt 0 view .LVU473
+ 1559 0016 83F82020 		strb	r2, [r3, #32]
+ 1560              		.loc 1 731 3 is_stmt 1 view .LVU474
+ 1561              		.loc 1 733 3 view .LVU475
+ 1562              		.loc 1 733 10 is_stmt 0 view .LVU476
+ 1563 001a 7047     		bx	lr
+ 1564              	.LVL79:
+ 1565              	.L153:
+ 1566              		.loc 1 702 5 is_stmt 1 view .LVU477
+ 1567 001c 0329     		cmp	r1, #3
+ 1568 001e F9D8     		bhi	.L145
+ 1569 0020 DFE801F0 		tbb	[pc, r1]
+ 1570              	.L147:
+ 1571 0024 02       		.byte	(.L150-.L147)/2
+ 1572 0025 05       		.byte	(.L149-.L147)/2
+ 1573 0026 08       		.byte	(.L148-.L147)/2
+ 1574 0027 0B       		.byte	(.L146-.L147)/2
+ 1575              		.p2align 1
+ 1576              	.L150:
+ 1577              		.loc 1 705 7 view .LVU478
+ 1578              		.loc 1 705 30 is_stmt 0 view .LVU479
+ 1579 0028 9A62     		str	r2, [r3, #40]
+ 1580              		.loc 1 706 7 is_stmt 1 view .LVU480
+ 1581              		.loc 1 695 21 is_stmt 0 view .LVU481
+ 1582 002a 0846     		mov	r0, r1
+ 1583              		.loc 1 706 7 view .LVU482
+ 1584 002c F2E7     		b	.L145
+ 1585              	.L149:
+ 1586              		.loc 1 709 7 is_stmt 1 view .LVU483
+ 1587              		.loc 1 709 34 is_stmt 0 view .LVU484
+ 1588 002e DA62     		str	r2, [r3, #44]
+ 1589              		.loc 1 710 7 is_stmt 1 view .LVU485
+ 1590              		.loc 1 695 21 is_stmt 0 view .LVU486
+ 1591 0030 0020     		movs	r0, #0
+ 1592              		.loc 1 710 7 view .LVU487
+ 1593 0032 EFE7     		b	.L145
+ 1594              	.L148:
+ 1595              		.loc 1 713 7 is_stmt 1 view .LVU488
+ 1596              		.loc 1 713 31 is_stmt 0 view .LVU489
+ 1597 0034 1A63     		str	r2, [r3, #48]
+ 1598              		.loc 1 714 7 is_stmt 1 view .LVU490
+ 1599              		.loc 1 695 21 is_stmt 0 view .LVU491
+ 1600 0036 0020     		movs	r0, #0
+ 1601              		.loc 1 714 7 view .LVU492
+ 1602 0038 ECE7     		b	.L145
+ 1603              	.L146:
+ 1604              		.loc 1 717 7 is_stmt 1 view .LVU493
+ 1605              		.loc 1 717 31 is_stmt 0 view .LVU494
+ 1606 003a 5A63     		str	r2, [r3, #52]
+ 1607              		.loc 1 718 7 is_stmt 1 view .LVU495
+ 1608              		.loc 1 695 21 is_stmt 0 view .LVU496
+ 1609 003c 0020     		movs	r0, #0
+ 1610              		.loc 1 718 7 view .LVU497
+ 1611 003e E9E7     		b	.L145
+ 1612              	.L151:
+ 1613              		.loc 1 698 3 view .LVU498
+ 1614 0040 0220     		movs	r0, #2
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 29
+
+
+ 1615              		.loc 1 734 1 view .LVU499
+ 1616 0042 7047     		bx	lr
+ 1617              		.cfi_endproc
+ 1618              	.LFE73:
+ 1620              		.section	.text.HAL_DMA_UnRegisterCallback,"ax",%progbits
+ 1621              		.align	1
+ 1622              		.global	HAL_DMA_UnRegisterCallback
+ 1623              		.syntax unified
+ 1624              		.thumb
+ 1625              		.thumb_func
+ 1626              		.fpu softvfp
+ 1628              	HAL_DMA_UnRegisterCallback:
+ 1629              	.LVL80:
+ 1630              	.LFB74:
+ 1631              		.loc 1 745 1 is_stmt 1 view -0
+ 1632              		.cfi_startproc
+ 1633              		@ args = 0, pretend = 0, frame = 0
+ 1634              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1635              		@ link register save eliminated.
+ 1636              		.loc 1 745 1 is_stmt 0 view .LVU501
+ 1637 0000 0346     		mov	r3, r0
+ 1638              		.loc 1 746 3 is_stmt 1 view .LVU502
+ 1639              	.LVL81:
+ 1640              		.loc 1 749 3 view .LVU503
+ 1641              		.loc 1 749 3 view .LVU504
+ 1642 0002 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
+ 1643 0006 012A     		cmp	r2, #1
+ 1644 0008 25D0     		beq	.L163
+ 1645              		.loc 1 749 3 discriminator 2 view .LVU505
+ 1646 000a 0122     		movs	r2, #1
+ 1647 000c 80F82020 		strb	r2, [r0, #32]
+ 1648              		.loc 1 749 3 discriminator 2 view .LVU506
+ 1649              		.loc 1 751 3 discriminator 2 view .LVU507
+ 1650              		.loc 1 751 33 is_stmt 0 discriminator 2 view .LVU508
+ 1651 0010 90F82100 		ldrb	r0, [r0, #33]	@ zero_extendqisi2
+ 1652              	.LVL82:
+ 1653              		.loc 1 751 5 discriminator 2 view .LVU509
+ 1654 0014 9042     		cmp	r0, r2
+ 1655 0016 04D0     		beq	.L165
+ 1656              		.loc 1 785 12 view .LVU510
+ 1657 0018 0120     		movs	r0, #1
+ 1658              	.L156:
+ 1659              	.LVL83:
+ 1660              		.loc 1 789 3 is_stmt 1 view .LVU511
+ 1661              		.loc 1 789 3 view .LVU512
+ 1662 001a 0022     		movs	r2, #0
+ 1663 001c 83F82020 		strb	r2, [r3, #32]
+ 1664              		.loc 1 789 3 view .LVU513
+ 1665              		.loc 1 791 3 view .LVU514
+ 1666              		.loc 1 791 10 is_stmt 0 view .LVU515
+ 1667 0020 7047     		bx	lr
+ 1668              	.LVL84:
+ 1669              	.L165:
+ 1670              		.loc 1 753 5 is_stmt 1 view .LVU516
+ 1671 0022 0429     		cmp	r1, #4
+ 1672 0024 F9D8     		bhi	.L156
+ 1673 0026 DFE801F0 		tbb	[pc, r1]
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 30
+
+
+ 1674              	.L158:
+ 1675 002a 03       		.byte	(.L162-.L158)/2
+ 1676 002b 07       		.byte	(.L161-.L158)/2
+ 1677 002c 0A       		.byte	(.L160-.L158)/2
+ 1678 002d 0D       		.byte	(.L159-.L158)/2
+ 1679 002e 10       		.byte	(.L157-.L158)/2
+ 1680 002f 00       		.p2align 1
+ 1681              	.L162:
+ 1682              		.loc 1 756 7 view .LVU517
+ 1683              		.loc 1 756 30 is_stmt 0 view .LVU518
+ 1684 0030 0022     		movs	r2, #0
+ 1685 0032 9A62     		str	r2, [r3, #40]
+ 1686              		.loc 1 757 7 is_stmt 1 view .LVU519
+ 1687              		.loc 1 746 21 is_stmt 0 view .LVU520
+ 1688 0034 0846     		mov	r0, r1
+ 1689              		.loc 1 757 7 view .LVU521
+ 1690 0036 F0E7     		b	.L156
+ 1691              	.L161:
+ 1692              		.loc 1 760 7 is_stmt 1 view .LVU522
+ 1693              		.loc 1 760 34 is_stmt 0 view .LVU523
+ 1694 0038 0020     		movs	r0, #0
+ 1695 003a D862     		str	r0, [r3, #44]
+ 1696              		.loc 1 761 7 is_stmt 1 view .LVU524
+ 1697 003c EDE7     		b	.L156
+ 1698              	.L160:
+ 1699              		.loc 1 764 7 view .LVU525
+ 1700              		.loc 1 764 31 is_stmt 0 view .LVU526
+ 1701 003e 0020     		movs	r0, #0
+ 1702 0040 1863     		str	r0, [r3, #48]
+ 1703              		.loc 1 765 7 is_stmt 1 view .LVU527
+ 1704 0042 EAE7     		b	.L156
+ 1705              	.L159:
+ 1706              		.loc 1 768 7 view .LVU528
+ 1707              		.loc 1 768 31 is_stmt 0 view .LVU529
+ 1708 0044 0020     		movs	r0, #0
+ 1709 0046 5863     		str	r0, [r3, #52]
+ 1710              		.loc 1 769 7 is_stmt 1 view .LVU530
+ 1711 0048 E7E7     		b	.L156
+ 1712              	.L157:
+ 1713              		.loc 1 772 7 view .LVU531
+ 1714              		.loc 1 772 30 is_stmt 0 view .LVU532
+ 1715 004a 0020     		movs	r0, #0
+ 1716 004c 9862     		str	r0, [r3, #40]
+ 1717              		.loc 1 773 7 is_stmt 1 view .LVU533
+ 1718              		.loc 1 773 34 is_stmt 0 view .LVU534
+ 1719 004e D862     		str	r0, [r3, #44]
+ 1720              		.loc 1 774 7 is_stmt 1 view .LVU535
+ 1721              		.loc 1 774 31 is_stmt 0 view .LVU536
+ 1722 0050 1863     		str	r0, [r3, #48]
+ 1723              		.loc 1 775 7 is_stmt 1 view .LVU537
+ 1724              		.loc 1 775 31 is_stmt 0 view .LVU538
+ 1725 0052 5863     		str	r0, [r3, #52]
+ 1726              		.loc 1 776 7 is_stmt 1 view .LVU539
+ 1727 0054 E1E7     		b	.L156
+ 1728              	.LVL85:
+ 1729              	.L163:
+ 1730              		.loc 1 749 3 is_stmt 0 view .LVU540
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 31
+
+
+ 1731 0056 0220     		movs	r0, #2
+ 1732              	.LVL86:
+ 1733              		.loc 1 792 1 view .LVU541
+ 1734 0058 7047     		bx	lr
+ 1735              		.cfi_endproc
+ 1736              	.LFE74:
+ 1738              		.section	.text.HAL_DMA_GetState,"ax",%progbits
+ 1739              		.align	1
+ 1740              		.global	HAL_DMA_GetState
+ 1741              		.syntax unified
+ 1742              		.thumb
+ 1743              		.thumb_func
+ 1744              		.fpu softvfp
+ 1746              	HAL_DMA_GetState:
+ 1747              	.LVL87:
+ 1748              	.LFB75:
+ 1749              		.loc 1 821 1 is_stmt 1 view -0
+ 1750              		.cfi_startproc
+ 1751              		@ args = 0, pretend = 0, frame = 0
+ 1752              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1753              		@ link register save eliminated.
+ 1754              		.loc 1 823 3 view .LVU543
+ 1755              		.loc 1 824 1 is_stmt 0 view .LVU544
+ 1756 0000 90F82100 		ldrb	r0, [r0, #33]	@ zero_extendqisi2
+ 1757              	.LVL88:
+ 1758              		.loc 1 824 1 view .LVU545
+ 1759 0004 7047     		bx	lr
+ 1760              		.cfi_endproc
+ 1761              	.LFE75:
+ 1763              		.section	.text.HAL_DMA_GetError,"ax",%progbits
+ 1764              		.align	1
+ 1765              		.global	HAL_DMA_GetError
+ 1766              		.syntax unified
+ 1767              		.thumb
+ 1768              		.thumb_func
+ 1769              		.fpu softvfp
+ 1771              	HAL_DMA_GetError:
+ 1772              	.LVL89:
+ 1773              	.LFB76:
+ 1774              		.loc 1 833 1 is_stmt 1 view -0
+ 1775              		.cfi_startproc
+ 1776              		@ args = 0, pretend = 0, frame = 0
+ 1777              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1778              		@ link register save eliminated.
+ 1779              		.loc 1 834 3 view .LVU547
+ 1780              		.loc 1 834 14 is_stmt 0 view .LVU548
+ 1781 0000 806B     		ldr	r0, [r0, #56]
+ 1782              	.LVL90:
+ 1783              		.loc 1 835 1 view .LVU549
+ 1784 0002 7047     		bx	lr
+ 1785              		.cfi_endproc
+ 1786              	.LFE76:
+ 1788              		.text
+ 1789              	.Letext0:
+ 1790              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 1791              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 1792              		.file 4 "../Drivers/CMSIS/Include/core_cm3.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 32
+
+
+ 1793              		.file 5 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 1794              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 1795              		.file 7 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 1796              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1797              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1798              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s 			page 33
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f1xx_hal_dma.c
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:16     .text.DMA_SetConfig:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:23     .text.DMA_SetConfig:0000000000000000 DMA_SetConfig
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:102    .text.HAL_DMA_Init:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:109    .text.HAL_DMA_Init:0000000000000000 HAL_DMA_Init
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:233    .text.HAL_DMA_Init:0000000000000060 $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:240    .text.HAL_DMA_DeInit:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:247    .text.HAL_DMA_DeInit:0000000000000000 HAL_DMA_DeInit
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:357    .text.HAL_DMA_DeInit:000000000000005c $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:364    .text.HAL_DMA_Start:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:371    .text.HAL_DMA_Start:0000000000000000 HAL_DMA_Start
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:458    .text.HAL_DMA_Start:0000000000000050 $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:463    .text.HAL_DMA_Start_IT:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:470    .text.HAL_DMA_Start_IT:0000000000000000 HAL_DMA_Start_IT
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:580    .text.HAL_DMA_Start_IT:0000000000000074 $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:585    .text.HAL_DMA_Abort:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:592    .text.HAL_DMA_Abort:0000000000000000 HAL_DMA_Abort
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:662    .text.HAL_DMA_Abort_IT:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:669    .text.HAL_DMA_Abort_IT:0000000000000000 HAL_DMA_Abort_IT
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:795    .text.HAL_DMA_Abort_IT:0000000000000090 $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:801    .text.HAL_DMA_PollForTransfer:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:808    .text.HAL_DMA_PollForTransfer:0000000000000000 HAL_DMA_PollForTransfer
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1234   .text.HAL_DMA_PollForTransfer:0000000000000224 $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1241   .text.HAL_DMA_IRQHandler:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1248   .text.HAL_DMA_IRQHandler:0000000000000000 HAL_DMA_IRQHandler
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1510   .text.HAL_DMA_IRQHandler:000000000000013c $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1516   .text.HAL_DMA_RegisterCallback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1523   .text.HAL_DMA_RegisterCallback:0000000000000000 HAL_DMA_RegisterCallback
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1571   .text.HAL_DMA_RegisterCallback:0000000000000024 $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1575   .text.HAL_DMA_RegisterCallback:0000000000000028 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1621   .text.HAL_DMA_UnRegisterCallback:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1628   .text.HAL_DMA_UnRegisterCallback:0000000000000000 HAL_DMA_UnRegisterCallback
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1675   .text.HAL_DMA_UnRegisterCallback:000000000000002a $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1739   .text.HAL_DMA_GetState:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1746   .text.HAL_DMA_GetState:0000000000000000 HAL_DMA_GetState
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1764   .text.HAL_DMA_GetError:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1771   .text.HAL_DMA_GetError:0000000000000000 HAL_DMA_GetError
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1680   .text.HAL_DMA_UnRegisterCallback:000000000000002f $d
+C:\Users\38164\AppData\Local\Temp\ccm1A8Db.s:1680   .text.HAL_DMA_UnRegisterCallback:0000000000000030 $t
+
+UNDEFINED SYMBOLS
+HAL_GetTick

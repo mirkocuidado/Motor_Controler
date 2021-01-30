@@ -1,0 +1,349 @@
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"work.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.work_task_function,"ax",%progbits
+  16              		.align	1
+  17              		.global	work_task_function
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	work_task_function:
+  25              	.LVL0:
+  26              	.LFB70:
+  27              		.file 1 "../Core/Src/work.c"
+   1:../Core/Src/work.c **** 
+  28              		.loc 1 17 39 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 17 39 is_stmt 0 view .LVU1
+  33 0000 30B5     		push	{r4, r5, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 83B0     		sub	sp, sp, #12
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 24
+  42              		.loc 1 19 2 is_stmt 1 view .LVU2
+  43 0004 4821     		movs	r1, #72
+  44 0006 0020     		movs	r0, #0
+  45              	.LVL1:
+  46              		.loc 1 19 2 is_stmt 0 view .LVU3
+  47 0008 294C     		ldr	r4, .L13
+  48 000a A047     		blx	r4
+  49              	.LVL2:
+  50              		.loc 1 21 2 is_stmt 1 view .LVU4
+  51 000c 1F21     		movs	r1, #31
+  52 000e 0120     		movs	r0, #1
+  53 0010 A047     		blx	r4
+  54              	.LVL3:
+  55              		.loc 1 22 2 view .LVU5
+  56 0012 1F21     		movs	r1, #31
+  57 0014 0120     		movs	r0, #1
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s 			page 2
+
+
+  58 0016 A047     		blx	r4
+  59              	.LVL4:
+  60              		.loc 1 23 2 view .LVU6
+  61 0018 1F21     		movs	r1, #31
+  62 001a 0120     		movs	r0, #1
+  63 001c A047     		blx	r4
+  64              	.LVL5:
+  65              		.loc 1 24 2 view .LVU7
+  66 001e 1F21     		movs	r1, #31
+  67 0020 0120     		movs	r0, #1
+  68 0022 A047     		blx	r4
+  69              	.LVL6:
+  70              		.loc 1 25 2 view .LVU8
+  71 0024 1F21     		movs	r1, #31
+  72 0026 0120     		movs	r0, #1
+  73 0028 A047     		blx	r4
+  74              	.LVL7:
+  75              		.loc 1 26 2 view .LVU9
+  76 002a 1F21     		movs	r1, #31
+  77 002c 0120     		movs	r0, #1
+  78 002e A047     		blx	r4
+  79              	.LVL8:
+  80              		.loc 1 27 2 view .LVU10
+  81 0030 1F21     		movs	r1, #31
+  82 0032 0120     		movs	r0, #1
+  83 0034 A047     		blx	r4
+  84              	.LVL9:
+  85              		.loc 1 29 2 view .LVU11
+  86 0036 1F4C     		ldr	r4, .L13+4
+  87 0038 0021     		movs	r1, #0
+  88 003a 2046     		mov	r0, r4
+  89 003c 1E4D     		ldr	r5, .L13+8
+  90 003e A847     		blx	r5
+  91              	.LVL10:
+  92              		.loc 1 30 2 view .LVU12
+  93 0040 0421     		movs	r1, #4
+  94 0042 2046     		mov	r0, r4
+  95 0044 A847     		blx	r5
+  96              	.LVL11:
+  97              		.loc 1 32 2 view .LVU13
+  98              		.loc 1 32 7 is_stmt 0 view .LVU14
+  99 0046 2368     		ldr	r3, [r4]
+ 100              		.loc 1 32 23 view .LVU15
+ 101 0048 0022     		movs	r2, #0
+ 102 004a 5A63     		str	r2, [r3, #52]
+ 103              		.loc 1 33 2 is_stmt 1 view .LVU16
+ 104              		.loc 1 33 23 is_stmt 0 view .LVU17
+ 105 004c 9A63     		str	r2, [r3, #56]
+ 106 004e 1EE0     		b	.L8
+ 107              	.L11:
+ 108              	.LBB2:
+ 109              		.loc 1 39 4 is_stmt 1 view .LVU18
+ 110              		.loc 1 39 9 is_stmt 0 view .LVU19
+ 111 0050 184B     		ldr	r3, .L13+4
+ 112 0052 1B68     		ldr	r3, [r3]
+ 113              		.loc 1 39 28 view .LVU20
+ 114 0054 9DF80520 		ldrb	r2, [sp, #5]	@ zero_extendqisi2
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s 			page 3
+
+
+ 115              		.loc 1 39 25 view .LVU21
+ 116 0058 5A63     		str	r2, [r3, #52]
+ 117              		.loc 1 40 4 is_stmt 1 view .LVU22
+ 118 005a 8021     		movs	r1, #128
+ 119 005c 0020     		movs	r0, #0
+ 120 005e 144B     		ldr	r3, .L13
+ 121 0060 9847     		blx	r3
+ 122              	.LVL12:
+ 123 0062 1DE0     		b	.L3
+ 124              	.L12:
+ 125              		.loc 1 43 4 view .LVU23
+ 126              		.loc 1 43 9 is_stmt 0 view .LVU24
+ 127 0064 134B     		ldr	r3, .L13+4
+ 128 0066 1B68     		ldr	r3, [r3]
+ 129              		.loc 1 43 28 view .LVU25
+ 130 0068 9DF80520 		ldrb	r2, [sp, #5]	@ zero_extendqisi2
+ 131              		.loc 1 43 25 view .LVU26
+ 132 006c 9A63     		str	r2, [r3, #56]
+ 133              		.loc 1 44 4 is_stmt 1 view .LVU27
+ 134 006e C021     		movs	r1, #192
+ 135 0070 0020     		movs	r0, #0
+ 136 0072 0F4B     		ldr	r3, .L13
+ 137 0074 9847     		blx	r3
+ 138              	.LVL13:
+ 139 0076 13E0     		b	.L3
+ 140              	.LVL14:
+ 141              	.L5:
+ 142              		.loc 1 52 4 discriminator 3 view .LVU28
+ 143 0078 0121     		movs	r1, #1
+ 144 007a 0846     		mov	r0, r1
+ 145 007c 0C4B     		ldr	r3, .L13
+ 146 007e 9847     		blx	r3
+ 147              	.LVL15:
+ 148              		.loc 1 51 26 discriminator 3 view .LVU29
+ 149 0080 0134     		adds	r4, r4, #1
+ 150              	.LVL16:
+ 151              	.L4:
+ 152              		.loc 1 51 12 discriminator 1 view .LVU30
+ 153              		.loc 1 51 15 is_stmt 0 discriminator 1 view .LVU31
+ 154 0082 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
+ 155              		.loc 1 51 3 discriminator 1 view .LVU32
+ 156 0086 A342     		cmp	r3, r4
+ 157 0088 F6DC     		bgt	.L5
+ 158              	.LVL17:
+ 159              	.L6:
+ 160              	.LBB3:
+ 161              		.loc 1 54 16 is_stmt 1 discriminator 1 view .LVU33
+ 162              		.loc 1 54 3 is_stmt 0 discriminator 1 view .LVU34
+ 163 008a 0F2C     		cmp	r4, #15
+ 164 008c 0ADD     		ble	.L10
+ 165              	.LVL18:
+ 166              	.L8:
+ 167              		.loc 1 54 3 discriminator 1 view .LVU35
+ 168              	.LBE3:
+ 169              	.LBE2:
+ 170              		.loc 1 35 2 is_stmt 1 view .LVU36
+ 171              	.LBB5:
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s 			page 4
+
+
+ 172              		.loc 1 36 3 view .LVU37
+ 173              		.loc 1 36 20 is_stmt 0 view .LVU38
+ 174 008e 0B4B     		ldr	r3, .L13+12
+ 175 0090 9847     		blx	r3
+ 176              	.LVL19:
+ 177 0092 ADF80400 		strh	r0, [sp, #4]	@ movhi
+ 178              		.loc 1 38 3 is_stmt 1 view .LVU39
+ 179              		.loc 1 38 7 is_stmt 0 view .LVU40
+ 180 0096 C0B2     		uxtb	r0, r0
+ 181              		.loc 1 38 5 view .LVU41
+ 182 0098 0128     		cmp	r0, #1
+ 183 009a D9D0     		beq	.L11
+ 184              		.loc 1 42 8 is_stmt 1 view .LVU42
+ 185              		.loc 1 42 10 is_stmt 0 view .LVU43
+ 186 009c 0228     		cmp	r0, #2
+ 187 009e E1D0     		beq	.L12
+ 188              	.L3:
+ 189              	.LBE5:
+ 190              		.loc 1 17 39 discriminator 1 view .LVU44
+ 191 00a0 0024     		movs	r4, #0
+ 192 00a2 EEE7     		b	.L4
+ 193              	.LVL20:
+ 194              	.L10:
+ 195              	.LBB6:
+ 196              	.LBB4:
+ 197              		.loc 1 55 4 is_stmt 1 discriminator 3 view .LVU45
+ 198 00a4 2021     		movs	r1, #32
+ 199 00a6 0120     		movs	r0, #1
+ 200 00a8 014B     		ldr	r3, .L13
+ 201 00aa 9847     		blx	r3
+ 202              	.LVL21:
+ 203              		.loc 1 54 22 discriminator 3 view .LVU46
+ 204 00ac 0134     		adds	r4, r4, #1
+ 205              	.LVL22:
+ 206              		.loc 1 54 22 is_stmt 0 discriminator 3 view .LVU47
+ 207 00ae ECE7     		b	.L6
+ 208              	.L14:
+ 209              		.align	2
+ 210              	.L13:
+ 211 00b0 00000000 		.word	LCD_add_to_queue
+ 212 00b4 00000000 		.word	htim3
+ 213 00b8 00000000 		.word	HAL_TIM_PWM_Start
+ 214 00bc 00000000 		.word	receive_motor_command_from_MCU_one
+ 215              	.LBE4:
+ 216              	.LBE6:
+ 217              		.cfi_endproc
+ 218              	.LFE70:
+ 220              		.section	.rodata.init_Work.str1.4,"aMS",%progbits,1
+ 221              		.align	2
+ 222              	.LC0:
+ 223 0000 776F726B 		.ascii	"work_task_MCU2\000"
+ 223      5F746173 
+ 223      6B5F4D43 
+ 223      553200
+ 224              		.section	.text.init_Work,"ax",%progbits
+ 225              		.align	1
+ 226              		.global	init_Work
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s 			page 5
+
+
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ 230              		.fpu softvfp
+ 232              	init_Work:
+ 233              	.LFB69:
+ 234              		.loc 1 10 18 is_stmt 1 view -0
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238 0000 10B5     		push	{r4, lr}
+ 239              	.LCFI2:
+ 240              		.cfi_def_cfa_offset 8
+ 241              		.cfi_offset 4, -8
+ 242              		.cfi_offset 14, -4
+ 243 0002 82B0     		sub	sp, sp, #8
+ 244              	.LCFI3:
+ 245              		.cfi_def_cfa_offset 16
+ 246              		.loc 1 11 2 view .LVU49
+ 247 0004 084B     		ldr	r3, .L17
+ 248 0006 9847     		blx	r3
+ 249              	.LVL23:
+ 250              		.loc 1 12 2 view .LVU50
+ 251 0008 084B     		ldr	r3, .L17+4
+ 252 000a 9847     		blx	r3
+ 253              	.LVL24:
+ 254              		.loc 1 13 2 view .LVU51
+ 255 000c 084B     		ldr	r3, .L17+8
+ 256 000e 9847     		blx	r3
+ 257              	.LVL25:
+ 258              		.loc 1 14 2 view .LVU52
+ 259 0010 0023     		movs	r3, #0
+ 260 0012 0193     		str	r3, [sp, #4]
+ 261 0014 0622     		movs	r2, #6
+ 262 0016 0092     		str	r2, [sp]
+ 263 0018 8022     		movs	r2, #128
+ 264 001a 0649     		ldr	r1, .L17+12
+ 265 001c 0648     		ldr	r0, .L17+16
+ 266 001e 074C     		ldr	r4, .L17+20
+ 267 0020 A047     		blx	r4
+ 268              	.LVL26:
+ 269              		.loc 1 15 1 is_stmt 0 view .LVU53
+ 270 0022 02B0     		add	sp, sp, #8
+ 271              	.LCFI4:
+ 272              		.cfi_def_cfa_offset 8
+ 273              		@ sp needed
+ 274 0024 10BD     		pop	{r4, pc}
+ 275              	.L18:
+ 276 0026 00BF     		.align	2
+ 277              	.L17:
+ 278 0028 00000000 		.word	init_MCU_two
+ 279 002c 00000000 		.word	init_LCD
+ 280 0030 00000000 		.word	init_KeyPad
+ 281 0034 00000000 		.word	.LC0
+ 282 0038 00000000 		.word	work_task_function
+ 283 003c 00000000 		.word	xTaskCreate
+ 284              		.cfi_endproc
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s 			page 6
+
+
+ 285              	.LFE69:
+ 287              		.text
+ 288              	.Letext0:
+ 289              		.file 2 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 290              		.file 3 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-ea
+ 291              		.file 4 "../Core/Inc/FreeRTOSConfig.h"
+ 292              		.file 5 "../Drivers/CMSIS/Include/core_cm3.h"
+ 293              		.file 6 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 294              		.file 7 "../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103x6.h"
+ 295              		.file 8 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 296              		.file 9 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 297              		.file 10 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 298              		.file 11 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 299              		.file 12 "../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 300              		.file 13 "../Core/Inc/usart.h"
+ 301              		.file 14 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\lib\\gcc\\
+ 302              		.file 15 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 303              		.file 16 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 304              		.file 17 "../c:\\users\\38164\\onedrive\\desktop\\gnu mcu\\arm-none-eabi-gcc-9.3.1-1.1\\arm-none-e
+ 305              		.file 18 "../Core/Inc/mcu_two.h"
+ 306              		.file 19 "../Core/Inc/lcd.h"
+ 307              		.file 20 "../Core/Inc/tim.h"
+ 308              		.file 21 "../Core/Inc/keypad.h"
+ 309              		.file 22 "../Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ARM GAS  C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 work.c
+C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s:16     .text.work_task_function:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s:24     .text.work_task_function:0000000000000000 work_task_function
+C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s:211    .text.work_task_function:00000000000000b0 $d
+C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s:221    .rodata.init_Work.str1.4:0000000000000000 $d
+C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s:225    .text.init_Work:0000000000000000 $t
+C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s:232    .text.init_Work:0000000000000000 init_Work
+C:\Users\38164\AppData\Local\Temp\cc3AA6Od.s:278    .text.init_Work:0000000000000028 $d
+
+UNDEFINED SYMBOLS
+LCD_add_to_queue
+htim3
+HAL_TIM_PWM_Start
+receive_motor_command_from_MCU_one
+init_MCU_two
+init_LCD
+init_KeyPad
+xTaskCreate
